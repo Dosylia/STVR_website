@@ -7,7 +7,7 @@ use Tests\TestCase;
 
 class LocalisationTest extends TestCase
 {
-    private const FILES = ['site', 'home', 'download', 'install', 'host', 'faq', 'roadmap', 'devlog'];
+    private const FILES = ['site', 'home', 'download', 'install', 'host', 'faq', 'roadmap', 'devlog', 'shots'];
 
     /**
      * The invariant that keeps four languages honest: every key English has,

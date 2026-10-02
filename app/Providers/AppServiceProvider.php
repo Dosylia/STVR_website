@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Support\Devlog;
 use App\Support\Nav;
 use App\Support\ReleaseService;
+use App\Support\Shots;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
@@ -14,6 +15,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->singleton(ReleaseService::class);
         $this->app->singleton(Devlog::class);
+        $this->app->singleton(Shots::class);
     }
 
     public function boot(): void

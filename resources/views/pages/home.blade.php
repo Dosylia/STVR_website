@@ -102,6 +102,37 @@
 
 <div class="shell"><div class="rule" aria-hidden="true"><span class="rule__mark"></span></div></div>
 
+{{-- ========================================================= shots ====== --}}
+{{-- The gallery exists whether or not there are screenshots yet. With none it
+     shows the illustration instead, which is a composition rather than a gap —
+     the section was designed to work empty, because for a while it will be. --}}
+<section class="section section--tight">
+    <div class="shell">
+        <p class="inscription">{{ __('shots.label') }}</p>
+        <h2>{{ __('shots.title') }}</h2>
+        <p class="lede">{{ __('shots.lede') }}</p>
+
+        @if (count($shots))
+            <div class="shots" style="margin-top:2.5rem">
+                @foreach ($shots as $i => $shot)
+                    <figure class="shot reveal{{ $i === 0 ? ' shot--lead' : '' }}" style="transition-delay:{{ $i * 60 }}ms">
+                        <img src="{{ $shot['url'] }}" alt="{{ $shot['alt'] }}"
+                             loading="lazy" decoding="async" width="1600" height="900">
+                        @if ($shot['caption'])
+                            <figcaption>{{ $shot['caption'] }}</figcaption>
+                        @endif
+                    </figure>
+                @endforeach
+            </div>
+        @else
+            <figure class="shot shot--art reveal" style="margin-top:2.5rem">
+                <div class="shot__frame">@include('art.scene')</div>
+                <figcaption>{{ __('home.hero.caption') }}</figcaption>
+            </figure>
+        @endif
+    </div>
+</section>
+
 {{-- ================================================ loading screen ===== --}}
 <section class="section section--tight">
     <div class="shell">

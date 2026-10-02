@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Support\Devlog;
 use App\Support\Nav;
 use App\Support\ReleaseService;
+use App\Support\Shots;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -13,6 +14,7 @@ class PageController extends Controller
     public function __construct(
         private readonly ReleaseService $releases,
         private readonly Devlog $devlog,
+        private readonly Shots $shots,
     ) {
     }
 
@@ -29,6 +31,7 @@ class PageController extends Controller
         return $this->page('pages.home', 'home', [
             'release' => $this->releases->latest(),
             'entries' => $this->devlog->latest(app()->getLocale(), 3),
+            'shots'   => $this->shots->all(),
         ]);
     }
 

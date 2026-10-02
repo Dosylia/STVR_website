@@ -45,6 +45,7 @@ docker exec -w /var/www/stvr dev_stvr php artisan optimize:clear
 | `app/Support/Nav.php` | Builds every internal URL and negotiates the language at `/`. |
 | `app/Support/ReleaseService.php` | Reads the newest GitHub release, caches it, falls back when there is none. |
 | `app/Support/Devlog.php` | Loads markdown entries from `resources/devlog/<locale>/`. |
+| `app/Support/Shots.php` | Reads `public/media/shots/`; the home page gallery falls back to the illustration when it is empty. |
 | `resources/views/art/` | The illustrations, as hand-written SVG. |
 | `public/assets/` | One stylesheet, one script, self-hosted fonts. Edited directly. |
 
@@ -109,6 +110,38 @@ The body, in markdown.
 The English folder is the canonical list. A translation is the same filename
 under `resources/devlog/fr/` (or `de`, `es`); without one, readers get the
 English text and a visible note saying so, rather than a missing entry.
+
+---
+
+## Adding screenshots
+
+Drop image files into `public/media/shots/`. They appear on the home page, in
+order, with no code change and no deploy:
+
+```
+public/media/shots/01-two-on-the-road.jpg
+public/media/shots/02-riften-market.webp
+```
+
+The leading number orders them; the rest of the name becomes the slug. `.jpg`,
+`.jpeg`, `.png`, `.webp` and `.avif` all work, and about 1600px wide is plenty.
+The first image is given double width on a wide screen, so put the best one
+first.
+
+Captions are optional. To add one, use the slug in every language file:
+
+```php
+// lang/en/shots.php
+'captions' => [
+    'riften-market' => 'Two players, one market, and nobody has fallen through the floor yet.',
+],
+```
+
+Without a caption the slug becomes the alt text and no caption is drawn.
+
+**With the folder empty** the section shows the illustrated scene instead and
+still reads as finished — which is why it could ship before there was anything
+to put in it.
 
 ---
 

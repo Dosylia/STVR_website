@@ -1471,3 +1471,59 @@ tbody td:first-child { color: var(--parchment); font-family: var(--mono); font-s
 }
 @media (max-width: 760px) { .constellation { display: none; } }
 .constellation text { letter-spacing: .08em; }
+
+
+/* =============================================================================
+   Screenshots
+   -----------------------------------------------------------------------------
+   A masonry-ish grid where the first image is given double width, so one good
+   capture carries the section and the rest fall in behind it. With no images at
+   all the same frame holds the illustration, and the section reads as finished
+   either way — which is the only reason it can ship before the screenshots do.
+   ========================================================================== */
+
+.shots {
+  display: grid;
+  gap: clamp(.9rem, 2vw, 1.4rem);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
+}
+
+.shot {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  background: var(--stone-950);
+  border: 1px solid var(--stone-700);
+  border-radius: var(--radius);
+  transition: border-color .3s var(--ease), transform .3s var(--ease);
+}
+.shot:hover { border-color: var(--gold); transform: translateY(-3px); }
+
+.shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  max-width: 100%;
+}
+
+.shot__frame { aspect-ratio: 16 / 9; max-width: 100%; overflow: hidden; }
+.shot__frame svg { width: 100%; height: 100%; object-fit: cover; }
+
+.shot figcaption {
+  padding: .85rem 1.1rem;
+  font-size: .86rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--parchment-3);
+  border-top: 1px solid var(--stone-850);
+}
+
+/* The lead image gets two columns when the grid has room for them. */
+@media (min-width: 60rem) {
+  .shot--lead { grid-column: span 2; }
+}
+
+.shot--art { grid-column: 1 / -1; }
+.shot--art:hover { transform: none; border-color: var(--stone-700); }
