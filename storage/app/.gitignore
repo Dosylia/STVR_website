@@ -2,3 +2,8 @@
 !private/
 !public/
 !.gitignore
+
+# The TTFs that `php artisan stvr:images` draws the share card and icons with.
+# Tracked on purpose: without them the command cannot run on a fresh clone.
+!fonts/
+!fonts/**

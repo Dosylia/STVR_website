@@ -18,8 +18,9 @@ use Illuminate\Support\Facades\Log;
  *  3. Whatever happens, the page still needs a working download button.
  *
  * So: short timeout, cached result, and a configured fallback underneath. The
- * negative result is cached too, otherwise every visit while GitHub is sulking
- * costs six seconds.
+ * negative result is cached too — as `false`, because Cache::remember treats a
+ * cached null as a miss — otherwise every visit while GitHub is sulking costs
+ * six seconds.
  */
 final class ReleaseService
 {
@@ -29,13 +30,17 @@ final class ReleaseService
     {
         $minutes = max(1, (int) config('stvr.github.cache_minutes', 30));
 
+        // `false`, not `null`, for "there is nothing to show". Cache::remember
+        // treats a null as a miss and re-runs the closure, so a null here would
+        // mean every single visit while GitHub is unreachable pays the full
+        // timeout — which is the one case the cache exists for.
         $payload = Cache::remember(
             self::CACHE_KEY,
             now()->addMinutes($minutes),
-            fn () => $this->fetch(),
+            fn () => $this->fetch() ?? false,
         );
 
-        return $payload === null
+        return $payload === false
             ? $this->fallback()
             : $this->hydrate($payload);
     }
@@ -103,7 +108,10 @@ final class ReleaseService
 
         return new Release(
             tag: $json['tag_name'] ?? null,
-            name: $json['name'] ?: ($json['tag_name'] ?? null),
+            // `?:` alone is not enough: GitHub omits `name` entirely for an
+            // untitled release, and reading a missing key is a fatal in a strict
+            // error handler.
+            name: ($json['name'] ?? null) ?: ($json['tag_name'] ?? null),
             publishedAt: $this->date($json['published_at'] ?? null),
             url: $json['html_url'] ?? null,
             notes: $json['body'] ?? null,
