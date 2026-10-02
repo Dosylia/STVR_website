@@ -251,15 +251,53 @@
 
   /* ------------------------------------------------------------- copy line */
 
+  /**
+   * navigator.clipboard only exists in a secure context, so on a plain-http
+   * deployment (or a .loc dev host) it is simply undefined and the button does
+   * nothing at all. execCommand('copy') is deprecated and still works
+   * everywhere, which is exactly what a fallback is for.
+   */
+  const copyText = async (text) => {
+    if (navigator.clipboard?.writeText) {
+      try {
+        await navigator.clipboard.writeText(text);
+        return true;
+      } catch { /* fall through */ }
+    }
+
+    const scratch = document.createElement('textarea');
+    scratch.value = text;
+    scratch.setAttribute('readonly', '');
+    scratch.style.cssText = 'position:fixed;top:0;left:-9999px;opacity:0';
+    document.body.appendChild(scratch);
+    scratch.select();
+
+    let ok = false;
+    try {
+      ok = document.execCommand('copy');
+    } catch { /* nothing left to try */ }
+
+    scratch.remove();
+
+    return ok;
+  };
+
   $$('[data-copy]').forEach((button) => {
     button.addEventListener('click', async () => {
       const source = document.getElementById(button.dataset.copy);
       if (!source) return;
 
-      try {
-        await navigator.clipboard.writeText(source.textContent.trim());
-      } catch {
-        return; // no clipboard permission: the text is on screen to select
+      const done = await copyText(source.textContent.trim());
+
+      if (!done) {
+        // Nothing worked: put the text under the caret so Ctrl+C still does it.
+        const range = document.createRange();
+        range.selectNodeContents(source);
+        const selection = getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+
+        return;
       }
 
       const original = button.textContent;

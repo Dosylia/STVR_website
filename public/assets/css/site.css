@@ -160,7 +160,19 @@ code, kbd, samp {
   border: 1px solid rgba(63, 214, 164, .16);
   border-radius: var(--radius);
   padding: .1em .42em;
-  white-space: nowrap;
+  /* Inline code has to wrap. `nowrap` kept file paths like
+     %LOCALAPPDATA%\SkyrimTogetherVR\connect.txt on one line and pushed the whole
+     document 30px wider than a 320px phone; `anywhere` also lets the containing
+     block shrink below the token's width, which `break-word` does not. */
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+/* Inside a code block the whitespace is the content, so it stays literal and
+   the block scrolls instead. */
+pre code, .copyline__code {
+  white-space: pre;
+  overflow-wrap: normal;
 }
 
 kbd {
@@ -684,8 +696,14 @@ kbd {
 .burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 .burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
-@media (max-width: 960px) {
+/* The drawer takes over before the horizontal nav runs out of room, not after.
+   At 960px the six links, the wordmark, the language button and the download
+   button together measured wider than the viewport, and the overflow pushed the
+   burger off the right-hand edge — so on a phone there was no menu at all and
+   the whole page scrolled sideways. */
+@media (max-width: 1100px) {
   .burger { display: grid; }
+
   .nav {
     position: fixed;
     inset: 4.6rem 0 auto;
@@ -698,11 +716,33 @@ kbd {
     backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--stone-800);
     transform: translateY(-120%);
-    transition: transform .4s var(--ease);
+    /* visibility, not just the transform: a translated-off-screen panel is still
+       in the tab order and still read by a screen reader, so a phone user tabbing
+       from the burger would land on six links nobody can see. */
+    visibility: hidden;
+    transition: transform .4s var(--ease), visibility .4s var(--ease);
+    max-height: calc(100svh - 4.6rem);
+    overflow-y: auto;
   }
-  .nav.is-open { transform: none; }
+  .nav.is-open { transform: none; visibility: visible; }
   .nav__link { padding: .95rem .2rem; font-size: .88rem; border-bottom: 1px solid var(--stone-850); }
   .nav__link::after { left: .2rem; right: auto; width: 2rem; }
+}
+
+/* Below this the masthead has to choose. The download button goes: it is the
+   first item in the drawer, every page has a download call to action of its own,
+   and keeping it here is what pushed the burger off screen. */
+@media (max-width: 620px) {
+  .masthead__cta { display: none; }
+  .masthead__inner { gap: .75rem; }
+  .wordmark__sigil { width: 1.9rem; height: 1.9rem; }
+  .wordmark__a { font-size: .82rem; letter-spacing: .16em; }
+  .wordmark__b { font-size: .5rem; letter-spacing: .3em; }
+}
+
+@media (max-width: 380px) {
+  .wordmark__b { display: none; }
+  .lang__toggle { padding: .5rem .55rem; }
 }
 
 /* =============================================================================
@@ -848,11 +888,26 @@ kbd {
   border-top: 1px solid var(--stone-800);
   background: linear-gradient(180deg, var(--stone-950), var(--void) 60%);
 }
+/* Every track has to be able to shrink to the container width, or the grid
+   refuses to wrap and the whole document scrolls sideways on a phone. The
+   min(100%, …) inside minmax() is what makes that true; a bare 9rem minimum is
+   what made the footer 498px wide inside a 360px viewport. */
 .footer__top {
   display: grid;
-  gap: clamp(2rem, 5vw, 3.5rem);
-  grid-template-columns: minmax(min(100%, 19rem), 1.4fr) repeat(auto-fit, minmax(9rem, 1fr));
+  gap: clamp(1.8rem, 5vw, 3.5rem);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
   margin-bottom: 3rem;
+}
+.footer__about { min-width: 0; }
+
+/* Above this width the columns are stated outright rather than left to auto-fit,
+   which was picking four tracks and wrapping the last list onto its own row. */
+@media (min-width: 880px) {
+  .footer__top { grid-template-columns: 1.7fr repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 879px) {
+  .footer__about { grid-column: 1 / -1; }
 }
 .footer__about p { font-size: .9rem; color: var(--parchment-3); max-width: 36ch; }
 .footer__about .wordmark { margin-bottom: 1.1rem; }
@@ -919,7 +974,6 @@ kbd {
 }
 .steps__title { font-family: var(--display); font-size: 1.08rem; font-weight: 600; color: var(--parchment); margin: .22rem 0 .4rem; }
 .steps__body { font-size: .97rem; color: var(--parchment-3); margin: 0; }
-.steps__body code { white-space: normal; word-break: break-word; }
 
 /* =============================================================================
    Requirement list
