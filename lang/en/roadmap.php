@@ -3,7 +3,7 @@
 return [
 
     'meta' => [
-        'title'       => 'Skyrim Together VR — roadmap and known issues',
+        'title'       => 'Skyrim Together VR: roadmap and known issues',
         'description' => 'The six things being fixed, in the order they are worth fixing, and an honest list of what breaks today.',
     ],
 
@@ -33,7 +33,7 @@ return [
                 'n' => 2,
                 'state' => 'active',
                 'title' => 'The world, identical in both headsets',
-                'body'  => 'If you killed it, it is dead for them too; if they looted it, the chest is empty for you. The long tail is cell boundaries — crossing them fast is where the strangest reports come from.',
+                'body'  => 'If you killed it, it is dead for them too; if they looted it, the chest is empty for you. The long tail is cell boundaries. Crossing them fast is where the strangest reports come from.',
             ],
             [
                 'n' => 3,
@@ -51,7 +51,7 @@ return [
                 'n' => 5,
                 'state' => 'later',
                 'title' => 'Nobody under the floor',
-                'body'  => 'NPCs occasionally arrive below the ground they should be standing on. They are in sync — just in sync at the wrong height.',
+                'body'  => 'NPCs occasionally arrive below the ground they should be standing on. They are in sync, just in sync at the wrong height.',
             ],
             [
                 'n' => 6,
@@ -65,7 +65,7 @@ return [
     'issues' => [
         'label' => 'Today',
         'title' => 'Known issues',
-        'lede'  => 'Current, specific, and not a formality. If you hit something that is not here, it is genuinely new — send the log.',
+        'lede'  => 'Current, specific, and not a formality. If you hit something that is not here, it is genuinely new. Send the log.',
         'items' => [
             [
                 'title' => 'It still crashes',
@@ -73,7 +73,7 @@ return [
             ],
             [
                 'title' => 'Crossing cells fast is where things go odd',
-                'body'  => 'A bandit launched into the sky, a dead body in the wrong place, a spriggan whose hits never land — all reported while sprinting across country, which is the common thread currently being pulled.',
+                'body'  => 'A bandit launched into the sky, a dead body in the wrong place, a spriggan whose hits never land, all reported while sprinting across country, which is the common thread currently being pulled.',
             ],
             [
                 'title' => 'NPCs below floor level',
@@ -98,7 +98,7 @@ return [
     'done' => [
         'label' => 'Behind us',
         'title' => 'Recently off the list',
-        'lede'  => 'Not a changelog — the devlog is the changelog. Just the shape of the last few weeks.',
+        'lede'  => 'Not a changelog. The devlog is the changelog. Just the shape of the last few weeks.',
         'items' => [
             'Dropped items follow the hand that threw them, and reach the floor instead of hovering.',
             'Hips cross the wire, so a body bends where its owner bends.',

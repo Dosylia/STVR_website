@@ -19,7 +19,7 @@ return Application::configure(basePath: dirname(__DIR__))
         // PHP-FPM is only reachable from the nginx container on the internal
         // network, so the forwarded headers it sees are our own. Honouring them
         // is what makes canonical URLs, hreflang tags and redirects come out as
-        // https:// behind a TLS terminator — without pretending every request is
+        // https:// behind a TLS terminator, without pretending every request is
         // https, which is what forcing the scheme outright used to do here and
         // which breaks a plain-http deployment.
         $middleware->trustProxies(at: '*');

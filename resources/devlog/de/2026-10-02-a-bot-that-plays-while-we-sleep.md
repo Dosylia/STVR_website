@@ -8,13 +8,13 @@ tags: tests, werkzeuge
 Den größten Teil dieses Projekts über bestand die Testsuite aus zwei Leuten in Headsets an
 einem Freitagabend.
 
-Das hat echte Vorteile — es findet, worauf es ankommt, weil die einzigen gemeldeten Fehler
+Das hat echte Vorteile. Es findet, worauf es ankommt, weil die einzigen gemeldeten Fehler
 die sind, die etwas ruiniert haben. Es hat auch ein offensichtliches Problem: die
 Rückmeldeschleife dauert eine Woche, sie kostet zwei Leute einen Abend, und ungefähr die
 Hälfte der Information kommt als »da wurde es komisch, in der Nähe vom Banditenlager«.
 
 Also gibt es jetzt einen Bot. Er fährt den Client ohne Anzeige hoch, verbindet sich mit
-einem Server und spielt eine Reihe geskripteter Paare durch — zwei Clients, je ein Szenario,
+einem Server und spielt eine Reihe geskripteter Paare durch: zwei Clients, je ein Szenario,
 ein bekannter erwarteter Endzustand.
 
 ## Was er tatsächlich fängt
@@ -27,7 +27,7 @@ Hook, der früher sicher war.
 Das sind genau die Fehler, die unsichtbar bleiben, bis sie katastrophal werden, die vom
 Timing abhängen und die ein menschlicher Tester in einem von fünf Versuchen reproduziert.
 Eine Maschine, die dasselbe Szenario über Nacht vierzigmal durchspielt, reproduziert sie
-zuverlässig genug, um eine Adresse daraufzusetzen — und eine Adresse ist, wie wir immer
+zuverlässig genug, um eine Adresse daraufzusetzen, und eine Adresse ist, wie wir immer
 wieder aufschreiben, das Einzige, was einen Absturz entscheidet.
 
 ## Der Teil, der nicht offensichtlich war

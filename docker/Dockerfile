@@ -1,5 +1,5 @@
 # =============================================================================
-# Skyrim Together VR — production image
+# Skyrim Together VR: production image
 # -----------------------------------------------------------------------------
 # Two stages. The first one has Composer and is thrown away; the second is the
 # thing that ships, and it has no package manager, no Composer, no Node and no
@@ -72,7 +72,7 @@ CMD ["php-fpm"]
 
 
 # ---- stage 3: the web server ------------------------------------------------
-# nginx serves public/ straight off disk, so it needs those files — and it is a
+# nginx serves public/ straight off disk, so it needs those files, and it is a
 # different container from PHP-FPM, so it cannot see the app image's filesystem.
 #
 # Baking them into the nginx image is the one arrangement with no moving parts:

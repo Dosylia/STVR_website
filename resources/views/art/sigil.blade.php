@@ -3,7 +3,7 @@
 
     Deliberately *not* the Skyrim dragon emblem: that one belongs to Bethesda,
     and a fan project that leans on someone else's trademark for its identity
-    has no identity. This is its own device — a stave flanked by two wings, ringed
+    has no identity. This is its own device: a stave flanked by two wings, ringed
     in iron, with a gold lozenge set at the crown. Two wings because the whole
     point of the mod is that there are two of you.
 --}}

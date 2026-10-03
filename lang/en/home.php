@@ -3,14 +3,14 @@
 return [
 
     'meta' => [
-        'title'       => 'Skyrim Together VR — you are not the only Dragonborn anymore',
-        'description' => 'Free, open-source co-op for Skyrim VR. Your modlist, your save, your server — and a friend standing next to you at their real height, with their real hands.',
+        'title'       => 'Skyrim Together VR: you are not the only Dragonborn anymore',
+        'description' => 'Free, open-source co-op for Skyrim VR. Your modlist, your save, your server, and a friend standing next to you at their real height, with their real hands.',
     ],
 
     'hero' => [
         'kicker'   => 'Open source · GPLv3 · a VR port of Skyrim Together Reborn',
         'title'    => 'You are not the only Dragonborn anymore',
-        'lede'     => 'Co-op for Skyrim VR. Your modlist, your save, your server — and someone else actually in the room with you, at their own height, with their own hands.',
+        'lede'     => 'Co-op for Skyrim VR. Your modlist, your save, your server, and someone else actually in the room with you, at their own height, with their own hands.',
         'primary'  => 'Get the build',
         'secondary'=> 'How to install it',
         'scroll'   => 'Keep reading',
@@ -34,7 +34,7 @@ return [
     'plain' => [
         'label' => 'Plainly',
         'title' => 'What this actually is',
-        'body'  => 'Skyrim Together Reborn put co-op into Skyrim Special Edition. Skyrim VR is a different executable: different memory addresses, different engine classes, a body where there used to be a camera. This is that mod, taken apart and put back together for the VR build — by two full-stack developers who learned C++ and reverse engineering on the way, which is either reassuring or alarming depending on your temperament.',
+        'body'  => 'Skyrim Together Reborn put co-op into Skyrim Special Edition. Skyrim VR is a different executable: different memory addresses, different engine classes, a body where there used to be a camera. This is that mod, taken apart and put back together for the VR build, by two full-stack developers who learned C++ and reverse engineering on the way, which is either reassuring or alarming depending on your temperament.',
         'body2' => 'It is free, the source is public, and it never talks to a server we own. You host, or your friend hosts. Nobody signs up for anything.',
     ],
 
@@ -47,7 +47,7 @@ return [
             [
                 'rune'  => 'ᛗ',
                 'title' => 'They are really there',
-                'body'  => 'Head, hands and hips go across the wire. With VRIK installed, your friend has a body — so when they lean around a corner to look, you watch them lean. When they point, you can follow the arm. Not a floating helmet. A person.',
+                'body'  => 'Head, hands and hips go across the wire. With VRIK installed, your friend has a body, so when they lean around a corner to look, you watch them lean. When they point, you can follow the arm. Not a floating helmet. A person.',
             ],
             [
                 'rune'  => 'ᛟ',
@@ -57,7 +57,7 @@ return [
             [
                 'rune'  => 'ᚦ',
                 'title' => 'Your modlist, untouched',
-                'body'  => 'Mod Organizer 2, Vortex, a Wabbajack list like FUS, or no manager at all. Your load order stays your load order. The launcher starts the game and loads SKSE for you — you never touch the SKSE loader again.',
+                'body'  => 'Mod Organizer 2, Vortex, a Wabbajack list like FUS, or no manager at all. Your load order stays your load order. The launcher starts the game and loads SKSE for you. You never touch the SKSE loader again.',
             ],
             [
                 'rune'  => 'ᛒ',
@@ -72,7 +72,7 @@ return [
             [
                 'rune'  => 'ᛉ',
                 'title' => 'It reconnects on its own',
-                'body'  => 'A dropped connection retries after 5 seconds, then 10, 20, 30 and 60, and tells you so on screen. A refused one does not retry and says why — wrong build, wrong password — instead of leaving you staring at a loading door.',
+                'body'  => 'A dropped connection retries after 5 seconds, then 10, 20, 30 and 60, and tells you so on screen. A refused one does not retry and says why (wrong build, wrong password) instead of leaving you staring at a loading door.',
             ],
         ],
     ],
@@ -91,7 +91,7 @@ return [
             'The server refuses any client whose build does not match. The connect notification names both versions, so a mismatch takes ten seconds to diagnose.',
             'uGridsToLoad must be 5. It is the default of every Wabbajack list, and the server will not take anything else.',
             'VRIK is what gives your friend a body. Without it they are still there, with rather less of them to see.',
-            'The host connects to their own server at 127.0.0.1 — the same address as everyone else, minus the travel.',
+            'The host connects to their own server at 127.0.0.1, the same address as everyone else, minus the travel.',
             'Both of you should run the same modlist. "He sees a bear, I see a wolf" is almost always two different load orders.',
         ],
     ],

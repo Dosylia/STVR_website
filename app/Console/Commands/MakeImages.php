@@ -11,7 +11,7 @@ use Illuminate\Console\Command;
  *     php artisan stvr:images
  *
  * They are generated rather than committed as binaries because they are derived
- * from the same mark and the same palette as everything else — change the gold
+ * from the same mark and the same palette as everything else. Change the gold
  * in one place and re-run this, instead of reopening an editor nobody has.
  *
  * Open Graph has to be a PNG: Slack, Discord, Facebook and X all ignore an SVG
@@ -104,7 +104,7 @@ class MakeImages extends Command
 
     private function stars($im, int $w): void
     {
-        // Seeded so the card is byte-identical on every regeneration — otherwise
+        // Seeded so the card is byte-identical on every regeneration. Otherwise
         // every run is a diff and the file churns in git for no reason.
         mt_srand(20260926);
 
@@ -119,7 +119,7 @@ class MakeImages extends Command
 
     /**
      * The aurora is painted on its own layer and blurred to death, because GD
-     * has no gradient fill and no feGaussianBlur — thirty passes of its 3x3
+     * has no gradient fill and no feGaussianBlur, and thirty passes of its 3x3
      * kernel is the cheapest thing that looks like light rather than like paint.
      */
     /**
@@ -191,7 +191,7 @@ class MakeImages extends Command
      * spaced peaks of equal height read as a sawtooth graph, so no two spans
      * share a width or a height and two of them are deliberately long and flat.
      *
-     * The tall peak sits right of centre, outside the shadow wash — a snowcap in
+     * The tall peak sits right of centre, outside the shadow wash. A snowcap in
      * the darkened half reads as a white triangle floating in a black sky.
      */
     private function ranges($im, int $w, int $h): void
@@ -240,7 +240,7 @@ class MakeImages extends Command
     {
         // Torch glow as a real radial falloff. GD's 3x3 blur has an effective
         // radius of about four pixels however many times you run it, so blurring
-        // an 86-pixel disc gives you an 86-pixel disc with soft corners — which
+        // an 86-pixel disc gives you an 86-pixel disc with soft corners, which
         // is how the first attempt at this put an orange rectangle on the card.
         $this->glow($im, 1004, 554, 120, [232, 128, 56], 0.60);
         $this->glow($im, 1004, 554, 42,  [255, 206, 150], 0.72);
@@ -331,7 +331,7 @@ class MakeImages extends Command
 
         imagefilledrectangle($im, $x, 378, $x + 148, 380, $gold);
 
-        imagettftext($im, 22, 0, $x, 436, $mist, $this->spectral, 'Your modlist, your save, your server —');
+        imagettftext($im, 22, 0, $x, 436, $mist, $this->spectral, 'Your modlist, your save, your server,');
         imagettftext($im, 22, 0, $x, 474, $mist, $this->spectral, 'and someone else actually in the room.');
 
         imagettftext($im, 13, 0, $x, 556, $faint, $this->cinzelLight, 'FREE   ·   OPEN SOURCE   ·   GPLv3');

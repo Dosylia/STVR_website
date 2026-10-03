@@ -18,12 +18,12 @@ behind a rock, looking up, with one arm out.
 
 The temptation is to send the whole skeleton. We are not going to, and not only for bandwidth.
 A full skeleton means the remote end has to agree about bone naming, rig scale and VRIK's own
-solver settings — and the number one cause of "he sees a bear, I see a wolf" is already two
+solver settings, and the number one cause of "he sees a bear, I see a wolf" is already two
 modlists disagreeing. Adding a thirty-bone contract between them would be inviting the same
 class of bug into the one system that has to be reliable.
 
-So: head, hands, hips. VRIK already knows how to build a body out of head and hands — that is
-literally its job — and the hips are what it cannot infer. Where your hips are decides whether
+So: head, hands, hips. VRIK already knows how to build a body out of head and hands, which is
+literally its job, and the hips are what it cannot infer. Where your hips are decides whether
 you are standing, crouched, leaning, or turned at the waist while looking the other way.
 
 With hips crossing the wire, three things started working at once that we had been treating as
@@ -37,7 +37,7 @@ separate problems:
 ## What it cost
 
 One commit of this work is called *Hips reach the body*, which should tell you how the first
-attempt went. The hip position arrived in the wrong space — correct numbers, wrong origin —
+attempt went. The hip position arrived in the wrong space (correct numbers, wrong origin),
 so remote players stood with their pelvis about a metre in front of their chest. It looked
 less like a bug and more like a curse.
 

@@ -40,7 +40,7 @@
 <link rel="manifest" href="{{ url('/site.webmanifest') }}">
 
 {{-- Fonts are self-hosted, so they preload from our own origin and the page
-     makes no third-party request at all — which also means no cookie banner. --}}
+     makes no third-party request at all, which also means no cookie banner. --}}
 <link rel="preload" as="style" href="@assetv('assets/css/fonts.css')">
 <link rel="stylesheet" href="@assetv('assets/css/fonts.css')">
 <link rel="stylesheet" href="@assetv('assets/css/site.css')">

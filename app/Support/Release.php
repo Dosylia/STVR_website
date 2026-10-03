@@ -60,7 +60,7 @@ final class Release
         return $this->asset('server');
     }
 
-    /** Total downloads across every asset — only meaningful for a live release. */
+    /** Total downloads across every asset. Only meaningful for a live release. */
     public function downloads(): int
     {
         return array_sum(array_map(fn (ReleaseAsset $a) => $a->downloads, $this->assets));

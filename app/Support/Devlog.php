@@ -7,7 +7,7 @@ namespace App\Support;
  *
  * Reasons: entries are written by hand in an editor, they are part of the repo
  * so they are reviewed and reverted like code, and the site keeps working with
- * no database at all. The canonical list of entries is the English folder —
+ * no database at all. The canonical list of entries is the English folder:
  * a post always exists in English first, and a missing translation falls back
  * to English with a visible note rather than vanishing from the other languages.
  */
@@ -19,7 +19,7 @@ final class Devlog
      * Deliberately *not* a persistent cache. Laravel's file store restricts
      * unserialize() to an allow-list of classes, so a cached DevlogEntry comes
      * back as __PHP_Incomplete_Class and every page that touches the devlog
-     * 500s — in production only, because that is the only place the cache was
+     * 500s, in production only, because that is the only place the cache was
      * enabled. Caching a handful of small markdown files to save a few
      * microseconds was never worth a failure mode that cannot show up locally.
      *

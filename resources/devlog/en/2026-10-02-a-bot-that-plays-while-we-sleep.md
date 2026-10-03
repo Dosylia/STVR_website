@@ -7,13 +7,13 @@ tags: testing, tooling
 
 For most of this project, the test suite was two people in headsets on a Friday evening.
 
-That has real advantages — it finds the things that matter, because the only bugs that get
+That has real advantages. It finds the things that matter, because the only bugs that get
 reported are the ones that ruined something. It also has an obvious problem: the feedback loop
 is a week long, it costs two people an evening, and roughly half the information arrives as
 "it went weird near the bandit camp".
 
 So there is now a bot. It runs the client headless, connects to a server, and plays through a
-set of scripted pairs — two clients, a scenario each, a known expected state at the end.
+set of scripted pairs: two clients, a scenario each, a known expected state at the end.
 
 ## What it actually catches
 
@@ -23,7 +23,7 @@ code that still holds it, a null extension on a hook that used to be safe.
 
 Those are exactly the bugs that are invisible until they are catastrophic, that depend on
 timing, and that a human tester reproduces one time in five. A machine running the same
-scenario forty times overnight reproduces them reliably enough to put an address on them —
+scenario forty times overnight reproduces them reliably enough to put an address on them,
 and an address, as we keep writing down, is the only thing that settles a crash.
 
 ## The part that was not obvious

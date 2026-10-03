@@ -104,8 +104,8 @@
 
 {{-- ========================================================= shots ====== --}}
 {{-- The gallery exists whether or not there are screenshots yet. With none it
-     shows the illustration instead, which is a composition rather than a gap —
-     the section was designed to work empty, because for a while it will be. --}}
+     shows the illustration instead, which is a composition rather than a gap.
+     The section was designed to work empty, because for a while it will be. --}}
 <section class="section section--tight">
     <div class="shell">
         <p class="inscription">{{ __('shots.label') }}</p>

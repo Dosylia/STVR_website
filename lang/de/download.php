@@ -45,7 +45,7 @@ return [
         ],
         'server' => [
             'title' => 'Server',
-            'body'  => 'Der dedizierte Server allein, für eine Maschine ohne das Spiel. Eine Linux-Build gibt es auch — frag danach.',
+            'body'  => 'Der dedizierte Server allein, für eine Maschine ohne das Spiel. Eine Linux-Build gibt es auch. Frag danach.',
             'meta'  => 'Nur für Hosts',
         ],
         'download_cta' => 'Herunterladen',
@@ -57,12 +57,12 @@ return [
         'title' => 'Bevor du klickst',
         'lede'  => 'Nichts davon ist optional, außer wo es dasteht.',
         'items' => [
-            ['name' => 'Skyrim VR :version',             'note' => 'Die Steam-Version. Nicht Special Edition, nicht Anniversary — die VR-Programmdatei.', 'state' => 'required'],
+            ['name' => 'Skyrim VR :version',             'note' => 'Die Steam-Version. Nicht Special Edition, nicht Anniversary: die VR-Programmdatei.', 'state' => 'required'],
             ['name' => 'SKSE VR',                        'note' => 'Die VR-Fassung des Script Extenders. Nach Data, wie jede SKSE-Mod.',                  'state' => 'required'],
             ['name' => 'VR Address Library for SKSEVR',  'note' => 'Erst damit findet die Mod überhaupt irgendetwas im Spiel.',                           'state' => 'required'],
             ['name' => 'uGridsToLoad = 5',               'note' => 'Der Standardwert. Der Server lehnt alles andere ab, weil die Welten sonst nicht mehr zusammenpassen.', 'state' => 'required'],
             ['name' => 'Engine Fixes VR',                'note' => 'Beseitigt eine Sorte Absturz, die nichts mit uns zu tun hat.',                        'state' => 'recommended'],
-            ['name' => 'VRIK',                           'note' => 'Der Körper, den dein Freund sieht. Dringend empfohlen — darum geht es im Kern.',      'state' => 'recommended'],
+            ['name' => 'VRIK',                           'note' => 'Der Körper, den dein Freund sieht. Dringend empfohlen. Darum geht es im Kern.',      'state' => 'recommended'],
             ['name' => 'Dieselbe Build wie deine Freunde','note' => 'Der Server lehnt Abweichungen ab und nennt dabei beide Versionen.',                   'state' => 'required'],
         ],
     ],
@@ -70,15 +70,15 @@ return [
     'next' => [
         'label' => 'Danach',
         'title' => 'Heruntergeladen. Und jetzt',
-        'install' => ['title' => 'Installieren',     'body' => 'MO2, Vortex, eine Wabbajack-Liste oder gar kein Manager — die Anleitung deckt alle vier ab.', 'cta' => 'Zur Anleitung'],
-        'host'    => ['title' => 'Hosten',           'body' => 'Eine ausführbare Datei, ein UDP-Port — oder ein virtuelles LAN und gar kein Router.',        'cta' => 'Host-Anleitung'],
+        'install' => ['title' => 'Installieren',     'body' => 'MO2, Vortex, eine Wabbajack-Liste oder gar kein Manager. Die Anleitung deckt alle vier ab.', 'cta' => 'Zur Anleitung'],
+        'host'    => ['title' => 'Hosten',           'body' => 'Eine ausführbare Datei, ein UDP-Port, oder ein virtuelles LAN und gar kein Router.',        'cta' => 'Host-Anleitung'],
         'issues'  => ['title' => 'Wenn es kaputtgeht','body' => 'collect-logs.bat ausführen und das Zip schicken. Darin sind Log, Dump und die Versionen.',   'cta' => 'Fehler melden'],
     ],
 
     'safety' => [
         'label' => 'Vertrauen',
         'title' => 'Ein Wort zum Vertrauen',
-        'body'  => 'Der Launcher ersetzt die Programmdatei des Spiels im Speicher, um seine Arbeit zu tun — also genau die Form von Sache, der man misstrauen sollte. Deshalb: jede Zeile davon liegt auf GitHub, die Lizenz sorgt dafür, dass das so bleibt, und die Build, die du herunterlädst, wird von einem Skript aus demselben Repository gebaut. Wenn du sie lieber selbst kompilierst, ist das eine unterstützte Antwort.',
+        'body'  => 'Der Launcher ersetzt die Programmdatei des Spiels im Speicher, um seine Arbeit zu tun, also genau die Form von Sache, der man misstrauen sollte. Deshalb: jede Zeile davon liegt auf GitHub, die Lizenz sorgt dafür, dass das so bleibt, und die Build, die du herunterlädst, wird von einem Skript aus demselben Repository gebaut. Wenn du sie lieber selbst kompilierst, ist das eine unterstützte Antwort.',
         'cta'   => 'Quellcode lesen',
     ],
 ];

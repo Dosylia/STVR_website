@@ -2,7 +2,7 @@
     The six goals as a star map.
 
     Skyrim's own progression screen is a night sky, so an ordered list of six
-    things to fix can be one too. Purely decorative — aria-hidden, and every
+    things to fix can be one too. Purely decorative: aria-hidden, and every
     goal is written out properly in the cards below, in order, where a screen
     reader and a phone both get the whole thing.
 --}}

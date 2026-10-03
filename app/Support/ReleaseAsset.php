@@ -13,7 +13,7 @@ final class ReleaseAsset
     ) {
     }
 
-    /** "412 MB" — binary units, one decimal only where it earns its place. */
+    /** "412 MB". Binary units, one decimal only where it earns its place. */
     public function humanSize(): string
     {
         if ($this->size <= 0) {

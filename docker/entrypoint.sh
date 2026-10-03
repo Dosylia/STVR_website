@@ -3,7 +3,7 @@
 # Warms Laravel's caches at container start rather than at image build.
 #
 # The caches bake in environment values, and the environment is not known until
-# the container runs — an image built with the wrong APP_URL would hand every
+# the container runs. An image built with the wrong APP_URL would hand every
 # visitor absolute links to the wrong hostname, including the hreflang tags,
 # which is a slow and confusing way to lose a search ranking.
 # -----------------------------------------------------------------------------

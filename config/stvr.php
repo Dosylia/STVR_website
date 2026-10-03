@@ -104,7 +104,7 @@ return [
     |--------------------------------------------------------------------------
     | Languages
     |--------------------------------------------------------------------------
-    | `name` is written in the language itself — nobody looking for German wants
+    | `name` is written in the language itself. Nobody looking for German wants
     | to scan a list that says "German". `tag` is the BCP-47 value for <html lang>
     | and hreflang.
     */

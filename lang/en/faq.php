@@ -3,7 +3,7 @@
 return [
 
     'meta' => [
-        'title'       => 'Skyrim Together VR — questions',
+        'title'       => 'Skyrim Together VR: questions',
         'description' => 'Does it work with my modlist? Does it cost anything? Will it get me banned? Can I play with someone on Special Edition? Answers.',
     ],
 
@@ -28,7 +28,7 @@ return [
                 ],
                 [
                     'q' => 'Is this the same as Skyrim Together Reborn?',
-                    'a' => 'It is that mod, ported. Reborn is for Skyrim Special Edition — a different executable with different memory addresses and no VR anything. Every engine hook had to be found again for the VR build, and the parts that are about hands and headsets did not exist at all. The multiplayer underneath is Tilted Phoques\' work and the credit is theirs.',
+                    'a' => 'It is that mod, ported. Reborn is for Skyrim Special Edition, a different executable with different memory addresses and no VR anything. Every engine hook had to be found again for the VR build, and the parts that are about hands and headsets did not exist at all. The multiplayer underneath is Tilted Phoques\' work and the credit is theirs.',
                 ],
                 [
                     'q' => 'Can I play with someone on Special Edition?',
@@ -36,7 +36,7 @@ return [
                 ],
                 [
                     'q' => 'How many people can play?',
-                    'a' => 'It is built and tested around small groups — two to four friends. There is no technical lobby cap, but nobody has taken it to a crowd, and the honest answer is that a crowd would find the rough edges faster than you want.',
+                    'a' => 'It is built and tested around small groups: two to four friends. There is no technical lobby cap, but nobody has taken it to a crowd, and the honest answer is that a crowd would find the rough edges faster than you want.',
                 ],
             ],
         ],
@@ -46,15 +46,15 @@ return [
             'items' => [
                 [
                     'q' => 'Will it work with my modlist?',
-                    'a' => 'Probably, and that is the point — it loads alongside whatever you already run, through MO2, Vortex or a Wabbajack list. The only hard requirement is that <code>uGridsToLoad</code> stays at 5.',
+                    'a' => 'Probably, and that is the point. It loads alongside whatever you already run, through MO2, Vortex or a Wabbajack list. The only hard requirement is that <code>uGridsToLoad</code> stays at 5.',
                 ],
                 [
                     'q' => 'Do both of us need the same mods?',
-                    'a' => 'Not byte for byte — mod checking is deliberately off. But the closer the two lists are, the fewer surprises. Anything that changes what exists in the world or what a creature is will eventually produce "he sees a bear, I see a wolf".',
+                    'a' => 'Not byte for byte. Mod checking is deliberately off. But the closer the two lists are, the fewer surprises. Anything that changes what exists in the world or what a creature is will eventually produce "he sees a bear, I see a wolf".',
                 ],
                 [
                     'q' => 'Do I need VRIK?',
-                    'a' => 'Technically no. In practice yes. VRIK is what gives you a body, and your body is what your friend sees. Without it you are still there — just much less of you.',
+                    'a' => 'Technically no. In practice yes. VRIK is what gives you a body, and your body is what your friend sees. Without it you are still there, just much less of you.',
                 ],
                 [
                     'q' => 'Does it work with Wabbajack lists like FUS?',
@@ -62,7 +62,7 @@ return [
                 ],
                 [
                     'q' => 'Does it work on Quest?',
-                    'a' => 'Only through PC VR — Virtual Desktop, Air Link, a cable. This is a PC mod for the PC game; a standalone headset has no Skyrim VR to mod.',
+                    'a' => 'Only through PC VR: Virtual Desktop, Air Link, a cable. This is a PC mod for the PC game; a standalone headset has no Skyrim VR to mod.',
                 ],
             ],
         ],
@@ -84,7 +84,7 @@ return [
                 ],
                 [
                     'q' => 'Is my IP address exposed?',
-                    'a' => 'To whoever runs the server and whoever is on it, yes — the same as any game where a friend hosts. If that matters to you, use a virtual LAN like Tailscale or ZeroTier instead of forwarding a port; nothing is then reachable from the open internet.',
+                    'a' => 'To whoever runs the server and whoever is on it, yes, the same as any game where a friend hosts. If that matters to you, use a virtual LAN like Tailscale or ZeroTier instead of forwarding a port; nothing is then reachable from the open internet.',
                 ],
             ],
         ],
@@ -106,7 +106,7 @@ return [
                 ],
                 [
                     'q' => 'Can I help?',
-                    'a' => 'Yes. Playing it and reporting precisely is worth more than it sounds — most of what has been fixed was found in somebody\'s log. If you reverse-engineer, there is a short list of engine addresses still unmapped for VR, and the repository explains how they were found.',
+                    'a' => 'Yes. Playing it and reporting precisely is worth more than it sounds. Most of what has been fixed was found in somebody\'s log. If you reverse-engineer, there is a short list of engine addresses still unmapped for VR, and the repository explains how they were found.',
                 ],
             ],
         ],

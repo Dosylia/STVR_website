@@ -19,7 +19,7 @@ return [
         'steps' => [
             ['title' => 'Gardez le dossier Server quelque part', 'body' => 'N’importe où sur la machine qui hébergera. Le serveur n’a pas besoin du jeu : une machine allumée en permanence ou un vieux portable font l’affaire.'],
             ['title' => 'Lancez host-server.bat',               'body' => 'Il refuse de démarrer un deuxième serveur, démarre celui-ci, et affiche l’adresse à distribuer. Une console s’ouvre et indique le port.'],
-            ['title' => 'Laissez la fenêtre ouverte',           'body' => 'La fermer met fin à la session. Sous Windows 11 elle peut s’ouvrir comme onglet d’un Terminal existant — si vous voyez deux onglets serveur, fermez les deux et recommencez.'],
+            ['title' => 'Laissez la fenêtre ouverte',           'body' => 'La fermer met fin à la session. Sous Windows 11 elle peut s’ouvrir comme onglet d’un Terminal existant. Si vous voyez deux onglets serveur, fermez les deux et recommencez.'],
             ['title' => 'Regardez les gens arriver',            'body' => 'La console affiche <em>New player … connected</em>. C’est le moyen le plus rapide de savoir qu’une connexion est bien arrivée jusqu’au serveur.'],
         ],
     ],
@@ -31,17 +31,17 @@ return [
 
         'forward' => [
             'label' => 'Rediriger un port',
-            'body'  => 'Redirigez <strong>:protocol :port</strong> dans votre box vers le PC qui fait tourner le serveur, donnez-lui un bail statique pour que la règle ne dérive pas, et autorisez-le dans le pare-feu Windows. Distribuez ensuite votre adresse publique — <code>api.ipify.org</code> vous la donnera, et votre FAI peut la changer après un redémarrage de la box.',
+            'body'  => 'Redirigez <strong>:protocol :port</strong> dans votre box vers le PC qui fait tourner le serveur, donnez-lui un bail statique pour que la règle ne dérive pas, et autorisez-le dans le pare-feu Windows. Distribuez ensuite votre adresse publique. <code>api.ipify.org</code> vous la donnera, et votre FAI peut la changer après un redémarrage de la box.',
             'rule'  => 'Une ligne dans Terminal (Administrateur), une seule fois :',
             'cmd'   => 'New-NetFirewallRule -DisplayName "Skyrim Together Server (UDP :port)" -Direction Inbound -Protocol UDP -LocalPort :port -Action Allow -Profile Any',
         ],
 
         'vpn' => [
             'label' => 'Ou ignorer la box',
-            'body'  => 'Mettez tout le monde sur un réseau local virtuel — Tailscale, ZeroTier ou Radmin VPN — et distribuez l’adresse qu’il vous donne. Pas de redirection, pas d’IP publique, rien d’exposé sur Internet, et ça survit au changement d’adresse par votre FAI. Pour deux ou trois amis, c’est presque toujours la bonne réponse.',
+            'body'  => 'Mettez tout le monde sur un réseau local virtuel (Tailscale, ZeroTier ou Radmin VPN) et distribuez l’adresse qu’il vous donne. Pas de redirection, pas d’IP publique, rien d’exposé sur Internet, et ça survit au changement d’adresse par votre FAI. Pour deux ou trois amis, c’est presque toujours la bonne réponse.',
         ],
 
-        'self' => 'Héberger sur le PC où vous jouez est normal et prévu. Vous vous connectez à vous-même sur <code>127.0.0.1::port</code> — la même adresse que tout le monde, sans le trajet.',
+        'self' => 'Héberger sur le PC où vous jouez est normal et prévu. Vous vous connectez à vous-même sur <code>127.0.0.1::port</code>, la même adresse que tout le monde, sans le trajet.',
     ],
 
     'settings' => [
@@ -58,7 +58,7 @@ return [
             ['k' => 'bEnableDeathSystem','v' => 'true',   'd' => 'La mort vous fait réapparaître dans un temple au lieu de charger une sauvegarde, ce qui désynchroniserait le monde.'],
             ['k' => 'bAllowMO2',         'v' => 'true',   'd' => 'Autorise les clients lancés via Mod Organizer 2. Laissez activé.'],
             ['k' => 'bAllowSKSE',        'v' => 'true',   'd' => 'Autorise SKSE. Laissez activé ; rien ne fonctionne sans.'],
-            ['k' => 'bEnableModCheck',   'v' => 'false',  'd' => 'Impose des listes de mods identiques à l’octet près. Désactivé par choix — à peu près identique suffit.'],
+            ['k' => 'bEnableModCheck',   'v' => 'false',  'd' => 'Impose des listes de mods identiques à l’octet près. Désactivé par choix. À peu près identique suffit.'],
         ],
     ],
 
@@ -73,7 +73,7 @@ return [
 
     'linux' => [
         'title' => 'Linux',
-        'body'  => 'Une build Linux du serveur dédié existe, pour qui préfère la garder sur une machine déjà allumée. Elle n’est pas encore sur la page des releases — demandez-la.',
+        'body'  => 'Une build Linux du serveur dédié existe, pour qui préfère la garder sur une machine déjà allumée. Elle n’est pas encore sur la page des releases. Demandez-la.',
     ],
 
     'cta' => [

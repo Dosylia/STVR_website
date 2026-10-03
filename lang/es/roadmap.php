@@ -3,7 +3,7 @@
 return [
 
     'meta' => [
-        'title'       => 'Skyrim Together VR — hoja de ruta y fallos conocidos',
+        'title'       => 'Skyrim Together VR: hoja de ruta y fallos conocidos',
         'description' => 'Las seis cosas que se están arreglando, en el orden en que merece la pena arreglarlas, y una lista honesta de lo que se rompe hoy.',
     ],
 
@@ -33,7 +33,7 @@ return [
                 'n' => 2,
                 'state' => 'active',
                 'title' => 'El mundo, idéntico en los dos visores',
-                'body'  => 'Si tú lo mataste, para él también está muerto; si él saqueó el cofre, para ti está vacío. Lo que queda son los límites de celda — cruzarlos deprisa es de donde vienen los informes más extraños.',
+                'body'  => 'Si tú lo mataste, para él también está muerto; si él saqueó el cofre, para ti está vacío. Lo que queda son los límites de celda. Cruzarlos deprisa es de donde vienen los informes más extraños.',
             ],
             [
                 'n' => 3,
@@ -51,7 +51,7 @@ return [
                 'n' => 5,
                 'state' => 'later',
                 'title' => 'Nadie bajo el suelo',
-                'body'  => 'Los PNJ a veces aparecen por debajo del suelo en el que deberían estar. Están sincronizados — solo que sincronizados a la altura equivocada.',
+                'body'  => 'Los PNJ a veces aparecen por debajo del suelo en el que deberían estar. Están sincronizados, solo que sincronizados a la altura equivocada.',
             ],
             [
                 'n' => 6,
@@ -65,7 +65,7 @@ return [
     'issues' => [
         'label' => 'Hoy',
         'title' => 'Fallos conocidos',
-        'lede'  => 'Al día, concretos, y no una formalidad. Si te encuentras algo que no esté aquí, es genuinamente nuevo — manda el registro.',
+        'lede'  => 'Al día, concretos, y no una formalidad. Si te encuentras algo que no esté aquí, es genuinamente nuevo. Manda el registro.',
         'items' => [
             [
                 'title' => 'Sigue colgándose',
@@ -73,7 +73,7 @@ return [
             ],
             [
                 'title' => 'Cruzar celdas deprisa se pone raro',
-                'body'  => 'Un bandido lanzado al cielo, un cadáver en el sitio equivocado, una spriggan cuyos golpes no llegan nunca — todo reportado mientras se cruzaba el país a la carrera, que es el hilo del que se está tirando ahora.',
+                'body'  => 'Un bandido lanzado al cielo, un cadáver en el sitio equivocado, una spriggan cuyos golpes no llegan nunca, todo reportado mientras se cruzaba el país a la carrera, que es el hilo del que se está tirando ahora.',
             ],
             [
                 'title' => 'PNJ por debajo del nivel del suelo',
@@ -98,7 +98,7 @@ return [
     'done' => [
         'label' => 'Detrás',
         'title' => 'Fuera de la lista últimamente',
-        'lede'  => 'No es un changelog — el diario hace de changelog. Solo la forma de las últimas semanas.',
+        'lede'  => 'No es un changelog. El diario hace de changelog. Solo la forma de las últimas semanas.',
         'items' => [
             'Los objetos soltados siguen a la mano que los lanzó y llegan al suelo en vez de quedarse flotando.',
             'La cadera cruza la red, así que un cuerpo se dobla por donde se dobla su dueño.',

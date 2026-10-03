@@ -3,7 +3,7 @@
 Drop image files in this folder and they appear on the home page, in order, with
 no code change and no deploy step.
 
-**Naming:** `NN-slug.ext` — the number orders them, the slug names them.
+**Naming:** `NN-slug.ext`, where the number orders them and the slug names them.
 
 ```
 01-two-on-the-road.jpg
@@ -26,4 +26,4 @@ anything much larger is bandwidth nobody asked for.
 Without a caption the image stands on its own, and the slug becomes its alt text.
 
 **With this folder empty**, the home page shows the illustrated scene instead and
-reads as finished either way — which is the point. Nothing here is required.
+reads as finished either way, which is the point. Nothing here is required.

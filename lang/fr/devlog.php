@@ -3,7 +3,7 @@
 return [
 
     'meta' => [
-        'title'       => 'Skyrim Together VR — journal de développement',
+        'title'       => 'Skyrim Together VR : journal de développement',
         'description' => 'Ce qui a cassé, ce que c’était vraiment, et ce qui a été fait. Y compris les diagnostics qui étaient faux.',
     ],
 

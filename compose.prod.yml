@@ -1,9 +1,9 @@
 # =============================================================================
-# Skyrim Together VR — production stack
+# Skyrim Together VR: production stack
 # -----------------------------------------------------------------------------
 # Two containers and nothing else: PHP-FPM with the app baked into the image,
 # and nginx in front of it. No database, no Redis, no queue worker, because the
-# site needs none of them — the devlog is markdown in the repo and the only
+# site needs none of them: the devlog is markdown in the repo and the only
 # external call is a cached GitHub request.
 #
 #   cp .env.example .env            # then fill in APP_KEY and APP_URL

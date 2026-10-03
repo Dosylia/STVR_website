@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @php use App\Support\Nav; @endphp
 
-@section('title', $entry->title.' — '.__('site.meta.suffix'))
+@section('title', $entry->title.' · '.__('site.meta.suffix'))
 @section('description', $entry->summary ?: __('devlog.meta.description'))
 
 @push('head')

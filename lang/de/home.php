@@ -3,14 +3,14 @@
 return [
 
     'meta' => [
-        'title'       => 'Skyrim Together VR — du bist nicht mehr das einzige Drachenblut',
-        'description' => 'Kostenloser, quelloffener Koop für Skyrim VR. Deine Modliste, dein Spielstand, dein Server — und jemand, der wirklich neben dir steht, in seiner echten Größe, mit seinen echten Händen.',
+        'title'       => 'Skyrim Together VR: du bist nicht mehr das einzige Drachenblut',
+        'description' => 'Kostenloser, quelloffener Koop für Skyrim VR. Deine Modliste, dein Spielstand, dein Server, und jemand, der wirklich neben dir steht, in seiner echten Größe, mit seinen echten Händen.',
     ],
 
     'hero' => [
         'kicker'   => 'Quelloffen · GPLv3 · VR-Portierung von Skyrim Together Reborn',
         'title'    => 'Du bist nicht mehr das einzige Drachenblut',
-        'lede'     => 'Koop für Skyrim VR. Deine Modliste, dein Spielstand, dein Server — und jemand, der wirklich mit dir im Raum steht, in seiner eigenen Größe, mit seinen eigenen Händen.',
+        'lede'     => 'Koop für Skyrim VR. Deine Modliste, dein Spielstand, dein Server, und jemand, der wirklich mit dir im Raum steht, in seiner eigenen Größe, mit seinen eigenen Händen.',
         'primary'  => 'Build holen',
         'secondary'=> 'So wird es installiert',
         'scroll'   => 'Weiterlesen',
@@ -34,7 +34,7 @@ return [
     'plain' => [
         'label' => 'Klartext',
         'title' => 'Was das hier wirklich ist',
-        'body'  => 'Skyrim Together Reborn hat Koop in Skyrim Special Edition gebracht. Skyrim VR ist eine andere ausführbare Datei: andere Speicheradressen, andere Engine-Klassen, ein Körper dort, wo vorher nur eine Kamera war. Das hier ist dieselbe Mod, auseinandergenommen und für die VR-Build wieder zusammengesetzt — von zwei Fullstack-Entwicklern, die unterwegs C++ und Reverse Engineering gelernt haben, was je nach Temperament beruhigend oder beunruhigend klingt.',
+        'body'  => 'Skyrim Together Reborn hat Koop in Skyrim Special Edition gebracht. Skyrim VR ist eine andere ausführbare Datei: andere Speicheradressen, andere Engine-Klassen, ein Körper dort, wo vorher nur eine Kamera war. Das hier ist dieselbe Mod, auseinandergenommen und für die VR-Build wieder zusammengesetzt, von zwei Fullstack-Entwicklern, die unterwegs C++ und Reverse Engineering gelernt haben, was je nach Temperament beruhigend oder beunruhigend klingt.',
         'body2' => 'Es ist kostenlos, der Quellcode ist öffentlich, und nichts läuft jemals über einen Server, der uns gehört. Du hostest, oder dein Freund hostet. Niemand legt irgendwo ein Konto an.',
     ],
 
@@ -47,7 +47,7 @@ return [
             [
                 'rune'  => 'ᛗ',
                 'title' => 'Er ist wirklich da',
-                'body'  => 'Kopf, Hände und Hüfte gehen über die Leitung. Mit VRIK hat dein Freund einen Körper — wenn er sich also um eine Ecke lehnt, siehst du ihn sich lehnen. Zeigt er auf etwas, kannst du dem Arm folgen. Kein schwebender Helm. Eine Person.',
+                'body'  => 'Kopf, Hände und Hüfte gehen über die Leitung. Mit VRIK hat dein Freund einen Körper. Wenn er sich also um eine Ecke lehnt, siehst du ihn sich lehnen. Zeigt er auf etwas, kannst du dem Arm folgen. Kein schwebender Helm. Eine Person.',
             ],
             [
                 'rune'  => 'ᛟ',
@@ -57,12 +57,12 @@ return [
             [
                 'rune'  => 'ᚦ',
                 'title' => 'Deine Modliste, unangetastet',
-                'body'  => 'Mod Organizer 2, Vortex, eine Wabbajack-Liste wie FUS oder gar kein Manager. Deine Ladereihenfolge bleibt deine Ladereihenfolge. Der Launcher startet das Spiel und lädt SKSE für dich — den SKSE-Loader fasst du nie wieder an.',
+                'body'  => 'Mod Organizer 2, Vortex, eine Wabbajack-Liste wie FUS oder gar kein Manager. Deine Ladereihenfolge bleibt deine Ladereihenfolge. Der Launcher startet das Spiel und lädt SKSE für dich. Den SKSE-Loader fasst du nie wieder an.',
             ],
             [
                 'rune'  => 'ᛒ',
                 'title' => 'Eine Welt, nicht zwei',
-                'body'  => 'Quests, Wetter und Tageszeit werden über die Gruppe geteilt, und die Gruppe bildet sich von selbst, sobald ihr beide verbunden seid. Ein fallen gelassener Gegenstand landet in beiden Headsets auf demselben Boden — und folgt unterwegs der Hand, die ihn geworfen hat.',
+                'body'  => 'Quests, Wetter und Tageszeit werden über die Gruppe geteilt, und die Gruppe bildet sich von selbst, sobald ihr beide verbunden seid. Ein fallen gelassener Gegenstand landet in beiden Headsets auf demselben Boden, und folgt unterwegs der Hand, die ihn geworfen hat.',
             ],
             [
                 'rune'  => 'ᚾ',
@@ -72,7 +72,7 @@ return [
             [
                 'rune'  => 'ᛉ',
                 'title' => 'Es verbindet sich von selbst neu',
-                'body'  => 'Eine abgerissene Verbindung versucht es nach 5 Sekunden erneut, dann nach 10, 20, 30 und 60 — und sagt es dir auf dem Bildschirm. Eine abgelehnte versucht es nicht und sagt warum: falsche Build, falsches Passwort. Statt dich vor einer Ladetür stehen zu lassen.',
+                'body'  => 'Eine abgerissene Verbindung versucht es nach 5 Sekunden erneut, dann nach 10, 20, 30 und 60, und sagt es dir auf dem Bildschirm. Eine abgelehnte versucht es nicht und sagt warum: falsche Build, falsches Passwort. Statt dich vor einer Ladetür stehen zu lassen.',
             ],
         ],
     ],
@@ -88,10 +88,10 @@ return [
     'tips' => [
         'label' => 'Vom Ladebildschirm',
         'items' => [
-            'Der Server weist jeden Client ab, dessen Build nicht passt. Die Verbindungsmeldung nennt beide Versionen — die Diagnose dauert zehn Sekunden.',
+            'Der Server weist jeden Client ab, dessen Build nicht passt. Die Verbindungsmeldung nennt beide Versionen. Die Diagnose dauert zehn Sekunden.',
             'uGridsToLoad muss 5 sein. Das ist der Standard jeder Wabbajack-Liste, und der Server akzeptiert nichts anderes.',
             'VRIK gibt deinem Freund einen Körper. Ohne VRIK ist er immer noch da, nur deutlich weniger von ihm.',
-            'Der Host verbindet sich mit seinem eigenen Server über 127.0.0.1 — dieselbe Adresse wie alle anderen, nur ohne den Weg.',
+            'Der Host verbindet sich mit seinem eigenen Server über 127.0.0.1, dieselbe Adresse wie alle anderen, nur ohne den Weg.',
             'Spielt beide dieselbe Modliste. »Er sieht einen Bären, ich sehe einen Wolf« sind fast immer zwei verschiedene Ladereihenfolgen.',
         ],
     ],
@@ -111,7 +111,7 @@ return [
 
     'devlog' => [
         'label' => 'Von der Werkbank',
-        'title' => 'Was diese Woche kaputtging — und was es wirklich war',
+        'title' => 'Was diese Woche kaputtging, und was es wirklich war',
         'cta'   => 'Alle Einträge',
         'empty' => 'Die ersten Einträge entstehen gerade.',
     ],

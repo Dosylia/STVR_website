@@ -45,7 +45,7 @@ return [
         ],
         'server' => [
             'title' => 'Server',
-            'body'  => 'The dedicated server on its own, for a machine that does not have the game. A Linux build exists too — ask.',
+            'body'  => 'The dedicated server on its own, for a machine that does not have the game. A Linux build exists too. Ask.',
             'meta'  => 'Hosts only',
         ],
         'download_cta' => 'Download',
@@ -57,12 +57,12 @@ return [
         'title' => 'Before you click',
         'lede'  => 'None of this is optional except where it says so.',
         'items' => [
-            ['name' => 'Skyrim VR :version',             'note' => 'The Steam version. Not Special Edition, not Anniversary — the VR executable.', 'state' => 'required'],
+            ['name' => 'Skyrim VR :version',             'note' => 'The Steam version. Not Special Edition, not Anniversary: the VR executable.', 'state' => 'required'],
             ['name' => 'SKSE VR',                        'note' => 'The script extender build for VR. Installed into Data like any SKSE mod.',        'state' => 'required'],
             ['name' => 'VR Address Library for SKSEVR',  'note' => 'What lets the mod find anything inside the game at all.',                         'state' => 'required'],
             ['name' => 'uGridsToLoad = 5',               'note' => 'The default. The server refuses anything else, because the world would not line up.', 'state' => 'required'],
             ['name' => 'Engine Fixes VR',                'note' => 'Stops a category of crash that has nothing to do with us.',                       'state' => 'recommended'],
-            ['name' => 'VRIK',                           'note' => 'The body your friend sees. Strongly recommended — this is most of the point.',    'state' => 'recommended'],
+            ['name' => 'VRIK',                           'note' => 'The body your friend sees. Strongly recommended. This is most of the point.',    'state' => 'recommended'],
             ['name' => 'The same build as your friends', 'note' => 'The server refuses a mismatch and names both versions when it does.',             'state' => 'required'],
         ],
     ],
@@ -70,7 +70,7 @@ return [
     'next' => [
         'label' => 'Next',
         'title' => 'Downloaded. Now what',
-        'install' => ['title' => 'Install it',   'body' => 'MO2, Vortex, a Wabbajack list, or no manager at all — the guide covers all four.', 'cta' => 'Install guide'],
+        'install' => ['title' => 'Install it',   'body' => 'MO2, Vortex, a Wabbajack list, or no manager at all. The guide covers all four.', 'cta' => 'Install guide'],
         'host'    => ['title' => 'Host it',      'body' => 'One executable, one UDP port, or a virtual LAN and no router at all.',            'cta' => 'Hosting guide'],
         'issues'  => ['title' => 'When it breaks', 'body' => 'Run collect-logs.bat and send the zip. It gathers the log, the dump and the versions.', 'cta' => 'Report a bug'],
     ],

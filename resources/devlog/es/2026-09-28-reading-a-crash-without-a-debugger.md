@@ -13,8 +13,8 @@ Windows solo hay uno.
 El 27 de septiembre dedicamos varias horas a intentar que `dbghelp` cargara el PDB de esa
 imagen. No lo hará. `SymLoadModuleEx` informa del módulo como diferido y después declara no
 encontrada cada función conocida. No merece la pena volver a intentarlo, y esta entrada
-existe en parte para que la siguiente persona —probablemente uno de nosotros, dentro de dos
-meses— no lo haga.
+existe en parte para que la siguiente persona, probablemente uno de nosotros, dentro de dos
+meses, no lo haga.
 
 ## Lo que sí funciona: el mapa del enlazador
 
@@ -49,7 +49,7 @@ El mapa tiene que venir de la build que se colgó.
 Un mapa caducado no falla. Nombra las funciones equivocadas, lee las direcciones
 equivocadas, y parece completamente plausible mientras lo hace. Pasa un mapa actual contra
 un volcado del 13 de septiembre y anunciará con aplomo «0 borrados de actores registrados en
-esta sesión» —para una build escrita dos semanas antes de que `RecentDeletes` existiera.
+esta sesión», para una build escrita dos semanas antes de que `RecentDeletes` existiera.
 
 `explain-dump.py` ahora compara la marca de tiempo del mapa con la del módulo del volcado y
 se niega en vez de adivinar. Si usas `minidump.py` o `mapsym.py` directamente, esa

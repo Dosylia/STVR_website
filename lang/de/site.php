@@ -40,7 +40,7 @@ return [
 
     'footer' => [
         'built'    => 'Ein inoffizielles Fan-Projekt. Keine Verbindung zu Bethesda Softworks oder ZeniMax Media und von dort weder unterstützt noch genehmigt. The Elder Scrolls und Skyrim sind deren Marken.',
-        'licence'  => 'Veröffentlicht unter der :licence — derselben Lizenz wie die Mod, auf der das hier aufbaut.',
+        'licence'  => 'Veröffentlicht unter der :licence, derselben Lizenz wie die Mod, auf der das hier aufbaut.',
         'upstream' => 'Aufgebaut auf :reborn von Tilted Phoques. Der Mehrspielerteil, der das alles möglich macht, ist ihre Arbeit; die VR-Portierung liegt nicht in ihrer Verantwortung.',
         'source'   => 'Quellcode',
         'community'=> 'Community',
@@ -50,7 +50,7 @@ return [
     ],
 
     'meta' => [
-        'default_title'       => 'Skyrim Together VR — Koop für Skyrim VR',
+        'default_title'       => 'Skyrim Together VR: Koop für Skyrim VR',
         'default_description' => 'Eine kostenlose, quelloffene Koop-Mod für Skyrim VR. Spielt eure eigene Modliste zu zweit auf eurem eigenen Server. Aufgebaut auf Skyrim Together Reborn.',
         'suffix'              => 'Skyrim Together VR',
     ],

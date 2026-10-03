@@ -21,9 +21,9 @@ return [
             ['name' => 'SKSE VR',                       'note' => 'Dans Data, à côté de Skyrim.esm, comme d’habitude.',                                  'state' => 'required'],
             ['name' => 'VR Address Library for SKSEVR', 'note' => 'La table de correspondance que le mod lit pour trouver quoi que ce soit dans le jeu.', 'state' => 'required'],
             ['name' => 'Engine Fixes VR',               'note' => 'Supprime des crashs qui appartiennent au moteur, pas à nous.',                        'state' => 'recommended'],
-            ['name' => 'VRIK',                          'note' => 'Donne un corps à votre personnage — et c’est ce corps que votre ami verra bouger.',    'state' => 'recommended'],
+            ['name' => 'VRIK',                          'note' => 'Donne un corps à votre personnage, et c’est ce corps que votre ami verra bouger.',    'state' => 'recommended'],
         ],
-        'ugrids' => 'Un seul réglage compte : <code>uGridsToLoad</code> doit valoir <code>5</code> dans <code>SkyrimPrefs.ini</code>. C’est la valeur par défaut partout, listes Wabbajack comprises, et le serveur refuse toute autre valeur — avec un nombre de cellules différent, les deux mondes cesseraient discrètement de s’accorder sur ce qui existe.',
+        'ugrids' => 'Un seul réglage compte : <code>uGridsToLoad</code> doit valoir <code>5</code> dans <code>SkyrimPrefs.ini</code>. C’est la valeur par défaut partout, listes Wabbajack comprises, et le serveur refuse toute autre valeur. Avec un nombre de cellules différent, les deux mondes cesseraient discrètement de s’accorder sur ce qui existe.',
     ],
 
     'methods' => [
@@ -52,7 +52,7 @@ return [
             ],
             'warnings' => [
                 'Le <strong>Purge</strong> de Vortex retire tous les mods déployés de <code>Data</code>, celui-ci compris. Redéployez avant de jouer.',
-                'Vortex exige que le jeu et son dossier de staging soient sur le même disque pour les liens physiques. C’est une règle de Vortex, pas la nôtre — réglez-la là-bas s’il râle.',
+                'Vortex exige que le jeu et son dossier de staging soient sur le même disque pour les liens physiques. C’est une règle de Vortex, pas la nôtre. Réglez-la là-bas s’il râle.',
             ],
         ],
 
@@ -61,7 +61,7 @@ return [
             'note'  => 'Très bien aussi. Il faut juste être le gestionnaire vous-même.',
             'steps' => [
                 ['title' => 'Copier le mod',       'body' => 'Tout ce qui est dans <code>Skyrim Together mod</code> va dans <code>Skyrim VR\\Data</code>, à côté de <code>Skyrim.esm</code>. Activez <code>SkyrimTogether.esp</code> dans l’écran Mods du jeu.'],
-                ['title' => 'Placer le lanceur',   'body' => 'Mettez le dossier <code>Skyrim Together VR</code> où vous voulez — dans le dossier de Skyrim VR est un choix raisonnable.'],
+                ['title' => 'Placer le lanceur',   'body' => 'Mettez le dossier <code>Skyrim Together VR</code> où vous voulez. Dans le dossier de Skyrim VR est un choix raisonnable.'],
                 ['title' => 'Lancer depuis là',    'body' => 'Démarrez le jeu avec <code>SkyrimTogetherVR.exe</code> depuis ce dossier, pas avec SKSE. Au premier lancement, il demande où Skyrim VR est installé.'],
             ],
         ],
@@ -71,7 +71,7 @@ return [
         'title' => 'Lui indiquer un serveur',
         'lede'  => 'Le client lit un petit fichier texte pour savoir où aller. Vous l’écrivez une fois.',
         'easy'  => 'Le plus simple : double-cliquez sur <code>setup-connect.bat</code> dans le dossier <code>Skyrim Together VR</code> et tapez l’adresse.',
-        'manual'=> 'À la main : créez <code>:path</code>, l’adresse sur la première ligne et le mot de passe du serveur — s’il y en a un — sur la deuxième.',
+        'manual'=> 'À la main : créez <code>:path</code>, l’adresse sur la première ligne et le mot de passe du serveur, s’il y en a un, sur la deuxième.',
         'table' => [
             'who'  => 'Qui vous êtes',
             'line1'=> 'Ligne 1',
@@ -92,7 +92,7 @@ return [
             ['title' => 'Quelqu’un démarre un serveur', 'body' => 'L’hôte lance <code>host-server.bat</code> et laisse la fenêtre ouverte. Si c’est vous, voyez le guide d’hébergement.'],
             ['title' => 'Tout le monde lance le jeu',   'body' => 'Via MO2, via Vortex, ou directement l’exe. Avec une grosse liste de mods, laissez-lui le temps.'],
             ['title' => 'Chargez une sauvegarde',       'body' => 'N’importe laquelle. Cinq secondes plus tard s’affichera <em>Skyrim Together : connexion…</em> puis <em>connecté (build …)</em>. Le groupe se forme seul ; personne n’a à inviter personne.'],
-            ['title' => 'Jouez',                        'body' => 'Le tableau de bord SteamVR a un onglet <strong>Skyrim Together</strong> — bouton système, pointeur laser. <code>:key</code> déconnecte et reconnecte sans quitter le jeu.'],
+            ['title' => 'Jouez',                        'body' => 'Le tableau de bord SteamVR a un onglet <strong>Skyrim Together</strong> : bouton système, pointeur laser. <code>:key</code> déconnecte et reconnecte sans quitter le jeu.'],
         ],
     ],
 
@@ -108,17 +108,17 @@ return [
         'title' => 'Quand ça ne marche pas',
         'lede'  => 'Grosso modo par ordre de fréquence.',
         'items' => [
-            ['q' => 'Ça ne se connecte jamais',              'a' => 'Vérifiez <code>connect.txt</code> d’abord : bonne adresse, bon port, rien d’autre sur la ligne. Vérifiez ensuite que la fenêtre du serveur est bien ouverte chez l’hôte — elle écrit une ligne à chaque connexion.'],
+            ['q' => 'Ça ne se connecte jamais',              'a' => 'Vérifiez <code>connect.txt</code> d’abord : bonne adresse, bon port, rien d’autre sur la ligne. Vérifiez ensuite que la fenêtre du serveur est bien ouverte chez l’hôte. Elle écrit une ligne à chaque connexion.'],
             ['q' => 'Refusé dès la tentative',               'a' => 'C’est volontaire. La notification dit pourquoi : build différente ou mauvais mot de passe. Les builds doivent coïncider exactement, serveur compris.'],
-            ['q' => 'Il voit un ours, je vois un loup',      'a' => 'Ordres de chargement différents. Rapprochez les deux listes autant que possible — même liste, même version, mêmes mods optionnels.'],
+            ['q' => 'Il voit un ours, je vois un loup',      'a' => 'Ordres de chargement différents. Rapprochez les deux listes autant que possible : même liste, même version, mêmes mods optionnels.'],
             ['q' => 'Le jeu plante',                         'a' => 'Lancez <code>collect-logs.bat</code> dans le dossier du lanceur. Il dépose sur votre Bureau un zip avec le log, le crash dump et les versions. Envoyez-le : c’est la différence entre un correctif et une supposition.'],
-            ['q' => 'Le jeu démarre sans mes mods SKSE',     'a' => 'Vous avez lancé le loader SKSE au lieu de <code>SkyrimTogetherVR.exe</code>. Le lanceur charge SKSE lui-même — passez par lui, pas à côté.'],
+            ['q' => 'Le jeu démarre sans mes mods SKSE',     'a' => 'Vous avez lancé le loader SKSE au lieu de <code>SkyrimTogetherVR.exe</code>. Le lanceur charge SKSE lui-même. Passez par lui, pas à côté.'],
         ],
     ],
 
     'cta' => [
         'title' => 'Il faut bien que quelqu’un tienne le serveur',
-        'body'  => 'C’est un exécutable et un port UDP — ou aucun port, si vous préférez un réseau virtuel.',
+        'body'  => 'C’est un exécutable et un port UDP, ou aucun port, si vous préférez un réseau virtuel.',
         'primary' => 'Guide d’hébergement',
     ],
 ];

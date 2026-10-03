@@ -20,13 +20,13 @@ brazo estirado.
 
 La tentación es mandar el esqueleto entero. No lo vamos a hacer, y no solo por el ancho de
 banda. Un esqueleto completo significa que el otro extremo tiene que estar de acuerdo sobre
-el nombrado de huesos, la escala del rig y los ajustes del propio solver de VRIK —y la causa
+el nombrado de huesos, la escala del rig y los ajustes del propio solver de VRIK, y la causa
 número uno de «él ve un oso, yo veo un lobo» ya son dos listas de mods que no se ponen de
 acuerdo. Añadir un contrato de treinta huesos entre ellas sería invitar a esa misma clase de
 fallo precisamente al único sistema que tiene que ser fiable.
 
 Así que: cabeza, manos, cadera. VRIK ya sabe construir un cuerpo a partir de una cabeza y
-dos manos —es literalmente su trabajo— y la cadera es lo que no puede deducir. Dónde está tu
+dos manos, que es literalmente su trabajo, y la cadera es lo que no puede deducir. Dónde está tu
 cadera decide si estás de pie, agachado, inclinado, o girado por la cintura mientras miras
 hacia otro lado.
 
@@ -42,7 +42,7 @@ tratando como problemas distintos:
 
 Uno de los commits de este trabajo se llama *La cadera alcanza el cuerpo*, lo que debería
 decirte cómo fue el primer intento. La posición de la cadera llegaba en el espacio
-equivocado —números correctos, origen equivocado— así que los jugadores remotos se quedaban
+equivocado (números correctos, origen equivocado), así que los jugadores remotos se quedaban
 con la pelvis como un metro por delante del pecho. Parecía menos un fallo que una maldición.
 
 ## Sigue abierto

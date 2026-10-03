@@ -50,7 +50,7 @@ return [
     ],
 
     'meta' => [
-        'default_title'       => 'Skyrim Together VR — cooperativo para Skyrim VR',
+        'default_title'       => 'Skyrim Together VR: cooperativo para Skyrim VR',
         'default_description' => 'Un mod cooperativo libre y gratuito para Skyrim VR. Juega con tu propia lista de mods, en tu propio servidor, con quien quieras. Basado en Skyrim Together Reborn.',
         'suffix'              => 'Skyrim Together VR',
     ],

@@ -3,7 +3,7 @@
 return [
 
     'meta' => [
-        'title'       => 'Skyrim Together VR — Fragen',
+        'title'       => 'Skyrim Together VR: Fragen',
         'description' => 'Läuft es mit meiner Modliste? Kostet es etwas? Werde ich gebannt? Kann ich mit jemandem auf Special Edition spielen? Antworten.',
     ],
 
@@ -20,7 +20,7 @@ return [
             'items' => [
                 [
                     'q' => 'Was ist das, in einem Satz?',
-                    'a' => 'Eine kostenlose, quelloffene Mod, mit der ihr Skyrim VR gemeinsam spielt — auf einem Server, den einer von euch betreibt.',
+                    'a' => 'Eine kostenlose, quelloffene Mod, mit der ihr Skyrim VR gemeinsam spielt, auf einem Server, den einer von euch betreibt.',
                 ],
                 [
                     'q' => 'Kostet es etwas?',
@@ -28,7 +28,7 @@ return [
                 ],
                 [
                     'q' => 'Ist das dasselbe wie Skyrim Together Reborn?',
-                    'a' => 'Es ist dieselbe Mod, portiert. Reborn ist für Skyrim Special Edition — eine andere Programmdatei mit anderen Speicheradressen und ohne alles, was VR ist. Jeder Engine-Hook musste für die VR-Build neu gefunden werden, und alles, was mit Händen und Headsets zu tun hat, gab es dort überhaupt nicht. Der Mehrspielerteil darunter ist die Arbeit von Tilted Phoques, und die Anerkennung gehört ihnen.',
+                    'a' => 'Es ist dieselbe Mod, portiert. Reborn ist für Skyrim Special Edition: eine andere Programmdatei mit anderen Speicheradressen und ohne alles, was VR ist. Jeder Engine-Hook musste für die VR-Build neu gefunden werden, und alles, was mit Händen und Headsets zu tun hat, gab es dort überhaupt nicht. Der Mehrspielerteil darunter ist die Arbeit von Tilted Phoques, und die Anerkennung gehört ihnen.',
                 ],
                 [
                     'q' => 'Kann ich mit jemandem auf Special Edition spielen?',
@@ -36,7 +36,7 @@ return [
                 ],
                 [
                     'q' => 'Mit wie vielen Leuten geht das?',
-                    'a' => 'Gebaut und getestet ist es für kleine Gruppen — zwei bis vier Freunde. Es gibt kein technisches Lobby-Limit, aber niemand hat es in eine Menschenmenge geführt, und die ehrliche Antwort ist, dass eine Menge die rauen Kanten schneller finden würde, als dir lieb ist.',
+                    'a' => 'Gebaut und getestet ist es für kleine Gruppen: zwei bis vier Freunde. Es gibt kein technisches Lobby-Limit, aber niemand hat es in eine Menschenmenge geführt, und die ehrliche Antwort ist, dass eine Menge die rauen Kanten schneller finden würde, als dir lieb ist.',
                 ],
             ],
         ],
@@ -46,15 +46,15 @@ return [
             'items' => [
                 [
                     'q' => 'Läuft es mit meiner Modliste?',
-                    'a' => 'Vermutlich, und genau das ist der Punkt — es lädt neben dem, was du ohnehin spielst, über MO2, Vortex oder eine Wabbajack-Liste. Die einzige harte Bedingung ist, dass <code>uGridsToLoad</code> auf 5 bleibt.',
+                    'a' => 'Vermutlich, und genau das ist der Punkt. Es lädt neben dem, was du ohnehin spielst, über MO2, Vortex oder eine Wabbajack-Liste. Die einzige harte Bedingung ist, dass <code>uGridsToLoad</code> auf 5 bleibt.',
                 ],
                 [
                     'q' => 'Brauchen wir beide dieselben Mods?',
-                    'a' => 'Nicht bytegleich — die Mod-Prüfung ist absichtlich aus. Aber je näher die beiden Listen beieinander sind, desto weniger Überraschungen. Alles, was verändert, was in der Welt existiert oder was eine Kreatur ist, führt irgendwann zu »er sieht einen Bären, ich sehe einen Wolf«.',
+                    'a' => 'Nicht bytegleich. Die Mod-Prüfung ist absichtlich aus. Aber je näher die beiden Listen beieinander sind, desto weniger Überraschungen. Alles, was verändert, was in der Welt existiert oder was eine Kreatur ist, führt irgendwann zu »er sieht einen Bären, ich sehe einen Wolf«.',
                 ],
                 [
                     'q' => 'Brauche ich VRIK?',
-                    'a' => 'Technisch nein. Praktisch ja. VRIK gibt dir einen Körper, und dein Körper ist das, was dein Freund sieht. Ohne VRIK bist du immer noch da — nur deutlich weniger von dir.',
+                    'a' => 'Technisch nein. Praktisch ja. VRIK gibt dir einen Körper, und dein Körper ist das, was dein Freund sieht. Ohne VRIK bist du immer noch da, nur deutlich weniger von dir.',
                 ],
                 [
                     'q' => 'Läuft es mit Wabbajack-Listen wie FUS?',
@@ -62,7 +62,7 @@ return [
                 ],
                 [
                     'q' => 'Läuft es auf der Quest?',
-                    'a' => 'Nur über PC-VR — Virtual Desktop, Air Link, ein Kabel. Das ist eine PC-Mod für das PC-Spiel; ein Standalone-Headset hat kein Skyrim VR zum Modden.',
+                    'a' => 'Nur über PC-VR: Virtual Desktop, Air Link, ein Kabel. Das ist eine PC-Mod für das PC-Spiel; ein Standalone-Headset hat kein Skyrim VR zum Modden.',
                 ],
             ],
         ],
@@ -84,7 +84,7 @@ return [
                 ],
                 [
                     'q' => 'Ist meine IP-Adresse sichtbar?',
-                    'a' => 'Für den, der den Server betreibt, und für alle darauf: ja — wie in jedem Spiel, in dem ein Freund hostet. Wenn dich das stört, nimm ein virtuelles LAN wie Tailscale oder ZeroTier statt einer Portweiterleitung; dann ist nichts mehr aus dem offenen Internet erreichbar.',
+                    'a' => 'Für den, der den Server betreibt, und für alle darauf: ja, wie in jedem Spiel, in dem ein Freund hostet. Wenn dich das stört, nimm ein virtuelles LAN wie Tailscale oder ZeroTier statt einer Portweiterleitung; dann ist nichts mehr aus dem offenen Internet erreichbar.',
                 ],
             ],
         ],
@@ -106,7 +106,7 @@ return [
                 ],
                 [
                     'q' => 'Kann ich helfen?',
-                    'a' => 'Ja. Spielen und präzise berichten ist mehr wert, als es klingt — das meiste, was behoben wurde, wurde in irgendjemandes Log gefunden. Wenn du Reverse Engineering machst: es gibt noch eine kurze Liste von Engine-Adressen ohne VR-Zuordnung, und das Repository erklärt, wie die anderen gefunden wurden.',
+                    'a' => 'Ja. Spielen und präzise berichten ist mehr wert, als es klingt. Das meiste, was behoben wurde, wurde in irgendjemandes Log gefunden. Wenn du Reverse Engineering machst: es gibt noch eine kurze Liste von Engine-Adressen ohne VR-Zuordnung, und das Repository erklärt, wie die anderen gefunden wurden.',
                 ],
             ],
         ],

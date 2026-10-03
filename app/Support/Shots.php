@@ -5,7 +5,7 @@ namespace App\Support;
 /**
  * Screenshots, if there are any.
  *
- * The site was designed without them on purpose — there was nothing to show
+ * The site was designed without them on purpose. There was nothing to show
  * when it was built, and a page that only works once somebody remembers to take
  * a screenshot is a page that stays unfinished. So the gallery reads whatever is
  * in public/media/shots and renders it; with an empty folder the section falls
@@ -13,7 +13,7 @@ namespace App\Support;
  *
  * Dropping a file in is the whole workflow. No build step, no config entry, no
  * deploy: name it `NN-slug.jpg` (the number orders it, the slug names it) and it
- * appears. A caption is optional — add one under the same slug in
+ * appears. A caption is optional: add one under the same slug in
  * lang/<locale>/shots.php and it shows up; leave it out and the image stands on
  * its own.
  */

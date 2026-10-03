@@ -21,17 +21,17 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         /**
-         * @stvr('facts.port') — a fact from config, escaped, in the middle of a
+         * @stvr('facts.port') gives a fact from config, escaped, in the middle of a
          * sentence. Keeps port numbers and version strings out of 4 × n
          * translation files, where they would drift apart within a month.
          */
         Blade::directive('stvr', fn ($expression) => "<?php echo e(config('stvr.'.{$expression})); ?>");
 
-        /** @nav('install') — a URL for the current language. */
+        /** @nav('install') gives a URL for the current language. */
         Blade::directive('nav', fn ($expression) => "<?php echo e(\App\Support\Nav::url({$expression})); ?>");
 
         /**
-         * @assetv('assets/css/site.css') — the asset URL with ?v=<mtime>.
+         * @assetv('assets/css/site.css') gives the asset URL with ?v=<mtime>.
          *
          * nginx serves these immutable for a month, so without a cache key an
          * edit to the stylesheet reaches nobody who has already visited. The

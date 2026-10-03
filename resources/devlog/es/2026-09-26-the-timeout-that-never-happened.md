@@ -34,7 +34,7 @@ descargó las celdas que iba dejando atrás, y el cliente soltó lo que había e
 Eso no es un fallo. Eso es la cosa funcionando.
 
 También explica un informe que habíamos archivado aparte. **Lydia estaba cuatro celdas por
-detrás** — en x≈29000 mientras él estaba en x≈47000 — y eso es todo el contenido de «Seen
+detrás**, en x≈29000 mientras él estaba en x≈47000, y eso es todo el contenido de «Seen
 no ve a Lydia en absoluto» de las 21:21. No había desaparecido. Estaba en Cuervo de Roca.
 
 ## Lo que queda

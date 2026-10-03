@@ -14,19 +14,18 @@ Das hier bedeuten die Reason Codes tatsächlich, nachgelesen in
 `TiltedConnect/Client.cpp` statt angenommen:
 
 - **`0 kTimeout`** wird nur gemeldet, wenn der vorherige Zustand `Connecting` war. Das ist
-  ein Verbindungsversuch, der nie zustande kam — keine laufende Verbindung, die abreißt.
+  ein Verbindungsversuch, der nie zustande kam, keine laufende Verbindung, die abreißt.
   Seine beiden um 21:16:01 und 21:16:16 sind fehlgeschlagene Versuche nach dem Laden eines
   Spielstands.
 - **`4 kAborted`** kommt aus `Client::Close()`. Das ist *dieser* Client, der die Verbindung
   selbst schließt. Alle drei waren bewusste lokale Schließungen.
 
-Es gab also überhaupt keine Timeouts mitten in der Sitzung. Nicht weniger als gedacht —
-keine.
+Es gab also überhaupt keine Timeouts mitten in der Sitzung. Nicht weniger als gedacht. Keine.
 
 ## Die fünfundvierzig Akteure waren auch kein Fehler
 
 Die andere Hälfte der Theorie jener Nacht war ein Moment um 21:19:01, in dem der Client 45
-Akteure auf einmal zurückgab — was genau nach der Art Lawine aussah, die eine Welt in
+Akteure auf einmal zurückgab, was genau nach der Art Lawine aussah, die eine Welt in
 Stücke zurücklässt.
 
 Seine Grid-Wechsel über diese drei Minuten lauten (5,7) → (6,7) → (7,7) → (8,6) → (9,6) →
@@ -36,7 +35,7 @@ Spiel hat die Zellen hinter ihm entladen, und der Client hat freigegeben, was da
 Das ist kein Bug. Das ist die Sache, die funktioniert.
 
 Es erklärt auch eine Meldung, die wir getrennt abgelegt hatten. **Lydia war vier Zellen
-hinter ihm** — bei x≈29000, während er bei x≈47000 stand — und das ist der gesamte Inhalt
+hinter ihm**, bei x≈29000, während er bei x≈47000 stand, und das ist der gesamte Inhalt
 von »Seen sieht Lydia überhaupt nicht« um 21:21. Sie fehlte nicht. Sie war in Rabenfels.
 
 ## Was übrig bleibt
@@ -57,9 +56,9 @@ weiterhin wissenswert, und es kostet nichts. Aber ihre Begründung hat sich von 
 Fehler« zu »das ist interessant« verschoben, und diese Herabstufung ist es wert,
 aufgeschrieben zu werden.
 
-Dreimal wurde am 27. September ein Absturz auf etwas anderes geschoben — auf das Caching
+Dreimal wurde am 27. September ein Absturz auf etwas anderes geschoben: auf das Caching
 der Waffenberührung, dann auf einen Zugriff außerhalb der Grenzen, dann auf die Hardware
-des Freundes — jedes Mal abgeleitet aus einem Absturz kurz nach dem Abbau eines Stapels
+des Freundes. Jedes Mal abgeleitet aus einem Absturz kurz nach dem Abbau eines Stapels
 Kopien. Alle drei waren plausibel. Keine wurde gegen eine Adresse geprüft.
 
 Timing legt nahe. Adressen entscheiden.

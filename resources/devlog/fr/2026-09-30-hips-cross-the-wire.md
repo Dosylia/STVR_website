@@ -20,13 +20,13 @@ tendu.
 
 La tentation est d’envoyer tout le squelette. Nous n’allons pas le faire, et pas seulement
 pour la bande passante. Un squelette complet signifie que l’autre bout doit être d’accord
-sur le nommage des os, l’échelle du rig et les réglages du solveur de VRIK — et la première
+sur le nommage des os, l’échelle du rig et les réglages du solveur de VRIK, et la première
 cause de « il voit un ours, je vois un loup » est déjà deux listes de mods en désaccord.
 Ajouter un contrat de trente os entre elles reviendrait à inviter la même classe de bug dans
 le seul système qui doit être fiable.
 
 Donc : tête, mains, bassin. VRIK sait déjà construire un corps à partir d’une tête et de
-deux mains — c’est littéralement son travail — et le bassin est ce qu’il ne peut pas
+deux mains, ce qui est littéralement son travail, et le bassin est ce qu’il ne peut pas
 déduire. La position de votre bassin décide si vous êtes debout, accroupi, penché, ou tourné
 à la taille tout en regardant ailleurs.
 
@@ -42,7 +42,7 @@ alors que nous les traitions comme des problèmes séparés :
 
 Un des commits de ce travail s’appelle *Le bassin rejoint le corps*, ce qui devrait vous
 dire comment s’est passée la première tentative. La position du bassin arrivait dans le
-mauvais espace — bons chiffres, mauvaise origine — et les joueurs distants se tenaient donc
+mauvais espace (bons chiffres, mauvaise origine), et les joueurs distants se tenaient donc
 avec le bassin un mètre devant la poitrine. Cela ressemblait moins à un bug qu’à une
 malédiction.
 

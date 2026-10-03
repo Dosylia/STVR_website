@@ -18,8 +18,8 @@ use Illuminate\Support\Facades\Log;
  *  3. Whatever happens, the page still needs a working download button.
  *
  * So: short timeout, cached result, and a configured fallback underneath. The
- * negative result is cached too — as `false`, because Cache::remember treats a
- * cached null as a miss — otherwise every visit while GitHub is sulking costs
+ * negative result is cached too, as `false`, because Cache::remember treats a
+ * cached null as a miss. Otherwise every visit while GitHub is sulking costs
  * six seconds.
  */
 final class ReleaseService
@@ -33,7 +33,7 @@ final class ReleaseService
         // `false`, not `null`, for "there is nothing to show". Cache::remember
         // treats a null as a miss and re-runs the closure, so a null here would
         // mean every single visit while GitHub is unreachable pays the full
-        // timeout — which is the one case the cache exists for.
+        // timeout, which is the one case the cache exists for.
         $payload = Cache::remember(
             self::CACHE_KEY,
             now()->addMinutes($minutes),

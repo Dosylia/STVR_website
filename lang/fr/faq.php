@@ -3,7 +3,7 @@
 return [
 
     'meta' => [
-        'title'       => 'Skyrim Together VR — questions',
+        'title'       => 'Skyrim Together VR : questions',
         'description' => 'Est-ce compatible avec ma liste de mods ? Est-ce payant ? Est-ce que je risque un ban ? Puis-je jouer avec quelqu’un sur Special Edition ? Les réponses.',
     ],
 
@@ -28,7 +28,7 @@ return [
                 ],
                 [
                     'q' => 'C’est la même chose que Skyrim Together Reborn ?',
-                    'a' => 'C’est ce mod, porté. Reborn vise Skyrim Special Edition — un autre exécutable, d’autres adresses mémoire, et rien de VR. Chaque accroche moteur a dû être retrouvée pour la build VR, et tout ce qui touche aux mains et au casque n’existait pas du tout. Le multijoueur en dessous est le travail de Tilted Phoques et le mérite leur revient.',
+                    'a' => 'C’est ce mod, porté. Reborn vise Skyrim Special Edition : un autre exécutable, d’autres adresses mémoire, et rien de VR. Chaque accroche moteur a dû être retrouvée pour la build VR, et tout ce qui touche aux mains et au casque n’existait pas du tout. Le multijoueur en dessous est le travail de Tilted Phoques et le mérite leur revient.',
                 ],
                 [
                     'q' => 'Puis-je jouer avec quelqu’un sur Special Edition ?',
@@ -36,7 +36,7 @@ return [
                 ],
                 [
                     'q' => 'On peut jouer à combien ?',
-                    'a' => 'C’est pensé et testé pour de petits groupes — deux à quatre amis. Il n’y a pas de limite technique de lobby, mais personne ne l’a emmené en foule, et la réponse honnête est qu’une foule trouverait les aspérités plus vite que vous ne le souhaitez.',
+                    'a' => 'C’est pensé et testé pour de petits groupes : deux à quatre amis. Il n’y a pas de limite technique de lobby, mais personne ne l’a emmené en foule, et la réponse honnête est qu’une foule trouverait les aspérités plus vite que vous ne le souhaitez.',
                 ],
             ],
         ],
@@ -50,11 +50,11 @@ return [
                 ],
                 [
                     'q' => 'Faut-il les mêmes mods tous les deux ?',
-                    'a' => 'Pas à l’octet près — la vérification des mods est volontairement désactivée. Mais plus les deux listes sont proches, moins il y a de surprises. Tout ce qui change ce qui existe dans le monde, ou ce qu’une créature est, finira par produire « il voit un ours, je vois un loup ».',
+                    'a' => 'Pas à l’octet près. La vérification des mods est volontairement désactivée. Mais plus les deux listes sont proches, moins il y a de surprises. Tout ce qui change ce qui existe dans le monde, ou ce qu’une créature est, finira par produire « il voit un ours, je vois un loup ».',
                 ],
                 [
                     'q' => 'VRIK est-il nécessaire ?',
-                    'a' => 'Techniquement non. En pratique oui. VRIK est ce qui vous donne un corps, et votre corps est ce que votre ami voit. Sans lui vous êtes toujours là — simplement beaucoup moins visible.',
+                    'a' => 'Techniquement non. En pratique oui. VRIK est ce qui vous donne un corps, et votre corps est ce que votre ami voit. Sans lui vous êtes toujours là, simplement beaucoup moins visible.',
                 ],
                 [
                     'q' => 'Et avec les listes Wabbajack comme FUS ?',
@@ -62,7 +62,7 @@ return [
                 ],
                 [
                     'q' => 'Ça marche sur Quest ?',
-                    'a' => 'Uniquement en PC VR — Virtual Desktop, Air Link, un câble. C’est un mod PC pour le jeu PC ; un casque autonome n’a pas de Skyrim VR à modder.',
+                    'a' => 'Uniquement en PC VR : Virtual Desktop, Air Link, un câble. C’est un mod PC pour le jeu PC ; un casque autonome n’a pas de Skyrim VR à modder.',
                 ],
             ],
         ],
@@ -84,7 +84,7 @@ return [
                 ],
                 [
                     'q' => 'Mon adresse IP est-elle exposée ?',
-                    'a' => 'À celui qui tient le serveur et à ceux qui y sont, oui — comme dans tout jeu où un ami héberge. Si cela vous gêne, utilisez un réseau virtuel type Tailscale ou ZeroTier plutôt qu’une redirection de port : plus rien n’est alors joignable depuis Internet.',
+                    'a' => 'À celui qui tient le serveur et à ceux qui y sont, oui, comme dans tout jeu où un ami héberge. Si cela vous gêne, utilisez un réseau virtuel type Tailscale ou ZeroTier plutôt qu’une redirection de port : plus rien n’est alors joignable depuis Internet.',
                 ],
             ],
         ],

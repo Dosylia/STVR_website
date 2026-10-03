@@ -14,7 +14,7 @@ Wir haben am 27. September mehrere Stunden darauf verwendet, `dbghelp` dazu zu b
 PDB für dieses Image zu laden. Es tut es nicht. `SymLoadModuleEx` meldet das Modul als
 zurückgestellt und erklärt anschließend jede bekannte Funktion für nicht gefunden. Das ist
 keinen zweiten Versuch wert, und dieser Eintrag existiert auch deshalb, damit die nächste
-Person — vermutlich eine*r von uns, in zwei Monaten — es nicht doch tut.
+Person, vermutlich eine*r von uns, in zwei Monaten, es nicht doch tut.
 
 ## Was funktioniert: die Linker-Map
 
@@ -49,7 +49,7 @@ Die Map muss aus der Build stammen, die abgestürzt ist.
 Eine veraltete Map schlägt nicht fehl. Sie benennt die falschen Funktionen, liest die
 falschen Adressen und wirkt dabei vollkommen plausibel. Lass eine aktuelle Map gegen einen
 Dump vom 13. September laufen, und sie meldet selbstbewusst »0 Akteur-Löschungen in dieser
-Sitzung aufgezeichnet« — für eine Build, die zwei Wochen vor der Existenz von
+Sitzung aufgezeichnet«, für eine Build, die zwei Wochen vor der Existenz von
 `RecentDeletes` geschrieben wurde.
 
 `explain-dump.py` vergleicht inzwischen den Zeitstempel der Map mit dem des Moduls im Dump
@@ -61,5 +61,5 @@ benutzt, muss diese Prüfung selbst machen.
 Die Programmdatei des Spiels auf der Platte ist Steam-verschlüsselt. Eine Adresse innerhalb
 von `?game_seg@@3PAEA` lässt sich offline nicht disassemblieren. Einen unbekannten Aufrufer
 auf Spielseite zu benennen erfordert entweder einen Hook im laufenden Spiel oder die
-Adressdatenbank — eine dritte Möglichkeit gibt es nicht, und ein Nachmittag auf der Suche
+Adressdatenbank. Eine dritte Möglichkeit gibt es nicht, und ein Nachmittag auf der Suche
 danach ist ein Nachmittag.

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /* =============================================================================
-   Skyrim Together VR — stylesheet
+   Skyrim Together VR: stylesheet
    -----------------------------------------------------------------------------
    One file, no build step, no framework. The site is six pages of mostly text;
    a bundler would be ceremony. Everything is a custom property at the top so the
@@ -260,7 +260,7 @@ kbd {
 .center .inscription::after { display: none; }
 
 /* =============================================================================
-   Knotwork rule — the divider between sections
+   Knotwork rule: the divider between sections
    -----------------------------------------------------------------------------
    A tiled Nordic interlace with a gold lozenge set into the middle of it. Drawn
    rather than imported so it inherits colour and never loads a file.
@@ -368,7 +368,7 @@ kbd {
 .btn-row--center { justify-content: center; }
 
 /* =============================================================================
-   Tablet — the card
+   Tablet: the card
    -----------------------------------------------------------------------------
    A slab of dark stone with iron corner brackets. The brackets are two pseudo
    elements with partial borders, which is cheaper than four and reads the same.
@@ -416,7 +416,7 @@ kbd {
 .tablet p  { font-size: .97rem; color: var(--parchment-3); }
 
 /* =============================================================================
-   Seal — the round stamp used for version badges and section marks
+   Seal: the round stamp used for version badges and section marks
    ========================================================================== */
 
 .seal {
@@ -512,7 +512,7 @@ kbd {
 /* =============================================================================
    Masthead
    -----------------------------------------------------------------------------
-   Transparent over the hero, then an iron band once you scroll past it — so the
+   Transparent over the hero, then an iron band once you scroll past it, so the
    illustration is never cut in half by a bar, and the nav is never unreadable.
    ========================================================================== */
 
@@ -699,7 +699,7 @@ kbd {
 /* The drawer takes over before the horizontal nav runs out of room, not after.
    At 960px the six links, the wordmark, the language button and the download
    button together measured wider than the viewport, and the overflow pushed the
-   burger off the right-hand edge — so on a phone there was no menu at all and
+   burger off the right-hand edge, so on a phone there was no menu at all and
    the whole page scrolled sideways. */
 @media (max-width: 1100px) {
   .burger { display: grid; }
@@ -771,7 +771,7 @@ kbd {
 
 /* A page header is a third the height of the home hero, so "slice" lands on the
    middle of the illustration and hangs a mountain range in mid-air. Anchoring to
-   the top keeps sky, moons and aurora — which is what a header wants anyway. */
+   the top keeps sky, moons and aurora, which is what a header wants anyway. */
 .hero--page .hero__scene svg { object-position: top; }
 
 .hero__snow {
@@ -1057,7 +1057,7 @@ kbd {
 .asset p { font-size: .92rem; color: var(--parchment-3); flex: 1; margin-bottom: 1.2rem; }
 
 /* =============================================================================
-   Tabs — the three install routes
+   Tabs: the three install routes
    ========================================================================== */
 
 .tabs__list {
@@ -1138,7 +1138,7 @@ tbody tr:hover td { background: rgba(255, 255, 255, .018); }
 tbody td:first-child { color: var(--parchment); font-family: var(--mono); font-size: .85rem; white-space: nowrap; }
 
 /* =============================================================================
-   Copyable line — connect.txt, firewall rule, addresses
+   Copyable line: connect.txt, firewall rule, addresses
    ========================================================================== */
 
 .copyline {
@@ -1219,7 +1219,7 @@ tbody td:first-child { color: var(--parchment); font-family: var(--mono); font-s
 .tips__line.is-fading { opacity: 0; }
 
 /* =============================================================================
-   Constellation — the roadmap
+   Constellation: the roadmap
    -----------------------------------------------------------------------------
    The six goals as a star map, because the game's own progression screen is one
    and because an ordered list of six items is otherwise just an ordered list.
@@ -1442,7 +1442,7 @@ tbody td:first-child { color: var(--parchment); font-family: var(--mono); font-s
 }
 
 /* The torch between the two figures. Small, warm, and the only thing on the
-   page that flickers — which is why the eye finds them. */
+   page that flickers, which is why the eye finds them. */
 .scene__pair circle { animation: flicker 3.4s ease-in-out infinite alternate; }
 @keyframes flicker {
   from { opacity: .62; transform: scale(.96); transform-origin: 1190px 792px; }
@@ -1479,7 +1479,7 @@ tbody td:first-child { color: var(--parchment); font-family: var(--mono); font-s
    A masonry-ish grid where the first image is given double width, so one good
    capture carries the section and the rest fall in behind it. With no images at
    all the same frame holds the illustration, and the section reads as finished
-   either way — which is the only reason it can ship before the screenshots do.
+   either way, which is the only reason it can ship before the screenshots do.
    ========================================================================== */
 
 .shots {

@@ -1,5 +1,5 @@
 {{-- The closing call to action. Every page ends with one, and no two pages end
-     with the same one — the install guide sends you to hosting, hosting sends
+     with the same one: the install guide sends you to hosting, hosting sends
      you back to the download. --}}
 @props(['title', 'body', 'primary', 'primaryUrl', 'secondary' => null, 'secondaryUrl' => null])
 <section class="closer">

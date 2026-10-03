@@ -27,7 +27,7 @@ era seguro.
 Son exactamente los fallos invisibles hasta que son catastróficos, los que dependen del
 momento exacto, y los que un probador humano reproduce una vez de cada cinco. Una máquina
 corriendo el mismo escenario cuarenta veces de madrugada los reproduce con fiabilidad
-suficiente para ponerles una dirección encima —y una dirección, como no dejamos de
+suficiente para ponerles una dirección encima, y una dirección, como no dejamos de
 escribir, es lo único que zanja un cuelgue.
 
 ## La parte que no era obvia

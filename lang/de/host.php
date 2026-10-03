@@ -17,9 +17,9 @@ return [
         'label' => 'Der Server',
         'title' => 'Ihn starten',
         'steps' => [
-            ['title' => 'Den Server-Ordner irgendwo behalten', 'body' => 'Irgendwo auf der Maschine, die hosten soll. Der Server braucht das Spiel nicht — eine dauerhaft laufende Kiste oder ein alter Laptop tun es auch.'],
+            ['title' => 'Den Server-Ordner irgendwo behalten', 'body' => 'Irgendwo auf der Maschine, die hosten soll. Der Server braucht das Spiel nicht. Eine dauerhaft laufende Kiste oder ein alter Laptop tun es auch.'],
             ['title' => 'host-server.bat ausführen',           'body' => 'Es weigert sich, einen zweiten Server zu starten, startet diesen und zeigt die Adresse zum Weitergeben an. Ein Konsolenfenster öffnet sich und nennt den Port.'],
-            ['title' => 'Das Fenster offen lassen',            'body' => 'Schließen beendet die Sitzung. Unter Windows 11 öffnet es sich eventuell als Tab in einem bestehenden Terminal — siehst du jemals zwei Server-Tabs, schließe beide und fang neu an.'],
+            ['title' => 'Das Fenster offen lassen',            'body' => 'Schließen beendet die Sitzung. Unter Windows 11 öffnet es sich eventuell als Tab in einem bestehenden Terminal. Siehst du jemals zwei Server-Tabs, schließe beide und fang neu an.'],
             ['title' => 'Zuschauen, wer ankommt',              'body' => 'Die Konsole schreibt <em>New player … connected</em>. Das ist der schnellste Weg, um zu wissen, dass eine Verbindung überhaupt beim Server angekommen ist.'],
         ],
     ],
@@ -31,17 +31,17 @@ return [
 
         'forward' => [
             'label' => 'Einen Port weiterleiten',
-            'body'  => 'Leite <strong>:protocol :port</strong> im Router auf den PC mit dem Server weiter, gib der Maschine eine feste DHCP-Reservierung, damit die Regel nicht verrutscht, und erlaube sie in der Windows-Firewall. Dann gibst du deine öffentliche Adresse weiter — <code>api.ipify.org</code> verrät sie dir, und dein Provider kann sie nach einem Router-Neustart ändern.',
+            'body'  => 'Leite <strong>:protocol :port</strong> im Router auf den PC mit dem Server weiter, gib der Maschine eine feste DHCP-Reservierung, damit die Regel nicht verrutscht, und erlaube sie in der Windows-Firewall. Dann gibst du deine öffentliche Adresse weiter. <code>api.ipify.org</code> verrät sie dir, und dein Provider kann sie nach einem Router-Neustart ändern.',
             'rule'  => 'Eine Zeile im Terminal (als Administrator), einmalig:',
             'cmd'   => 'New-NetFirewallRule -DisplayName "Skyrim Together Server (UDP :port)" -Direction Inbound -Protocol UDP -LocalPort :port -Action Allow -Profile Any',
         ],
 
         'vpn' => [
             'label' => 'Oder den Router weglassen',
-            'body'  => 'Setz alle in ein virtuelles LAN — Tailscale, ZeroTier oder Radmin VPN — und gib die Adresse weiter, die es dir nennt. Keine Portweiterleitung, keine öffentliche IP, nichts im offenen Internet, und es überlebt den Adresswechsel durch den Provider. Für zwei oder drei Freunde ist das fast immer die richtige Antwort.',
+            'body'  => 'Setz alle in ein virtuelles LAN (Tailscale, ZeroTier oder Radmin VPN) und gib die Adresse weiter, die es dir nennt. Keine Portweiterleitung, keine öffentliche IP, nichts im offenen Internet, und es überlebt den Adresswechsel durch den Provider. Für zwei oder drei Freunde ist das fast immer die richtige Antwort.',
         ],
 
-        'self' => 'Auf dem PC zu hosten, auf dem du spielst, ist normal und vorgesehen. Du verbindest dich mit dir selbst über <code>127.0.0.1::port</code> — dieselbe Adresse wie alle anderen, nur ohne den Weg.',
+        'self' => 'Auf dem PC zu hosten, auf dem du spielst, ist normal und vorgesehen. Du verbindest dich mit dir selbst über <code>127.0.0.1::port</code>, dieselbe Adresse wie alle anderen, nur ohne den Weg.',
     ],
 
     'settings' => [
@@ -55,10 +55,10 @@ return [
             ['k' => 'bAutoPartyCreate',  'v' => 'true',   'd' => 'Der erste Spieler auf dem Server bekommt eine Gruppe, damit niemand in VR ein Gruppenmenü suchen muss.'],
             ['k' => 'bAutoPartyJoin',    'v' => 'true',   'd' => 'Alle anderen treten automatisch bei. Nötig für geteiltes Wetter und geteilte Quests.'],
             ['k' => 'bEnablePvp',        'v' => 'false',  'd' => 'Ob Spieler einander Schaden zufügen können. Denk an eure Freundschaften, bevor du das änderst.'],
-            ['k' => 'bEnableDeathSystem','v' => 'true',   'd' => 'Der Tod lässt dich in einem Tempel wieder erscheinen, statt einen Spielstand zu laden — was die Welt desynchronisieren würde.'],
+            ['k' => 'bEnableDeathSystem','v' => 'true',   'd' => 'Der Tod lässt dich in einem Tempel wieder erscheinen, statt einen Spielstand zu laden, was die Welt desynchronisieren würde.'],
             ['k' => 'bAllowMO2',         'v' => 'true',   'd' => 'Erlaubt über Mod Organizer 2 gestartete Clients. Anlassen.'],
             ['k' => 'bAllowSKSE',        'v' => 'true',   'd' => 'Erlaubt SKSE. Anlassen; ohne läuft hier gar nichts.'],
-            ['k' => 'bEnableModCheck',   'v' => 'false',  'd' => 'Erzwingt bytegleiche Modlisten. Absichtlich aus — nah genug ist nah genug.'],
+            ['k' => 'bEnableModCheck',   'v' => 'false',  'd' => 'Erzwingt bytegleiche Modlisten. Absichtlich aus. Nah genug ist nah genug.'],
         ],
     ],
 
@@ -73,7 +73,7 @@ return [
 
     'linux' => [
         'title' => 'Linux',
-        'body'  => 'Eine Linux-Build des dedizierten Servers gibt es, für alle, die ihn lieber auf einer ohnehin laufenden Maschine behalten. Sie ist noch nicht auf der Releases-Seite — frag danach.',
+        'body'  => 'Eine Linux-Build des dedizierten Servers gibt es, für alle, die ihn lieber auf einer ohnehin laufenden Maschine behalten. Sie ist noch nicht auf der Releases-Seite. Frag danach.',
     ],
 
     'cta' => [

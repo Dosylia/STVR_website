@@ -14,14 +14,13 @@ Voici ce que les codes de raison veulent vraiment dire, lus dans `TiltedConnect/
 plutôt que supposés :
 
 - **`0 kTimeout`** n’est signalé que lorsque l’état précédent était `Connecting`. C’est une
-  tentative de connexion qui n’a jamais abouti — pas une connexion vivante qui tombe. Ses
+  tentative de connexion qui n’a jamais abouti, pas une connexion vivante qui tombe. Ses
   deux occurrences à 21:16:01 et 21:16:16 sont des tentatives échouées après le chargement
   d’une sauvegarde.
 - **`4 kAborted`** vient de `Client::Close()`. C’est *ce* client qui ferme lui-même la
   connexion. Ses trois occurrences étaient des fermetures locales délibérées.
 
-Il n’y a donc eu aucun timeout en cours de session. Pas moins que ce que nous pensions —
-aucun.
+Il n’y a donc eu aucun timeout en cours de session. Pas moins que ce que nous pensions. Aucun.
 
 ## Les quarante-cinq acteurs n’étaient pas une anomalie non plus
 
@@ -37,7 +36,7 @@ trouvait.
 Ce n’est pas un bug. C’est la chose qui fonctionne.
 
 Cela explique aussi un rapport que nous avions classé à part. **Lydia était quatre cellules
-derrière lui** — à x≈29000 alors qu’il se tenait à x≈47000 — ce qui constitue l’intégralité
+derrière lui**, à x≈29000 alors qu’il se tenait à x≈47000, ce qui constitue l’intégralité
 du « Seen ne voit pas Lydia du tout » de 21:21. Elle n’avait pas disparu. Elle était à
 Raven Rock.
 
@@ -58,8 +57,8 @@ La ligne de diagnostic `Silence:` ajoutée le 25 reste. Un client qui cesse de p
 toujours d’être repéré, et cela ne coûte rien. Mais sa justification est passée de « c’est
 le bug » à « c’est intéressant », et cette rétrogradation mérite d’être écrite.
 
-Trois fois le 27 septembre, un crash a été imputé à autre chose — la mise en cache du
-contact d’arme, puis une lecture hors bornes, puis le matériel de l’ami — chaque fois
+Trois fois le 27 septembre, un crash a été imputé à autre chose (la mise en cache du
+contact d’arme, puis une lecture hors bornes, puis le matériel de l’ami), chaque fois
 déduit d’un crash survenu peu après la destruction d’un lot de copies. Les trois étaient
 plausibles. Aucune n’avait été vérifiée contre une adresse.
 

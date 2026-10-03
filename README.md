@@ -1,4 +1,4 @@
-# Skyrim Together VR — website
+# Skyrim Together VR website
 
 The promotional site for [Skyrim Together VR](https://github.com/Dosylia/SkyrimTogetherVR),
 a VR port of Skyrim Together Reborn.
@@ -20,7 +20,7 @@ docker compose up -d stvr nginx
 Then add `stvr.missnovation.loc` to the Windows hosts file
 (`C:\Windows\System32\drivers\etc\hosts`, as Administrator) on the existing
 `missnovation.loc` line, and open **http://stvr.missnovation.loc**.
-HTTPS works too — the certificate is in `~/docker/data/ssl/`.
+HTTPS works too; the certificate is in `~/docker/data/ssl/`.
 
 Nothing needs installing on the host. Run artisan through the container:
 
@@ -140,7 +140,7 @@ Captions are optional. To add one, use the slug in every language file:
 Without a caption the slug becomes the alt text and no caption is drawn.
 
 **With the folder empty** the section shows the illustrated scene instead and
-still reads as finished — which is why it could ship before there was anything
+still reads as finished, which is why it could ship before there was anything
 to put in it.
 
 ---
@@ -182,7 +182,7 @@ echo $bad ? "$bad problems\n" : "all four locales agree\n";
 
 URL slugs are per-language (`/fr/installation`, `/de/anleitung`,
 `/es/instalacion`) and live in `config('stvr.paths')`. Always build links with
-`App\Support\Nav::url('install')` — that is what lets the language switcher put
+`App\Support\Nav::url('install')`. That is what lets the language switcher put
 a reader on the same page in their language instead of back on the home page.
 
 ---
@@ -215,10 +215,10 @@ $EDITOR .env        # set APP_KEY and APP_URL
 
 `docker/Dockerfile` builds three stages:
 
-1. **vendor** — Composer, `--no-dev`, optimised classmap. Discarded.
-2. **runtime** — `php:8.3-fpm-alpine` with the app baked in, running as
+1. **vendor**: Composer, `--no-dev`, optimised classmap. Discarded.
+2. **runtime**: `php:8.3-fpm-alpine` with the app baked in, running as
    `www-data`. Only `storage/` is writable.
-3. **web** — `nginx:stable-alpine` with `public/` copied in from the same build,
+3. **web**: `nginx:stable-alpine` with `public/` copied in from the same build,
    so the server and the assets can never be from different commits.
 
 TLS is left to whatever sits in front. The vhost reads `X-Forwarded-Proto` and
@@ -231,7 +231,7 @@ rather it handled the certificate itself.
 
 - **Do not cache objects.** Laravel 13's file cache restricts `unserialize()` to
   an allow-list, so a cached `DevlogEntry` comes back as
-  `__PHP_Incomplete_Class` and 500s — in production only, which is the worst
+  `__PHP_Incomplete_Class` and 500s, in production only, which is the worst
   place to find out. `ReleaseService` caches the raw GitHub array; `Devlog`
   memoises per request and nothing more.
 - **ICU.** The Dockerfile installs `icu-libs` separately from `icu-dev` and only

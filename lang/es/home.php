@@ -3,14 +3,14 @@
 return [
 
     'meta' => [
-        'title'       => 'Skyrim Together VR — ya no eres el único Sangre de Dragón',
-        'description' => 'Cooperativo libre y gratuito para Skyrim VR. Tu lista de mods, tu partida, tu servidor — y alguien de pie a tu lado, a su altura real, con sus manos reales.',
+        'title'       => 'Skyrim Together VR: ya no eres el único Sangre de Dragón',
+        'description' => 'Cooperativo libre y gratuito para Skyrim VR. Tu lista de mods, tu partida, tu servidor, y alguien de pie a tu lado, a su altura real, con sus manos reales.',
     ],
 
     'hero' => [
         'kicker'   => 'Código abierto · GPLv3 · port a VR de Skyrim Together Reborn',
         'title'    => 'Ya no eres el único Sangre de Dragón',
-        'lede'     => 'Cooperativo para Skyrim VR. Tu lista de mods, tu partida, tu servidor — y alguien que está de verdad en la habitación contigo, a su propia altura, con sus propias manos.',
+        'lede'     => 'Cooperativo para Skyrim VR. Tu lista de mods, tu partida, tu servidor, y alguien que está de verdad en la habitación contigo, a su propia altura, con sus propias manos.',
         'primary'  => 'Conseguir la build',
         'secondary'=> 'Cómo instalarlo',
         'scroll'   => 'Seguir',
@@ -34,7 +34,7 @@ return [
     'plain' => [
         'label' => 'Sin rodeos',
         'title' => 'Qué es esto en realidad',
-        'body'  => 'Skyrim Together Reborn llevó el cooperativo a Skyrim Special Edition. Skyrim VR es otro ejecutable: otras direcciones de memoria, otras clases del motor, y un cuerpo donde antes solo había una cámara. Esto es ese mod, desmontado y vuelto a montar para la build de VR — por dos desarrolladores full-stack que aprendieron C++ e ingeniería inversa por el camino, lo cual tranquiliza o inquieta según el carácter.',
+        'body'  => 'Skyrim Together Reborn llevó el cooperativo a Skyrim Special Edition. Skyrim VR es otro ejecutable: otras direcciones de memoria, otras clases del motor, y un cuerpo donde antes solo había una cámara. Esto es ese mod, desmontado y vuelto a montar para la build de VR, por dos desarrolladores full-stack que aprendieron C++ e ingeniería inversa por el camino, lo cual tranquiliza o inquieta según el carácter.',
         'body2' => 'Es gratis, el código es público y nada pasa nunca por un servidor nuestro. Alojas tú, o aloja tu amigo. Nadie se registra en nada.',
     ],
 
@@ -47,7 +47,7 @@ return [
             [
                 'rune'  => 'ᛗ',
                 'title' => 'Está ahí de verdad',
-                'body'  => 'La cabeza, las manos y la cadera cruzan la red. Con VRIK, tu amigo tiene cuerpo — así que cuando se asoma por una esquina, lo ves asomarse. Cuando señala, puedes seguir el brazo. No un casco flotante. Una persona.',
+                'body'  => 'La cabeza, las manos y la cadera cruzan la red. Con VRIK, tu amigo tiene cuerpo, así que cuando se asoma por una esquina, lo ves asomarse. Cuando señala, puedes seguir el brazo. No un casco flotante. Una persona.',
             ],
             [
                 'rune'  => 'ᛟ',
@@ -57,7 +57,7 @@ return [
             [
                 'rune'  => 'ᚦ',
                 'title' => 'Tus mods, intactos',
-                'body'  => 'Mod Organizer 2, Vortex, una lista de Wabbajack como FUS, o ningún gestor. Tu orden de carga sigue siendo tuyo. El lanzador arranca el juego y carga SKSE por ti — no vuelves a tocar el loader de SKSE.',
+                'body'  => 'Mod Organizer 2, Vortex, una lista de Wabbajack como FUS, o ningún gestor. Tu orden de carga sigue siendo tuyo. El lanzador arranca el juego y carga SKSE por ti. No vuelves a tocar el loader de SKSE.',
             ],
             [
                 'rune'  => 'ᛒ',
@@ -72,7 +72,7 @@ return [
             [
                 'rune'  => 'ᛉ',
                 'title' => 'Se reconecta solo',
-                'body'  => 'Una conexión caída lo reintenta a los 5 segundos, luego a los 10, 20, 30 y 60, y te lo dice en pantalla. Una rechazada no lo reintenta y explica por qué — build distinta, contraseña incorrecta — en lugar de dejarte mirando una puerta de carga.',
+                'body'  => 'Una conexión caída lo reintenta a los 5 segundos, luego a los 10, 20, 30 y 60, y te lo dice en pantalla. Una rechazada no lo reintenta y explica por qué (build distinta, contraseña incorrecta) en lugar de dejarte mirando una puerta de carga.',
             ],
         ],
     ],
@@ -91,7 +91,7 @@ return [
             'El servidor rechaza a cualquier cliente cuya build no coincida. El aviso de conexión nombra las dos versiones, así que el diagnóstico lleva diez segundos.',
             'uGridsToLoad debe valer 5. Es el valor por defecto de todas las listas de Wabbajack, y el servidor no acepta ningún otro.',
             'VRIK es lo que le da cuerpo a tu amigo. Sin él sigue estando ahí, pero hay bastante menos que ver.',
-            'El anfitrión se conecta a su propio servidor en 127.0.0.1 — la misma dirección que todos los demás, sin el viaje.',
+            'El anfitrión se conecta a su propio servidor en 127.0.0.1, la misma dirección que todos los demás, sin el viaje.',
             'Jugad los dos con la misma lista de mods. «Él ve un oso, yo veo un lobo» casi siempre son dos órdenes de carga distintos.',
         ],
     ],

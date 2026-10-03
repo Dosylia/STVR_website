@@ -3,8 +3,8 @@
 return [
 
     'meta' => [
-        'title'       => 'Skyrim Together VR — Fahrplan und bekannte Fehler',
-        'description' => 'Die sechs Dinge, die behoben werden, in der Reihenfolge, in der sie es wert sind — und eine ehrliche Liste dessen, was heute kaputtgeht.',
+        'title'       => 'Skyrim Together VR: Fahrplan und bekannte Fehler',
+        'description' => 'Die sechs Dinge, die behoben werden, in der Reihenfolge, in der sie es wert sind, und eine ehrliche Liste dessen, was heute kaputtgeht.',
     ],
 
     'hero' => [
@@ -33,7 +33,7 @@ return [
                 'n' => 2,
                 'state' => 'active',
                 'title' => 'Die Welt, in beiden Headsets gleich',
-                'body'  => 'Hast du es getötet, ist es auch für ihn tot; hat er die Truhe geplündert, ist sie für dich leer. Der lange Rest sind Zellgrenzen — sie schnell zu überqueren ist die Quelle der seltsamsten Meldungen.',
+                'body'  => 'Hast du es getötet, ist es auch für ihn tot; hat er die Truhe geplündert, ist sie für dich leer. Der lange Rest sind Zellgrenzen. Sie schnell zu überqueren ist die Quelle der seltsamsten Meldungen.',
             ],
             [
                 'n' => 3,
@@ -51,7 +51,7 @@ return [
                 'n' => 5,
                 'state' => 'later',
                 'title' => 'Niemand unter dem Boden',
-                'body'  => 'NPCs landen gelegentlich unterhalb des Bodens, auf dem sie stehen sollten. Sie sind synchron — nur eben auf der falschen Höhe.',
+                'body'  => 'NPCs landen gelegentlich unterhalb des Bodens, auf dem sie stehen sollten. Sie sind synchron, nur eben auf der falschen Höhe.',
             ],
             [
                 'n' => 6,
@@ -65,7 +65,7 @@ return [
     'issues' => [
         'label' => 'Heute',
         'title' => 'Bekannte Fehler',
-        'lede'  => 'Aktuell, konkret, und keine Formalie. Triffst du auf etwas, das hier nicht steht, ist es wirklich neu — schick das Log.',
+        'lede'  => 'Aktuell, konkret, und keine Formalie. Triffst du auf etwas, das hier nicht steht, ist es wirklich neu. Schick das Log.',
         'items' => [
             [
                 'title' => 'Es stürzt immer noch ab',
@@ -73,7 +73,7 @@ return [
             ],
             [
                 'title' => 'Zellen schnell zu überqueren wird seltsam',
-                'body'  => 'Ein in den Himmel geschleuderter Bandit, eine Leiche am falschen Ort, eine Spriggan, deren Treffer nie landen — alles gemeldet beim Sprint quer durchs Land, und genau an diesem Faden wird gerade gezogen.',
+                'body'  => 'Ein in den Himmel geschleuderter Bandit, eine Leiche am falschen Ort, eine Spriggan, deren Treffer nie landen, alles gemeldet beim Sprint quer durchs Land, und genau an diesem Faden wird gerade gezogen.',
             ],
             [
                 'title' => 'NPCs unter dem Bodenniveau',
@@ -85,7 +85,7 @@ return [
             ],
             [
                 'title' => 'Begleiter können weit zurückfallen',
-                'body'  => 'Reise schnell, und dein Begleiter ist vielleicht mehrere Zellen hinter dir. Der Client gibt Akteure in Zellen frei, die das Spiel entladen hat — korrektes Verhalten mit einem Ergebnis, das nicht danach aussieht.',
+                'body'  => 'Reise schnell, und dein Begleiter ist vielleicht mehrere Zellen hinter dir. Der Client gibt Akteure in Zellen frei, die das Spiel entladen hat: korrektes Verhalten mit einem Ergebnis, das nicht danach aussieht.',
             ],
         ],
         'report' => [
@@ -98,7 +98,7 @@ return [
     'done' => [
         'label' => 'Hinter uns',
         'title' => 'Kürzlich von der Liste',
-        'lede'  => 'Kein Changelog — das Entwicklertagebuch ist das Changelog. Nur die Form der letzten Wochen.',
+        'lede'  => 'Kein Changelog. Das Entwicklertagebuch ist das Changelog. Nur die Form der letzten Wochen.',
         'items' => [
             'Fallen gelassene Gegenstände folgen der Hand, die sie geworfen hat, und erreichen den Boden, statt zu schweben.',
             'Die Hüfte geht über die Leitung, also beugt sich ein Körper dort, wo sich sein Besitzer beugt.',

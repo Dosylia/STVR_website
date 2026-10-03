@@ -6,7 +6,7 @@ namespace App\Support;
  * Builds every internal URL, in every language.
  *
  * Views never concatenate a path. They ask for a page id and get a URL for the
- * current language — which is what makes the language switcher able to hand a
+ * current language, which is what makes the language switcher able to hand a
  * visitor the *same page* in German rather than dumping them on the home page,
  * the single thing that most often goes wrong on a multilingual site.
  */

@@ -45,7 +45,7 @@ return [
         ],
         'server' => [
             'title' => 'Servidor',
-            'body'  => 'El servidor dedicado por separado, para una máquina que no tiene el juego. También existe una build de Linux — pídela.',
+            'body'  => 'El servidor dedicado por separado, para una máquina que no tiene el juego. También existe una build de Linux. Pídela.',
             'meta'  => 'Solo anfitriones',
         ],
         'download_cta' => 'Descargar',
@@ -57,12 +57,12 @@ return [
         'title' => 'Antes de pulsar',
         'lede'  => 'Nada de esto es opcional, salvo donde lo pone.',
         'items' => [
-            ['name' => 'Skyrim VR :version',              'note' => 'La versión de Steam. No Special Edition, no Anniversary — el ejecutable de VR.',  'state' => 'required'],
+            ['name' => 'Skyrim VR :version',              'note' => 'La versión de Steam. No Special Edition, no Anniversary: el ejecutable de VR.',  'state' => 'required'],
             ['name' => 'SKSE VR',                         'note' => 'La build de VR del script extender. En Data, como cualquier mod de SKSE.',        'state' => 'required'],
             ['name' => 'VR Address Library for SKSEVR',   'note' => 'Lo que permite que el mod encuentre algo dentro del juego.',                      'state' => 'required'],
             ['name' => 'uGridsToLoad = 5',                'note' => 'El valor por defecto. El servidor rechaza cualquier otro: los dos mundos dejarían de cuadrar.', 'state' => 'required'],
             ['name' => 'Engine Fixes VR',                 'note' => 'Elimina una categoría de cuelgues que no tiene nada que ver con nosotros.',       'state' => 'recommended'],
-            ['name' => 'VRIK',                            'note' => 'El cuerpo que ve tu amigo. Muy recomendable — es casi todo el sentido de esto.',  'state' => 'recommended'],
+            ['name' => 'VRIK',                            'note' => 'El cuerpo que ve tu amigo. Muy recomendable. Es casi todo el sentido de esto.',  'state' => 'recommended'],
             ['name' => 'La misma build que tus amigos',   'note' => 'El servidor rechaza las diferencias y nombra las dos versiones al hacerlo.',      'state' => 'required'],
         ],
     ],
@@ -70,8 +70,8 @@ return [
     'next' => [
         'label' => 'Y ahora',
         'title' => 'Descargado. ¿Y ahora qué?',
-        'install' => ['title' => 'Instalarlo',       'body' => 'MO2, Vortex, una lista de Wabbajack o ningún gestor — la guía cubre los cuatro casos.', 'cta' => 'Guía de instalación'],
-        'host'    => ['title' => 'Alojarlo',         'body' => 'Un ejecutable, un puerto UDP — o una red virtual y ningún router.',                     'cta' => 'Guía de alojamiento'],
+        'install' => ['title' => 'Instalarlo',       'body' => 'MO2, Vortex, una lista de Wabbajack o ningún gestor. La guía cubre los cuatro casos.', 'cta' => 'Guía de instalación'],
+        'host'    => ['title' => 'Alojarlo',         'body' => 'Un ejecutable, un puerto UDP, o una red virtual y ningún router.',                     'cta' => 'Guía de alojamiento'],
         'issues'  => ['title' => 'Cuando se rompa',  'body' => 'Ejecuta collect-logs.bat y manda el zip. Lleva el registro, el volcado y las versiones.', 'cta' => 'Reportar un fallo'],
     ],
 

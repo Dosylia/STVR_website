@@ -13,8 +13,7 @@ Windows il n’y en a qu’un.
 Nous avons passé plusieurs heures le 27 septembre à essayer de faire charger le PDB de
 cette image par `dbghelp`. Il ne le fera pas. `SymLoadModuleEx` signale le module comme
 différé, puis déclare introuvable chaque fonction pourtant connue. Cela ne vaut pas la
-peine d’être retenté, et cette entrée existe en partie pour que la prochaine personne —
-probablement l’un de nous, dans deux mois — ne le fasse pas.
+peine d’être retenté, et cette entrée existe en partie pour que la prochaine personne, probablement l’un de nous, dans deux mois, ne le fasse pas.
 
 ## Ce qui marche : la table des symboles de l’éditeur de liens
 
@@ -49,7 +48,7 @@ La table doit venir de la build qui a planté.
 Une table périmée n’échoue pas. Elle nomme les mauvaises fonctions, lit les mauvaises
 adresses, et a l’air parfaitement plausible en le faisant. Lancez une table actuelle contre
 un dump du 13 septembre et elle annoncera avec aplomb « 0 suppressions d’acteurs
-enregistrées pour cette session » — pour une build écrite deux semaines avant l’existence
+enregistrées pour cette session », pour une build écrite deux semaines avant l’existence
 de `RecentDeletes`.
 
 `explain-dump.py` compare désormais l’horodatage de la table à celui du module dans le dump
@@ -60,5 +59,5 @@ cette vérification est à votre charge.
 
 L’exécutable du jeu sur le disque est chiffré par Steam. Une adresse à l’intérieur de
 `?game_seg@@3PAEA` ne peut pas être désassemblée hors ligne. Nommer un appelant inconnu
-côté jeu demande soit un hook en jeu, soit la base d’adresses — il n’y a pas de troisième
+côté jeu demande soit un hook en jeu, soit la base d’adresses. Il n’y a pas de troisième
 option, et un après-midi passé à en chercher une est un après-midi.

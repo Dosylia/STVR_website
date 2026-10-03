@@ -8,8 +8,8 @@
     and recolours from the same custom properties as the rest of the site.
 
     Read bottom-up in z-order: sky, stars, moons, aurora, far range, mid range
-    with the tall peak, the dragon, the near ridge, pines, and — the point of the
-    whole illustration — two figures, not one.
+    with the tall peak, the dragon, the near ridge, pines, and the point of the
+    whole illustration: two figures, not one.
 --}}
 @props(['crop' => 'xMidYMid'])
 <svg class="scene" viewBox="0 0 1600 900" preserveAspectRatio="{{ $crop }} slice"

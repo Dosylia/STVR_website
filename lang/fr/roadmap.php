@@ -3,7 +3,7 @@
 return [
 
     'meta' => [
-        'title'       => 'Skyrim Together VR — feuille de route et bugs connus',
+        'title'       => 'Skyrim Together VR : feuille de route et bugs connus',
         'description' => 'Les six chantiers en cours, dans l’ordre où ils méritent d’être réglés, et la liste honnête de ce qui casse aujourd’hui.',
     ],
 
@@ -51,7 +51,7 @@ return [
                 'n' => 5,
                 'state' => 'later',
                 'title' => 'Personne sous le sol',
-                'body'  => 'Des PNJ arrivent parfois sous le sol sur lequel ils devraient se tenir. Ils sont synchronisés — simplement synchronisés à la mauvaise altitude.',
+                'body'  => 'Des PNJ arrivent parfois sous le sol sur lequel ils devraient se tenir. Ils sont synchronisés, simplement synchronisés à la mauvaise altitude.',
             ],
             [
                 'n' => 6,
@@ -65,7 +65,7 @@ return [
     'issues' => [
         'label' => 'Aujourd’hui',
         'title' => 'Bugs connus',
-        'lede'  => 'À jour, précis, et pas une formalité. Si vous tombez sur autre chose, c’est vraiment nouveau — envoyez le log.',
+        'lede'  => 'À jour, précis, et pas une formalité. Si vous tombez sur autre chose, c’est vraiment nouveau. Envoyez le log.',
         'items' => [
             [
                 'title' => 'Ça plante encore',
@@ -73,7 +73,7 @@ return [
             ],
             [
                 'title' => 'Franchir les cellules vite déraille',
-                'body'  => 'Un bandit envoyé dans le ciel, un cadavre au mauvais endroit, une spriggan dont les coups ne portent jamais — tous signalés en traversant le pays au sprint, et c’est le fil qu’on tire en ce moment.',
+                'body'  => 'Un bandit envoyé dans le ciel, un cadavre au mauvais endroit, une spriggan dont les coups ne portent jamais, tous signalés en traversant le pays au sprint, et c’est le fil qu’on tire en ce moment.',
             ],
             [
                 'title' => 'Des PNJ sous le niveau du sol',
@@ -98,7 +98,7 @@ return [
     'done' => [
         'label' => 'Derrière nous',
         'title' => 'Sorties de la liste récemment',
-        'lede'  => 'Ce n’est pas un changelog — le journal fait office de changelog. Juste la forme des dernières semaines.',
+        'lede'  => 'Ce n’est pas un changelog. Le journal fait office de changelog. Juste la forme des dernières semaines.',
         'items' => [
             'Les objets lâchés suivent la main qui les a lancés et atteignent le sol au lieu de flotter.',
             'Le bassin traverse le réseau : un corps se plie là où son propriétaire se plie.',

@@ -20,13 +20,13 @@ Felsen kauert, nach oben schaut und einen Arm ausgestreckt hat.
 
 Die Versuchung ist, das ganze Skelett zu schicken. Werden wir nicht, und nicht nur wegen
 der Bandbreite. Ein vollständiges Skelett bedeutet, dass sich die Gegenseite über
-Knochenbenennung, Rig-Maßstab und VRIKs eigene Solver-Einstellungen einig sein muss — und
+Knochenbenennung, Rig-Maßstab und VRIKs eigene Solver-Einstellungen einig sein muss, und
 die häufigste Ursache von »er sieht einen Bären, ich sehe einen Wolf« sind bereits zwei
 Modlisten, die sich uneinig sind. Einen Vertrag über dreißig Knochen dazwischenzulegen hieße,
 dieselbe Fehlerklasse ausgerechnet in das eine System einzuladen, das verlässlich sein muss.
 
-Also: Kopf, Hände, Hüfte. VRIK weiß bereits, wie man aus Kopf und Händen einen Körper baut
-— das ist buchstäblich seine Aufgabe — und die Hüfte ist das, was es nicht erschließen kann.
+Also: Kopf, Hände, Hüfte. VRIK weiß bereits, wie man aus Kopf und Händen einen Körper baut,
+was buchstäblich seine Aufgabe ist, und die Hüfte ist das, was es nicht erschließen kann.
 Wo deine Hüfte ist, entscheidet darüber, ob du stehst, kauerst, dich lehnst oder in der
 Taille gedreht bist, während du in die andere Richtung schaust.
 
@@ -35,14 +35,14 @@ als getrennte Probleme behandelt hatten:
 
 - Sich um eine Ecke zu lehnen **sieht aus** wie sich um eine Ecke lehnen.
 - Kauern liest sich als Kauern und nicht als eine kleinere Person.
-- Sich umzudrehen, um nach hinten zu sehen, dreht nicht mehr den ganzen Körper mit dem Kopf
-  — das war das mit Abstand Unheimlichste im Spiel, und wir nannten es »die Eule«.
+- Sich umzudrehen, um nach hinten zu sehen, dreht nicht mehr den ganzen Körper mit dem Kopf.
+  Das war das mit Abstand Unheimlichste im Spiel, und wir nannten es »die Eule«.
 
 ## Was es gekostet hat
 
 Ein Commit dieser Arbeit heißt *Die Hüfte erreicht den Körper*, was genug darüber sagt, wie
-der erste Versuch lief. Die Hüftposition kam im falschen Raum an — richtige Zahlen, falscher
-Ursprung —, also standen entfernte Spieler mit dem Becken etwa einen Meter vor der Brust.
+der erste Versuch lief. Die Hüftposition kam im falschen Raum an (richtige Zahlen, falscher
+Ursprung), also standen entfernte Spieler mit dem Becken etwa einen Meter vor der Brust.
 Das wirkte weniger wie ein Fehler und mehr wie ein Fluch.
 
 ## Weiterhin offen

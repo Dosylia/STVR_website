@@ -14,7 +14,7 @@ une semaine, elle coûte une soirée à deux personnes, et environ la moitié de
 arrive sous la forme « ça a déraillé vers le camp de bandits ».
 
 Il y a donc maintenant un bot. Il lance le client sans affichage, se connecte à un serveur,
-et joue une série de paires scriptées — deux clients, un scénario chacun, un état final
+et joue une série de paires scriptées : deux clients, un scénario chacun, un état final
 attendu connu.
 
 ## Ce qu’il attrape vraiment
@@ -27,7 +27,7 @@ sûr.
 Ce sont exactement les bugs invisibles jusqu’à devenir catastrophiques, qui dépendent du
 timing, et qu’un testeur humain reproduit une fois sur cinq. Une machine qui rejoue le même
 scénario quarante fois dans la nuit les reproduit assez fiablement pour leur mettre une
-adresse dessus — et une adresse, comme nous n’arrêtons pas de l’écrire, est la seule chose
+adresse dessus, et une adresse, comme nous n’arrêtons pas de l’écrire, est la seule chose
 qui tranche un crash.
 
 ## La partie qui n’était pas évidente

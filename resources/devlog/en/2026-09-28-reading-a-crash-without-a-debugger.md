@@ -13,7 +13,7 @@ only one.
 We spent several hours on 27 September trying to make `dbghelp` load the PDB for that image.
 It will not. `SymLoadModuleEx` reports the module deferred, and then reports every known
 function as not found. That is not worth trying again, and this entry exists partly so that
-the next person — probably one of us, in two months — does not.
+the next person, probably one of us, in two months, does not.
 
 ## What does work: the linker map
 
@@ -46,7 +46,7 @@ The map has to come from the build that crashed.
 
 A stale map does not fail. It names the wrong functions, reads the wrong addresses, and looks
 entirely plausible doing it. Run a current map against a dump from 13 September and it will
-confidently report "0 actor deletions recorded this session" — for a build written two weeks
+confidently report "0 actor deletions recorded this session", for a build written two weeks
 before `RecentDeletes` existed.
 
 `explain-dump.py` now compares the map's timestamp against the dump's module timestamp and
@@ -57,5 +57,5 @@ yours to make.
 
 The game executable on disk is Steam-encrypted. An address inside `?game_seg@@3PAEA` cannot be
 disassembled offline. Naming an unknown game-side caller needs either an in-game hook or the
-address database — there is no third option, and an afternoon spent looking for one is an
+address database. There is no third option, and an afternoon spent looking for one is an
 afternoon.

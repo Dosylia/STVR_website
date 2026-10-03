@@ -5,7 +5,7 @@
     of advice, and it is the most recognisable piece of the game's interface that
     is not a logo. Borrowed knowingly. The rotation is a CSS rotateY on a flat
     drawing, so it goes edge-on at 90 degrees exactly the way a real flat object
-    would — which is why it reads as three-dimensional despite being nothing of
+    would, which is why it reads as three-dimensional despite being nothing of
     the kind.
 --}}
 <svg viewBox="0 0 120 170" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
