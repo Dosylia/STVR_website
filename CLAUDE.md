@@ -14,6 +14,17 @@ Laravel 13 · PHP 8.3 · four languages · no database.
   Good: `fix the hero scene cropping mountains into the headline`
   Bad: `feat(ui): enhance hero section 🚀` / `Update files`
 - A body is only worth writing when the *why* is not obvious from the diff.
+- **Never run `git push` in the foreground.** This machine uses Windows Git
+  Credential Manager, a GUI helper that blocks on a dialog and ignores
+  `GIT_TERMINAL_PROMPT=0`. A push with nobody at the keyboard hangs for hours,
+  not seconds — it has already cost one unattended run 4¼ hours. Background it
+  with a hard timeout and check the result later:
+  `(timeout 120 git push -q origin main; echo "exit=$?") > /tmp/push.log 2>&1 &`
+- **"Queue the commits" means commit locally and do not push.** When the user
+  says they will not be around, pushing is the thing they are telling you not to
+  do. Report the unpushed count instead: `git rev-list --count origin/main..main`.
+- If a push is already running in the background and turns out to be blocked,
+  kill it. Stopping new attempts while the old one still hangs fixes nothing.
 
 **Content.**
 - Nothing on this site may claim a capability the mod does not have today.
