@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DevlogController;
+use App\Http\Controllers\LauncherController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\SeoController;
 use App\Support\Nav;
@@ -21,6 +22,13 @@ Route::get('/', [PageController::class, 'root'])->name('root');
 
 Route::get('/robots.txt', [SeoController::class, 'robots'])->name('robots');
 Route::get('/sitemap.xml', [SeoController::class, 'sitemap'])->name('sitemap');
+
+// The launcher, from this site's copy of its newest GitHub release (App\Support\LauncherDownload): the file, and
+// the note installed launchers read to update themselves.
+Route::get('/downloads/launcher/latest.json', [LauncherController::class, 'latest'])->name('launcher.latest');
+Route::get('/downloads/launcher/{name}', [LauncherController::class, 'file'])
+    ->where('name', '[A-Za-z0-9._-]+')
+    ->name('launcher.file');
 
 $pages = [
     'download' => 'download',

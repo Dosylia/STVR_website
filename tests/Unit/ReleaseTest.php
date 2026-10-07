@@ -46,6 +46,24 @@ class ReleaseTest extends TestCase
         $this->assertSame('5.0 MB', $release->patch()->humanSize());
     }
 
+    public function test_the_files_make_release_writes_land_in_their_own_cards(): void
+    {
+        Http::fake(['api.github.com/*' => Http::response([
+            'tag_name' => 'v1.9.0',
+            'assets' => [
+                ['name' => 'SkyrimTogetherVR-standalone-v1.9.0.zip',   'browser_download_url' => 'https://example/full.zip',   'size' => 1],
+                ['name' => 'SkyrimTogetherVR-v1.9.0-update.zip',        'browser_download_url' => 'https://example/patch.zip',  'size' => 1],
+                ['name' => 'SkyrimTogetherVR-v1.9.0-server-update.zip', 'browser_download_url' => 'https://example/server.zip', 'size' => 1],
+            ],
+        ])]);
+
+        $release = app(ReleaseService::class)->latest();
+
+        $this->assertSame('https://example/full.zip', $release->full()->url);
+        $this->assertSame('https://example/patch.zip', $release->patch()->url);
+        $this->assertSame('https://example/server.zip', $release->server()->url);
+    }
+
     public function test_a_repository_with_no_releases_falls_back_quietly(): void
     {
         // GitHub answers 404 for /releases/latest when nothing is tagged. That

@@ -60,15 +60,17 @@ return [
     | The launcher
     |--------------------------------------------------------------------------
     |
-    | Served by this site, not GitHub (Emma, 2026-10-07): the download button
-    | gives the file in public/<folder>, so a click downloads it at once. To
-    | publish a new version, put its file there and take the old one out.
+    | GitHub builds it at every push to its repository and releases it when
+    | its version goes up; this site keeps a copy of the newest release and
+    | serves it under its own address (App\Support\LauncherDownload), to the
+    | download button and to installed launchers updating themselves. The
+    | repository can stay private: the token only needs to read its contents.
     |
     */
 
     'launcher' => [
-        'folder' => 'downloads/launcher',
-        'types'  => ['exe', 'msi', 'zip'],
+        'repo'  => env('STVR_LAUNCHER_REPO', 'Dosylia/urSovngarde-launcher'),
+        'token' => env('STVR_LAUNCHER_TOKEN', ''),
     ],
 
     'github' => [
@@ -91,13 +93,16 @@ return [
     |--------------------------------------------------------------------------
     | How an asset filename is classified in the download panel
     |--------------------------------------------------------------------------
-    | make-release.ps1 emits SkyrimTogetherVR-<version>.zip and
-    | SkyrimTogetherVR-<version>-update.zip. Order matters: first match wins.
+    | make-release.ps1 emits SkyrimTogetherVR-standalone-<version>.zip,
+    | SkyrimTogetherVR-<version>-update.zip and
+    | SkyrimTogetherVR-<version>-server-update.zip. Order matters: first match
+    | wins, so "server" comes before the update rule, or the server's zip
+    | would be taken for the client update.
     */
     'asset_kinds' => [
         'launcher' => ['ursovngarde_', '-setup.exe', '.msi'],
-        'patch'  => ['-update.zip', '-patch.zip'],
         'server' => ['server'],
+        'patch'  => ['-update.zip', '-patch.zip'],
         'full'   => ['.zip'],
     ],
 

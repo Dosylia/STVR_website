@@ -55,8 +55,8 @@
             </p>
         @endunless
 
-        {{-- The launcher first: the way in for nearly everyone. The button downloads the launcher file this site
-             serves (public/downloads/launcher); until one is there it says so and leads nowhere. --}}
+        {{-- The launcher first: the way in for nearly everyone. The button downloads the launcher from this site
+             (its copy of the newest GitHub release); until there is one it says so and leads nowhere. --}}
         <article class="tablet asset asset--lead reveal" style="margin-top:2.2rem">
             <div class="asset__head">
                 <h2 class="asset__title">{{ __('download.assets.launcher.title') }}</h2>
