@@ -28,6 +28,7 @@ $pages = [
     'host'     => 'host',
     'faq'      => 'faq',
     'roadmap'  => 'roadmap',
+    'privacy'  => 'privacy',
 ];
 
 foreach (Nav::locales() as $locale) {

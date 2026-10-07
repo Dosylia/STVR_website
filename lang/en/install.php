@@ -3,8 +3,8 @@
 return [
 
     'meta' => [
-        'title'       => 'Install Skyrim Together VR',
-        'description' => 'Install Skyrim Together VR with Mod Organizer 2, a Wabbajack list, Vortex, or no mod manager at all. Prerequisites, connect.txt, first launch and updating.',
+        'title'       => 'Install urSovngarde',
+        'description' => 'Install urSovngarde with Mod Organizer 2, a Wabbajack list, Vortex, or no mod manager at all. Prerequisites, connect.txt, first launch and updating.',
     ],
 
     'hero' => [

@@ -2,10 +2,9 @@
 
 return [
 
-    'brand'    => 'Skyrim Together VR',
-    'brand_a'  => 'Skyrim',
-    'brand_b'  => 'Together',
-    'brand_c'  => 'VR',
+    'brand'    => 'urSovngarde',
+    'brand_a'  => 'ur',
+    'brand_b'  => 'Sovngarde',
     'tagline'  => 'Cooperativo para Skyrim VR',
 
     'nav' => [
@@ -15,6 +14,7 @@ return [
         'roadmap'  => 'Hoja de ruta',
         'devlog'   => 'Diario',
         'faq'      => 'Preguntas',
+        'privacy'  => 'Privacidad',
         'menu'     => 'Menú',
         'close'    => 'Cerrar',
     ],
@@ -50,9 +50,9 @@ return [
     ],
 
     'meta' => [
-        'default_title'       => 'Skyrim Together VR: cooperativo para Skyrim VR',
+        'default_title'       => 'urSovngarde: cooperativo para Skyrim VR',
         'default_description' => 'Un mod cooperativo libre y gratuito para Skyrim VR. Juega con tu propia lista de mods, en tu propio servidor, con quien quieras. Basado en Skyrim Together Reborn.',
-        'suffix'              => 'Skyrim Together VR',
+        'suffix'              => 'urSovngarde',
     ],
 
     'badge' => [

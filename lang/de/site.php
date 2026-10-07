@@ -2,10 +2,9 @@
 
 return [
 
-    'brand'    => 'Skyrim Together VR',
-    'brand_a'  => 'Skyrim',
-    'brand_b'  => 'Together',
-    'brand_c'  => 'VR',
+    'brand'    => 'urSovngarde',
+    'brand_a'  => 'ur',
+    'brand_b'  => 'Sovngarde',
     'tagline'  => 'Koop für Skyrim VR',
 
     'nav' => [
@@ -15,6 +14,7 @@ return [
         'roadmap'  => 'Fahrplan',
         'devlog'   => 'Entwicklertagebuch',
         'faq'      => 'FAQ',
+        'privacy'  => 'Datenschutz',
         'menu'     => 'Menü',
         'close'    => 'Schließen',
     ],
@@ -50,9 +50,9 @@ return [
     ],
 
     'meta' => [
-        'default_title'       => 'Skyrim Together VR: Koop für Skyrim VR',
+        'default_title'       => 'urSovngarde: Koop für Skyrim VR',
         'default_description' => 'Eine kostenlose, quelloffene Koop-Mod für Skyrim VR. Spielt eure eigene Modliste zu zweit auf eurem eigenen Server. Aufgebaut auf Skyrim Together Reborn.',
-        'suffix'              => 'Skyrim Together VR',
+        'suffix'              => 'urSovngarde',
     ],
 
     'badge' => [

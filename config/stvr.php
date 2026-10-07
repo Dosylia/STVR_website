@@ -15,8 +15,8 @@ return [
     | Identity
     |--------------------------------------------------------------------------
     */
-    'name'       => 'Skyrim Together VR',
-    'short_name' => 'STVR',
+    'name'       => 'urSovngarde',
+    'short_name' => 'urSovngarde',
     'tagline_key' => 'site.tagline',
 
     /*
@@ -102,6 +102,18 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Crash reports
+    |--------------------------------------------------------------------------
+    | What the privacy page promises about the reports the launcher sends. The
+    | hub deletes a report this many days after it arrives (its KV expiry), and
+    | the triage deletes its downloaded copies on the same day.
+    */
+    'reports' => [
+        'keep_days' => 90,
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Languages
     |--------------------------------------------------------------------------
     | `name` is written in the language itself. Nobody looking for German wants
@@ -131,6 +143,7 @@ return [
         'faq'      => ['en' => 'faq',      'fr' => 'faq',          'de' => 'faq',       'es' => 'faq'],
         'roadmap'  => ['en' => 'roadmap',  'fr' => 'feuille-de-route', 'de' => 'fahrplan', 'es' => 'hoja-de-ruta'],
         'devlog'   => ['en' => 'devlog',   'fr' => 'journal',      'de' => 'entwicklertagebuch', 'es' => 'diario'],
+        'privacy'  => ['en' => 'privacy',  'fr' => 'confidentialite', 'de' => 'datenschutz', 'es' => 'privacidad'],
     ],
 
     'fallback_locale' => 'en',

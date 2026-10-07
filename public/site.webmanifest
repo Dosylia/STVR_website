@@ -1,6 +1,6 @@
 {
-  "name": "Skyrim Together VR",
-  "short_name": "STVR",
+  "name": "urSovngarde",
+  "short_name": "urSovngarde",
   "description": "Free, open-source co-op for Skyrim VR.",
   "start_url": "/",
   "display": "standalone",

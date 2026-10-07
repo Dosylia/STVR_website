@@ -1,0 +1,97 @@
+<?php
+
+return [
+
+    'meta' => [
+        'title'       => 'urSovngarde: Datenschutz und Absturzberichte',
+        'description' => 'Was ein Absturzbericht enthält, was deinen PC nie verlässt, wer ihn liest und wie er nach :days Tagen gelöscht wird, oder früher, wenn du darum bittest.',
+    ],
+
+    'hero' => [
+        'kicker' => 'Absturzberichte und deine Daten',
+        'title'  => 'Datenschutz',
+        'lede'   => 'Was ein Absturzbericht enthält, was deinen PC nie verlässt, wer ihn liest und wie lange.',
+    ],
+
+    'status' => 'Der urSovngarde-Launcher ist noch nicht erschienen. Diese Seite kommt zuerst, damit man lesen kann, was er sendet, bevor er überhaupt fragt.',
+
+    'discord' => 'unserem Discord-Server',
+
+    'sections' => [
+
+        [
+            'title' => 'Nichts geht ohne ein Ja',
+            'body'  => [
+                'Wenn sich das Spiel nach einem Absturz schließt, fragt der Launcher, ob er einen Bericht darüber senden darf. Du kannst nur für diesen Absturz antworten, ja oder nein, oder einmal für alle: immer oder nie. Immer und nie lassen sich später in den Einstellungen des Launchers ändern.',
+                'Hat sich das Spiel geschlossen, während du im Headset warst, wartet die Frage, bis du den Launcher das nächste Mal öffnest. Wer das Fenster ohne Antwort schließt, sendet nichts.',
+            ],
+        ],
+
+        [
+            'title' => 'Was ein Bericht enthält',
+            'body'  => ['Nur Dateien zum Absturz, und nur vom letzten Tag:'],
+            'items' => [
+                'Das eigene Log der Mod: womit sie sich verbunden hat, was sie zwischen den beiden Spielen abgeglichen hat und auf welche Fehler sie gestoßen ist.',
+                'Der Bericht von Crash Logger zu jedem Absturz: wo im Code des Spiels er passiert ist, deine Liste von Plugins und SKSE-Plugins, deine Windows-Version und die Teile deines PCs (Prozessor, Grafikkarte, Arbeitsspeicher, Headset-Modell).',
+                'Das Log des Servers, falls du gehostet hast.',
+                'Die Version der Mod, die du benutzt hast.',
+                'Ein kleiner Speicherauszug von ein paar Megabyte: was die Threads des Spiels im Moment des Absturzes gerade taten. Er kann kleine Bruchstücke von dem enthalten, was das Spiel in diesem Augenblick im Speicher hatte.',
+                'Deine Antwort auf eine Frage: Ist es abgestürzt, während du gespielt hast?',
+            ],
+        ],
+
+        [
+            'title' => 'Was vorher entfernt wird',
+            'body'  => ['Auf deinem PC, bevor irgendetwas gesendet wird, in jeder Datei, auch im Speicherauszug:'],
+            'items' => [
+                'Dein Windows-Benutzername, wo immer er in einem Dateipfad steht.',
+                'Jede IP-Adresse und jede Serveradresse.',
+                'Deine Discord-ID.',
+                'Namen von Spielern und Charakteren, ersetzt durch „Spieler A“, „Spieler B“ und so weiter.',
+            ],
+        ],
+
+        [
+            'title' => 'Was deinen PC nie verlässt',
+            'items' => [
+                'Deine Spielstände.',
+                'Screenshots und Bilder jeder Art.',
+                'Vollständige Speicherauszüge. Sie sind Hunderte Megabyte groß und enthalten weit mehr vom Speicher des Spiels, als ein Bericht braucht.',
+                'Deine Mods, deine Einstellungsdateien und die Dateien deiner Modliste.',
+                'Alles, was auf dieser Seite nicht genannt ist.',
+            ],
+        ],
+
+        [
+            'title' => 'Warum wir fragen',
+            'body'  => [
+                'Ein Absturz auf einem anderen PC, mit einer anderen Modliste, ist von hier aus unsichtbar, solange ihn niemand schickt. Das meiste, was bisher behoben wurde, fand sich im Log von irgendjemandem.',
+                'Berichte werden bei uns von einem Programm sortiert, das gleiche Abstürze zusammenfasst und nach Häufigkeit und Zahl der Betroffenen ordnet. Es liest Logs; über dich entscheidet es nichts. Berichte dienen dazu und zu nichts anderem: keine Werbung, kein Tracking, nichts wird verkauft oder weitergegeben.',
+            ],
+        ],
+
+        [
+            'title' => 'Wohin er geht und wer ihn liest',
+            'body'  => [
+                'Ein Bericht reist verschlüsselt (HTTPS) zu einem kleinen Dienst von uns, der bei Cloudflare läuft, und wird dort aufbewahrt. Lesen können ihn nur die Leute, die an der Mod arbeiten: heute zwei Personen.',
+                'Wie jeder Webserver sieht dieser Dienst die Adresse, von der ein Bericht kommt. Er behält eine verschleierte Form davon (einen Einweg-Hash) eine Stunde lang, um Berichte zu zählen und Fluten zu stoppen, und speichert die Adresse nie zusammen mit dem Bericht.',
+                'Wenn ein Bericht ankommt, erscheint eine kurze Zeile in einem privaten Kanal auf :discord: seine Nummer, seine Größe, die Version der Mod und ob es beim Spielen abgestürzt ist. Nie sein Inhalt.',
+            ],
+        ],
+
+        [
+            'title' => 'Wie lange er aufbewahrt wird',
+            'body'  => [
+                'Jeder Bericht wird :days Tage nach seiner Ankunft automatisch gelöscht, im Dienst und auf dem PC, auf dem Berichte gelesen werden.',
+            ],
+        ],
+
+        [
+            'title' => 'Einen Bericht löschen lassen',
+            'body'  => [
+                'Nach dem Senden zeigt der Launcher die Nummer des Berichts und führt eine Liste der Nummern, die er gesendet hat. Nenn eine Nummer auf :discord, und dieser Bericht wird überall gelöscht, ohne Rückfragen.',
+                'Wähl im Launcher „nie“, und ab dann wird nichts mehr gesendet.',
+            ],
+        ],
+    ],
+];

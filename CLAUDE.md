@@ -1,4 +1,4 @@
-# Skyrim Together VR site
+# urSovngarde site
 
 Promotional site for the Skyrim VR port of Skyrim Together Reborn.
 Laravel 13 · PHP 8.3 · four languages · no database.

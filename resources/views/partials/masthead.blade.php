@@ -9,7 +9,7 @@
         <a class="wordmark" href="{{ Nav::url('home') }}">
             @include('art.sigil', ['class' => 'wordmark__sigil', 'title' => config('stvr.name')])
             <span class="wordmark__text">
-                <span class="wordmark__a">{{ __('site.brand_a') }} {{ __('site.brand_b') }} <em class="wordmark__vr">{{ __('site.brand_c') }}</em></span>
+                <span class="wordmark__a"><em class="wordmark__ur">{{ __('site.brand_a') }}</em>{{ __('site.brand_b') }}</span>
                 <span class="wordmark__b">{{ __('site.tagline') }}</span>
             </span>
         </a>

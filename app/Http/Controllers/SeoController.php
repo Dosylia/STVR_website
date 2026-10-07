@@ -36,7 +36,7 @@ class SeoController extends Controller
 
         $targets = array_map(
             fn (string $page) => ['page' => $page, 'params' => []],
-            array_merge(['home'], Nav::MENU),
+            array_merge(['home'], Nav::MENU, ['privacy']),
         );
 
         foreach ($this->devlog->all($fallback) as $entry) {

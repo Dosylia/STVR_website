@@ -3,8 +3,8 @@
 return [
 
     'meta' => [
-        'title'       => 'Héberger un serveur Skyrim Together VR',
-        'description' => 'Faites tourner votre propre serveur Skyrim Together VR : redirection du port UDP 10578, ou réseau virtuel sans toucher à la box. Réglages, mots de passe et build Linux.',
+        'title'       => 'Héberger un serveur urSovngarde',
+        'description' => 'Faites tourner votre propre serveur urSovngarde : redirection du port UDP 10578, ou réseau virtuel sans toucher à la box. Réglages, mots de passe et build Linux.',
     ],
 
     'hero' => [

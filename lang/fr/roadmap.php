@@ -3,7 +3,7 @@
 return [
 
     'meta' => [
-        'title'       => 'Skyrim Together VR : feuille de route et bugs connus',
+        'title'       => 'urSovngarde : feuille de route et bugs connus',
         'description' => 'Les six chantiers en cours, dans l’ordre où ils méritent d’être réglés, et la liste honnête de ce qui casse aujourd’hui.',
     ],
 

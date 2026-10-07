@@ -1,6 +1,6 @@
-# Skyrim Together VR website
+# urSovngarde website
 
-The promotional site for [Skyrim Together VR](https://github.com/Dosylia/SkyrimTogetherVR),
+The promotional site for [urSovngarde](https://github.com/Dosylia/SkyrimTogetherVR),
 a VR port of Skyrim Together Reborn.
 
 Laravel 13 on PHP 8.3. Four languages. No database, no queue, no build step.
@@ -160,7 +160,7 @@ function flat(array $a, string $p = ""): array {
     }
     return $o;
 }
-$files = ["site","home","download","install","host","faq","roadmap","devlog"];
+$files = ["site","home","download","install","host","faq","roadmap","devlog","shots","privacy"];
 $bad = 0;
 foreach ($files as $f) {
     $en = flat(require "lang/en/$f.php");
@@ -242,7 +242,7 @@ rather it handled the certificate itself.
 
 ## Licence and attribution
 
-The site is part of the Skyrim Together VR project and inherits its
+The site is part of the urSovngarde project and inherits its
 [GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.en.html) licence.
 
 The multiplayer this promotes is

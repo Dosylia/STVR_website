@@ -3,7 +3,7 @@
 return [
 
     'meta' => [
-        'title'       => 'Skyrim Together VR: ya no eres el único Sangre de Dragón',
+        'title'       => 'urSovngarde: ya no eres el único Sangre de Dragón',
         'description' => 'Cooperativo libre y gratuito para Skyrim VR. Tu lista de mods, tu partida, tu servidor, y alguien de pie a tu lado, a su altura real, con sus manos reales.',
     ],
 

@@ -3,7 +3,7 @@
 return [
 
     'meta' => [
-        'title'       => 'Skyrim Together VR: Fahrplan und bekannte Fehler',
+        'title'       => 'urSovngarde: Fahrplan und bekannte Fehler',
         'description' => 'Die sechs Dinge, die behoben werden, in der Reihenfolge, in der sie es wert sind, und eine ehrliche Liste dessen, was heute kaputtgeht.',
     ],
 

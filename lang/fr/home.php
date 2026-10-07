@@ -3,7 +3,7 @@
 return [
 
     'meta' => [
-        'title'       => 'Skyrim Together VR : vous n’êtes plus le seul Enfant de dragon',
+        'title'       => 'urSovngarde : vous n’êtes plus le seul Enfant de dragon',
         'description' => 'Le coop libre et gratuit pour Skyrim VR. Votre liste de mods, votre sauvegarde, votre serveur, et quelqu’un debout à côté de vous, à sa vraie taille, avec ses vraies mains.',
     ],
 

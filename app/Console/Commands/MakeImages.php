@@ -305,9 +305,9 @@ class MakeImages extends Command
     }
 
     /**
-     * Type is measured rather than guessed: imagettfbbox gives the real advance
-     * width, so "VR" sits where "TOGETHER" actually ends. Hard-coding that offset
-     * is how the first draft of this card ended up reading "TOGETHEVR".
+     * The name on two lines, the short part in gold above the long one: "UR",
+     * then "SOVNGARDE". The gold accent the first card gave "VR" stays on the
+     * part of the name that is ours.
      */
     private function cardText($im, int $w, int $h): void
     {
@@ -320,14 +320,9 @@ class MakeImages extends Command
 
         imagettftext($im, 16, 0, $x, 136, $gold, $this->cinzelLight, 'CO-OP FOR SKYRIM VR');
 
-        imagettftext($im, 72, 0, $x, 246, $parchment, $this->cinzel, 'SKYRIM');
+        imagettftext($im, 72, 0, $x, 246, $gold, $this->cinzel, 'UR');
 
-        $together = 'TOGETHER';
-        imagettftext($im, 72, 0, $x, 338, $parchment, $this->cinzel, $together);
-
-        $box = imagettfbbox(72, 0, $this->cinzel, $together);
-        $vrX = $x + ($box[2] - $box[0]) + 22;
-        imagettftext($im, 72, 0, $vrX, 338, $gold, $this->cinzel, 'VR');
+        imagettftext($im, 72, 0, $x, 338, $parchment, $this->cinzel, 'SOVNGARDE');
 
         imagefilledrectangle($im, $x, 378, $x + 148, 380, $gold);
 

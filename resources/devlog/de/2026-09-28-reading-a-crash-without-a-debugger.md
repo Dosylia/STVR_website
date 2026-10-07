@@ -5,7 +5,7 @@ summary: Der Launcher ersetzt die Programmdatei des Spiels, also zeigt ein Crash
 tags: abstürze, werkzeuge
 ---
 
-Wenn Skyrim Together VR abstürzt, ist der Dump auf eine sehr bestimmte Weise nutzlos: er
+Wenn urSovngarde abstürzt, ist der Dump auf eine sehr bestimmte Weise nutzlos: er
 zeigt **ein** Modul, etwa 90 MB groß, namens `SkyrimTogetherVR.exe`. Der Code des Spiels
 und unserer stecken beide darin. Modulnamen können sie nicht trennen, denn für Windows gibt
 es nur eines.

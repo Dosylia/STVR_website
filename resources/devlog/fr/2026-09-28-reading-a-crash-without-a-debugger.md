@@ -5,7 +5,7 @@ summary: Le lanceur remplace l’exécutable du jeu, donc un crash dump ne montr
 tags: crashs, outillage
 ---
 
-Quand Skyrim Together VR plante, le dump est inutile d’une façon très précise : il montre
+Quand urSovngarde plante, le dump est inutile d’une façon très précise : il montre
 **un** module, environ 90 Mo, nommé `SkyrimTogetherVR.exe`. Le code du jeu et le nôtre sont
 tous les deux dedans. Les noms de modules ne peuvent pas les séparer, parce que pour
 Windows il n’y en a qu’un.

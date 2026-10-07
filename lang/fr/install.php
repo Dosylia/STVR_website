@@ -3,8 +3,8 @@
 return [
 
     'meta' => [
-        'title'       => 'Installer Skyrim Together VR',
-        'description' => 'Installer Skyrim Together VR avec Mod Organizer 2, une liste Wabbajack, Vortex, ou sans gestionnaire. Prérequis, connect.txt, premier lancement et mises à jour.',
+        'title'       => 'Installer urSovngarde',
+        'description' => 'Installer urSovngarde avec Mod Organizer 2, une liste Wabbajack, Vortex, ou sans gestionnaire. Prérequis, connect.txt, premier lancement et mises à jour.',
     ],
 
     'hero' => [

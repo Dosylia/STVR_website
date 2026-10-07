@@ -3,7 +3,7 @@
 return [
 
     'meta' => [
-        'title'       => 'Skyrim Together VR: diario de desarrollo',
+        'title'       => 'urSovngarde: diario de desarrollo',
         'description' => 'Qué se rompió, qué resultó ser, y qué se hizo al respecto. Incluidos los diagnósticos que estaban equivocados.',
     ],
 

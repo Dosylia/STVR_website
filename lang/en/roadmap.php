@@ -3,7 +3,7 @@
 return [
 
     'meta' => [
-        'title'       => 'Skyrim Together VR: roadmap and known issues',
+        'title'       => 'urSovngarde: roadmap and known issues',
         'description' => 'The six things being fixed, in the order they are worth fixing, and an honest list of what breaks today.',
     ],
 

@@ -3,7 +3,7 @@
 return [
 
     'meta' => [
-        'title'       => 'Skyrim Together VR: hoja de ruta y fallos conocidos',
+        'title'       => 'urSovngarde: hoja de ruta y fallos conocidos',
         'description' => 'Las seis cosas que se están arreglando, en el orden en que merece la pena arreglarlas, y una lista honesta de lo que se rompe hoy.',
     ],
 

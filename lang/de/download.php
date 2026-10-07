@@ -3,8 +3,8 @@
 return [
 
     'meta' => [
-        'title'       => 'Skyrim Together VR herunterladen',
-        'description' => 'Hol dir die neueste Build von Skyrim Together VR: das komplette Paket für die Erstinstallation oder das kleine Update-Zip, wenn du es schon hast.',
+        'title'       => 'urSovngarde herunterladen',
+        'description' => 'Hol dir die neueste Build von urSovngarde: das komplette Paket für die Erstinstallation oder das kleine Update-Zip, wenn du es schon hast.',
     ],
 
     'hero' => [

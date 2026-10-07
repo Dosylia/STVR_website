@@ -3,7 +3,7 @@
 return [
 
     'meta' => [
-        'title'       => 'Skyrim Together VR: du bist nicht mehr das einzige Drachenblut',
+        'title'       => 'urSovngarde: du bist nicht mehr das einzige Drachenblut',
         'description' => 'Kostenloser, quelloffener Koop für Skyrim VR. Deine Modliste, dein Spielstand, dein Server, und jemand, der wirklich neben dir steht, in seiner echten Größe, mit seinen echten Händen.',
     ],
 

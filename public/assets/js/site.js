@@ -1,5 +1,5 @@
 /* =============================================================================
-   Skyrim Together VR: behaviour
+   urSovngarde: behaviour
    -----------------------------------------------------------------------------
    Plain ES2020, one file, deferred. Nothing here is load-bearing: the site is
    six pages of server-rendered HTML and every one of them works with this file

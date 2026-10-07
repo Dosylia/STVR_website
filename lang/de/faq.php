@@ -3,7 +3,7 @@
 return [
 
     'meta' => [
-        'title'       => 'Skyrim Together VR: Fragen',
+        'title'       => 'urSovngarde: Fragen',
         'description' => 'Läuft es mit meiner Modliste? Kostet es etwas? Werde ich gebannt? Kann ich mit jemandem auf Special Edition spielen? Antworten.',
     ],
 

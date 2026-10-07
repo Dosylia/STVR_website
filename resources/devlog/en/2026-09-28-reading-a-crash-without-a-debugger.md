@@ -5,7 +5,7 @@ summary: The launcher replaces the game executable, so a crash dump shows one 90
 tags: crashes, tooling
 ---
 
-When Skyrim Together VR crashes, the dump is unhelpful in a very specific way: it shows
+When urSovngarde crashes, the dump is unhelpful in a very specific way: it shows
 **one** module, about 90 MB, named `SkyrimTogetherVR.exe`. The game's code and ours are both
 inside it. Module names cannot separate them, because as far as Windows is concerned there is
 only one.

@@ -10,7 +10,7 @@
                 <a class="wordmark" href="{{ Nav::url('home') }}">
                     @include('art.sigil', ['class' => 'wordmark__sigil'])
                     <span class="wordmark__text">
-                        <span class="wordmark__a">{{ __('site.brand_a') }} {{ __('site.brand_b') }} <em class="wordmark__vr">{{ __('site.brand_c') }}</em></span>
+                        <span class="wordmark__a"><em class="wordmark__ur">{{ __('site.brand_a') }}</em>{{ __('site.brand_b') }}</span>
                         <span class="wordmark__b">{{ __('site.tagline') }}</span>
                     </span>
                 </a>
@@ -29,7 +29,7 @@
             <div class="footer__col">
                 <h4>{{ __('site.nav.devlog') }}</h4>
                 <ul class="footer__list">
-                    @foreach (['roadmap', 'devlog', 'faq'] as $item)
+                    @foreach (['roadmap', 'devlog', 'faq', 'privacy'] as $item)
                         <li><a href="{{ Nav::url($item) }}">{{ __("site.nav.{$item}") }}</a></li>
                     @endforeach
                 </ul>

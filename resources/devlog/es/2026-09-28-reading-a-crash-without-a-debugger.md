@@ -5,7 +5,7 @@ summary: El lanzador sustituye el ejecutable del juego, así que un volcado mues
 tags: cuelgues, herramientas
 ---
 
-Cuando Skyrim Together VR se cuelga, el volcado es inútil de una forma muy concreta:
+Cuando urSovngarde se cuelga, el volcado es inútil de una forma muy concreta:
 muestra **un** módulo, de unos 90 MB, llamado `SkyrimTogetherVR.exe`. El código del juego y
 el nuestro están los dos dentro. Los nombres de módulo no pueden separarlos, porque para
 Windows solo hay uno.

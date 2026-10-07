@@ -3,7 +3,7 @@
 return [
 
     'meta' => [
-        'title'       => 'Skyrim Together VR: Entwicklertagebuch',
+        'title'       => 'urSovngarde: Entwicklertagebuch',
         'description' => 'Was kaputtging, was es wirklich war, und was dagegen getan wurde. Einschließlich der Diagnosen, die falsch waren.',
     ],
 

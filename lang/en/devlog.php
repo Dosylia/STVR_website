@@ -3,7 +3,7 @@
 return [
 
     'meta' => [
-        'title'       => 'Skyrim Together VR: devlog',
+        'title'       => 'urSovngarde: devlog',
         'description' => 'What broke, what it turned out to be, and what was done about it. Including the diagnoses that were wrong.',
     ],
 

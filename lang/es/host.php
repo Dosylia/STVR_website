@@ -3,8 +3,8 @@
 return [
 
     'meta' => [
-        'title'       => 'Montar un servidor de Skyrim Together VR',
-        'description' => 'Lleva tu propio servidor de Skyrim Together VR: redirección del puerto UDP 10578, o una red virtual sin tocar el router. Ajustes, contraseñas y la build de Linux.',
+        'title'       => 'Montar un servidor de urSovngarde',
+        'description' => 'Lleva tu propio servidor de urSovngarde: redirección del puerto UDP 10578, o una red virtual sin tocar el router. Ajustes, contraseñas y la build de Linux.',
     ],
 
     'hero' => [

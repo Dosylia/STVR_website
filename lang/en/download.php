@@ -3,8 +3,8 @@
 return [
 
     'meta' => [
-        'title'       => 'Download Skyrim Together VR',
-        'description' => 'Get the latest Skyrim Together VR build: the full package for a first install, or the small update zip if you already have it.',
+        'title'       => 'Download urSovngarde',
+        'description' => 'Get the latest urSovngarde build: the full package for a first install, or the small update zip if you already have it.',
     ],
 
     'hero' => [

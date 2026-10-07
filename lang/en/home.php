@@ -3,7 +3,7 @@
 return [
 
     'meta' => [
-        'title'       => 'Skyrim Together VR: you are not the only Dragonborn anymore',
+        'title'       => 'urSovngarde: you are not the only Dragonborn anymore',
         'description' => 'Free, open-source co-op for Skyrim VR. Your modlist, your save, your server, and a friend standing next to you at their real height, with their real hands.',
     ],
 

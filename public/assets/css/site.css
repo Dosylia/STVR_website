@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /* =============================================================================
-   Skyrim Together VR: stylesheet
+   urSovngarde: stylesheet
    -----------------------------------------------------------------------------
    One file, no build step, no framework. The site is six pages of mostly text;
    a bundler would be ceremony. Everything is a custom property at the top so the
@@ -570,7 +570,7 @@ kbd {
   color: var(--parchment);
   text-transform: uppercase;
 }
-.wordmark__vr { font-style: normal; color: var(--gold); }
+.wordmark__ur { font-style: normal; color: var(--gold); }
 .wordmark__b {
   font-size: .56rem;
   font-weight: 600;
