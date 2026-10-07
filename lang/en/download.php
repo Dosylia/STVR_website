@@ -9,8 +9,8 @@ return [
 
     'hero' => [
         'kicker' => 'Free · GPLv3 · no account',
-        'title'  => 'Take the build',
-        'lede'   => 'Two files. The big one the first time, the small one every time after that.',
+        'title'  => 'Take the launcher',
+        'lede'   => 'One small program installs the mod, checks your setup, starts the game and gets your friends in. The packages for an install by hand are below it.',
     ],
 
     'release' => [
@@ -33,9 +33,17 @@ return [
     ],
 
     'assets' => [
+        'launcher' => [
+            'title' => 'urSovngarde launcher',
+            'body'  => 'Finds Skyrim VR and your mod manager, installs and updates the mod, checks your setup against every trap we know, starts the game, and joins friends with a six-letter code. For Windows 10 and 11.',
+            'meta'  => 'Start here',
+            'soon'  => 'Not released yet',
+            'soon_note' => 'The launcher is still being tested. This button downloads it the day it is published.',
+        ],
+        'by_hand' => 'By hand',
         'full' => [
             'title' => 'Full package',
-            'body'  => 'Everything: the mod folder, the launcher, the server, and the four install guides. This is the one you want the first time.',
+            'body'  => 'Everything, for an install by hand: the mod folder, its own launcher, the server and the four install guides. The urSovngarde launcher downloads this same package for you.',
             'meta'  => 'First install',
         ],
         'patch' => [
@@ -72,13 +80,13 @@ return [
         'title' => 'Downloaded. Now what',
         'install' => ['title' => 'Install it',   'body' => 'MO2, Vortex, a Wabbajack list, or no manager at all. The guide covers all four.', 'cta' => 'Install guide'],
         'host'    => ['title' => 'Host it',      'body' => 'One executable, one UDP port, or a virtual LAN and no router at all.',            'cta' => 'Hosting guide'],
-        'issues'  => ['title' => 'When it breaks', 'body' => 'Run collect-logs.bat and send the zip. It gathers the log, the dump and the versions.', 'cta' => 'Report a bug'],
+        'issues'  => ['title' => 'When it breaks', 'body' => 'After a crash the launcher asks whether to send a report, your names and addresses taken out first. Without it: run collect-logs.bat and send the zip.', 'cta' => 'Report a bug'],
     ],
 
     'safety' => [
         'label' => 'Trust',
         'title' => 'A word on trust',
-        'body'  => 'The launcher replaces the game executable in memory to do its work, which is exactly the shape of a thing you should be suspicious of. So: every line of this is on GitHub, the licence requires it to stay that way, and the build you download is made by a script in that same repository. If you would rather compile it yourself, that is a supported answer.',
+        'body'  => 'The mod\'s own launcher (SkyrimTogetherVR.exe) replaces the game executable in memory to do its work, which is exactly the shape of a thing you should be suspicious of. So: every line of this is on GitHub, the licence requires it to stay that way, and the build you download is made by a script in that same repository. If you would rather compile it yourself, that is a supported answer.',
         'cta'   => 'Read the source',
     ],
 ];

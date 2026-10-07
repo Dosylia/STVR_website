@@ -11,7 +11,7 @@ return [
         'kicker'   => 'Open source · GPLv3 · portage VR de Skyrim Together Reborn',
         'title'    => 'Vous n’êtes plus le seul Enfant de dragon',
         'lede'     => 'Le coop pour Skyrim VR. Votre liste de mods, votre sauvegarde, votre serveur, et quelqu’un réellement dans la pièce avec vous, à sa propre taille, avec ses propres mains.',
-        'primary'  => 'Récupérer la build',
+        'primary'  => 'Télécharger le lanceur',
         'secondary'=> 'Comment l’installer',
         'scroll'   => 'Continuer',
         'caption'  => 'Deux sur la crête. L’un des deux n’est pas un PNJ.',
@@ -99,12 +99,12 @@ return [
     'steps' => [
         'label' => 'Se lancer',
         'title' => 'De rien du tout à en train de jouer',
-        'lede'  => 'Quatre étapes. La plus longue est le téléchargement.',
+        'lede'  => 'Quatre étapes, et le lanceur fait l’essentiel.',
         'items' => [
-            ['n' => '1', 'title' => 'Préparer Skyrim VR',       'body' => 'SKSE VR et la VR Address Library for SKSEVR, comme n’importe quel mod SKSE. Engine Fixes VR et VRIK si vous voulez que ce soit bien, et pas seulement fonctionnel.'],
-            ['n' => '2', 'title' => 'Poser le mod',             'body' => 'Un dossier à installer dans votre gestionnaire, un plugin à cocher, et le dossier du lanceur où vous voulez.'],
-            ['n' => '3', 'title' => 'Indiquer un serveur',      'body' => 'Lancez setup-connect.bat une fois et tapez l’adresse de l’hôte. L’hôte tape 127.0.0.1 et héberge depuis le PC sur lequel il joue.'],
-            ['n' => '4', 'title' => 'Charger une sauvegarde',   'body' => 'Démarrez avec SkyrimTogetherVR.exe et chargez n’importe quelle sauvegarde. Cinq secondes plus tard, la connexion se fait seule et vous met tous les deux dans un groupe.'],
+            ['n' => '1', 'title' => 'Préparer Skyrim VR', 'body' => 'SKSE VR et la VR Address Library for SKSEVR, comme n’importe quel mod SKSE. Engine Fixes VR et VRIK si vous voulez que ce soit bien, et pas seulement fonctionnel. Le lanceur vérifie votre installation contre les pièges que nous connaissons.'],
+            ['n' => '2', 'title' => 'Ouvrir le lanceur', 'body' => 'Il trouve Skyrim VR dans vos bibliothèques Steam et le gestionnaire de mods que vous utilisez : Mod Organizer 2 (FUS et autres listes), Vortex, ou aucun.'],
+            ['n' => '3', 'title' => 'Installer', 'body' => 'Un clic met le mod en place, l’ajoute à votre profil Mod Organizer, et nomme ce qui l’empêcherait de marcher dans votre installation, avec la solution.'],
+            ['n' => '4', 'title' => 'Jouer ensemble', 'body' => 'Jouer lance le jeu comme votre installation le lance. Hébergez une partie et donnez à vos amis un code de six caractères, ou rejoignez la leur. Chargez une sauvegarde et vous voilà dans un groupe.'],
         ],
         'cta' => 'Le guide complet',
     ],
@@ -119,7 +119,7 @@ return [
     'cta' => [
         'title' => 'Bordeciel est un grand pays à traverser seul',
         'body'  => 'Gratuit, open source, et ça tourne sur la liste de mods que vous avez déjà.',
-        'primary' => 'Récupérer la build',
+        'primary' => 'Télécharger le lanceur',
         'secondary' => 'Lire le guide d’installation',
     ],
 ];

@@ -55,6 +55,22 @@ return [
     | and the response is cached for `cache_minutes`, so one small site will
     | never come close.
     */
+    /*
+    |--------------------------------------------------------------------------
+    | The launcher
+    |--------------------------------------------------------------------------
+    |
+    | Served by this site, not GitHub (Emma, 2026-10-07): the download button
+    | gives the file in public/<folder>, so a click downloads it at once. To
+    | publish a new version, put its file there and take the old one out.
+    |
+    */
+
+    'launcher' => [
+        'folder' => 'downloads/launcher',
+        'types'  => ['exe', 'msi', 'zip'],
+    ],
+
     'github' => [
         'repo'          => env('STVR_GITHUB_REPO', 'Dosylia/SkyrimTogetherVR'),
         'token'         => env('STVR_GITHUB_TOKEN', ''),
@@ -79,6 +95,7 @@ return [
     | SkyrimTogetherVR-<version>-update.zip. Order matters: first match wins.
     */
     'asset_kinds' => [
+        'launcher' => ['ursovngarde_', '-setup.exe', '.msi'],
         'patch'  => ['-update.zip', '-patch.zip'],
         'server' => ['server'],
         'full'   => ['.zip'],

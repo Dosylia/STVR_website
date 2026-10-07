@@ -72,7 +72,7 @@ return [
             'items' => [
                 [
                     'q' => '¿Me pueden banear por esto?',
-                    'a' => 'No hay de dónde banearte. Skyrim VR no tiene anticheat ni componente en línea, y esto nunca habla con un servidor nuestro. Tus partidas son tuyas, en tu disco.',
+                    'a' => 'No hay de dónde banearte. Skyrim VR no tiene anticheat ni componente en línea, y el juego nunca habla con un servidor nuestro. El lanzador de urSovngarde solo lo hace para buscar un código de invitación o, si aceptas, enviar un informe de fallo. Tus partidas son tuyas, en tu disco.',
                 ],
                 [
                     'q' => '¿Por qué el lanzador sustituye el ejecutable del juego?',
@@ -98,7 +98,7 @@ return [
                 ],
                 [
                     'q' => 'Se ha roto algo. ¿Qué necesitáis de mí?',
-                    'a' => 'Ejecuta <code>collect-logs.bat</code> en la carpeta del lanzador y manda el zip que deja en tu Escritorio. Lleva el registro del cliente, el volcado y las versiones de build. Un volcado nombra la función exacta; una descripción nombra una sensación.',
+                    'a' => 'Tras un fallo, el lanzador pregunta si puede enviar un informe, quitando antes tus nombres y direcciones; es todo lo que necesitamos. Sin el lanzador, ejecuta <code>collect-logs.bat</code> en la carpeta del lanzador del mod y manda el zip que deja en tu Escritorio. Un volcado nombra la función exacta; una descripción nombra una sensación.',
                 ],
                 [
                     'q' => '¿Habrá página en Nexus?',

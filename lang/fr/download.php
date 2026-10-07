@@ -9,8 +9,8 @@ return [
 
     'hero' => [
         'kicker' => 'Gratuit · GPLv3 · sans compte',
-        'title'  => 'Prenez la build',
-        'lede'   => 'Deux fichiers. Le gros la première fois, le petit toutes les fois suivantes.',
+        'title'  => 'Prenez le lanceur',
+        'lede'   => 'Un petit programme installe le mod, vérifie votre installation, lance le jeu et fait entrer vos amis. Les paquets pour une installation à la main sont en dessous.',
     ],
 
     'release' => [
@@ -33,9 +33,17 @@ return [
     ],
 
     'assets' => [
+        'launcher' => [
+            'title' => 'Lanceur urSovngarde',
+            'body'  => 'Trouve Skyrim VR et votre gestionnaire de mods, installe et met à jour le mod, vérifie votre installation contre chaque piège que nous connaissons, lance le jeu, et rejoint vos amis avec un code de six caractères. Pour Windows 10 et 11.',
+            'meta'  => 'Commencez ici',
+            'soon'  => 'Pas encore publié',
+            'soon_note' => 'Le lanceur est encore en test. Ce bouton le téléchargera dès sa publication.',
+        ],
+        'by_hand' => 'À la main',
         'full' => [
             'title' => 'Paquet complet',
-            'body'  => 'Tout : le dossier du mod, le lanceur, le serveur et les quatre guides d’installation. C’est celui qu’il vous faut la première fois.',
+            'body'  => 'Tout, pour une installation à la main : le dossier du mod, son propre lanceur, le serveur et les quatre guides d’installation. Le lanceur urSovngarde télécharge ce même paquet pour vous.',
             'meta'  => 'Première installation',
         ],
         'patch' => [
@@ -72,13 +80,13 @@ return [
         'title' => 'Téléchargé. Et maintenant',
         'install' => ['title' => 'L’installer',        'body' => 'MO2, Vortex, une liste Wabbajack ou aucun gestionnaire. Le guide couvre les quatre cas.', 'cta' => 'Guide d’installation'],
         'host'    => ['title' => 'L’héberger',         'body' => 'Un exécutable, un port UDP, ou un réseau virtuel et pas de box du tout.',                'cta' => 'Guide d’hébergement'],
-        'issues'  => ['title' => 'Quand ça casse',     'body' => 'Lancez collect-logs.bat et envoyez le zip. Il contient le log, le dump et les versions.', 'cta' => 'Signaler un bug'],
+        'issues'  => ['title' => 'Quand ça casse',     'body' => 'Après un plantage, le lanceur demande s’il peut envoyer un rapport, vos noms et adresses retirés d’abord. Sans lui : lancez collect-logs.bat et envoyez le zip.', 'cta' => 'Signaler un bug'],
     ],
 
     'safety' => [
         'label' => 'Confiance',
         'title' => 'Un mot sur la confiance',
-        'body'  => 'Le lanceur remplace l’exécutable du jeu en mémoire pour faire son travail, ce qui est exactement la forme d’une chose dont il faut se méfier. Donc : chaque ligne est sur GitHub, la licence impose que cela reste ainsi, et la build que vous téléchargez est produite par un script du même dépôt. Si vous préférez la compiler vous-même, c’est une réponse parfaitement valable.',
+        'body'  => 'Le lanceur propre au mod (SkyrimTogetherVR.exe) remplace l’exécutable du jeu en mémoire pour faire son travail, ce qui est exactement la forme d’une chose dont il faut se méfier. Donc : chaque ligne est sur GitHub, la licence impose que cela reste ainsi, et la build que vous téléchargez est produite par un script du même dépôt. Si vous préférez la compiler vous-même, c’est une réponse parfaitement valable.',
         'cta'   => 'Lire le code',
     ],
 ];

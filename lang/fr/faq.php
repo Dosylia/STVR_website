@@ -72,7 +72,7 @@ return [
             'items' => [
                 [
                     'q' => 'Je risque un bannissement ?',
-                    'a' => 'Il n’y a rien dont être banni. Skyrim VR n’a ni anti-triche ni composante en ligne, et ceci ne parle jamais à un serveur qui nous appartient. Vos sauvegardes sont à vous, sur votre disque.',
+                    'a' => 'Il n’y a rien dont être banni. Skyrim VR n’a ni anti-triche ni composante en ligne, et le jeu ne parle jamais à un serveur à nous. Le lanceur urSovngarde ne le fait que pour chercher un code d’invitation ou, si vous l’acceptez, envoyer un rapport de plantage. Vos sauvegardes sont à vous, sur votre disque.',
                 ],
                 [
                     'q' => 'Pourquoi le lanceur remplace-t-il l’exécutable du jeu ?',
@@ -98,7 +98,7 @@ return [
                 ],
                 [
                     'q' => 'Quelque chose a cassé. Que vous faut-il ?',
-                    'a' => 'Lancez <code>collect-logs.bat</code> dans le dossier du lanceur et envoyez le zip déposé sur votre Bureau. Il contient le log client, le crash dump et les versions de build. Un dump nomme la fonction exacte ; une description nomme une impression.',
+                    'a' => 'Après un plantage, le lanceur demande s’il peut envoyer un rapport, vos noms et adresses retirés d’abord ; c’est tout ce qu’il nous faut. Sans le lanceur, lancez <code>collect-logs.bat</code> dans le dossier du lanceur du mod et envoyez le zip déposé sur votre Bureau. Un dump nomme la fonction exacte ; une description nomme une impression.',
                 ],
                 [
                     'q' => 'Y aura-t-il une page Nexus ?',

@@ -18,6 +18,31 @@
 </section>
 
 {{-- ==================================================== prerequisites ==== --}}
+{{-- ===================================================== the easy way ==== --}}
+<section class="section section--lift">
+    <div class="shell shell--narrow">
+        <p class="inscription">{{ __('install.launcher.label') }}</p>
+        <h2>{{ __('install.launcher.title') }}</h2>
+        <p class="lede">{{ __('install.launcher.lede') }}</p>
+
+        <ol class="steps reveal" style="margin-top:2rem">
+            @foreach (__('install.launcher.steps') as $step)
+                <li class="steps__item">
+                    <p class="steps__title">{{ $step['title'] }}</p>
+                    <p class="steps__body">{{ $step['body'] }}</p>
+                </li>
+            @endforeach
+        </ol>
+
+        <div class="btn-row" style="margin-top:2rem">
+            <a class="btn btn--forge" href="{{ Nav::url('download') }}">
+                @include('partials.icon', ['name' => 'download'])
+                {{ __('install.launcher.cta') }}
+            </a>
+        </div>
+    </div>
+</section>
+
 <section class="section">
     <div class="shell shell--narrow">
         <p class="inscription">{{ __('site.misc.step', ['n' => 1]) }}</p>

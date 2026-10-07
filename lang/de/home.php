@@ -11,7 +11,7 @@ return [
         'kicker'   => 'Quelloffen · GPLv3 · VR-Portierung von Skyrim Together Reborn',
         'title'    => 'Du bist nicht mehr das einzige Drachenblut',
         'lede'     => 'Koop für Skyrim VR. Deine Modliste, dein Spielstand, dein Server, und jemand, der wirklich mit dir im Raum steht, in seiner eigenen Größe, mit seinen eigenen Händen.',
-        'primary'  => 'Build holen',
+        'primary'  => 'Launcher herunterladen',
         'secondary'=> 'So wird es installiert',
         'scroll'   => 'Weiterlesen',
         'caption'  => 'Zwei auf dem Grat. Einer davon ist kein NPC.',
@@ -99,12 +99,12 @@ return [
     'steps' => [
         'label' => 'Reinkommen',
         'title' => 'Von nichts bis zum Spielen',
-        'lede'  => 'Vier Schritte. Der längste davon ist der Download.',
+        'lede'  => 'Vier Schritte, und der Launcher erledigt die meisten.',
         'items' => [
-            ['n' => '1', 'title' => 'Skyrim VR vorbereiten',  'body' => 'SKSE VR und die VR Address Library for SKSEVR, wie bei jeder SKSE-Mod. Engine Fixes VR und VRIK, wenn es gut werden soll und nicht nur funktionieren.'],
-            ['n' => '2', 'title' => 'Die Mod hineinlegen',    'body' => 'Einen Ordner über den Mod-Manager installieren, ein Plugin anhaken, und den Launcher-Ordner hinlegen, wo du magst.'],
-            ['n' => '3', 'title' => 'Einen Server eintragen', 'body' => 'setup-connect.bat einmal ausführen und die Adresse des Hosts eintippen. Der Host tippt 127.0.0.1 und hostet vom selben PC aus, auf dem er spielt.'],
-            ['n' => '4', 'title' => 'Spielstand laden',       'body' => 'Mit SkyrimTogetherVR.exe starten und irgendeinen Spielstand laden. Etwa fünf Sekunden später verbindet es sich von selbst und steckt euch beide in eine Gruppe.'],
+            ['n' => '1', 'title' => 'Skyrim VR vorbereiten', 'body' => 'SKSE VR und die VR Address Library for SKSEVR, wie bei jeder SKSE-Mod. Engine Fixes VR und VRIK, wenn es gut werden soll und nicht nur funktionieren. Der Launcher prüft deine Installation auf die Fallen, die wir kennen.'],
+            ['n' => '2', 'title' => 'Den Launcher öffnen', 'body' => 'Er findet Skyrim VR in deinen Steam-Bibliotheken und den Mod-Manager, den du nutzt: Mod Organizer 2 (FUS und andere Listen), Vortex oder keinen.'],
+            ['n' => '3', 'title' => 'Installieren', 'body' => 'Ein Klick legt die Mod ab, trägt sie in dein Mod-Organizer-Profil ein und nennt, was sie in deiner Installation aufhalten würde, mit der Lösung.'],
+            ['n' => '4', 'title' => 'Zusammen spielen', 'body' => 'Spielen startet das Spiel so, wie deine Installation es startet. Hoste ein Spiel und gib deinen Freunden einen sechsstelligen Code, oder tritt ihrem bei. Lade einen Spielstand, und ihr seid in einer Gruppe.'],
         ],
         'cta' => 'Die vollständige Anleitung',
     ],
@@ -119,7 +119,7 @@ return [
     'cta' => [
         'title' => 'Himmelsrand ist ein großes Land, um es allein zu durchqueren',
         'body'  => 'Kostenlos, quelloffen, und es läuft auf der Modliste, die du schon hast.',
-        'primary' => 'Build holen',
+        'primary' => 'Launcher herunterladen',
         'secondary' => 'Anleitung lesen',
     ],
 ];

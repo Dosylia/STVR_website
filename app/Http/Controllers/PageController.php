@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Support\Devlog;
+use App\Support\LauncherDownload;
 use App\Support\Nav;
 use App\Support\ReleaseService;
 use App\Support\Shots;
@@ -15,6 +16,7 @@ class PageController extends Controller
         private readonly ReleaseService $releases,
         private readonly Devlog $devlog,
         private readonly Shots $shots,
+        private readonly LauncherDownload $launcher,
     ) {
     }
 
@@ -38,7 +40,8 @@ class PageController extends Controller
     public function download(): View
     {
         return $this->page('pages.download', 'download', [
-            'release' => $this->releases->latest(),
+            'release'  => $this->releases->latest(),
+            'launcher' => $this->launcher->current(),
         ]);
     }
 

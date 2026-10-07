@@ -11,7 +11,7 @@ return [
         'kicker'   => 'Código abierto · GPLv3 · port a VR de Skyrim Together Reborn',
         'title'    => 'Ya no eres el único Sangre de Dragón',
         'lede'     => 'Cooperativo para Skyrim VR. Tu lista de mods, tu partida, tu servidor, y alguien que está de verdad en la habitación contigo, a su propia altura, con sus propias manos.',
-        'primary'  => 'Conseguir la build',
+        'primary'  => 'Descargar el lanzador',
         'secondary'=> 'Cómo instalarlo',
         'scroll'   => 'Seguir',
         'caption'  => 'Dos en la cresta. Uno de ellos no es un PNJ.',
@@ -99,12 +99,12 @@ return [
     'steps' => [
         'label' => 'Entrar',
         'title' => 'De cero a estar jugando',
-        'lede'  => 'Cuatro pasos. El más largo es la descarga.',
+        'lede'  => 'Cuatro pasos, y el lanzador hace la mayoría.',
         'items' => [
-            ['n' => '1', 'title' => 'Preparar Skyrim VR',       'body' => 'SKSE VR y la VR Address Library for SKSEVR, como cualquier mod de SKSE. Engine Fixes VR y VRIK si quieres que esto esté bien y no solo que funcione.'],
-            ['n' => '2', 'title' => 'Meter el mod',             'body' => 'Una carpeta que instalar en tu gestor, un plugin que marcar, y la carpeta del lanzador donde quieras.'],
-            ['n' => '3', 'title' => 'Apuntar a un servidor',    'body' => 'Ejecuta setup-connect.bat una vez y escribe la dirección del anfitrión. El anfitrión escribe 127.0.0.1 y aloja desde el mismo PC en el que juega.'],
-            ['n' => '4', 'title' => 'Cargar una partida',       'body' => 'Arranca con SkyrimTogetherVR.exe y carga cualquier partida. Unos cinco segundos después se conecta solo y os mete a los dos en un grupo.'],
+            ['n' => '1', 'title' => 'Preparar Skyrim VR', 'body' => 'SKSE VR y la VR Address Library for SKSEVR, como cualquier mod de SKSE. Engine Fixes VR y VRIK si quieres que esto esté bien y no solo que funcione. El lanzador comprueba tu instalación contra las trampas que conocemos.'],
+            ['n' => '2', 'title' => 'Abrir el lanzador', 'body' => 'Encuentra Skyrim VR en tus bibliotecas de Steam y el gestor de mods que usas: Mod Organizer 2 (FUS y otras listas), Vortex o ninguno.'],
+            ['n' => '3', 'title' => 'Instalar', 'body' => 'Un clic coloca el mod, lo añade a tu perfil de Mod Organizer y nombra lo que en tu instalación lo impediría, con la solución.'],
+            ['n' => '4', 'title' => 'Jugar juntos', 'body' => 'Jugar arranca el juego como lo arranca tu instalación. Aloja una partida y da a tus amigos un código de seis caracteres, o únete a la suya. Carga una partida y ya estáis en un grupo.'],
         ],
         'cta' => 'La guía completa',
     ],
@@ -119,7 +119,7 @@ return [
     'cta' => [
         'title' => 'Skyrim es un país grande para cruzarlo solo',
         'body'  => 'Gratis, de código abierto, y funciona con la lista de mods que ya tienes.',
-        'primary' => 'Conseguir la build',
+        'primary' => 'Descargar el lanzador',
         'secondary' => 'Leer la guía de instalación',
     ],
 ];

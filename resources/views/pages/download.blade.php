@@ -55,6 +55,33 @@
             </p>
         @endunless
 
+        {{-- The launcher first: the way in for nearly everyone. The button downloads the launcher file this site
+             serves (public/downloads/launcher); until one is there it says so and leads nowhere. --}}
+        <article class="tablet asset asset--lead reveal" style="margin-top:2.2rem">
+            <div class="asset__head">
+                <h2 class="asset__title">{{ __('download.assets.launcher.title') }}</h2>
+                @if ($launcher && $launcher->humanSize())
+                    <span class="asset__size">{{ $launcher->humanSize() }}</span>
+                @endif
+            </div>
+            <span class="pill pill--gold" style="align-self:flex-start;margin-bottom:.9rem">{{ __('download.assets.launcher.meta') }}</span>
+            <p>{{ __('download.assets.launcher.body') }}</p>
+            @if ($launcher)
+                <a class="btn btn--forge" href="{{ $launcher->url }}" download rel="noopener">
+                    @include('partials.icon', ['name' => 'download'])
+                    {{ __('download.assets.download_cta') }}
+                </a>
+            @else
+                <span class="btn btn--forge btn--off" aria-disabled="true">
+                    @include('partials.icon', ['name' => 'download'])
+                    {{ __('download.assets.launcher.soon') }}
+                </span>
+                <p class="asset__soon">{{ __('download.assets.launcher.soon_note') }}</p>
+            @endif
+        </article>
+
+        <p class="inscription" style="margin-top:2.6rem">{{ __('download.assets.by_hand') }}</p>
+
         {{-- Three cards, but only for the files that actually exist in the
              release. An empty "Server" slot would promise a download that is
              not there, which is worse than not mentioning it. --}}
@@ -72,7 +99,7 @@
                     </div>
                     <span class="pill" style="align-self:flex-start;margin-bottom:.9rem">{{ __("download.assets.{$kind}.meta") }}</span>
                     <p>{{ __("download.assets.{$kind}.body") }}</p>
-                    <a class="btn {{ $kind === 'full' ? 'btn--forge' : 'btn--ghost' }}"
+                    <a class="btn btn--ghost"
                        href="{{ $asset?->url ?: $release->landingUrl() }}"
                        @if ($asset) download @endif rel="noopener">
                         @include('partials.icon', ['name' => 'download'])

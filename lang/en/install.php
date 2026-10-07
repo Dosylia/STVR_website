@@ -10,7 +10,20 @@ return [
     'hero' => [
         'kicker' => 'Fifteen minutes, most of it downloading',
         'title'  => 'Putting it in',
-        'lede'   => 'Pick how you manage mods. The rest is the same for everyone.',
+        'lede'   => 'The launcher does it in three clicks. By hand, pick how you manage mods: the rest is the same for everyone.',
+    ],
+
+    'launcher' => [
+        'label' => 'The easy way',
+        'title' => 'Let the launcher do it',
+        'lede'  => 'Download it, open it, click Install. Everything after this section is what it does for you, for when you would rather do it by hand.',
+        'steps' => [
+            ['title' => 'Download the launcher', 'body' => 'From the download page: one small installer, no account.'],
+            ['title' => 'Open it', 'body' => 'It finds Skyrim VR in any Steam library, and Mod Organizer 2, Vortex or no mod manager. If it guesses wrong, correct it in the settings.'],
+            ['title' => 'Install', 'body' => 'It downloads the newest release and puts the mod in place: in Mod Organizer, the mod in your profile, its plugin ticked, its launcher added as an executable. Then it checks your setup.'],
+            ['title' => 'Play', 'body' => 'Play starts the game through your mod manager. Under Friends, host a game for a six-letter code, or type a friend\'s.'],
+        ],
+        'cta'   => 'Download the launcher',
     ],
 
     'prereq' => [

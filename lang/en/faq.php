@@ -72,7 +72,7 @@ return [
             'items' => [
                 [
                     'q' => 'Can this get me banned?',
-                    'a' => 'There is nothing to be banned from. Skyrim VR has no anti-cheat and no online component, and this never talks to a server we own. Your saves are yours, on your disk.',
+                    'a' => 'There is nothing to be banned from. Skyrim VR has no anti-cheat and no online component, and the game never talks to a server of ours. The urSovngarde launcher does only to look up an invite code or, if you agree, to send a crash report. Your saves are yours, on your disk.',
                 ],
                 [
                     'q' => 'Why does the launcher replace the game executable?',
@@ -98,7 +98,7 @@ return [
                 ],
                 [
                     'q' => 'Something broke. What do you need from me?',
-                    'a' => 'Run <code>collect-logs.bat</code> in the launcher folder and send the zip it leaves on your Desktop. It has the client log, the crash dump and the build versions. A dump names the exact function; a description names a feeling.',
+                    'a' => 'After a crash the launcher asks whether to send a report, with your names and addresses taken out first; that is all we need. Without the launcher, run <code>collect-logs.bat</code> in the mod\'s launcher folder and send the zip it leaves on your Desktop. A dump names the exact function; a description names a feeling.',
                 ],
                 [
                     'q' => 'Will there be a Nexus page?',

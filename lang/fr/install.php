@@ -10,7 +10,20 @@ return [
     'hero' => [
         'kicker' => 'Un quart d’heure, surtout du téléchargement',
         'title'  => 'La mise en place',
-        'lede'   => 'Choisissez votre façon de gérer vos mods. Le reste est identique pour tout le monde.',
+        'lede'   => 'Le lanceur le fait en trois clics. À la main, choisissez votre façon de gérer les mods : le reste est pareil pour tout le monde.',
+    ],
+
+    'launcher' => [
+        'label' => 'Le plus simple',
+        'title' => 'Laissez faire le lanceur',
+        'lede'  => 'Téléchargez-le, ouvrez-le, cliquez sur Installer. Tout ce qui suit cette section est ce qu’il fait pour vous, pour quand vous préférez le faire à la main.',
+        'steps' => [
+            ['title' => 'Télécharger le lanceur', 'body' => 'Depuis la page de téléchargement : un petit installateur, sans compte.'],
+            ['title' => 'L’ouvrir', 'body' => 'Il trouve Skyrim VR dans n’importe quelle bibliothèque Steam, et Mod Organizer 2, Vortex ou aucun gestionnaire. S’il se trompe, corrigez-le dans les réglages.'],
+            ['title' => 'Installer', 'body' => 'Il télécharge la dernière version et met le mod en place : dans Mod Organizer, le mod dans votre profil, son plugin coché, son lanceur ajouté comme exécutable. Puis il vérifie votre installation.'],
+            ['title' => 'Jouer', 'body' => 'Jouer lance le jeu par votre gestionnaire de mods. Dans Amis, hébergez une partie pour obtenir un code de six caractères, ou tapez celui d’un ami.'],
+        ],
+        'cta'   => 'Télécharger le lanceur',
     ],
 
     'prereq' => [

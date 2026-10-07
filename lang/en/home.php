@@ -11,7 +11,7 @@ return [
         'kicker'   => 'Open source · GPLv3 · a VR port of Skyrim Together Reborn',
         'title'    => 'You are not the only Dragonborn anymore',
         'lede'     => 'Co-op for Skyrim VR. Your modlist, your save, your server, and someone else actually in the room with you, at their own height, with their own hands.',
-        'primary'  => 'Get the build',
+        'primary'  => 'Download the launcher',
         'secondary'=> 'How to install it',
         'scroll'   => 'Keep reading',
         'caption'  => 'Two on the ridge. One of them is not an NPC.',
@@ -99,12 +99,12 @@ return [
     'steps' => [
         'label' => 'Getting in',
         'title' => 'From nothing to playing',
-        'lede'  => 'Four steps. The longest of them is the download.',
+        'lede'  => 'Four steps, and the launcher does most of them.',
         'items' => [
-            ['n' => '1', 'title' => 'Get Skyrim VR ready',    'body' => 'SKSE VR and the VR Address Library for SKSEVR, like any SKSE mod. Engine Fixes VR and VRIK if you want this to be good rather than merely working.'],
-            ['n' => '2', 'title' => 'Drop in the mod',        'body' => 'Install one folder through your mod manager, tick one plugin, and put the launcher folder anywhere you like.'],
-            ['n' => '3', 'title' => 'Point it at a server',   'body' => 'Run setup-connect.bat once and type the host\'s address. The host types 127.0.0.1 and hosts from the same PC they play on.'],
-            ['n' => '4', 'title' => 'Load a save',            'body' => 'Launch with SkyrimTogetherVR.exe and load any save. About five seconds later it connects on its own and puts you both in a party.'],
+            ['n' => '1', 'title' => 'Get Skyrim VR ready', 'body' => 'SKSE VR and the VR Address Library for SKSEVR, like any SKSE mod. Engine Fixes VR and VRIK if you want this to be good rather than merely working. The launcher checks your setup for the traps we know.'],
+            ['n' => '2', 'title' => 'Open the launcher', 'body' => 'It finds Skyrim VR in your Steam libraries and the mod manager you use: Mod Organizer 2 (FUS and other lists), Vortex, or none at all.'],
+            ['n' => '3', 'title' => 'Install', 'body' => 'One click puts the mod in place, adds it to your Mod Organizer profile, and names anything in your setup that would stop it, with the fix.'],
+            ['n' => '4', 'title' => 'Play together', 'body' => 'Play starts the game the way your setup starts it. Host a game and give your friends a six-letter code, or join theirs. Load a save and you are in a party.'],
         ],
         'cta' => 'The full install guide',
     ],
@@ -119,7 +119,7 @@ return [
     'cta' => [
         'title' => 'Skyrim is a big country to cross alone',
         'body'  => 'Free, open source, and it runs on the modlist you already have.',
-        'primary' => 'Get the build',
+        'primary' => 'Download the launcher',
         'secondary' => 'Read the install guide',
     ],
 ];

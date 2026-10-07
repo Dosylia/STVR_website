@@ -76,7 +76,7 @@ class ReleaseTest extends TestCase
     {
         Http::fake(['api.github.com/*' => Http::response([], 404)]);
 
-        $this->get('/en/download')->assertOk()->assertSee('Take the build');
+        $this->get('/en/download')->assertOk()->assertSee('Take the launcher');
     }
 
     public function test_the_download_page_names_the_version_when_there_is_one(): void

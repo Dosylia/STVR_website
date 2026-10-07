@@ -9,8 +9,8 @@ return [
 
     'hero' => [
         'kicker' => 'Kostenlos · GPLv3 · ohne Konto',
-        'title'  => 'Nimm die Build',
-        'lede'   => 'Zwei Dateien. Die große beim ersten Mal, die kleine jedes Mal danach.',
+        'title'  => 'Nimm den Launcher',
+        'lede'   => 'Ein kleines Programm installiert die Mod, prüft deine Installation, startet das Spiel und holt deine Freunde dazu. Die Pakete für eine Installation von Hand stehen darunter.',
     ],
 
     'release' => [
@@ -33,9 +33,17 @@ return [
     ],
 
     'assets' => [
+        'launcher' => [
+            'title' => 'urSovngarde-Launcher',
+            'body'  => 'Findet Skyrim VR und deinen Mod-Manager, installiert und aktualisiert die Mod, prüft deine Installation auf jede Falle, die wir kennen, startet das Spiel und tritt Freunden mit einem sechsstelligen Code bei. Für Windows 10 und 11.',
+            'meta'  => 'Hier anfangen',
+            'soon'  => 'Noch nicht veröffentlicht',
+            'soon_note' => 'Der Launcher wird noch getestet. Dieser Knopf lädt ihn herunter, sobald er veröffentlicht ist.',
+        ],
+        'by_hand' => 'Von Hand',
         'full' => [
             'title' => 'Komplettpaket',
-            'body'  => 'Alles: der Mod-Ordner, der Launcher, der Server und die vier Installationsanleitungen. Das ist das, was du beim ersten Mal willst.',
+            'body'  => 'Alles, für eine Installation von Hand: der Mod-Ordner, sein eigener Launcher, der Server und die vier Installationsanleitungen. Der urSovngarde-Launcher lädt genau dieses Paket für dich herunter.',
             'meta'  => 'Erstinstallation',
         ],
         'patch' => [
@@ -72,13 +80,13 @@ return [
         'title' => 'Heruntergeladen. Und jetzt',
         'install' => ['title' => 'Installieren',     'body' => 'MO2, Vortex, eine Wabbajack-Liste oder gar kein Manager. Die Anleitung deckt alle vier ab.', 'cta' => 'Zur Anleitung'],
         'host'    => ['title' => 'Hosten',           'body' => 'Eine ausführbare Datei, ein UDP-Port, oder ein virtuelles LAN und gar kein Router.',        'cta' => 'Host-Anleitung'],
-        'issues'  => ['title' => 'Wenn es kaputtgeht','body' => 'collect-logs.bat ausführen und das Zip schicken. Darin sind Log, Dump und die Versionen.',   'cta' => 'Fehler melden'],
+        'issues'  => ['title' => 'Wenn es kaputtgeht','body' => 'Nach einem Absturz fragt der Launcher, ob er einen Bericht senden darf, deine Namen und Adressen vorher entfernt. Ohne ihn: collect-logs.bat ausführen und das Zip schicken.',   'cta' => 'Fehler melden'],
     ],
 
     'safety' => [
         'label' => 'Vertrauen',
         'title' => 'Ein Wort zum Vertrauen',
-        'body'  => 'Der Launcher ersetzt die Programmdatei des Spiels im Speicher, um seine Arbeit zu tun, also genau die Form von Sache, der man misstrauen sollte. Deshalb: jede Zeile davon liegt auf GitHub, die Lizenz sorgt dafür, dass das so bleibt, und die Build, die du herunterlädst, wird von einem Skript aus demselben Repository gebaut. Wenn du sie lieber selbst kompilierst, ist das eine unterstützte Antwort.',
+        'body'  => 'Der eigene Launcher der Mod (SkyrimTogetherVR.exe) ersetzt die Programmdatei des Spiels im Speicher, um seine Arbeit zu tun, also genau die Form von Sache, der man misstrauen sollte. Deshalb: jede Zeile davon liegt auf GitHub, die Lizenz sorgt dafür, dass das so bleibt, und die Build, die du herunterlädst, wird von einem Skript aus demselben Repository gebaut. Wenn du sie lieber selbst kompilierst, ist das eine unterstützte Antwort.',
         'cta'   => 'Quellcode lesen',
     ],
 ];

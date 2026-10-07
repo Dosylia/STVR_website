@@ -72,7 +72,7 @@ return [
             'items' => [
                 [
                     'q' => 'Kann ich davon gebannt werden?',
-                    'a' => 'Es gibt nichts, wovon man gebannt werden könnte. Skyrim VR hat weder Anti-Cheat noch Online-Komponente, und das hier spricht nie mit einem Server, der uns gehört. Deine Spielstände gehören dir, auf deiner Platte.',
+                    'a' => 'Es gibt nichts, wovon man gebannt werden könnte. Skyrim VR hat weder Anti-Cheat noch Online-Komponente, und das Spiel spricht nie mit einem Server von uns. Der urSovngarde-Launcher tut es nur, um einen Einladungscode nachzuschlagen oder, wenn du zustimmst, einen Absturzbericht zu senden. Deine Spielstände gehören dir, auf deiner Platte.',
                 ],
                 [
                     'q' => 'Warum ersetzt der Launcher die Programmdatei des Spiels?',
@@ -98,7 +98,7 @@ return [
                 ],
                 [
                     'q' => 'Etwas ist kaputtgegangen. Was braucht ihr von mir?',
-                    'a' => 'Führe <code>collect-logs.bat</code> im Launcher-Ordner aus und schick das Zip, das auf deinem Desktop landet. Darin sind das Client-Log, der Crashdump und die Build-Versionen. Ein Dump benennt die genaue Funktion; eine Beschreibung benennt ein Gefühl.',
+                    'a' => 'Nach einem Absturz fragt der Launcher, ob er einen Bericht senden darf, deine Namen und Adressen vorher entfernt; mehr brauchen wir nicht. Ohne den Launcher führe <code>collect-logs.bat</code> im Launcher-Ordner der Mod aus und schick das Zip, das auf deinem Desktop landet. Ein Dump benennt die genaue Funktion; eine Beschreibung benennt ein Gefühl.',
                 ],
                 [
                     'q' => 'Wird es eine Nexus-Seite geben?',
