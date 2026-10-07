@@ -29,6 +29,7 @@ return [
         'install'    => 'Anleitung',
         'github'     => 'Quellcode auf GitHub',
         'discord'    => 'Discord',
+        'support'    => 'Unterstützen',
         'nexus'      => 'Nexus Mods',
         'issues'     => 'Fehler melden',
         'read_more'  => 'Weiterlesen',
@@ -36,6 +37,16 @@ return [
         'all_posts'  => 'Alle Einträge',
         'copy'       => 'Kopieren',
         'copied'     => 'Kopiert',
+    ],
+
+    'community' => [
+        'label'         => 'Community',
+        'discord_title' => 'Kommt auf unseren Discord',
+        'discord_body'  => 'Der schnellste Weg zu Hilfe, wenn sich eine Installation sträubt, zu Leuten, mit denen ihr spielen könnt, und zu dem, woran gerade gearbeitet wird, bevor es im Entwicklertagebuch steht.',
+        'discord_cta'   => 'Zum Discord',
+        'support_title' => 'Haltet die Server am Laufen',
+        'support_body'  => 'urSovngarde ist kostenlos und bleibt es. Der Dienst, der euren Server in einen Code für Freunde verwandelt, und das Postfach für Absturzberichte laufen auf Servern, die wir jeden Monat bezahlen. Wenn euch die Mod einen guten Abend beschert hat, hält ein kleiner Beitrag sie am Leben.',
+        'support_cta'   => 'Projekt unterstützen',
     ],
 
     'footer' => [

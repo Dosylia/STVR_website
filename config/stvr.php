@@ -24,7 +24,8 @@ return [
     | Links
     |--------------------------------------------------------------------------
     | An empty string hides the link everywhere it would otherwise appear, so
-    | the Discord and Nexus buttons simply do not exist until you set them.
+    | the Discord, Nexus and support buttons simply do not exist until you set
+    | them.
     */
     'links' => [
         'github'        => env('STVR_GITHUB_URL', 'https://github.com/Dosylia/SkyrimTogetherVR'),
@@ -32,6 +33,7 @@ return [
         'releases'      => env('STVR_RELEASES_URL', 'https://github.com/Dosylia/SkyrimTogetherVR/releases'),
         'discord'       => env('STVR_DISCORD_URL', ''),
         'nexus'         => env('STVR_NEXUS_URL', ''),
+        'support'       => env('STVR_SUPPORT_URL', ''),
         'upstream'      => 'https://github.com/tiltedphoques/TiltedEvolution',
         'upstream_site' => 'https://skyrim-together.com',
         'licence'       => 'https://www.gnu.org/licenses/gpl-3.0.en.html',
@@ -93,10 +95,11 @@ return [
     |--------------------------------------------------------------------------
     | How an asset filename is classified in the download panel
     |--------------------------------------------------------------------------
-    | make-release.ps1 emits SkyrimTogetherVR-standalone-<version>.zip,
-    | SkyrimTogetherVR-<version>-update.zip and
-    | SkyrimTogetherVR-<version>-server-update.zip. Order matters: first match
-    | wins, so "server" comes before the update rule, or the server's zip
+    | make-release.ps1 emits urSovngarde-<version>.zip,
+    | urSovngarde-<version>-update.zip and urSovngarde-<version>-server.zip
+    | (SkyrimTogetherVR-standalone-<version>.zip, -update.zip and
+    | -server-update.zip before v1.9.0's release). Order matters: first match
+    | wins, so "server" comes before the update rule, or the old server zip
     | would be taken for the client update.
     */
     'asset_kinds' => [

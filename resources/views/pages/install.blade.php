@@ -208,6 +208,8 @@
     </div>
 </section>
 
+@include('partials.community')
+
 @include('partials.closer', [
     'title'      => __('install.cta.title'),
     'body'       => __('install.cta.body'),

@@ -174,6 +174,8 @@
     </div>
 </section>
 
+@include('partials.community')
+
 @include('partials.closer', [
     'title'        => __('install.hero.title'),
     'body'         => __('download.next.install.body'),

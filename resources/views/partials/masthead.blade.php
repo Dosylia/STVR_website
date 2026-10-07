@@ -48,6 +48,21 @@
                 </ul>
             </div>
 
+            {{-- Discord and support stay one tap away on every page; the full
+                 case for both is made by partials.community. --}}
+            @if ($discord = Nav::link('discord'))
+                <a class="masthead__social masthead__social--discord" href="{{ $discord }}" rel="noopener"
+                   aria-label="{{ __('site.cta.discord') }}" title="{{ __('site.cta.discord') }}">
+                    @include('partials.icon', ['name' => 'discord', 'class' => 'masthead__glyph'])
+                </a>
+            @endif
+            @if ($support = Nav::link('support'))
+                <a class="masthead__social masthead__social--support" href="{{ $support }}" rel="noopener"
+                   aria-label="{{ __('site.cta.support') }}" title="{{ __('site.cta.support') }}">
+                    @include('partials.icon', ['name' => 'heart', 'class' => 'masthead__glyph'])
+                </a>
+            @endif
+
             <a class="btn btn--forge btn--small masthead__cta" href="{{ Nav::url('download') }}">
                 @include('partials.icon', ['name' => 'download'])
                 {{ __('site.cta.download') }}

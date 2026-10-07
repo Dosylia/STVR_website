@@ -121,6 +121,8 @@
     </div>
 </section>
 
+@include('partials.community')
+
 @include('partials.closer', [
     'title'        => __('host.cta.title'),
     'body'         => __('host.cta.body'),

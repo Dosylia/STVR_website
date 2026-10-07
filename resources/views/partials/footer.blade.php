@@ -42,6 +42,9 @@
                     @if ($discord = Nav::link('discord'))
                         <li><a href="{{ $discord }}" rel="noopener">{{ __('site.cta.discord') }}</a></li>
                     @endif
+                    @if ($support = Nav::link('support'))
+                        <li><a href="{{ $support }}" rel="noopener">{{ __('site.community.support_cta') }}</a></li>
+                    @endif
                     @if ($nexus = Nav::link('nexus'))
                         <li><a href="{{ $nexus }}" rel="noopener">{{ __('site.cta.nexus') }}</a></li>
                     @endif

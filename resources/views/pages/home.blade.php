@@ -177,6 +177,9 @@
     </div>
 </section>
 
+{{-- ====================================================== community ===== --}}
+@include('partials.community')
+
 {{-- ========================================================= honest ===== --}}
 <section class="section section--lift">
     <div class="shell shell--narrow center">

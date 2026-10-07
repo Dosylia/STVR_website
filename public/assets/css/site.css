@@ -733,6 +733,29 @@ kbd {
   .nav__link::after { left: .2rem; right: auto; width: 2rem; }
 }
 
+/* Discord and support, as two small square glyphs beside the download button.
+   Square and label-less on purpose: the masthead has run out of room before.
+   The words live in partials.community. */
+.masthead__social {
+  display: grid;
+  place-items: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  flex: none;
+  color: var(--parchment-2);
+  border: 1px solid var(--stone-600);
+  border-radius: var(--radius);
+  transition: color .2s var(--ease), border-color .2s var(--ease), background .2s var(--ease);
+}
+.masthead__glyph { width: 1.1rem; height: 1.1rem; }
+.masthead__social--discord:hover, .masthead__social--discord:focus-visible {
+  color: #fff; border-color: #5865f2; background: rgba(88, 101, 242, .18);
+}
+.masthead__social--support { color: var(--ember-hot); border-color: rgba(229, 96, 46, .45); }
+.masthead__social--support:hover, .masthead__social--support:focus-visible {
+  color: #fff; border-color: var(--ember-hot); background: rgba(229, 96, 46, .16);
+}
+
 /* Below this the masthead has to choose. The download button goes: it is the
    first item in the drawer, every page has a download call to action of its own,
    and keeping it here is what pushed the burger off screen. */
@@ -746,6 +769,7 @@ kbd {
 
 @media (max-width: 380px) {
   .wordmark__b { display: none; }
+  .masthead__social--support { display: none; }
   .lang__toggle { padding: .5rem .55rem; }
 }
 
@@ -1184,6 +1208,77 @@ tbody td:first-child { color: var(--parchment); font-family: var(--mono); font-s
 }
 .copyline__btn:hover { background: var(--stone-800); color: var(--gold-hot); }
 .copyline__btn.is-done { color: var(--aurora-a); }
+
+/* =============================================================================
+   Community: Discord and support
+   -----------------------------------------------------------------------------
+   Two panels with a large faint glyph behind each. Discord keeps a touch of its
+   own blue so it is recognised at a glance; support is in the site's ember,
+   the colour every other "do this" on the page already has.
+   ========================================================================== */
+
+.community {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1rem, 2.5vw, 1.6rem);
+}
+.community--single { grid-template-columns: minmax(0, 1fr); }
+@media (max-width: 780px) { .community { grid-template-columns: minmax(0, 1fr); } }
+
+.community__panel {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: clamp(1.6rem, 4vw, 2.6rem);
+  border: 1px solid var(--stone-800);
+  border-radius: var(--radius);
+  isolation: isolate;
+}
+.community__panel--discord {
+  background: radial-gradient(120% 90% at 100% 0%, rgba(88, 101, 242, .16), transparent 60%),
+              linear-gradient(160deg, var(--stone-900), var(--void));
+  border-color: rgba(88, 101, 242, .28);
+}
+.community__panel--support {
+  background: radial-gradient(120% 90% at 100% 0%, rgba(229, 96, 46, .14), transparent 60%),
+              linear-gradient(160deg, var(--stone-900), var(--void));
+  border-color: rgba(229, 96, 46, .26);
+}
+
+.community__glyph {
+  position: absolute;
+  z-index: -1;
+  right: -1.5rem;
+  top: -1.5rem;
+  width: clamp(8rem, 16vw, 11rem);
+  height: auto;
+  opacity: .07;
+  color: var(--parchment);
+}
+.community__panel .inscription { width: 100%; }
+.community__title {
+  margin: .5rem 0 .8rem;
+  font-size: clamp(1.45rem, 1.2rem + 1vw, 2rem);
+}
+.community__body {
+  margin: 0 0 1.6rem;
+  max-width: 34rem;
+  line-height: 1.65;
+  color: var(--parchment-2);
+}
+.community__btn { margin-top: auto; }
+.community__btn--discord {
+  --btn-fg: #fff;
+  background: linear-gradient(180deg, #6873f5, #4752c4);
+  border-color: #3c45a5;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .4), 0 12px 32px -14px rgba(88, 101, 242, .55),
+              inset 0 1px 0 rgba(220, 225, 255, .25);
+}
+.community__btn--discord:hover, .community__btn--discord:focus-visible {
+  border-color: #aab1ff;
+}
 
 /* =============================================================================
    Loading-screen tips

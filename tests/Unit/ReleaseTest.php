@@ -51,9 +51,9 @@ class ReleaseTest extends TestCase
         Http::fake(['api.github.com/*' => Http::response([
             'tag_name' => 'v1.9.0',
             'assets' => [
-                ['name' => 'SkyrimTogetherVR-standalone-v1.9.0.zip',   'browser_download_url' => 'https://example/full.zip',   'size' => 1],
-                ['name' => 'SkyrimTogetherVR-v1.9.0-update.zip',        'browser_download_url' => 'https://example/patch.zip',  'size' => 1],
-                ['name' => 'SkyrimTogetherVR-v1.9.0-server-update.zip', 'browser_download_url' => 'https://example/server.zip', 'size' => 1],
+                ['name' => 'urSovngarde-v1.9.0.zip',        'browser_download_url' => 'https://example/full.zip',   'size' => 1],
+                ['name' => 'urSovngarde-v1.9.0-update.zip', 'browser_download_url' => 'https://example/patch.zip',  'size' => 1],
+                ['name' => 'urSovngarde-v1.9.0-server.zip', 'browser_download_url' => 'https://example/server.zip', 'size' => 1],
             ],
         ])]);
 
