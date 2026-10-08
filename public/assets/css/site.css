@@ -89,7 +89,9 @@ body {
   color: var(--parchment-2);
   font-family: var(--body);
   font-size: clamp(1rem, .96rem + .22vw, 1.12rem);
-  font-weight: 300;
+  /* 400, not 300: the light cut of Spectral thins out to hairlines on this
+     background, and descriptions in parchment-3 became hard work to read. */
+  font-weight: 400;
   line-height: 1.72;
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
@@ -354,7 +356,18 @@ kbd {
 
 /* A download that is not published yet: shown, never clickable. */
 .btn--off { opacity: .45; filter: saturate(.35); cursor: not-allowed; pointer-events: none; box-shadow: none; }
-.asset__soon { margin-top: .7rem; font-size: .88rem; color: var(--mist); }
+.asset__tags { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin-bottom: 1rem; }
+.asset__works {
+  margin-left: .4rem;
+  font-family: var(--display);
+  font-size: .66rem;
+  font-weight: 600;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+  color: var(--mist);
+}
+@media (max-width: 520px) { .asset__works { flex-basis: 100%; margin: .3rem 0 0; } }
+.asset__soon { margin-top: .7rem; font-size: .95rem; color: var(--mist); }
 
 .btn--ghost { background: transparent; border-color: var(--stone-600); }
 .btn--ghost:hover { background: rgba(255, 255, 255, .03); }
@@ -417,7 +430,7 @@ kbd {
 }
 .tablet__rune svg { width: 1.7rem; height: 1.7rem; stroke-width: 1.5; }
 .tablet h3 { margin-bottom: .5rem; }
-.tablet p  { font-size: .97rem; color: var(--parchment-3); }
+.tablet p  { font-size: 1em; color: var(--parchment-3); }
 
 /* =============================================================================
    Seal: the round stamp used for version badges and section marks
@@ -454,6 +467,8 @@ kbd {
 .pill--gold  { color: var(--gold-hot); border-color: rgba(192, 152, 44, .42); background: rgba(192, 152, 44, .09); }
 .pill--ember { color: #ffb79b;         border-color: rgba(191, 58, 43, .5);   background: rgba(191, 58, 43, .13); }
 .pill--live  { color: var(--aurora-a); border-color: rgba(63, 214, 164, .4);  background: rgba(63, 214, 164, .09); }
+
+.pill__icon { width: 1.05em; height: 1.05em; flex: none; margin-left: -.15em; }
 
 .pill__dot {
   width: 6px; height: 6px;
@@ -887,7 +902,7 @@ h1 > .hero__kicker { display: flex; width: fit-content; line-height: 1.4; text-s
   margin-bottom: .3rem;
 }
 .band__value--mono { font-family: var(--mono); font-size: clamp(1.2rem, 1rem + .9vw, 1.7rem); color: var(--aurora-a); }
-.band__note { font-size: .83rem; color: var(--parchment-3); line-height: 1.45; }
+.band__note { font-size: .9rem; color: var(--parchment-3); line-height: 1.45; }
 
 /* =============================================================================
    Footer
@@ -919,7 +934,7 @@ h1 > .hero__kicker { display: flex; width: fit-content; line-height: 1.4; text-s
 @media (max-width: 879px) {
   .footer__about { grid-column: 1 / -1; }
 }
-.footer__about p { font-size: .9rem; color: var(--parchment-3); max-width: 36ch; }
+.footer__about p { font-size: .97rem; color: var(--parchment-3); max-width: 36ch; }
 .footer__about .wordmark { margin-bottom: 1.1rem; }
 
 .footer__col h4 { color: var(--gold); font-size: .68rem; letter-spacing: .22em; margin-bottom: 1rem; }
@@ -983,7 +998,7 @@ h1 > .hero__kicker { display: flex; width: fit-content; line-height: 1.4; text-s
   background: linear-gradient(180deg, rgba(192, 152, 44, .42), rgba(192, 152, 44, .06));
 }
 .steps__title { font-family: var(--display); font-size: 1.08rem; font-weight: 600; color: var(--parchment); margin: .22rem 0 .4rem; }
-.steps__body { font-size: .97rem; color: var(--parchment-3); margin: 0; }
+.steps__body { font-size: 1em; color: var(--parchment-3); margin: 0; }
 
 /* =============================================================================
    Requirement list
@@ -1029,7 +1044,7 @@ h1 > .hero__kicker { display: flex; width: fit-content; line-height: 1.4; text-s
   color: var(--iron);
 }
 .reqs__item--required .reqs__state { color: rgba(229, 96, 46, .8); }
-.reqs__note { font-size: .92rem; color: var(--parchment-3); line-height: 1.55; }
+.reqs__note { font-size: .97rem; color: var(--parchment-3); line-height: 1.55; }
 
 /* =============================================================================
    Download panel
@@ -1057,14 +1072,14 @@ h1 > .hero__kicker { display: flex; width: fit-content; line-height: 1.4; text-s
   line-height: 1.1;
   margin: 0 0 .35rem;
 }
-.release__meta { display: flex; flex-wrap: wrap; gap: .5rem .9rem; align-items: center; font-size: .85rem; color: var(--parchment-3); }
+.release__meta { display: flex; flex-wrap: wrap; gap: .5rem .9rem; align-items: center; font-size: .95rem; color: var(--parchment-3); }
 
 .assets { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); margin-top: 1.6rem; }
 .asset { display: flex; flex-direction: column; }
 .asset__head { display: flex; align-items: baseline; justify-content: space-between; gap: .8rem; margin-bottom: .55rem; }
 .asset__title { font-family: var(--display); font-size: 1.05rem; font-weight: 600; color: var(--parchment); margin: 0; }
 .asset__size { font-family: var(--mono); font-size: .76rem; color: var(--aurora-a); white-space: nowrap; }
-.asset p { font-size: .92rem; color: var(--parchment-3); flex: 1; margin-bottom: 1.2rem; }
+.asset p { font-size: 1em; color: var(--parchment-3); flex: 1; margin-bottom: 1.2rem; }
 
 /* =============================================================================
    Tabs: the three install routes
@@ -1102,7 +1117,7 @@ h1 > .hero__kicker { display: flex; width: fit-content; line-height: 1.4; text-s
   border-color: rgba(192, 152, 44, .4);
 }
 .tabs__panel[hidden] { display: none; }
-.tabs__note { font-size: .88rem; font-style: italic; color: var(--iron); margin: -1rem 0 1.8rem; }
+.tabs__note { font-size: .95rem; font-style: italic; color: var(--iron); margin: -1rem 0 1.8rem; }
 
 .notes { list-style: none; margin: 1.8rem 0 0; padding: 0; display: grid; gap: .8rem; }
 .notes li {
@@ -1128,7 +1143,7 @@ h1 > .hero__kicker { display: flex; width: fit-content; line-height: 1.4; text-s
    ========================================================================== */
 
 .table-wrap { overflow-x: auto; border: 1px solid var(--stone-800); border-radius: var(--radius); }
-table { width: 100%; border-collapse: collapse; font-size: .92rem; min-width: 32rem; }
+table { width: 100%; border-collapse: collapse; font-size: .97rem; min-width: 32rem; }
 thead th {
   font-family: var(--display);
   font-size: .66rem;
@@ -1394,7 +1409,7 @@ tbody td:first-child { color: var(--parchment); font-family: var(--mono); font-s
 
 .goal__head { display: flex; flex-wrap: wrap; align-items: baseline; gap: .6rem .9rem; margin-bottom: .5rem; }
 .goal h3 { margin: 0; font-size: 1.15rem; }
-.goal p  { margin: 0; font-size: .95rem; color: var(--parchment-3); }
+.goal p  { margin: 0; font-size: 1em; color: var(--parchment-3); }
 
 .legend { display: flex; flex-wrap: wrap; gap: 1.2rem; margin-bottom: 2rem; font-size: .8rem; color: var(--iron); }
 .legend__key { display: inline-flex; align-items: center; gap: .5rem; font-family: var(--display); letter-spacing: .12em; text-transform: uppercase; font-size: .68rem; font-weight: 600; }
@@ -1437,7 +1452,7 @@ tbody td:first-child { color: var(--parchment); font-family: var(--mono); font-s
   transition: transform .3s var(--ease);
 }
 .faq__q[open] summary::after { transform: rotate(-135deg); }
-.faq__a { padding: 0 2.4rem 1.5rem .3rem; font-size: .97rem; color: var(--parchment-3); }
+.faq__a { padding: 0 2.4rem 1.5rem .3rem; font-size: 1em; color: var(--parchment-3); }
 .faq__a p:last-child { margin-bottom: 0; }
 
 /* =============================================================================
@@ -1460,7 +1475,7 @@ tbody td:first-child { color: var(--parchment); font-family: var(--mono); font-s
 .post__date { font-family: var(--mono); font-size: .74rem; color: var(--gold); letter-spacing: .04em; }
 .post h3 { margin: 0 0 .5rem; font-size: clamp(1.1rem, 1rem + .5vw, 1.35rem); transition: color .25s var(--ease); }
 .post:hover h3 { color: var(--gold-hot); }
-.post p { margin: 0; font-size: .95rem; color: var(--parchment-3); }
+.post p { margin: 0; font-size: 1em; color: var(--parchment-3); }
 
 .tag {
   font-family: var(--mono);

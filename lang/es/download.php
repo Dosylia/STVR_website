@@ -37,6 +37,8 @@ return [
             'title' => 'Lanzador de urSovngarde',
             'body'  => 'Encuentra Skyrim VR y tu gestor de mods, instala y actualiza el mod, comprueba tu instalación contra cada trampa que conocemos, arranca el juego y se une a tus amigos con un código de seis caracteres. Para Windows 10 y 11.',
             'meta'  => 'Empieza aquí',
+            'works_with' => 'Funciona con',
+            'setups' => ['Mod Organizer 2', 'Vortex', 'Sin gestor de mods'],
             'soon'  => 'Aún no publicado',
             'soon_note' => 'El lanzador aún está en pruebas. Este botón lo descargará en cuanto se publique.',
         ],

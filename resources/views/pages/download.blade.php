@@ -58,7 +58,15 @@
                     <span class="asset__size">{{ $launcher->humanSize() }}</span>
                 @endif
             </div>
-            <span class="pill pill--gold" style="align-self:flex-start;margin-bottom:.9rem">{{ __('download.assets.launcher.meta') }}</span>
+            {{-- Which setups it handles, as tags beside "start here": the first
+                 thing a modder wants to know is whether it fits theirs. --}}
+            <div class="asset__tags">
+                <span class="pill pill--gold">{{ __('download.assets.launcher.meta') }}</span>
+                <span class="asset__works">{{ __('download.assets.launcher.works_with') }}</span>
+                @foreach (__('download.assets.launcher.setups') as $setup)
+                    <span class="pill pill--live">@include('partials.icon', ['name' => 'check', 'class' => 'pill__icon']){{ $setup }}</span>
+                @endforeach
+            </div>
             <p>{{ __('download.assets.launcher.body') }}</p>
             @if ($launcher)
                 <a class="btn btn--forge" href="{{ $launcher->url }}" download rel="noopener">
