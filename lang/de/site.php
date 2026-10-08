@@ -61,8 +61,8 @@ return [
     ],
 
     'meta' => [
-        'default_title'       => 'urSovngarde: Koop für Skyrim VR',
-        'default_description' => 'Eine kostenlose, quelloffene Koop-Mod für Skyrim VR. Spielt eure eigene Modliste zu zweit auf eurem eigenen Server. Aufgebaut auf Skyrim Together Reborn.',
+        'default_title'       => 'Skyrim VR Multiplayer- und Koop-Mod · urSovngarde',
+        'default_description' => 'Skyrim VR im Multiplayer, kostenlos und quelloffen: eine Koop-Mod, mit der ihr eure eigene Modliste mit Freunden auf eurem eigenen Server spielt. Aufgebaut auf Skyrim Together Reborn.',
         'suffix'              => 'urSovngarde',
     ],
 

@@ -3,8 +3,8 @@
 return [
 
     'meta' => [
-        'title'       => 'Host a urSovngarde server',
-        'description' => 'Run your own urSovngarde server: port forwarding on UDP 10578, or a virtual LAN with no router changes at all. Server settings, passwords, and the Linux build.',
+        'title'       => 'Host a Skyrim VR multiplayer server · urSovngarde',
+        'description' => 'Run your own Skyrim VR co-op server: port forwarding on UDP :port, or a virtual LAN with no router changes at all. Server settings, passwords, and the Linux build.',
     ],
 
     'hero' => [

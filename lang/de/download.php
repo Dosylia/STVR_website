@@ -3,8 +3,8 @@
 return [
 
     'meta' => [
-        'title'       => 'urSovngarde herunterladen',
-        'description' => 'Hol dir die neueste Build von urSovngarde: das komplette Paket für die Erstinstallation oder das kleine Update-Zip, wenn du es schon hast.',
+        'title'       => 'Skyrim VR Multiplayer-Mod herunterladen · urSovngarde',
+        'description' => 'Lade urSovngarde herunter, die kostenlose Koop- und Multiplayer-Mod für Skyrim VR: den Launcher, das komplette Paket für die Erstinstallation oder das kleine Update-Zip.',
     ],
 
     'hero' => [

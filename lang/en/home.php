@@ -3,14 +3,14 @@
 return [
 
     'meta' => [
-        'title'       => 'urSovngarde: you are not the only Dragonborn anymore',
-        'description' => 'Free, open-source co-op for Skyrim VR. Your modlist, your save, your server, and a friend standing next to you at their real height, with their real hands.',
+        'title'       => 'Skyrim VR Multiplayer & Co-op Mod · urSovngarde',
+        'description' => 'Play Skyrim VR multiplayer with friends: a free, open-source co-op mod. Your modlist, your save, your server, and a friend beside you with their real hands.',
     ],
 
     'hero' => [
-        'kicker'   => 'Open source · GPLv3 · a VR port of Skyrim Together Reborn',
+        'kicker'   => 'Skyrim VR multiplayer · co-op mod · open source',
         'title'    => 'You are not the only Dragonborn anymore',
-        'lede'     => 'Co-op for Skyrim VR. Your modlist, your save, your server, and someone else actually in the room with you, at their own height, with their own hands.',
+        'lede'     => 'Multiplayer co-op for Skyrim VR. Your modlist, your save, your server, and someone else actually in the room with you, at their own height, with their own hands.',
         'primary'  => 'Download the launcher',
         'secondary'=> 'How to install it',
         'scroll'   => 'Keep reading',

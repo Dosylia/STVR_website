@@ -3,14 +3,14 @@
 return [
 
     'meta' => [
-        'title'       => 'urSovngarde : vous n’êtes plus le seul Enfant de dragon',
-        'description' => 'Le coop libre et gratuit pour Skyrim VR. Votre liste de mods, votre sauvegarde, votre serveur, et quelqu’un debout à côté de vous, à sa vraie taille, avec ses vraies mains.',
+        'title'       => 'Skyrim VR multijoueur : le mod coop · urSovngarde',
+        'description' => 'Jouez à Skyrim VR en multijoueur entre amis : un mod coop libre et gratuit. Votre liste de mods, votre sauvegarde, votre serveur, et un ami à côté de vous, avec ses vraies mains.',
     ],
 
     'hero' => [
-        'kicker'   => 'Open source · GPLv3 · portage VR de Skyrim Together Reborn',
+        'kicker'   => 'Skyrim VR multijoueur · mod coop · open source',
         'title'    => 'Vous n’êtes plus le seul Enfant de dragon',
-        'lede'     => 'Le coop pour Skyrim VR. Votre liste de mods, votre sauvegarde, votre serveur, et quelqu’un réellement dans la pièce avec vous, à sa propre taille, avec ses propres mains.',
+        'lede'     => 'Le coop multijoueur pour Skyrim VR. Votre liste de mods, votre sauvegarde, votre serveur, et quelqu’un réellement dans la pièce avec vous, à sa propre taille, avec ses propres mains.',
         'primary'  => 'Télécharger le lanceur',
         'secondary'=> 'Comment l’installer',
         'scroll'   => 'Continuer',

@@ -3,8 +3,8 @@
 return [
 
     'meta' => [
-        'title'       => 'Install urSovngarde',
-        'description' => 'Install urSovngarde with Mod Organizer 2, a Wabbajack list, Vortex, or no mod manager at all. Prerequisites, connect.txt, first launch and updating.',
+        'title'       => 'How to install Skyrim VR multiplayer · urSovngarde',
+        'description' => 'Set up Skyrim VR co-op with Mod Organizer 2, a Wabbajack list, Vortex, or no mod manager at all. Prerequisites, connect.txt, first launch and updating.',
     ],
 
     'hero' => [

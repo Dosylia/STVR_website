@@ -13,8 +13,9 @@
 
     <div class="shell">
         <div class="hero__inner">
-            <p class="hero__kicker">{{ __('home.hero.kicker') }}</p>
-            <h1>{{ __('home.hero.title') }}</h1>
+            {{-- The kicker is part of the heading, not a paragraph above it: it is
+                 the phrase people search for, and the h1 is where that counts. --}}
+            <h1><span class="hero__kicker">{{ __('home.hero.kicker') }}</span> {{ __('home.hero.title') }}</h1>
             <p class="hero__lede">{{ __('home.hero.lede') }}</p>
 
             <div class="btn-row">

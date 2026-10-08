@@ -22,13 +22,7 @@
     <div class="shell">
 
         <div class="release reveal">
-            <div class="seal" aria-hidden="true">
-                @if ($release->tag)
-                    <span class="seal__text">{{ \Illuminate\Support\Str::limit(ltrim($release->tag, 'vV'), 7, '') }}</span>
-                @else
-                    @include('art.sigil', ['class' => 'seal__sigil'])
-                @endif
-            </div>
+            @include('art.seal', ['class' => 'seal'])
 
             <div>
                 <p class="release__tag">{{ $release->tag ?: __('download.release.current') }}</p>

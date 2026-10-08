@@ -61,8 +61,8 @@ return [
     ],
 
     'meta' => [
-        'default_title'       => 'urSovngarde: co-op for Skyrim VR',
-        'default_description' => 'A free, open-source co-op mod for Skyrim VR. Play your own modlist with a friend on your own server. Built on Skyrim Together Reborn.',
+        'default_title'       => 'Skyrim VR multiplayer and co-op mod · urSovngarde',
+        'default_description' => 'Skyrim VR multiplayer, free and open source: a co-op mod for playing your own modlist with friends on your own server. Built on Skyrim Together Reborn.',
         'suffix'              => 'urSovngarde',
     ],
 

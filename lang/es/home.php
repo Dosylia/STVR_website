@@ -3,14 +3,14 @@
 return [
 
     'meta' => [
-        'title'       => 'urSovngarde: ya no eres el único Sangre de Dragón',
-        'description' => 'Cooperativo libre y gratuito para Skyrim VR. Tu lista de mods, tu partida, tu servidor, y alguien de pie a tu lado, a su altura real, con sus manos reales.',
+        'title'       => 'Skyrim VR multijugador: el mod cooperativo · urSovngarde',
+        'description' => 'Juega a Skyrim VR en multijugador con amigos: un mod cooperativo libre y gratuito. Tu lista de mods, tu partida, tu servidor, y un amigo a tu lado, con sus manos reales.',
     ],
 
     'hero' => [
-        'kicker'   => 'Código abierto · GPLv3 · port a VR de Skyrim Together Reborn',
+        'kicker'   => 'Skyrim VR multijugador · mod cooperativo · código abierto',
         'title'    => 'Ya no eres el único Sangre de Dragón',
-        'lede'     => 'Cooperativo para Skyrim VR. Tu lista de mods, tu partida, tu servidor, y alguien que está de verdad en la habitación contigo, a su propia altura, con sus propias manos.',
+        'lede'     => 'Cooperativo multijugador para Skyrim VR. Tu lista de mods, tu partida, tu servidor, y alguien que está de verdad en la habitación contigo, a su propia altura, con sus propias manos.',
         'primary'  => 'Descargar el lanzador',
         'secondary'=> 'Cómo instalarlo',
         'scroll'   => 'Seguir',

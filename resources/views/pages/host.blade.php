@@ -6,7 +6,7 @@
 @endphp
 
 @section('title', __('host.meta.title'))
-@section('description', __('host.meta.description'))
+@section('description', __('host.meta.description', ['port' => config('stvr.facts.port')]))
 
 @section('body')
 

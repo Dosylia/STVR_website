@@ -3,8 +3,8 @@
 return [
 
     'meta' => [
-        'title'       => 'Descargar urSovngarde',
-        'description' => 'Consigue la última build de urSovngarde: el paquete completo para la primera instalación, o el zip pequeño de actualización si ya lo tienes.',
+        'title'       => 'Descargar el mod multijugador de Skyrim VR · urSovngarde',
+        'description' => 'Descarga urSovngarde, el mod cooperativo y multijugador gratuito para Skyrim VR: el lanzador, el paquete completo para la primera instalación, o el zip pequeño de actualización.',
     ],
 
     'hero' => [

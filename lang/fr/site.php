@@ -61,8 +61,8 @@ return [
     ],
 
     'meta' => [
-        'default_title'       => 'urSovngarde : le coop pour Skyrim VR',
-        'default_description' => 'Un mod coop libre et gratuit pour Skyrim VR. Jouez avec votre propre liste de mods, à deux, sur votre propre serveur. Basé sur Skyrim Together Reborn.',
+        'default_title'       => 'Mod multijoueur et coop pour Skyrim VR · urSovngarde',
+        'default_description' => 'Skyrim VR en multijoueur, libre et gratuit : un mod coop pour jouer votre propre liste de mods entre amis, sur votre propre serveur. Basé sur Skyrim Together Reborn.',
         'suffix'              => 'urSovngarde',
     ],
 

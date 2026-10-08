@@ -3,8 +3,8 @@
 return [
 
     'meta' => [
-        'title'       => 'Héberger un serveur urSovngarde',
-        'description' => 'Faites tourner votre propre serveur urSovngarde : redirection du port UDP 10578, ou réseau virtuel sans toucher à la box. Réglages, mots de passe et build Linux.',
+        'title'       => 'Héberger un serveur multijoueur Skyrim VR · urSovngarde',
+        'description' => 'Faites tourner votre propre serveur coop Skyrim VR : redirection du port UDP :port, ou réseau virtuel sans toucher à la box. Réglages, mots de passe et build Linux.',
     ],
 
     'hero' => [

@@ -3,8 +3,8 @@
 return [
 
     'meta' => [
-        'title'       => 'Download urSovngarde',
-        'description' => 'Get the latest urSovngarde build: the full package for a first install, or the small update zip if you already have it.',
+        'title'       => 'Download the Skyrim VR multiplayer mod · urSovngarde',
+        'description' => 'Download urSovngarde, the free Skyrim VR co-op and multiplayer mod: the launcher, the full package for a first install, or the small update zip.',
     ],
 
     'hero' => [

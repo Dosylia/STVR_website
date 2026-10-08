@@ -3,8 +3,8 @@
 return [
 
     'meta' => [
-        'title'       => 'urSovngarde installieren',
-        'description' => 'urSovngarde mit Mod Organizer 2, einer Wabbajack-Liste, Vortex oder ganz ohne Mod-Manager installieren. Voraussetzungen, connect.txt, erster Start und Updates.',
+        'title'       => 'Skyrim VR Multiplayer installieren · urSovngarde',
+        'description' => 'Skyrim VR Koop mit Mod Organizer 2, einer Wabbajack-Liste, Vortex oder ganz ohne Mod-Manager einrichten. Voraussetzungen, connect.txt, erster Start und Updates.',
     ],
 
     'hero' => [

@@ -31,7 +31,7 @@
 <meta property="og:image" content="{{ url('/og.png') }}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="{{ config('stvr.name') }}">
+<meta property="og:image:alt" content="{{ __('site.meta.default_title') }}">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="icon" href="{{ url('/favicon.svg') }}" type="image/svg+xml">
@@ -45,19 +45,4 @@
 <link rel="stylesheet" href="@assetv('assets/css/fonts.css')">
 <link rel="stylesheet" href="@assetv('assets/css/site.css')">
 
-<script type="application/ld+json">
-{!! json_encode([
-    '@context' => 'https://schema.org',
-    '@type' => 'SoftwareApplication',
-    'name' => config('stvr.name'),
-    'applicationCategory' => 'GameApplication',
-    'operatingSystem' => 'Windows',
-    'description' => $desc,
-    'url' => $canonical,
-    'image' => url('/og.png'),
-    'license' => config('stvr.links.licence'),
-    'isAccessibleForFree' => true,
-    'offers' => ['@type' => 'Offer', 'price' => '0', 'priceCurrency' => 'USD'],
-    'inLanguage' => array_column($alternates, 'tag'),
-], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
-</script>
+<script type="application/ld+json">{!! \App\Support\StructuredData::site($desc, $canonical, $alternates) !!}</script>

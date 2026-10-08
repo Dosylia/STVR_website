@@ -3,8 +3,8 @@
 return [
 
     'meta' => [
-        'title'       => 'Einen urSovngarde-Server hosten',
-        'description' => 'Betreibe deinen eigenen urSovngarde-Server: Portweiterleitung auf UDP 10578 oder ein virtuelles LAN ganz ohne Router-Änderungen. Einstellungen, Passwörter und die Linux-Build.',
+        'title'       => 'Einen Skyrim VR Multiplayer-Server hosten · urSovngarde',
+        'description' => 'Betreibe deinen eigenen Skyrim VR Koop-Server: Portweiterleitung auf UDP :port oder ein virtuelles LAN ganz ohne Router-Änderungen. Einstellungen, Passwörter und die Linux-Build.',
     ],
 
     'hero' => [

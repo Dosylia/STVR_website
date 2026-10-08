@@ -7,17 +7,7 @@
 @push('head')
     {{-- An FAQ page is one of the few places structured data genuinely earns its
          bytes: these answers show up directly in search results. --}}
-    <script type="application/ld+json">
-    {!! json_encode([
-        '@context' => 'https://schema.org',
-        '@type' => 'FAQPage',
-        'mainEntity' => collect(__('faq.groups'))->flatMap(fn ($g) => $g['items'])->map(fn ($i) => [
-            '@type' => 'Question',
-            'name' => strip_tags($i['q']),
-            'acceptedAnswer' => ['@type' => 'Answer', 'text' => strip_tags($i['a'])],
-        ])->values()->all(),
-    ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
-    </script>
+    <script type="application/ld+json">{!! \App\Support\StructuredData::faq(__('faq.groups')) !!}</script>
 @endpush
 
 @section('body')

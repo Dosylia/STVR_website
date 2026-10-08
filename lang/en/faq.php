@@ -3,8 +3,8 @@
 return [
 
     'meta' => [
-        'title'       => 'urSovngarde: questions',
-        'description' => 'Does it work with my modlist? Does it cost anything? Will it get me banned? Can I play with someone on Special Edition? Answers.',
+        'title'       => 'Skyrim VR multiplayer FAQ · urSovngarde',
+        'description' => 'Skyrim VR co-op, answered: does it work with my modlist? Does it cost anything? Will it get me banned? Can I play with someone on Special Edition?',
     ],
 
     'hero' => [
@@ -21,6 +21,10 @@ return [
                 [
                     'q' => 'What is this, in one sentence?',
                     'a' => 'A free, open-source mod that lets you play Skyrim VR with friends on a server one of you runs.',
+                ],
+                [
+                    'q' => 'Is there a multiplayer mod for Skyrim VR?',
+                    'a' => 'Yes, this one. urSovngarde, formerly Skyrim Together VR, ports Skyrim Together Reborn\'s co-op to Skyrim VR: you and your friends play in one world, with quests, weather and time of day shared, and each of you sees the others at their real height, with their real hands.',
                 ],
                 [
                     'q' => 'Does it cost anything?',

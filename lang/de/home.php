@@ -3,14 +3,14 @@
 return [
 
     'meta' => [
-        'title'       => 'urSovngarde: du bist nicht mehr das einzige Drachenblut',
-        'description' => 'Kostenloser, quelloffener Koop für Skyrim VR. Deine Modliste, dein Spielstand, dein Server, und jemand, der wirklich neben dir steht, in seiner echten Größe, mit seinen echten Händen.',
+        'title'       => 'Skyrim VR Multiplayer: die Koop-Mod · urSovngarde',
+        'description' => 'Spielt Skyrim VR im Multiplayer mit Freunden: eine kostenlose, quelloffene Koop-Mod. Deine Modliste, dein Spielstand, dein Server, und ein Freund neben dir, mit echten Händen.',
     ],
 
     'hero' => [
-        'kicker'   => 'Quelloffen · GPLv3 · VR-Portierung von Skyrim Together Reborn',
+        'kicker'   => 'Skyrim VR Multiplayer · Koop-Mod · quelloffen',
         'title'    => 'Du bist nicht mehr das einzige Drachenblut',
-        'lede'     => 'Koop für Skyrim VR. Deine Modliste, dein Spielstand, dein Server, und jemand, der wirklich mit dir im Raum steht, in seiner eigenen Größe, mit seinen eigenen Händen.',
+        'lede'     => 'Multiplayer-Koop für Skyrim VR. Deine Modliste, dein Spielstand, dein Server, und jemand, der wirklich mit dir im Raum steht, in seiner eigenen Größe, mit seinen eigenen Händen.',
         'primary'  => 'Launcher herunterladen',
         'secondary'=> 'So wird es installiert',
         'scroll'   => 'Weiterlesen',
