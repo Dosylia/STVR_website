@@ -2,8 +2,11 @@
     use App\Support\Nav;
 
     $locale   = app()->getLocale();
-    $title    = trim($__env->yieldContent('title')) ?: __('site.meta.default_title');
-    $desc     = trim($__env->yieldContent('description')) ?: __('site.meta.default_description');
+    // @section('title', ...) has already escaped its value once; decoded here so
+    // {{ }} below escapes it exactly once, or "&" reaches the tab as "&amp;".
+    $plain    = fn (string $s) => html_entity_decode(trim($s), ENT_QUOTES | ENT_HTML5, 'UTF-8');
+    $title    = $plain($__env->yieldContent('title')) ?: __('site.meta.default_title');
+    $desc     = $plain($__env->yieldContent('description')) ?: __('site.meta.default_description');
     $canonical = $alternates[$locale]['url'] ?? url()->current();
 @endphp
 
