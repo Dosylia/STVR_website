@@ -10,7 +10,7 @@
     <div class="hero__scene">@include('art.scene', ['crop' => 'xMidYMin'])</div>
     <div class="shell">
         <div class="hero__inner">
-            <p class="hero__kicker">{{ __('roadmap.hero.kicker') }}</p>
+            @include('partials.kicker', ['text' => __('roadmap.hero.kicker')])
             <h1>{{ __('roadmap.hero.title') }}</h1>
             <p class="hero__lede">{{ __('roadmap.hero.lede') }}</p>
         </div>

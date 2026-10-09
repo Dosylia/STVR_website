@@ -14,7 +14,7 @@
     <div class="hero__scene">@include('art.scene', ['crop' => 'xMidYMin'])</div>
     <div class="shell">
         <div class="hero__inner">
-            <p class="hero__kicker">{{ __('host.hero.kicker') }}</p>
+            @include('partials.kicker', ['text' => __('host.hero.kicker')])
             <h1>{{ __('host.hero.title') }}</h1>
             <p class="hero__lede">{{ __('host.hero.lede') }}</p>
         </div>
