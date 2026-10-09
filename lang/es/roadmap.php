@@ -43,9 +43,9 @@ return [
             ],
             [
                 'n' => 4,
-                'state' => 'next',
+                'state' => 'active',
                 'title' => 'Cuerpos que se quedan donde los dejas',
-                'body'  => 'Primero arrastrar cadáveres, luego manejar el cuerpo de otro jugador y los PNJ vivos. Un cuerpo arrastrado a un umbral en un visor y dejado a la vista en el otro es justo el tipo de cosa que solo notas en el peor momento.',
+                'body'  => 'Arrastrar un cadáver funciona, y lo ven los dos jugadores. Un cadáver ya yace en el mismo sitio en los dos mundos. Queda por hacer: el cuerpo de otro jugador y los PNJ vivos.',
             ],
             [
                 'n' => 5,
@@ -55,9 +55,9 @@ return [
             ],
             [
                 'n' => 6,
-                'state' => 'later',
+                'state' => 'active',
                 'title' => 'Los golpes caen donde está el arma',
-                'body'  => 'Un mandoble en VR es un mandoble de verdad, no una animación disparada, y el juego del otro jugador tiene que estar de acuerdo sobre por dónde pasó el acero. Las espadas ya tienen peso; la detección de impactos tiene que ganárselo.',
+                'body'  => 'Cuando dos hojas se encuentran, los dos jugadores lo sienten, lo oyen y lo ven, y es la pantalla de quien defiende la que decide si un golpe se paró. A partir de la próxima release, solo un arma o un escudo paran un golpe. Lo siguiente: hojas que se frenan físicamente la una a la otra.',
             ],
         ],
     ],
@@ -80,8 +80,20 @@ return [
                 'body'  => 'Sincronizados correctamente, en el sitio equivocado. Normalmente cosmético, de vez en cuando fatal para un combate.',
             ],
             [
-                'title' => 'Los cadáveres no se ponen de acuerdo',
-                'body'  => 'Arrastrar funciona mejor que antes. Dos jugadores manejando el mismo cuerpo, o un cuerpo manejado de lejos, todavía no acaba siempre en el mismo sitio en los dos mundos.',
+                'title' => 'Los cuerpos movidos aún pueden no coincidir',
+                'body'  => 'Un cadáver ya yace en el mismo sitio en los dos mundos, y cuando alguien arrastra uno, lo ven los dos jugadores. El cuerpo de otro jugador, y los PNJ vivos cuando se les mueve, todavía pueden acabar en sitios distintos.',
+            ],
+            [
+                'title' => 'El PvP es joven',
+                'body'  => 'Las paradas son nuevas. El 8 y el 9 de octubre se encontraron tres formas en que un golpe atravesaba una parada, y las tres están arregladas para la próxima release. En una de las dos partidas, la copia del otro jugador a veces no lleva arma, y entonces no se le puede parar.',
+            ],
+            [
+                'title' => 'Alojar a través del relay es nuevo',
+                'body'  => 'En marcha desde :relay_since, y todavía sin probar durante una sesión completa. Si un amigo no consigue conectarse, redirige el puerto o usa Tailscale, como en la página del servidor.',
+            ],
+            [
+                'title' => 'Vortex anterior a :vortex_min',
+                'body'  => 'El lanzador copia los archivos en Data, como antes, y no aparecen en la lista de mods de Vortex. Actualizar Vortex lo arregla.',
             ],
             [
                 'title' => 'Los acompañantes pueden quedarse muy atrás',
@@ -100,11 +112,12 @@ return [
         'title' => 'Fuera de la lista últimamente',
         'lede'  => 'No es un changelog. El diario hace de changelog. Solo la forma de las últimas semanas.',
         'items' => [
-            'Los objetos soltados siguen a la mano que los lanzó y llegan al suelo en vez de quedarse flotando.',
-            'La cadera cruza la red, así que un cuerpo se dobla por donde se dobla su dueño.',
-            'Una copia remota que se sale de alcance y vuelve, vuelve correcta.',
-            'Las espadas tienen peso.',
-            'Una barra de vida enemiga deja de escribir en un menú que ya se cerró.',
+            'Un lanzador: instalar, comprobar, jugar, alojar y unirse con un código.',
+            'Alojar sin abrir ningún puerto, a través de un relay nuestro.',
+            'Cuando dos hojas se encuentran, los dos jugadores lo sienten, lo oyen y lo ven.',
+            'Una seguidora pertenece a la partida del jugador al que sigue.',
+            'Un cadáver yace en el mismo sitio en los dos mundos.',
+            'Volcados de fallo lo bastante pequeños como para enviarlos.',
             'Pruebas con bot sin supervisión: una regresión la encuentra una máquina de madrugada en vez de un amigo un viernes.',
         ],
     ],

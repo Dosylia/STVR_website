@@ -6,9 +6,9 @@
     $discordText = e(__('privacy.discord'));
     // The copy is HTML written by us, like the FAQ answers; only the two facts
     // are put in here, never anything a visitor typed.
-    $fill = fn (string $text) => strtr($text, [
-        ':days'    => $days,
-        ':discord' => $discord ? '<a href="'.e($discord).'" rel="noopener">'.$discordText.'</a>' : $discordText,
+    $fill = fn (string $text) => \App\Support\Facts::fill($text, [
+        'days'    => $days,
+        'discord' => $discord ? '<a href="'.e($discord).'" rel="noopener">'.$discordText.'</a>' : $discordText,
     ]);
 @endphp
 
@@ -31,14 +31,7 @@
 @foreach (__('privacy.sections') as $s => $section)
     <section class="section {{ $s % 2 ? 'section--lift' : '' }} section--tight">
         <div class="shell shell--narrow">
-            {{-- The launcher's consent window links here before the launcher is
-                 out, so the page says that first and nothing reads as already
-                 happening. --}}
-            @if ($s === 0)
-                <p class="notice">{{ __('privacy.status') }}</p>
-            @endif
-
-            <p class="inscription">{{ ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'][$s] ?? $s + 1 }}</p>
+            <p class="inscription">{{ ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII'][$s] ?? $s + 1 }}</p>
             <h2>{{ $section['title'] }}</h2>
 
             <div class="entry__body prose" style="margin-top:1.4rem">

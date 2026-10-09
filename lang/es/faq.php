@@ -40,7 +40,7 @@ return [
                 ],
                 [
                     'q' => '¿Cuánta gente puede jugar?',
-                    'a' => 'Está construido y probado para grupos pequeños: de dos a cuatro amigos. No hay un límite técnico de sala, pero nadie lo ha llevado a una multitud, y la respuesta honesta es que una multitud encontraría las aristas más rápido de lo que te gustaría.',
+                    'a' => 'El servidor admite :max_players jugadores por defecto, y su propia configuración desaconseja pasar de ahí. Nunca se han probado más de dos jugadores a la vez, así que con tres o más la prueba eres tú, y una multitud encontraría las aristas más rápido de lo que te gustaría.',
                 ],
             ],
         ],
@@ -76,7 +76,7 @@ return [
             'items' => [
                 [
                     'q' => '¿Me pueden banear por esto?',
-                    'a' => 'No hay de dónde banearte. Skyrim VR no tiene anticheat ni componente en línea, y el juego nunca habla con un servidor nuestro. El lanzador de urSovngarde solo lo hace para buscar un código de invitación o, si aceptas, enviar un informe de fallo. Tus partidas son tuyas, en tu disco.',
+                    'a' => 'No hay de dónde banearte. Skyrim VR no tiene anticheat ni componente en línea, y el juego nunca inicia sesión en ningún sitio. El lanzador de urSovngarde solo habla con un servidor nuestro para registrar tu código cuando alojas, para buscar el código de un amigo o, si aceptas, para enviar un informe de fallo. Cuando alojas a través de nuestro relay, el tráfico del juego pasa por él, cifrado. Tus partidas son tuyas, en tu disco.',
                 ],
                 [
                     'q' => '¿Por qué el lanzador sustituye el ejecutable del juego?',
@@ -88,7 +88,11 @@ return [
                 ],
                 [
                     'q' => '¿Queda expuesta mi IP?',
-                    'a' => 'Ante quien lleva el servidor y ante quienes estén en él, sí, igual que en cualquier juego donde aloja un amigo. Si eso te preocupa, usa una red virtual tipo Tailscale o ZeroTier en lugar de redirigir un puerto; así no queda nada accesible desde internet.',
+                    'a' => 'Ante quien lleva el servidor y ante quienes estén en él, sí, igual que en cualquier juego donde aloja un amigo. Con el lanzador, cualquiera que tenga tu código de invitación puede obtener tu dirección. Si eso te preocupa, usa una red virtual tipo Tailscale o ZeroTier y reparte su dirección en su lugar; así no queda nada accesible desde internet.',
+                ],
+                [
+                    'q' => '¿Tengo que abrir un puerto para alojar?',
+                    'a' => 'No con el lanzador :relay_min o posterior en los dos lados: alojar pasa por nuestro relay, y no hay nada que abrir en tu router. El relay es nuevo, existe desde :relay_since, así que si un amigo no consigue conectarse, la redirección de puertos o Tailscale siguen funcionando exactamente igual que antes.',
                 ],
             ],
         ],

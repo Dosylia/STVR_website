@@ -43,9 +43,9 @@ return [
             ],
             [
                 'n' => 4,
-                'state' => 'next',
+                'state' => 'active',
                 'title' => 'Des corps qui restent où on les laisse',
-                'body'  => 'Traîner un cadavre d’abord, puis manipuler le corps d’un autre joueur et les PNJ vivants. Un corps traîné dans une embrasure d’un côté et laissé à découvert de l’autre est le genre de chose qu’on ne remarque qu’au pire moment.',
+                'body'  => 'Traîner un cadavre fonctionne, et les deux joueurs le voient. Un cadavre repose désormais au même endroit dans les deux mondes. Reste à faire : le corps d’un autre joueur, et les PNJ vivants.',
             ],
             [
                 'n' => 5,
@@ -55,9 +55,9 @@ return [
             ],
             [
                 'n' => 6,
-                'state' => 'later',
+                'state' => 'active',
                 'title' => 'Les coups portent là où est l’arme',
-                'body'  => 'Un coup en VR est un vrai coup, pas une animation déclenchée, et le jeu de l’autre joueur doit être d’accord sur l’endroit où l’acier est réellement passé. Les épées ont déjà du poids ; la détection des coups doit le mériter.',
+                'body'  => 'Des lames qui se rencontrent se sentent, s’entendent et se voient chez les deux joueurs, et c’est l’écran du défenseur qui décide si un coup a été paré. À partir de la prochaine release, seule une arme ou un bouclier pare. Ensuite : des lames qui s’arrêtent physiquement l’une l’autre.',
             ],
         ],
     ],
@@ -80,8 +80,20 @@ return [
                 'body'  => 'Correctement synchronisés, au mauvais endroit. Souvent cosmétique, parfois fatal à un combat.',
             ],
             [
-                'title' => 'Les cadavres ne sont pas d’accord',
-                'body'  => 'Traîner fonctionne mieux qu’avant. Deux joueurs manipulant le même corps, ou un corps manipulé de loin, ne finit pas toujours au même endroit dans les deux mondes.',
+                'title' => 'Les corps déplacés peuvent encore diverger',
+                'body'  => 'Un cadavre repose désormais au même endroit dans les deux mondes, et les deux joueurs voient quand on en traîne un. Le corps d’un autre joueur, et les PNJ vivants qu’on déplace, peuvent encore finir à des endroits différents.',
+            ],
+            [
+                'title' => 'Le PvP est jeune',
+                'body'  => 'La parade est nouvelle. Trois façons dont un coup traversait une parade ont été trouvées les 8 et 9 octobre, et toutes trois sont corrigées pour la prochaine release. Dans l’un des deux jeux, la copie de l’autre joueur ne tient parfois aucune arme, et ne peut alors pas être parée.',
+            ],
+            [
+                'title' => 'L’hébergement via le relais est nouveau',
+                'body'  => 'En service depuis le :relay_since, et pas encore éprouvé sur une session complète. Si un ami n’arrive pas à se connecter, redirigez le port ou utilisez Tailscale, comme indiqué sur la page d’hébergement.',
+            ],
+            [
+                'title' => 'Vortex antérieur à :vortex_min',
+                'body'  => 'Le lanceur copie les fichiers dans Data, comme avant, et ils n’apparaissent pas dans la liste des mods de Vortex. Mettre Vortex à jour règle le problème.',
             ],
             [
                 'title' => 'Les compagnons peuvent rester loin derrière',
@@ -100,11 +112,12 @@ return [
         'title' => 'Sorties de la liste récemment',
         'lede'  => 'Ce n’est pas un changelog. Le journal fait office de changelog. Juste la forme des dernières semaines.',
         'items' => [
-            'Les objets lâchés suivent la main qui les a lancés et atteignent le sol au lieu de flotter.',
-            'Le bassin traverse le réseau : un corps se plie là où son propriétaire se plie.',
-            'Une copie distante qui sort de portée et revient revient correcte.',
-            'Les épées ont du poids.',
-            'La jauge de vie d’un ennemi cesse d’écrire dans un menu déjà fermé.',
+            'Un lanceur : installer, vérifier, jouer, héberger et rejoindre avec un code.',
+            'Héberger sans ouvrir de port, grâce à un relais à nous.',
+            'Des lames qui se rencontrent se sentent, s’entendent et se voient chez les deux joueurs.',
+            'Une suivante appartient au jeu du joueur qu’elle suit.',
+            'Un cadavre repose au même endroit dans les deux mondes.',
+            'Des crash dumps assez petits pour être envoyés.',
             'Des tests par bot sans surveillance : une régression est trouvée par une machine la nuit plutôt que par un ami un vendredi soir.',
         ],
     ],

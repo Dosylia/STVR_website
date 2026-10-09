@@ -40,7 +40,7 @@ return [
                 ],
                 [
                     'q' => 'On peut jouer à combien ?',
-                    'a' => 'C’est pensé et testé pour de petits groupes : deux à quatre amis. Il n’y a pas de limite technique de lobby, mais personne ne l’a emmené en foule, et la réponse honnête est qu’une foule trouverait les aspérités plus vite que vous ne le souhaitez.',
+                    'a' => 'Le serveur accepte :max_players joueurs par défaut, et ses propres réglages déconseillent d’aller au-delà. Seules des parties à deux joueurs simultanés ont été testées : à trois ou plus, le test, c’est vous, et une foule trouverait les aspérités plus vite que vous ne le souhaitez.',
                 ],
             ],
         ],
@@ -76,7 +76,7 @@ return [
             'items' => [
                 [
                     'q' => 'Je risque un bannissement ?',
-                    'a' => 'Il n’y a rien dont être banni. Skyrim VR n’a ni anti-triche ni composante en ligne, et le jeu ne parle jamais à un serveur à nous. Le lanceur urSovngarde ne le fait que pour chercher un code d’invitation ou, si vous l’acceptez, envoyer un rapport de plantage. Vos sauvegardes sont à vous, sur votre disque.',
+                    'a' => 'Il n’y a rien dont être banni. Skyrim VR n’a ni anti-triche ni composante en ligne, et le jeu ne se connecte jamais nulle part. Le lanceur urSovngarde ne parle à un serveur à nous que pour enregistrer votre code quand vous hébergez, pour chercher le code d’un ami ou, si vous l’acceptez, pour envoyer un rapport de plantage. Quand l’hébergement passe par notre relais, le trafic du jeu le traverse, chiffré. Vos sauvegardes sont à vous, sur votre disque.',
                 ],
                 [
                     'q' => 'Pourquoi le lanceur remplace-t-il l’exécutable du jeu ?',
@@ -88,7 +88,11 @@ return [
                 ],
                 [
                     'q' => 'Mon adresse IP est-elle exposée ?',
-                    'a' => 'À celui qui tient le serveur et à ceux qui y sont, oui, comme dans tout jeu où un ami héberge. Si cela vous gêne, utilisez un réseau virtuel type Tailscale ou ZeroTier plutôt qu’une redirection de port : plus rien n’est alors joignable depuis Internet.',
+                    'a' => 'À celui qui tient le serveur et à ceux qui y sont, oui, comme dans tout jeu où un ami héberge. Avec le lanceur, quiconque a votre code d’invitation peut obtenir votre adresse. Si cela vous gêne, utilisez un réseau virtuel type Tailscale ou ZeroTier et distribuez plutôt son adresse : plus rien n’est alors joignable depuis Internet.',
+                ],
+                [
+                    'q' => 'Faut-il ouvrir un port pour héberger ?',
+                    'a' => 'Pas avec le lanceur :relay_min ou plus récent des deux côtés : l’hébergement passe par notre relais, et il n’y a rien à ouvrir sur votre box. Le relais n’existe que depuis le :relay_since, donc si un ami n’arrive pas à se connecter, la redirection de port ou Tailscale fonctionnent toujours exactement comme avant.',
                 ],
             ],
         ],

@@ -15,6 +15,7 @@ return [
         'devlog'   => 'Devlog',
         'faq'      => 'FAQ',
         'privacy'  => 'Privacy',
+        'legal'    => 'Legal notice',
         'menu'     => 'Menu',
         'close'    => 'Close',
     ],

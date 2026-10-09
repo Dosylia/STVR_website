@@ -35,7 +35,7 @@
                 @foreach ($group['items'] as $item)
                     <details class="faq__q">
                         <summary>{{ $item['q'] }}</summary>
-                        <div class="faq__a"><p>{!! $item['a'] !!}</p></div>
+                        <div class="faq__a"><p>{!! \App\Support\Facts::fill($item['a']) !!}</p></div>
                     </details>
                 @endforeach
             </div>

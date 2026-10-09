@@ -43,9 +43,9 @@ return [
             ],
             [
                 'n' => 4,
-                'state' => 'next',
+                'state' => 'active',
                 'title' => 'Leichen, die liegen bleiben, wo man sie hinlegt',
-                'body'  => 'Erst das Ziehen von Leichen, dann der Umgang mit dem Körper eines anderen Spielers und mit lebenden NPCs. Eine Leiche, die im einen Headset in einen Türrahmen gezogen wurde und im anderen offen liegt, ist genau die Sorte Sache, die man im schlechtesten Moment bemerkt.',
+                'body'  => 'Leichen ziehen funktioniert, und beide Spieler sehen es. Eine Leiche liegt jetzt in beiden Welten am selben Ort. Was noch fehlt: der Körper eines anderen Spielers und lebende NPCs.',
             ],
             [
                 'n' => 5,
@@ -55,9 +55,9 @@ return [
             ],
             [
                 'n' => 6,
-                'state' => 'later',
+                'state' => 'active',
                 'title' => 'Treffer landen dort, wo die Waffe ist',
-                'body'  => 'Ein Schwung in VR ist ein echter Schwung, keine ausgelöste Animation, und das Spiel des anderen muss sich einig sein, wo der Stahl tatsächlich entlanggegangen ist. Schwerter haben schon Gewicht; die Trefferabfrage muss es sich noch verdienen.',
+                'body'  => 'Treffen zwei Klingen aufeinander, spüren, hören und sehen das beide Spieler, und der Bildschirm des Verteidigers entscheidet, ob ein Treffer pariert wurde. Ab der nächsten Veröffentlichung pariert nur eine Waffe oder ein Schild. Als Nächstes: Klingen, die einander wirklich aufhalten.',
             ],
         ],
     ],
@@ -80,8 +80,20 @@ return [
                 'body'  => 'Korrekt synchronisiert, am falschen Ort. Meist kosmetisch, gelegentlich tödlich für einen Kampf.',
             ],
             [
-                'title' => 'Leichen sind sich uneinig',
-                'body'  => 'Ziehen funktioniert besser als früher. Zwei Spieler am selben Körper, oder ein aus der Ferne bewegter Körper, landen noch nicht immer in beiden Welten am selben Ort.',
+                'title' => 'Bewegte Körper können sich noch uneinig sein',
+                'body'  => 'Eine Leiche liegt jetzt in beiden Welten am selben Ort, und wenn jemand eine zieht, sehen es beide Spieler. Der Körper eines anderen Spielers und bewegte lebende NPCs können noch an verschiedenen Orten landen.',
+            ],
+            [
+                'title' => 'PvP ist jung',
+                'body'  => 'Parieren ist neu. Am 8. und 9. Oktober wurden drei Wege gefunden, auf denen ein Treffer trotz Parade durchkam, und alle drei sind für die nächste Veröffentlichung behoben. In einem der beiden Spiele hält die Kopie des anderen Spielers manchmal keine Waffe, und dann lässt sie sich nicht parieren.',
+            ],
+            [
+                'title' => 'Hosten über das Relay ist neu',
+                'body'  => 'In Betrieb seit :relay_since und noch nicht über eine ganze Sitzung erprobt. Kommt ein Freund nicht rein, leite den Port weiter oder nimm Tailscale, wie auf der Hosting-Seite beschrieben.',
+            ],
+            [
+                'title' => 'Vortex älter als :vortex_min',
+                'body'  => 'Der Launcher kopiert die Dateien wie bisher nach Data, und sie tauchen nicht in der Modliste von Vortex auf. Vortex zu aktualisieren behebt das.',
             ],
             [
                 'title' => 'Begleiter können weit zurückfallen',
@@ -100,11 +112,12 @@ return [
         'title' => 'Kürzlich von der Liste',
         'lede'  => 'Kein Changelog. Das Entwicklertagebuch ist das Changelog. Nur die Form der letzten Wochen.',
         'items' => [
-            'Fallen gelassene Gegenstände folgen der Hand, die sie geworfen hat, und erreichen den Boden, statt zu schweben.',
-            'Die Hüfte geht über die Leitung, also beugt sich ein Körper dort, wo sich sein Besitzer beugt.',
-            'Eine entfernte Kopie, die außer Reichweite gerät und zurückkommt, kommt korrekt zurück.',
-            'Schwerter haben Gewicht.',
-            'Eine Gegner-Lebensanzeige schreibt nicht mehr in ein bereits geschlossenes Menü.',
+            'Ein Launcher: installieren, prüfen, spielen, hosten und mit einem Code beitreten.',
+            'Hosten, ohne einen Port zu öffnen, über ein Relay von uns.',
+            'Treffen zwei Klingen aufeinander, spüren, hören und sehen das beide Spieler.',
+            'Eine Begleiterin gehört zum Spiel des Spielers, dem sie folgt.',
+            'Eine Leiche liegt in beiden Welten am selben Ort.',
+            'Crashdumps, die klein genug zum Senden sind.',
             'Unbeaufsichtigte Bot-Tests: eine Regression findet nachts eine Maschine statt freitags ein Freund.',
         ],
     ],

@@ -21,8 +21,25 @@
     </div>
 </section>
 
-{{-- ======================================================== starting ==== --}}
+{{-- ======================================================== launcher ==== --}}
 <section class="section">
+    <div class="shell shell--narrow">
+        <p class="inscription">{{ __('host.launcher.label') }}</p>
+        <h2>{{ __('host.launcher.title') }}</h2>
+
+        <ol class="steps reveal" style="margin-top:2rem">
+            @foreach (__('host.launcher.steps') as $step)
+                <li class="steps__item">
+                    <p class="steps__title">{{ $step['title'] }}</p>
+                    <p class="steps__body">{!! \App\Support\Facts::fill($step['body']) !!}</p>
+                </li>
+            @endforeach
+        </ol>
+    </div>
+</section>
+
+{{-- ======================================================== starting ==== --}}
+<section class="section section--lift">
     <div class="shell shell--narrow">
         <p class="inscription">{{ __('host.start.label') }}</p>
         <h2>{{ __('host.start.title') }}</h2>
@@ -39,7 +56,7 @@
 </section>
 
 {{-- ====================================================== reachable ==== --}}
-<section class="section section--lift">
+<section class="section">
     <div class="shell">
         <p class="inscription">{{ __('host.reach.label') }}</p>
         <h2>{{ __('host.reach.title') }}</h2>
@@ -70,7 +87,7 @@
 </section>
 
 {{-- ======================================================== settings ==== --}}
-<section class="section">
+<section class="section section--lift">
     <div class="shell">
         <p class="inscription">{{ __('host.settings.label') }}</p>
         <h2>{{ __('host.settings.title') }}</h2>
@@ -100,7 +117,7 @@
 </section>
 
 {{-- =========================================================== rules ==== --}}
-<section class="section section--lift">
+<section class="section">
     <div class="shell shell--narrow">
         <p class="inscription">{{ __('host.rules.label') }}</p>
         <h2>{{ __('host.rules.title') }}</h2>

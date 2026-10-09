@@ -64,8 +64,8 @@
         <div class="grid grid--2" style="margin-top:2.5rem;align-items:start">
             @foreach (__('roadmap.issues.items') as $issue)
                 <article class="tablet reveal">
-                    <h3>{{ $issue['title'] }}</h3>
-                    <p>{!! $issue['body'] !!}</p>
+                    <h3>{{ \App\Support\Facts::fill($issue['title']) }}</h3>
+                    <p>{!! \App\Support\Facts::fill($issue['body']) !!}</p>
                 </article>
             @endforeach
         </div>

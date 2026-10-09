@@ -4,18 +4,29 @@ return [
 
     'meta' => [
         'title'       => 'Host a Skyrim VR multiplayer server · urSovngarde',
-        'description' => 'Run your own Skyrim VR co-op server: port forwarding on UDP :port, or a virtual LAN with no router changes at all. Server settings, passwords, and the Linux build.',
+        'description' => 'Host a Skyrim VR co-op server with the launcher and a six-letter code, through our relay with no port to open, or by hand with port forwarding on UDP :port or a virtual LAN.',
     ],
 
     'hero' => [
         'kicker' => 'One executable · one UDP port · no account',
         'title'  => 'Running the server',
-        'lede'   => 'The server is a program on a PC. It belongs to whoever starts it, and nothing of yours passes through anyone else.',
+        'lede'   => 'The server is a program on a PC, and it belongs to whoever starts it. No account, no lobby, no matchmaker.',
+    ],
+
+    'launcher' => [
+        'label' => 'The easy way',
+        'title' => 'Hosting with the launcher',
+        'steps' => [
+            ['title' => 'Press Host a game',             'body' => 'The launcher starts the server that its install put next to the mod, waits until it is really running, and shows a six-letter code. You can set a password first.'],
+            ['title' => 'Send the code',                 'body' => 'Friends type it under Join in their launcher, or press Join next to your name in their list of Steam friends.'],
+            ['title' => 'Nothing to open on your router', 'body' => 'With launcher :relay_min or newer on both sides, the game goes through a relay of ours, live since :relay_since. It is new, so if a friend cannot connect, use one of the two ways under Networking below.'],
+            ['title' => 'Stop hosting when you are done', 'body' => 'It takes the code down and closes the server.'],
+        ],
     ],
 
     'start' => [
-        'label' => 'The server',
-        'title' => 'Starting it',
+        'label' => 'By hand',
+        'title' => 'Without the launcher',
         'steps' => [
             ['title' => 'Keep the Server folder somewhere', 'body' => 'Anywhere on the machine that will host. The server does not need the game installed, so an always-on box or a spare laptop works.'],
             ['title' => 'Run host-server.bat',             'body' => 'It refuses to start a second server, starts this one, and prints the address to hand out. A console window opens and says the port.'],
@@ -27,7 +38,7 @@ return [
     'reach' => [
         'label' => 'Networking',
         'title' => 'Letting people reach you',
-        'lede'  => 'Two ways. The second one is easier and most people should take it.',
+        'lede'  => 'With the launcher\'s relay you can usually skip this section. When it does not work for you, there are two ways, and the second one is easier.',
 
         'forward' => [
             'label' => 'Forward a port',
@@ -66,14 +77,14 @@ return [
         'label' => 'Gotchas',
         'title' => 'Two rules that bite',
         'items' => [
-            ['title' => 'Everyone runs the same build', 'body' => 'Server included. A mismatched client is refused at connect and told both version numbers. When a release says the server changed, restart the server too.'],
+            ['title' => 'Builds that speak the same messages connect', 'body' => 'Whatever their version number. A release that changes the network messages says so, and then everyone updates, the server included. A refused player is told both versions, in the game and in the launcher\'s loading screen.'],
             ['title' => 'uGridsToLoad stays at 5',      'body' => 'The server refuses any other value. It is the default of every list, so this only ever catches people who went tweaking.'],
         ],
     ],
 
     'linux' => [
         'title' => 'Linux',
-        'body'  => 'A Linux build of the dedicated server exists, for anyone who would rather keep it on a box that is already running. It is not on the releases page yet. Ask.',
+        'body'  => 'The Linux build of the dedicated server does not build on the current code at the moment. It did before, and it is being fixed. Ask in the meantime.',
     ],
 
     'cta' => [

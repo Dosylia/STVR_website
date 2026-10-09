@@ -40,7 +40,7 @@ return [
                 ],
                 [
                     'q' => 'How many people can play?',
-                    'a' => 'It is built and tested around small groups: two to four friends. There is no technical lobby cap, but nobody has taken it to a crowd, and the honest answer is that a crowd would find the rough edges faster than you want.',
+                    'a' => 'The server takes :max_players players by default, and its own settings advise against more. Only two players at once have ever been tested, so with three or more you are the test, and a crowd would find the rough edges faster than you want.',
                 ],
             ],
         ],
@@ -76,7 +76,7 @@ return [
             'items' => [
                 [
                     'q' => 'Can this get me banned?',
-                    'a' => 'There is nothing to be banned from. Skyrim VR has no anti-cheat and no online component, and the game never talks to a server of ours. The urSovngarde launcher does only to look up an invite code or, if you agree, to send a crash report. Your saves are yours, on your disk.',
+                    'a' => 'There is nothing to be banned from. Skyrim VR has no anti-cheat and no online component, and the game never logs in anywhere. The urSovngarde launcher talks to a server of ours only to register your code when you host, to look up a friend\'s code, or, if you agree, to send a crash report. When hosting goes through our relay, the game\'s traffic passes through it, encrypted. Your saves are yours, on your disk.',
                 ],
                 [
                     'q' => 'Why does the launcher replace the game executable?',
@@ -88,7 +88,11 @@ return [
                 ],
                 [
                     'q' => 'Is my IP address exposed?',
-                    'a' => 'To whoever runs the server and whoever is on it, yes, the same as any game where a friend hosts. If that matters to you, use a virtual LAN like Tailscale or ZeroTier instead of forwarding a port; nothing is then reachable from the open internet.',
+                    'a' => 'To whoever runs the server and whoever is on it, yes, the same as any game where a friend hosts. With the launcher, anyone who has your invite code can get your address. If that matters to you, use a virtual LAN like Tailscale or ZeroTier and hand out its address instead; nothing is then reachable from the open internet.',
+                ],
+                [
+                    'q' => 'Do I need to open a port to host?',
+                    'a' => 'Not with launcher :relay_min or newer on both sides: hosting goes through our relay, and there is nothing to open on your router. The relay is new since :relay_since, so if a friend cannot connect, port forwarding or Tailscale still work exactly as before.',
                 ],
             ],
         ],

@@ -15,6 +15,7 @@ return [
         'devlog'   => 'Journal',
         'faq'      => 'FAQ',
         'privacy'  => 'Confidentialité',
+        'legal'    => 'Mentions légales',
         'menu'     => 'Menu',
         'close'    => 'Fermer',
     ],

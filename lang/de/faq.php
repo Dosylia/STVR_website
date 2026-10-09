@@ -40,7 +40,7 @@ return [
                 ],
                 [
                     'q' => 'Mit wie vielen Leuten geht das?',
-                    'a' => 'Gebaut und getestet ist es für kleine Gruppen: zwei bis vier Freunde. Es gibt kein technisches Lobby-Limit, aber niemand hat es in eine Menschenmenge geführt, und die ehrliche Antwort ist, dass eine Menge die rauen Kanten schneller finden würde, als dir lieb ist.',
+                    'a' => 'Der Server nimmt standardmäßig :max_players Spieler auf, und seine eigenen Einstellungen raten von mehr ab. Getestet wurden bisher nur zwei Spieler gleichzeitig. Ab drei bist also du der Test, und eine Menschenmenge würde die rauen Kanten schneller finden, als dir lieb ist.',
                 ],
             ],
         ],
@@ -76,7 +76,7 @@ return [
             'items' => [
                 [
                     'q' => 'Kann ich davon gebannt werden?',
-                    'a' => 'Es gibt nichts, wovon man gebannt werden könnte. Skyrim VR hat weder Anti-Cheat noch Online-Komponente, und das Spiel spricht nie mit einem Server von uns. Der urSovngarde-Launcher tut es nur, um einen Einladungscode nachzuschlagen oder, wenn du zustimmst, einen Absturzbericht zu senden. Deine Spielstände gehören dir, auf deiner Platte.',
+                    'a' => 'Es gibt nichts, wovon man gebannt werden könnte. Skyrim VR hat weder Anti-Cheat noch Online-Komponente, und das Spiel meldet sich nirgends an. Der urSovngarde-Launcher spricht nur mit einem Server von uns, um deinen Code zu registrieren, wenn du hostest, um den Code eines Freundes nachzuschlagen oder, wenn du zustimmst, um einen Absturzbericht zu senden. Läuft das Hosten über unser Relay, geht der Datenverkehr des Spiels verschlüsselt hindurch. Deine Spielstände gehören dir, auf deiner Platte.',
                 ],
                 [
                     'q' => 'Warum ersetzt der Launcher die Programmdatei des Spiels?',
@@ -88,7 +88,11 @@ return [
                 ],
                 [
                     'q' => 'Ist meine IP-Adresse sichtbar?',
-                    'a' => 'Für den, der den Server betreibt, und für alle darauf: ja, wie in jedem Spiel, in dem ein Freund hostet. Wenn dich das stört, nimm ein virtuelles LAN wie Tailscale oder ZeroTier statt einer Portweiterleitung; dann ist nichts mehr aus dem offenen Internet erreichbar.',
+                    'a' => 'Für den, der den Server betreibt, und für alle darauf: ja, wie in jedem Spiel, in dem ein Freund hostet. Mit dem Launcher kann jeder, der deinen Einladungscode hat, deine Adresse bekommen. Wenn dich das stört, nimm ein virtuelles LAN wie Tailscale oder ZeroTier und gib stattdessen dessen Adresse weiter; dann ist nichts mehr aus dem offenen Internet erreichbar.',
+                ],
+                [
+                    'q' => 'Muss ich zum Hosten einen Port öffnen?',
+                    'a' => 'Nicht mit Launcher :relay_min oder neuer auf beiden Seiten: Das Hosten läuft dann über unser Relay, und an deinem Router gibt es nichts zu öffnen. Das Relay ist erst seit :relay_since in Betrieb. Kommt ein Freund also nicht rein, funktionieren Portweiterleitung und Tailscale genau wie vorher.',
                 ],
             ],
         ],

@@ -15,6 +15,7 @@ return [
         'devlog'   => 'Entwicklertagebuch',
         'faq'      => 'FAQ',
         'privacy'  => 'Datenschutz',
+        'legal'    => 'Impressum',
         'menu'     => 'Menü',
         'close'    => 'Schließen',
     ],

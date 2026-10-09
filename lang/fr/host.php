@@ -4,18 +4,29 @@ return [
 
     'meta' => [
         'title'       => 'Héberger un serveur multijoueur Skyrim VR · urSovngarde',
-        'description' => 'Faites tourner votre propre serveur coop Skyrim VR : redirection du port UDP :port, ou réseau virtuel sans toucher à la box. Réglages, mots de passe et build Linux.',
+        'description' => 'Hébergez un serveur coop Skyrim VR avec le lanceur et un code de six lettres, via notre relais sans port à ouvrir, ou à la main avec une redirection du port UDP :port ou un réseau virtuel.',
     ],
 
     'hero' => [
         'kicker' => 'Un exécutable · un port UDP · aucun compte',
         'title'  => 'Tenir le serveur',
-        'lede'   => 'Le serveur est un programme sur un PC. Il appartient à celui qui le démarre, et rien de ce qui vous concerne ne passe par qui que ce soit d’autre.',
+        'lede'   => 'Le serveur est un programme sur un PC, et il appartient à celui qui le démarre. Pas de compte, pas de lobby, pas de matchmaking.',
+    ],
+
+    'launcher' => [
+        'label' => 'La voie facile',
+        'title' => 'Héberger avec le lanceur',
+        'steps' => [
+            ['title' => 'Appuyez sur Héberger une partie',   'body' => 'Le lanceur démarre le serveur que son installation a placé à côté du mod, attend qu’il tourne vraiment, puis affiche un code de six lettres. Vous pouvez d’abord définir un mot de passe.'],
+            ['title' => 'Envoyez le code',                   'body' => 'Vos amis le tapent sous Rejoindre dans leur lanceur, ou appuient sur Rejoindre à côté de votre nom dans leur liste d’amis Steam.'],
+            ['title' => 'Rien à ouvrir sur votre box',       'body' => 'Avec le lanceur :relay_min ou plus récent des deux côtés, la partie passe par un relais à nous, en service depuis le :relay_since. Il est récent : si un ami n’arrive pas à se connecter, utilisez l’une des deux méthodes décrites plus bas, sous Réseau.'],
+            ['title' => 'Arrêtez d’héberger quand vous avez fini', 'body' => 'Le code est retiré et le serveur se ferme.'],
+        ],
     ],
 
     'start' => [
-        'label' => 'Le serveur',
-        'title' => 'Le démarrer',
+        'label' => 'À la main',
+        'title' => 'Sans le lanceur',
         'steps' => [
             ['title' => 'Gardez le dossier Server quelque part', 'body' => 'N’importe où sur la machine qui hébergera. Le serveur n’a pas besoin du jeu : une machine allumée en permanence ou un vieux portable font l’affaire.'],
             ['title' => 'Lancez host-server.bat',               'body' => 'Il refuse de démarrer un deuxième serveur, démarre celui-ci, et affiche l’adresse à distribuer. Une console s’ouvre et indique le port.'],
@@ -27,7 +38,7 @@ return [
     'reach' => [
         'label' => 'Réseau',
         'title' => 'Se rendre joignable',
-        'lede'  => 'Deux façons. La seconde est plus simple et convient à la plupart des gens.',
+        'lede'  => 'Avec le relais du lanceur, vous pouvez en général sauter cette section. Quand il ne fonctionne pas pour vous, il reste deux façons, et la seconde est plus simple.',
 
         'forward' => [
             'label' => 'Rediriger un port',
@@ -66,14 +77,14 @@ return [
         'label' => 'Pièges',
         'title' => 'Deux règles qui mordent',
         'items' => [
-            ['title' => 'Tout le monde sur la même build', 'body' => 'Serveur compris. Un client décalé est refusé à la connexion et reçoit les deux numéros de version. Quand une release dit que le serveur a changé, redémarrez aussi le serveur.'],
+            ['title' => 'Les builds qui parlent les mêmes messages se connectent', 'body' => 'Quel que soit leur numéro de version. Une release qui change les messages réseau le dit, et alors tout le monde met à jour, serveur compris. Un joueur refusé reçoit les deux versions, dans le jeu et dans l’écran de chargement du lanceur.'],
             ['title' => 'uGridsToLoad reste à 5',          'body' => 'Le serveur refuse toute autre valeur. C’est la valeur par défaut de toutes les listes, donc cela n’attrape que ceux qui sont allés bidouiller.'],
         ],
     ],
 
     'linux' => [
         'title' => 'Linux',
-        'body'  => 'Une build Linux du serveur dédié existe, pour qui préfère la garder sur une machine déjà allumée. Elle n’est pas encore sur la page des releases. Demandez-la.',
+        'body'  => 'La build Linux du serveur dédié ne compile pas sur le code actuel pour le moment. Elle compilait auparavant, et c’est en cours de correction. D’ici là, demandez.',
     ],
 
     'cta' => [

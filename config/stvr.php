@@ -111,6 +111,25 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Legal notice (mentions légales)
+    |--------------------------------------------------------------------------
+    | French law (LCEN) asks a site to name its publisher and its host. An
+    | empty value leaves its line off the page, so nothing is ever shown as a
+    | placeholder; the host's legal name, address and phone are copied from the
+    | IONOS contract or an invoice, never guessed.
+    */
+    'legal' => [
+        'publisher'     => env('STVR_LEGAL_PUBLISHER', 'Emma Montbarbon'),
+        'address'       => env('STVR_LEGAL_ADDRESS', ''),
+        'email'         => env('STVR_LEGAL_EMAIL', ''),
+        'phone'         => env('STVR_LEGAL_PHONE', ''),
+        'host_name'     => env('STVR_HOST_NAME', 'IONOS'),
+        'host_address'  => env('STVR_HOST_ADDRESS', ''),
+        'host_phone'    => env('STVR_HOST_PHONE', ''),
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Hard facts the copy refers to
     |--------------------------------------------------------------------------
     */
@@ -123,6 +142,18 @@ return [
         'toggle_key'    => 'F6',
         'licence'       => 'GPL-3.0',
         'connect_file'  => '%LOCALAPPDATA%\\SkyrimTogetherVR\\connect.txt',
+
+        // Hosting with the launcher. The relay went live on relay_since, and
+        // both the host and the friend need relay_min_launcher or newer.
+        'relay_since'        => '2026-10-09',
+        'relay_min_launcher' => '0.3.0',
+        // Vortex from this version up gets the mod installed as a Vortex mod;
+        // older ones get the files copied into Data.
+        'vortex_mod_min'     => '1.14',
+        // How long the hub keeps a host's invite code without a renewal.
+        'invite_hours'       => 6,
+        // The server's default player limit (STServer.ini).
+        'max_players'        => 8,
     ],
 
     /*
@@ -169,6 +200,7 @@ return [
         'roadmap'  => ['en' => 'roadmap',  'fr' => 'feuille-de-route', 'de' => 'fahrplan', 'es' => 'hoja-de-ruta'],
         'devlog'   => ['en' => 'devlog',   'fr' => 'journal',      'de' => 'entwicklertagebuch', 'es' => 'diario'],
         'privacy'  => ['en' => 'privacy',  'fr' => 'confidentialite', 'de' => 'datenschutz', 'es' => 'privacidad'],
+        'legal'    => ['en' => 'legal-notice', 'fr' => 'mentions-legales', 'de' => 'impressum', 'es' => 'aviso-legal'],
     ],
 
     'fallback_locale' => 'en',

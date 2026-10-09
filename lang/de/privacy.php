@@ -3,17 +3,15 @@
 return [
 
     'meta' => [
-        'title'       => 'urSovngarde: Datenschutz und Absturzberichte',
-        'description' => 'Was ein Absturzbericht enthält, was deinen PC nie verlässt, wer ihn liest und wie er nach :days Tagen gelöscht wird, oder früher, wenn du darum bittest.',
+        'title'       => 'urSovngarde: Datenschutz',
+        'description' => 'Was ein Absturzbericht enthält und wie er nach :days Tagen gelöscht wird, was Einladungscodes und das Relay speichern, und die zwei Cookies, die diese Seite setzt.',
     ],
 
     'hero' => [
-        'kicker' => 'Absturzberichte und deine Daten',
+        'kicker' => 'Absturzberichte, Hosten und deine Daten',
         'title'  => 'Datenschutz',
-        'lede'   => 'Was ein Absturzbericht enthält, was deinen PC nie verlässt, wer ihn liest und wie lange.',
+        'lede'   => 'Was ein Absturzbericht enthält, was das Hosten über uns speichert, was diese Seite setzt, und wie lange.',
     ],
-
-    'status' => 'Der urSovngarde-Launcher ist noch nicht erschienen. Diese Seite kommt zuerst, damit man lesen kann, was er sendet, bevor er überhaupt fragt.',
 
     'discord' => 'unserem Discord-Server',
 
@@ -91,6 +89,30 @@ return [
             'body'  => [
                 'Nach dem Senden zeigt der Launcher die Nummer des Berichts und führt eine Liste der Nummern, die er gesendet hat. Nenn eine Nummer auf :discord, und dieser Bericht wird überall gelöscht, ohne Rückfragen.',
                 'Wähl im Launcher „nie“, und ab dann wird nichts mehr gesendet.',
+            ],
+        ],
+
+        [
+            'title' => 'Einladungscodes',
+            'body'  => [
+                'Wenn du mit dem Launcher hostest, speichert unser Hub (derselbe Cloudflare-Dienst, der die Berichte empfängt) deine öffentliche Adresse und deinen Port, ob der Server ein Passwort hat (nie das Passwort selbst), die Version des Launchers und, falls es eine gibt, die Relay-Sitzung. Er behält das :invite_hours Stunden lang; der Launcher erneuert es stündlich, solange du hostest, und entfernt es, wenn du aufhörst.',
+                'Wer den Code hat, bekommt die Adresse. Solange du hostest, sehen deine Steam-Freunde „Hosting urSovngarde“, und ihr Launcher kann den Code lesen.',
+            ],
+        ],
+
+        [
+            'title' => 'Das Relay',
+            'body'  => [
+                'Läuft das Hosten über das Relay, geht der Datenverkehr des Spiels zwischen dir und deinen Freunden über einen Server, den wir bei IONOS mieten, in einem Rechenzentrum in Deutschland: derselbe Server wie diese Website. Der Datenverkehr ist durch die eigene Netzwerktechnik des Spiels verschlüsselt, und das Relay kann ihn nicht lesen.',
+                'Das Relay speichert keine Adressen in seinen Logs. Einmal pro Minute schreibt es nur Zahlen: Sitzungen, Spieler, Pakete und Bytes. Eine Sitzung vergisst es 60 Sekunden, nachdem sie still geworden ist.',
+            ],
+        ],
+
+        [
+            'title' => 'Diese Website',
+            'body'  => [
+                'Die Seite setzt zwei Cookies, beide unbedingt erforderlich und beide nach zwei Stunden verschwunden: <code>skyrim-together-vr-session</code>, mit dem das Framework der Seite einen Besuch zusammenhält, und <code>XSRF-TOKEN</code>, ein Sicherheitstoken gegen gefälschte Formulare. Es gibt kein Tracking, keine Analyse und keine Werbung, und deshalb gibt es auch kein Cookie-Banner.',
+                'Wie jeder Webserver führt unserer ein Zugriffsprotokoll, das die Adresse und den Zeitpunkt jeder Anfrage festhält.',
             ],
         ],
     ],

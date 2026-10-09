@@ -4,18 +4,29 @@ return [
 
     'meta' => [
         'title'       => 'Montar un servidor multijugador de Skyrim VR · urSovngarde',
-        'description' => 'Lleva tu propio servidor cooperativo de Skyrim VR: redirección del puerto UDP :port, o una red virtual sin tocar el router. Ajustes, contraseñas y la build de Linux.',
+        'description' => 'Aloja un servidor cooperativo de Skyrim VR con el lanzador y un código de seis letras, a través de nuestro relay sin abrir ningún puerto, o a mano con redirección del puerto UDP :port o una red virtual.',
     ],
 
     'hero' => [
         'kicker' => 'Un ejecutable · un puerto UDP · ninguna cuenta',
         'title'  => 'Llevar el servidor',
-        'lede'   => 'El servidor es un programa en un PC. Pertenece a quien lo arranca, y nada tuyo pasa por nadie más.',
+        'lede'   => 'El servidor es un programa en un PC, y pertenece a quien lo arranca. Sin cuenta, sin sala, sin emparejamiento.',
+    ],
+
+    'launcher' => [
+        'label' => 'La forma fácil',
+        'title' => 'Alojar con el lanzador',
+        'steps' => [
+            ['title' => 'Pulsa Alojar una partida',          'body' => 'El lanzador arranca el servidor que su instalación dejó junto al mod, espera a que esté funcionando de verdad y muestra un código de seis letras. Antes puedes ponerle una contraseña.'],
+            ['title' => 'Manda el código',                   'body' => 'Tus amigos lo escriben en Unirse, en su lanzador, o pulsan Unirse junto a tu nombre en su lista de amigos de Steam.'],
+            ['title' => 'Nada que abrir en el router',       'body' => 'Con el lanzador :relay_min o posterior en los dos lados, la partida pasa por un relay nuestro, en marcha desde :relay_since. Es nuevo, así que si un amigo no consigue conectarse, usa una de las dos formas que hay más abajo, en Red.'],
+            ['title' => 'Deja de alojar cuando termines',    'body' => 'Eso retira el código y cierra el servidor.'],
+        ],
     ],
 
     'start' => [
-        'label' => 'El servidor',
-        'title' => 'Arrancarlo',
+        'label' => 'A mano',
+        'title' => 'Sin el lanzador',
         'steps' => [
             ['title' => 'Guarda la carpeta Server en algún sitio', 'body' => 'En cualquier parte de la máquina que vaya a alojar. El servidor no necesita el juego, así que un equipo siempre encendido o un portátil viejo valen.'],
             ['title' => 'Ejecuta host-server.bat',                 'body' => 'Se niega a arrancar un segundo servidor, arranca este, e imprime la dirección que hay que repartir. Se abre una consola y dice el puerto.'],
@@ -27,7 +38,7 @@ return [
     'reach' => [
         'label' => 'Red',
         'title' => 'Dejar que te alcancen',
-        'lede'  => 'Dos formas. La segunda es más fácil y a casi todo el mundo le conviene.',
+        'lede'  => 'Con el relay del lanzador, normalmente puedes saltarte esta sección. Cuando no te funcione, hay dos formas, y la segunda es más fácil.',
 
         'forward' => [
             'label' => 'Redirigir un puerto',
@@ -66,14 +77,14 @@ return [
         'label' => 'Trampas',
         'title' => 'Dos reglas que muerden',
         'items' => [
-            ['title' => 'Todos con la misma build', 'body' => 'Servidor incluido. A un cliente desalineado se le rechaza al conectar y se le dicen los dos números de versión. Cuando una release diga que el servidor ha cambiado, reinicia también el servidor.'],
+            ['title' => 'Se conectan las builds que hablan los mismos mensajes', 'body' => 'Sea cual sea su número de versión. Una release que cambia los mensajes de red lo dice, y entonces todo el mundo actualiza, servidor incluido. A un jugador rechazado se le dicen las dos versiones, en el juego y en la pantalla de carga del lanzador.'],
             ['title' => 'uGridsToLoad se queda en 5','body' => 'El servidor rechaza cualquier otro valor. Es el valor por defecto de todas las listas, así que esto solo pilla a quien se haya puesto a tocar.'],
         ],
     ],
 
     'linux' => [
         'title' => 'Linux',
-        'body'  => 'Existe una build de Linux del servidor dedicado, para quien prefiera tenerlo en una máquina que ya está encendida. Todavía no está en la página de releases. Pídela.',
+        'body'  => 'La build de Linux del servidor dedicado no compila con el código actual por ahora. Antes compilaba, y se está arreglando. Mientras tanto, pregunta.',
     ],
 
     'cta' => [

@@ -43,9 +43,9 @@ return [
             ],
             [
                 'n' => 4,
-                'state' => 'next',
+                'state' => 'active',
                 'title' => 'Bodies that stay where you put them',
-                'body'  => 'Dragging a corpse first, then handling another player\'s body and living NPCs. A body dragged into a doorway in one headset and left in the open in the other is the kind of thing you only notice at the worst moment.',
+                'body'  => 'Dragging a corpse works, and both players see it. A corpse now lies in the same place in both worlds. Still to do: another player\'s body, and living NPCs.',
             ],
             [
                 'n' => 5,
@@ -55,9 +55,9 @@ return [
             ],
             [
                 'n' => 6,
-                'state' => 'later',
+                'state' => 'active',
                 'title' => 'Hits land where the weapon is',
-                'body'  => 'A swing in VR is a real swing, not a triggered animation, and the other player\'s game needs to agree about where the steel actually went. Swords already have weight; the hit detection has to earn it.',
+                'body'  => 'Blades that meet are felt, heard and seen by both players, and the defender\'s screen decides whether a hit was parried. From the next release, only a weapon or a shield parries. Next: blades that physically stop each other.',
             ],
         ],
     ],
@@ -80,8 +80,20 @@ return [
                 'body'  => 'Synced correctly, standing in the wrong place. Mostly cosmetic, occasionally fatal to a fight.',
             ],
             [
-                'title' => 'Dead bodies disagree',
-                'body'  => 'Dragging works better than it did. Two players handling the same body, or a body handled far away, still does not always end up in the same place in both worlds.',
+                'title' => 'Moved bodies can still disagree',
+                'body'  => 'A corpse now lies in the same place in both worlds, and dragging one is seen by both players. Another player\'s body, and living NPCs being moved, can still end up in different places.',
+            ],
+            [
+                'title' => 'PvP is young',
+                'body'  => 'Parrying is new. Three ways a hit got through a parry were found on 8 and 9 October, and all three are fixed for the next release. In one game, the other player\'s copy sometimes holds no weapon, and then it cannot be parried.',
+            ],
+            [
+                'title' => 'Hosting through the relay is new',
+                'body'  => 'Live since :relay_since, and not yet proven over a full session. If a friend cannot connect, forward the port or use Tailscale, as on the hosting page.',
+            ],
+            [
+                'title' => 'Vortex older than :vortex_min',
+                'body'  => 'The launcher copies the files into Data, as before, and they do not show in Vortex\'s mod list. Updating Vortex fixes it.',
             ],
             [
                 'title' => 'Companions can fall far behind',
@@ -100,11 +112,12 @@ return [
         'title' => 'Recently off the list',
         'lede'  => 'Not a changelog. The devlog is the changelog. Just the shape of the last few weeks.',
         'items' => [
-            'Dropped items follow the hand that threw them, and reach the floor instead of hovering.',
-            'Hips cross the wire, so a body bends where its owner bends.',
-            'A remote copy that goes out of range and comes back comes back correct.',
-            'Swords have weight.',
-            'An enemy health meter stops writing to a menu that has already closed.',
+            'A launcher: install, check, play, host and join with a code.',
+            'Hosting without opening a port, through a relay of ours.',
+            'Blades that meet are felt, heard and seen by both players.',
+            'A follower belongs to the game of the player she follows.',
+            'A corpse lies in the same place in both worlds.',
+            'Crash dumps small enough to send.',
             'Unattended bot testing, so a regression is found by a machine overnight rather than by a friend on a Friday.',
         ],
     ],

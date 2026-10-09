@@ -3,17 +3,15 @@
 return [
 
     'meta' => [
-        'title'       => 'urSovngarde : confidentialité et rapports de plantage',
-        'description' => 'Ce que contient un rapport de plantage, ce qui ne quitte jamais votre PC, qui le lit, et comment il est supprimé au bout de :days jours, ou plus tôt si vous le demandez.',
+        'title'       => 'urSovngarde : confidentialité',
+        'description' => 'Ce que contient un rapport de plantage et comment il est supprimé au bout de :days jours, ce que gardent les codes d’invitation et le relais, et les deux cookies que dépose ce site.',
     ],
 
     'hero' => [
-        'kicker' => 'Les rapports de plantage et vos données',
+        'kicker' => 'Rapports de plantage, hébergement et vos données',
         'title'  => 'Confidentialité',
-        'lede'   => 'Ce que contient un rapport de plantage, ce qui ne quitte jamais votre PC, qui le lit et pendant combien de temps.',
+        'lede'   => 'Ce que contient un rapport de plantage, ce que garde un hébergement passé par nous, ce que dépose ce site, et pendant combien de temps.',
     ],
-
-    'status' => 'Le lanceur urSovngarde n’est pas encore sorti. Cette page arrive avant lui, pour que ce qu’il envoie puisse être lu avant qu’il ne pose la moindre question.',
 
     'discord' => 'notre serveur Discord',
 
@@ -91,6 +89,30 @@ return [
             'body'  => [
                 'Après l’envoi, le lanceur affiche le numéro du rapport et garde la liste des numéros qu’il a envoyés. Donnez un numéro sur :discord et ce rapport est supprimé partout, sans question.',
                 'Choisissez « jamais » dans le lanceur et plus rien n’est envoyé à partir de là.',
+            ],
+        ],
+
+        [
+            'title' => 'Codes d’invitation',
+            'body'  => [
+                'Quand vous hébergez avec le lanceur, notre hub (le même service Cloudflare qui reçoit les rapports) conserve votre adresse publique et votre port, le fait que le serveur ait ou non un mot de passe (jamais le mot de passe lui-même), la version du lanceur et, s’il y en a une, la session de relais. Il les garde :invite_hours heures ; le lanceur les renouvelle toutes les heures tant que vous hébergez et les retire quand vous arrêtez.',
+                'Quiconque a le code obtient l’adresse. Tant que vous hébergez, vos amis Steam voient « Hosting urSovngarde », et leur lanceur peut lire le code.',
+            ],
+        ],
+
+        [
+            'title' => 'Le relais',
+            'body'  => [
+                'Quand l’hébergement passe par le relais, le trafic du jeu entre vous et vos amis transite par un serveur que nous louons chez IONOS, dans un centre de données en Allemagne : le même serveur que ce site. Ce trafic est chiffré par la couche réseau du jeu lui-même, et le relais ne peut pas le lire.',
+                'Le relais ne garde aucune adresse dans ses journaux. Une fois par minute, il n’écrit que des totaux : sessions, joueurs, paquets et octets. Il oublie une session 60 secondes après qu’elle est devenue silencieuse.',
+            ],
+        ],
+
+        [
+            'title' => 'Ce site',
+            'body'  => [
+                'Le site dépose deux cookies, tous deux strictement nécessaires et tous deux supprimés au bout de deux heures : <code>skyrim-together-vr-session</code>, dont le framework du site se sert pour suivre une même visite, et <code>XSRF-TOKEN</code>, un jeton de sécurité contre les formulaires falsifiés. Il n’y a ni pistage, ni mesure d’audience, ni publicité, et c’est pourquoi il n’y a pas de bandeau de cookies.',
+                'Comme tout serveur web, le nôtre tient un journal d’accès qui enregistre l’adresse et l’heure de chaque requête.',
             ],
         ],
     ],

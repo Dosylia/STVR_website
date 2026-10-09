@@ -29,7 +29,7 @@
             <div class="footer__col">
                 <h4>{{ __('site.nav.devlog') }}</h4>
                 <ul class="footer__list">
-                    @foreach (['roadmap', 'devlog', 'faq', 'privacy'] as $item)
+                    @foreach (['roadmap', 'devlog', 'faq', 'privacy', 'legal'] as $item)
                         <li><a href="{{ Nav::url($item) }}">{{ __("site.nav.{$item}") }}</a></li>
                     @endforeach
                 </ul>

@@ -3,17 +3,15 @@
 return [
 
     'meta' => [
-        'title'       => 'urSovngarde: privacidad e informes de fallos',
-        'description' => 'Qué contiene un informe de fallo, qué no sale nunca de tu PC, quién lo lee y cómo se borra a los :days días, o antes si lo pides.',
+        'title'       => 'urSovngarde: privacidad',
+        'description' => 'Qué contiene un informe de fallo y cómo se borra a los :days días, qué guardan los códigos de invitación y el relay, y las dos cookies que pone este sitio.',
     ],
 
     'hero' => [
-        'kicker' => 'Los informes de fallos y tus datos',
+        'kicker' => 'Informes de fallos, alojamiento y tus datos',
         'title'  => 'Privacidad',
-        'lede'   => 'Qué contiene un informe de fallo, qué no sale nunca de tu PC, quién lo lee y durante cuánto tiempo.',
+        'lede'   => 'Qué contiene un informe de fallo, qué se guarda cuando alojas a través de nosotros, qué pone este sitio y durante cuánto tiempo.',
     ],
-
-    'status' => 'El lanzador de urSovngarde todavía no ha salido. Esta página llega antes, para que lo que envía pueda leerse antes de que pregunte nada.',
 
     'discord' => 'nuestro servidor de Discord',
 
@@ -91,6 +89,30 @@ return [
             'body'  => [
                 'Después de enviarlo, el lanzador muestra el número del informe y guarda la lista de los números que ha enviado. Da un número en :discord y ese informe se borra en todas partes, sin preguntas.',
                 'Elige «nunca» en el lanzador y desde ese momento no se envía nada.',
+            ],
+        ],
+
+        [
+            'title' => 'Códigos de invitación',
+            'body'  => [
+                'Cuando alojas con el lanzador, nuestro hub (el mismo servicio de Cloudflare que recibe los informes) guarda tu dirección pública y tu puerto, si el servidor tiene contraseña (nunca la contraseña en sí), la versión del lanzador y, cuando la hay, la sesión del relay. Los guarda durante :invite_hours horas; el lanzador los renueva cada hora mientras alojas y los retira cuando paras.',
+                'Cualquiera que tenga el código obtiene la dirección. Mientras alojas, tus amigos de Steam ven «Hosting urSovngarde», y su lanzador puede leer el código.',
+            ],
+        ],
+
+        [
+            'title' => 'El relay',
+            'body'  => [
+                'Cuando alojas a través del relay, el tráfico del juego entre tú y tus amigos pasa por un servidor que alquilamos a IONOS, en un centro de datos en Alemania: el mismo servidor que aloja esta web. El tráfico va cifrado por la propia red del juego, y el relay no puede leerlo.',
+                'El relay no guarda ninguna dirección en sus registros. Una vez por minuto anota solo recuentos: sesiones, jugadores, paquetes y bytes. Olvida una sesión 60 segundos después de que se quede en silencio.',
+            ],
+        ],
+
+        [
+            'title' => 'Esta web',
+            'body'  => [
+                'El sitio pone dos cookies, las dos estrictamente necesarias y las dos desaparecen a las dos horas: <code>skyrim-together-vr-session</code>, que el framework del sitio usa para mantener unida una visita, y <code>XSRF-TOKEN</code>, un token de seguridad contra formularios falsificados. No hay rastreo, ni analítica, ni publicidad, y por eso no hay banner de cookies.',
+                'Como cualquier servidor web, el nuestro guarda un registro de accesos que anota la dirección y la hora de cada petición.',
             ],
         ],
     ],

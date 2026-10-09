@@ -65,7 +65,7 @@ final class StructuredData
             'mainEntity' => collect($groups)->flatMap(fn ($g) => $g['items'])->map(fn ($i) => [
                 '@type' => 'Question',
                 'name' => strip_tags($i['q']),
-                'acceptedAnswer' => ['@type' => 'Answer', 'text' => strip_tags($i['a'])],
+                'acceptedAnswer' => ['@type' => 'Answer', 'text' => strip_tags(Facts::fill($i['a']))],
             ])->values()->all(),
         ]);
     }

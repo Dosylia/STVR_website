@@ -72,6 +72,11 @@ class PageController extends Controller
         return $this->page('pages.privacy', 'privacy');
     }
 
+    public function legal(): View
+    {
+        return $this->page('pages.legal', 'legal');
+    }
+
     /**
      * Everything a layout needs that is not specific to one page: which page we
      * are on (so the nav can mark it and the switcher can stay put) and the
