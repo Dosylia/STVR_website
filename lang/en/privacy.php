@@ -73,7 +73,7 @@ return [
             'body'  => [
                 'A report travels encrypted (HTTPS) to a small service of ours that runs on Cloudflare, and is kept there. Only the people who work on the mod can read it: two people today.',
                 'Like every web server, that service sees the address a report comes from. It keeps a scrambled form of the address (a one-way hash) for one hour, to count reports and stop floods, and never stores the address with the report.',
-                'When a report arrives, a short line is posted in a private channel of :discord: its number, its size, the mod\'s version and whether it crashed during play. Never what is inside.',
+                'When a report arrives, a short line is posted in a private channel of :discord: its number, its size, the mod\'s version, whether it crashed during play, and which crash it is: its name if we already know it, or the place in the game\'s code where it happened. Never the logs themselves.',
             ],
         ],
 
@@ -113,6 +113,7 @@ return [
             'body'  => [
                 'The site sets two cookies, both strictly necessary and both gone after two hours: <code>skyrim-together-vr-session</code>, which the site\'s framework uses to hold a visit together, and <code>XSRF-TOKEN</code>, a security token against forged forms. There is no tracking, no analytics and no advertising, which is why there is no cookie banner.',
                 'Like every web server, ours keeps an access log that records the address and time of each request.',
+                'When the launcher is downloaded from this site, or an installed launcher asks whether there is an update, the site tells our hub, which adds one to that day\'s count (and, for a download, to that version\'s). Nothing about who downloaded is sent.',
             ],
         ],
     ],

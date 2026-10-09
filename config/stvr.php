@@ -59,6 +59,20 @@ return [
     */
     /*
     |--------------------------------------------------------------------------
+    | The hub
+    |--------------------------------------------------------------------------
+    | The project's Cloudflare service (invite codes, crash reports, the team's
+    | panel). The site tells it how many launchers were downloaded and how many
+    | update checks came in (App\Support\HubStats). site_key is the hub's
+    | SITE_KEY secret; empty, and nothing is sent.
+    */
+    'hub' => [
+        'url'      => env('STVR_HUB_URL', 'https://ursovngarde-hub.ursovngarde.workers.dev'),
+        'site_key' => env('STVR_HUB_SITE_KEY', ''),
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | The launcher
     |--------------------------------------------------------------------------
     |

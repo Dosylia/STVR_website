@@ -73,7 +73,7 @@ return [
             'body'  => [
                 'Un rapport voyage chiffré (HTTPS) jusqu’à un petit service à nous qui tourne chez Cloudflare, et y est conservé. Seules les personnes qui travaillent sur le mod peuvent le lire : deux personnes aujourd’hui.',
                 'Comme tout serveur web, ce service voit l’adresse d’où vient un rapport. Il en garde une forme brouillée (une empreinte à sens unique) pendant une heure, pour compter les rapports et bloquer les envois en masse, et ne l’enregistre jamais avec le rapport.',
-                'Quand un rapport arrive, une courte ligne est publiée dans un salon privé de :discord : son numéro, sa taille, la version du mod et s’il a planté en cours de partie. Jamais son contenu.',
+                'Quand un rapport arrive, une courte ligne est publiée dans un salon privé de :discord : son numéro, sa taille, la version du mod, s’il a planté en cours de partie, et de quel plantage il s’agit, avec son nom si nous le connaissons déjà, ou l’endroit du code du jeu où il s’est produit. Jamais les journaux eux-mêmes.',
             ],
         ],
 
@@ -113,6 +113,7 @@ return [
             'body'  => [
                 'Le site dépose deux cookies, tous deux strictement nécessaires et tous deux supprimés au bout de deux heures : <code>skyrim-together-vr-session</code>, dont le framework du site se sert pour suivre une même visite, et <code>XSRF-TOKEN</code>, un jeton de sécurité contre les formulaires falsifiés. Il n’y a ni pistage, ni mesure d’audience, ni publicité, et c’est pourquoi il n’y a pas de bandeau de cookies.',
                 'Comme tout serveur web, le nôtre tient un journal d’accès qui enregistre l’adresse et l’heure de chaque requête.',
+                'Quand le lanceur est téléchargé depuis ce site, ou qu’un lanceur installé demande s’il existe une mise à jour, le site le signale à notre hub, qui ajoute un au compte du jour (et, pour un téléchargement, à celui de cette version). Rien sur la personne qui télécharge n’est envoyé.',
             ],
         ],
     ],

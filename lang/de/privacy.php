@@ -73,7 +73,7 @@ return [
             'body'  => [
                 'Ein Bericht reist verschlüsselt (HTTPS) zu einem kleinen Dienst von uns, der bei Cloudflare läuft, und wird dort aufbewahrt. Lesen können ihn nur die Leute, die an der Mod arbeiten: heute zwei Personen.',
                 'Wie jeder Webserver sieht dieser Dienst die Adresse, von der ein Bericht kommt. Er behält eine verschleierte Form davon (einen Einweg-Hash) eine Stunde lang, um Berichte zu zählen und Fluten zu stoppen, und speichert die Adresse nie zusammen mit dem Bericht.',
-                'Wenn ein Bericht ankommt, erscheint eine kurze Zeile in einem privaten Kanal auf :discord: seine Nummer, seine Größe, die Version der Mod und ob es beim Spielen abgestürzt ist. Nie sein Inhalt.',
+                'Wenn ein Bericht ankommt, erscheint eine kurze Zeile in einem privaten Kanal auf :discord: seine Nummer, seine Größe, die Version der Mod, ob es beim Spielen abgestürzt ist, und um welchen Absturz es sich handelt, mit seinem Namen, wenn wir ihn schon kennen, oder der Stelle im Code des Spiels, an der er passiert ist. Nie die Logs selbst.',
             ],
         ],
 
@@ -113,6 +113,7 @@ return [
             'body'  => [
                 'Die Seite setzt zwei Cookies, beide unbedingt erforderlich und beide nach zwei Stunden verschwunden: <code>skyrim-together-vr-session</code>, mit dem das Framework der Seite einen Besuch zusammenhält, und <code>XSRF-TOKEN</code>, ein Sicherheitstoken gegen gefälschte Formulare. Es gibt kein Tracking, keine Analyse und keine Werbung, und deshalb gibt es auch kein Cookie-Banner.',
                 'Wie jeder Webserver führt unserer ein Zugriffsprotokoll, das die Adresse und den Zeitpunkt jeder Anfrage festhält.',
+                'Wenn der Launcher von dieser Website heruntergeladen wird oder ein installierter Launcher fragt, ob es ein Update gibt, meldet die Website das unserem Hub, der den Zähler des Tages um eins erhöht (bei einem Download auch den dieser Version). Nichts darüber, wer heruntergeladen hat, wird übermittelt.',
             ],
         ],
     ],

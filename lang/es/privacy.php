@@ -73,7 +73,7 @@ return [
             'body'  => [
                 'Un informe viaja cifrado (HTTPS) hasta un pequeño servicio nuestro que funciona en Cloudflare, y se guarda allí. Solo pueden leerlo las personas que trabajan en el mod: dos personas hoy.',
                 'Como cualquier servidor web, ese servicio ve la dirección desde la que llega un informe. Guarda una huella irreversible de esa dirección (un hash) durante una hora, para contar los informes y frenar los envíos masivos, y nunca la guarda junto al informe.',
-                'Cuando llega un informe, se publica una línea corta en un canal privado de :discord: su número, su tamaño, la versión del mod y si falló durante la partida. Nunca su contenido.',
+                'Cuando llega un informe, se publica una línea corta en un canal privado de :discord: su número, su tamaño, la versión del mod, si falló durante la partida y de qué fallo se trata, con su nombre si ya lo conocemos o el lugar del código del juego donde ocurrió. Nunca los registros en sí.',
             ],
         ],
 
@@ -113,6 +113,7 @@ return [
             'body'  => [
                 'El sitio pone dos cookies, las dos estrictamente necesarias y las dos desaparecen a las dos horas: <code>skyrim-together-vr-session</code>, que el framework del sitio usa para mantener unida una visita, y <code>XSRF-TOKEN</code>, un token de seguridad contra formularios falsificados. No hay rastreo, ni analítica, ni publicidad, y por eso no hay banner de cookies.',
                 'Como cualquier servidor web, el nuestro guarda un registro de accesos que anota la dirección y la hora de cada petición.',
+                'Cuando el lanzador se descarga desde esta web, o un lanzador instalado pregunta si hay una actualización, la web se lo indica a nuestro hub, que suma uno al recuento del día (y, en una descarga, al de esa versión). No se envía nada sobre quién descargó.',
             ],
         ],
     ],

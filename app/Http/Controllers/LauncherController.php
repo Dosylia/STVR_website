@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Support\HubStats;
 use App\Support\LauncherDownload;
+use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Storage;
 use Symfony\Component\HttpFoundation\StreamedResponse;
@@ -14,17 +16,21 @@ class LauncherController extends Controller
     {
     }
 
-    public function file(string $name): StreamedResponse
+    public function file(Request $request, string $name): StreamedResponse
     {
         $path = $this->launcher->stored($name) ?? abort(404);
+
+        HubStats::launcherDownload($request, preg_match('/_(\d+\.\d+\.\d+)_/', $name, $m) ? $m[1] : null);
 
         return Storage::disk('local')->download($path, $name, ['Content-Type' => 'application/octet-stream']);
     }
 
     /** What Tauri's updater reads (its static JSON form): the version, and where the signed file is. */
-    public function latest(): JsonResponse
+    public function latest(Request $request): JsonResponse
     {
         $build = $this->launcher->current();
+
+        HubStats::updateCheck($request);
 
         if ($build === null || $build->version === null) {
             abort(404);
