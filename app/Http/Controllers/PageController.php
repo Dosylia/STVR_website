@@ -42,6 +42,7 @@ class PageController extends Controller
         return $this->page('pages.download', 'download', [
             'release'  => $this->releases->latest(),
             'launcher' => $this->launcher->asset(),
+            'launcherBuild' => $this->launcher->current(),
         ]);
     }
 

@@ -30,7 +30,7 @@
                     @if ($release->live)
                         <span class="pill pill--live"><span class="pill__dot"></span>{{ __('download.release.live_label') }}</span>
                         @if ($release->publishedAt)
-                            <span>{{ __('download.release.published', ['date' => $release->publishedAt->format('j F Y')]) }}</span>
+                            <span>{{ __('download.release.published', ['date' => \Illuminate\Support\Carbon::instance($release->publishedAt)->locale(app()->getLocale())->isoFormat('LL')]) }}</span>
                         @endif
                         @if ($release->downloads() > 0)
                             <span>{{ __('download.release.downloads', ['count' => number_format($release->downloads())]) }}</span>
@@ -58,6 +58,17 @@
                     <span class="asset__size">{{ $launcher->humanSize() }}</span>
                 @endif
             </div>
+            {{-- Version and date from the GitHub release the site copied the file from, like the mod's line above. --}}
+            @if ($launcherBuild && ($launcherBuild->version || $launcherBuild->publishedAt))
+                <p class="release__meta asset__release">
+                    @if ($launcherBuild->version)
+                        <span>{{ __('download.assets.launcher.version', ['version' => $launcherBuild->version]) }}</span>
+                    @endif
+                    @if ($launcherBuild->publishedAt)
+                        <span>{{ __('download.assets.launcher.updated', ['date' => \Illuminate\Support\Carbon::parse($launcherBuild->publishedAt)->locale(app()->getLocale())->isoFormat('LL')]) }}</span>
+                    @endif
+                </p>
+            @endif
             {{-- Which setups it handles, as tags beside "start here": the first
                  thing a modder wants to know is whether it fits theirs. --}}
             <div class="asset__tags">

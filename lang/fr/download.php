@@ -39,6 +39,8 @@ return [
             'meta'  => 'Commencez ici',
             'works_with' => 'Compatible avec',
             'setups' => ['Mod Organizer 2', 'Vortex', 'Sans gestionnaire de mods'],
+            'version' => 'Version :version',
+            'updated' => 'Mise à jour le :date',
             'soon'  => 'Pas encore publié',
             'soon_note' => 'Le lanceur est encore en test. Ce bouton le téléchargera dès sa publication.',
         ],

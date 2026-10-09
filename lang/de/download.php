@@ -39,6 +39,8 @@ return [
             'meta'  => 'Hier anfangen',
             'works_with' => 'Funktioniert mit',
             'setups' => ['Mod Organizer 2', 'Vortex', 'Ohne Mod-Manager'],
+            'version' => 'Version :version',
+            'updated' => 'Aktualisiert am :date',
             'soon'  => 'Noch nicht veröffentlicht',
             'soon_note' => 'Der Launcher wird noch getestet. Dieser Knopf lädt ihn herunter, sobald er veröffentlicht ist.',
         ],
