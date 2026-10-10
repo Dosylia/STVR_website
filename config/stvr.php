@@ -88,9 +88,11 @@ return [
             'Tamriel' => [
                 'slug' => 'skyrim',
                 'view' => 'art.skyrim-map',
-                // UNVERIFIED: estimates. In game at both places, getpos x and getpos y, and correct them.
-                'a' => ['world' => [21000, -9000],  'svg' => [478, 322]],   // Whiterun, main gate
-                'b' => ['world' => [131000, 33000], 'svg' => [790, 250]],   // Windhelm, bridge
+                // Two real positions, from the mod session (10 October): Castle Volkihar's doors and Fort Dawnguard's road
+                // door, at opposite corners of the drawing. The drawing's other places are put by eye, so a reading in
+                // Whiterun's market still checks the drawing between them.
+                'a' => ['world' => [-172340, 150683], 'svg' => [172, 84]],   // Castle Volkihar, the castle doors
+                'b' => ['world' => [200505, -107812], 'svg' => [906, 474]],  // Fort Dawnguard, where its road door comes out
             ],
             'DLC2SolstheimWorld' => [
                 'slug' => 'solstheim',
@@ -102,9 +104,11 @@ return [
             'DLC01SoulCairn' => [
                 'slug' => 'soul_cairn',
                 'view' => 'art.soul-cairn-map',
-                // UNVERIFIED: placeholders until someone stands there. In game at both places, getpos x and getpos y.
-                'a' => ['world' => [-20000, -30000], 'svg' => [300, 470]],  // where you arrive, at the portal
-                'b' => ['world' => [10000, 20000],   'svg' => [520, 200]],  // the Boneyard, its gate
+                // a is real, from the mod session: the Soul Cairn's door into the Boneyard, drawn at the keep's south side.
+                // b is not a place: it sets the scale so that the worldspace's bounds (x -212992 to 327680, y -208896 to
+                // 212992) fit the drawing's height, the same on both axes. A reading where you arrive would replace it.
+                'a' => ['world' => [8321, 11729],    'svg' => [520, 218]],  // the Boneyard, the Soul Cairn's door into it
+                'b' => ['world' => [108321, -88271], 'svg' => [670, 368]],  // a scale point, 100000 units from a
             ],
         ],
 
@@ -118,8 +122,12 @@ return [
             'WindhelmWorld'  => 'Tamriel',
             'RiftenWorld'    => 'Tamriel',
             'MarkarthWorld'  => 'Tamriel',
-            // Castle Volkihar's island and Fort Dawnguard are drawn on the Skyrim map. If the server reports either
-            // under a worldspace of its own, add that editor id here, pointing to Tamriel.
+            // Two courtyards with worldspaces of their own: the server sends each player there at one fixed spot,
+            // already in the parent's coordinates (Fort Dawnguard's road door, Castle Volkihar's doors, the Soul
+            // Cairn's door into the Boneyard).
+            'DLC1HunterHQWorld'          => 'Tamriel',
+            'DLC1VampireCastleCourtyard' => 'Tamriel',
+            'DLC01Boneyard'              => 'DLC01SoulCairn',
         ],
 
         // The areas a player can be outdoors in, by editor id, and the name the page gives each (lang/*/public.php,
@@ -132,11 +140,14 @@ return [
             'WindhelmWorld'        => 'skyrim',
             'RiftenWorld'          => 'skyrim',
             'MarkarthWorld'        => 'skyrim',
+            'DLC1HunterHQWorld'    => 'skyrim',
+            'DLC1VampireCastleCourtyard' => 'skyrim',
             'DLC2SolstheimWorld'   => 'solstheim',
             'Blackreach'           => 'blackreach',
             'Sovngarde'            => 'sovngarde',
             'SkuldafnWorld'        => 'skuldafn',
             'DLC01SoulCairn'       => 'soul_cairn',
+            'DLC01Boneyard'        => 'soul_cairn',
             'DLC01FalmerValley'    => 'forgotten_vale',
             'DLC2ApocryphaWorld'   => 'apocrypha',
             'DeepwoodRedoubtWorld' => 'deepwood_vale',

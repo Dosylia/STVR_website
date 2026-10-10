@@ -108,7 +108,9 @@ All in `config/stvr.php`, `public_server`:
 - **`shared`**: worldspaces drawn on another one's map because they share its ground and coordinates. Skyrim's walled
   cities (`WhiterunWorld`, `SolitudeWorld`, `WindhelmWorld`, `RiftenWorld`, `MarkarthWorld`) are worldspaces of their
   own in the game data, children of Tamriel, so a player in Whiterun's market is drawn on Whiterun on the Skyrim map.
-  To be checked once in game (below).
+  To be checked once in game (below). Also two courtyards with worldspaces of their own, for which the server sends one
+  fixed spot already in the parent's coordinates: `DLC1HunterHQWorld` (Fort Dawnguard) and `DLC1VampireCastleCourtyard`
+  (Castle Volkihar) on Skyrim, `DLC01Boneyard` on the Soul Cairn, counted in that map's tab.
 - **`areas`**: the name the page gives each exterior worldspace (`lang/*/public.php`, `map.areas`). A player outside
   main Skyrim is listed with the place and the area ("Raven Rock · Solstheim", "Boneyard · Soul Cairn"). A worldspace
   with a name but no drawing (the Forgotten Vale, Apocrypha, Blackreach, Sovngarde, Skuldafn, Deepwood
@@ -118,24 +120,20 @@ All in `config/stvr.php`, `public_server`:
 ### Calibration, per worldspace
 
 Each drawing places positions from two points whose in-game position and point on the drawing are both known (`a` and
-`b` under the worldspace in `maps`). **All three pairs are still estimates.** In game, stand at each place, run
-`getpos x` and `getpos y`, and correct the `world` numbers:
+`b` under the worldspace in `maps`):
 
-| Map | Point a | Point b |
-|---|---|---|
-| Skyrim (`Tamriel`) | Whiterun, the main gate | Windhelm, the bridge |
-| Solstheim (`DLC2SolstheimWorld`) | Raven Rock, the end of the dock | Skaal Village, the Greathall's door |
-| Soul Cairn (`DLC01SoulCairn`) | Where you arrive, at the portal | The Boneyard, its gate |
-
-And one check for the cities: in Whiterun's market, `getpos x` and `getpos y`, and the dot should land on Whiterun on
-the Skyrim map. If it does not, the cities need a pair of their own.
+| Map | a | b | State |
+|---|---|---|---|
+| Skyrim (`Tamriel`) | Castle Volkihar, the castle doors (-172340, 150683) | Fort Dawnguard, where its road door comes out (200505, -107812) | **Real**, from the mod session. The drawing's other places are put by eye: a reading in Whiterun's market checks them. |
+| Solstheim (`DLC2SolstheimWorld`) | Raven Rock, the end of the dock | Skaal Village, the Greathall's door | Estimates: both readings needed. |
+| Soul Cairn (`DLC01SoulCairn`) | The Soul Cairn's door into the Boneyard (8321, 11729) | A scale point: the worldspace's bounds (x -212992 to 327680, y -208896 to 212992) fitted to the drawing's height | a is real; a reading where you arrive would replace b. |
 
 ## Before switching it on
 
 - **Privacy page.** The "public server" section is written in four languages, says how to hide, and appears on the
   privacy page only once the page is switched on.
 - **Rules and moderation** on the page, once decided (`urSovngarde-hub/PUBLIC_SERVER.md`, decision 4).
-- **Calibration**, above: six places, and the Whiterun check.
+- **Calibration**, above: Solstheim's two places, where you arrive in the Soul Cairn, and the Whiterun check.
 
 ## Switching it on
 

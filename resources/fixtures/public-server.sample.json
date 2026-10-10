@@ -7,7 +7,7 @@
     "protocol": "a1b2c3d4",
     "password": false,
     "max_players": 8,
-    "player_count": 9,
+    "player_count": 10,
     "started_at": "2026-10-10T08:00:00Z",
     "server_time": "2026-10-10T12:00:00Z",
     "updated_at": "2026-10-10T12:00:00Z",
@@ -17,8 +17,8 @@
             "name": "Ingrid",
             "location": "Riverwood",
             "worldspace": "Tamriel",
-            "x": 7603,
-            "y": -66167,
+            "x": -36206,
+            "y": -72020,
             "heading": 45
         },
         {
@@ -26,8 +26,8 @@
             "name": "Torvald",
             "location": "Rivebois",
             "worldspace": "Tamriel",
-            "x": 9718,
-            "y": -62667,
+            "x": -33158,
+            "y": -68044,
             "heading": 200
         },
         {
@@ -40,8 +40,8 @@
             "name": "Kjeld",
             "location": "Windhelm",
             "worldspace": "Tamriel",
-            "x": 123948,
-            "y": 24250,
+            "x": 131422,
+            "y": 30715,
             "heading": 300
         },
         {
@@ -49,8 +49,8 @@
             "name": "Runa",
             "location": "Falkreath Hold",
             "worldspace": "Tamriel",
-            "x": -29416,
-            "y": -115750,
+            "x": -89542,
+            "y": -128359,
             "heading": 90
         },
         {
@@ -58,8 +58,8 @@
             "name": "Brynja",
             "location": "Whiterun",
             "worldspace": "WhiterunWorld",
-            "x": 18885,
-            "y": -13667,
+            "x": -19951,
+            "y": -12368,
             "heading": 270
         },
         {
@@ -75,10 +75,19 @@
             "id": "c1z0ny",
             "name": "Siv",
             "location": "Boneyard",
-            "worldspace": "DLC01SoulCairn",
-            "x": 7273,
-            "y": 14444,
-            "heading": 0
+            "worldspace": "DLC01Boneyard",
+            "x": 8321,
+            "y": 11729,
+            "heading": 180
+        },
+        {
+            "id": "f2g5hk",
+            "name": "Vald",
+            "location": "Fort Dawnguard",
+            "worldspace": "DLC1HunterHQWorld",
+            "x": 200505,
+            "y": -107812,
+            "heading": 90
         }
     ]
 }
