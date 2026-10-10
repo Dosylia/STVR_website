@@ -21,6 +21,8 @@ return [
         'version_label'  => 'Build actuelle',
         'version_none'   => 'En préparation',
         'version_rolling'=> 'Dernière build',
+        'launcher_label' => 'Lanceur',
+        'launcher_note'  => 'Mis à jour le :date',
         'port_label'     => 'Votre serveur, votre port',
         'port_note'      => 'UDP, redirigé ou via un VPN',
         'game_label'     => 'Tourne sur',

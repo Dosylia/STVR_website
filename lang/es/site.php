@@ -11,6 +11,7 @@ return [
         'download' => 'Descargar',
         'install'  => 'Instalación',
         'host'     => 'Montar servidor',
+        'public'   => 'Servidor público',
         'roadmap'  => 'Hoja de ruta',
         'devlog'   => 'Diario',
         'faq'      => 'Preguntas',

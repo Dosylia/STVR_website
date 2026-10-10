@@ -930,6 +930,8 @@ h1 > .hero__kicker { text-transform: none; }
   line-height: 1.1;
   margin-bottom: .3rem;
 }
+.band__link { color: inherit; text-decoration: none; }
+.band__link:hover { color: var(--gold-hot); }
 .band__value--mono { font-family: var(--mono); font-size: clamp(1.2rem, 1rem + .9vw, 1.7rem); color: var(--aurora-a); }
 .band__note { font-size: .9rem; color: var(--parchment-3); line-height: 1.45; }
 
@@ -1305,6 +1307,104 @@ tbody td:first-child { color: var(--parchment); font-family: var(--mono); font-s
 .community__btn--discord:hover, .community__btn--discord:focus-visible {
   border-color: #aab1ff;
 }
+
+/* =============================================================================
+   The public server
+   -----------------------------------------------------------------------------
+   A status tablet, a roster and our own map of Skyrim. Green only for what is
+   alive right now (the server's dot, the players), as everywhere on the site.
+   ========================================================================== */
+
+.server__state {
+  display: flex;
+  align-items: center;
+  gap: .55em;
+  margin: 0 0 .6rem;
+  font-family: var(--display);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+.server__state.is-online  { color: var(--aurora-a); }
+.server__state.is-offline { color: var(--iron); }
+.server__dot { width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+.is-online .server__dot { animation: pulse 2.6s infinite; }
+.server__name { margin: 0 0 1rem; font-size: clamp(1.4rem, 1.15rem + 1vw, 1.9rem); }
+.server__count { display: flex; align-items: baseline; gap: .45rem; margin: 0 0 1.4rem; }
+.server__count-n { font-family: var(--display); font-size: 3rem; font-weight: 700; line-height: 1; color: var(--parchment); }
+.server__count-of { font-family: var(--display); font-size: 1.4rem; color: var(--parchment-3); }
+.server__count-label { margin-left: .3rem; color: var(--parchment-3); }
+.server__facts { display: grid; gap: .9rem; margin: 0; }
+.server__facts > div { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 1rem; align-items: center; }
+.server__facts dt {
+  font-family: var(--display);
+  font-size: .66rem;
+  font-weight: 600;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+  color: var(--mist);
+}
+.server__facts dd { margin: 0; color: var(--parchment-2); }
+.server__facts .copyline { margin: 0; }
+.server__facts dd.mono { font-family: var(--mono); color: var(--aurora-a); }
+.server__updated { margin: 1.4rem 0 0; font-size: .9rem; color: var(--iron); }
+@media (max-width: 520px) { .server__facts > div { grid-template-columns: 1fr; gap: .3rem; } }
+
+.where {
+  display: grid;
+  grid-template-columns: minmax(16rem, 1fr) minmax(0, 2fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: start;
+}
+@media (max-width: 900px) { .where { grid-template-columns: 1fr; } }
+
+.roster { list-style: none; margin: 1.6rem 0 0; padding: 0; display: grid; gap: .5rem; }
+.roster__item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  column-gap: .9rem;
+  align-items: center;
+  padding: .75rem .9rem;
+  border: 1px solid var(--stone-800);
+  border-radius: var(--radius);
+  background: rgba(11, 13, 17, .6);
+}
+.roster__rune {
+  grid-row: span 2;
+  display: grid;
+  place-items: center;
+  width: 2.3rem;
+  height: 2.3rem;
+  border-radius: 50%;
+  border: 1px solid rgba(63, 214, 164, .45);
+  font-family: var(--display);
+  color: var(--aurora-a);
+}
+.roster__name { color: var(--parchment); }
+.roster__where { font-size: .9rem; color: var(--parchment-3); }
+.roster__note { margin-top: 1rem; font-size: .9rem; color: var(--iron); }
+
+.where__map { margin: 0; }
+.where__map .inscription { margin-bottom: 1rem; }
+.where__map figcaption { margin-top: .8rem; font-size: .9rem; font-style: italic; color: var(--iron); }
+.map {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--stone-800);
+  border-radius: var(--radius);
+}
+.map text { font-family: var(--display); }
+.map__sea { font-family: var(--body) !important; font-style: italic; font-size: 15px; fill: #3d5866; letter-spacing: .14em; }
+.map__peak { font-size: 10px; fill: #7d828c; letter-spacing: .08em; }
+.map__town path { fill: #7a6a3a; }
+.map__town text { font-size: 11px; fill: #9a9fa8; letter-spacing: .06em; }
+.map__town--capital path { fill: var(--gold); }
+.map__town--capital text { font-size: 13px; font-weight: 600; fill: var(--parchment-2); letter-spacing: .08em; }
+.map__player text { font-family: var(--body) !important; font-size: 13px; font-weight: 600; fill: #b6f5df; paint-order: stroke; stroke: #07080a; stroke-width: 3px; }
+.map__north text { font-size: 11px; fill: var(--gold); }
 
 /* =============================================================================
    Loading-screen tips

@@ -43,12 +43,23 @@
                 <p class="band__value">{{ $release->tag ?: ($release->exists() ? __('home.stats.version_rolling') : __('home.stats.version_none')) }}</p>
                 <p class="band__note">
                     @if ($release->live && $release->publishedAt)
-                        {{ $release->publishedAt->format('j F Y') }}
+                        {{ \Illuminate\Support\Carbon::instance($release->publishedAt)->locale(app()->getLocale())->isoFormat('LL') }}
                     @else
                         <a href="{{ Nav::link('releases') }}" rel="noopener">{{ __('download.release.mirror') }}</a>
                     @endif
                 </p>
             </div>
+            @if ($launcherBuild && $launcherBuild->version)
+                <div class="band__cell">
+                    <p class="band__label">{{ __('home.stats.launcher_label') }}</p>
+                    <p class="band__value"><a class="band__link" href="{{ Nav::url('download') }}">v{{ $launcherBuild->version }}</a></p>
+                    <p class="band__note">
+                        @if ($launcherBuild->publishedAt)
+                            {{ __('home.stats.launcher_note', ['date' => \Illuminate\Support\Carbon::parse($launcherBuild->publishedAt)->locale(app()->getLocale())->isoFormat('LL')]) }}
+                        @endif
+                    </p>
+                </div>
+            @endif
             <div class="band__cell">
                 <p class="band__label">{{ __('home.stats.port_label') }}</p>
                 <p class="band__value band__value--mono">@stvr('facts.protocol') @stvr('facts.port')</p>

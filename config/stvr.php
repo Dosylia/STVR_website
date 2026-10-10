@@ -59,6 +59,38 @@ return [
     */
     /*
     |--------------------------------------------------------------------------
+    | The public server
+    |--------------------------------------------------------------------------
+    | A server the team runs for anyone to join. The page reads its live status
+    | from status_url, a JSON document in the shape described in
+    | docs/public-server-status.md (the mod and the hub provide it).
+    |
+    | enabled puts the page in the menu, the sitemap and search results. Leave
+    | it off until the server and its status are really live: the page then
+    | says the server is not open yet, and nothing on it claims otherwise.
+    |
+    | status_url may be "sample" on a development machine: the page then shows
+    | resources/fixtures/public-server.sample.json, to review the design with
+    | players on it. Never in production.
+    */
+    'public_server' => [
+        'enabled'       => (bool) env('STVR_PUBLIC_SERVER_ENABLED', false),
+        'status_url'    => env('STVR_PUBLIC_SERVER_STATUS_URL', ''),
+        'cache_seconds' => (int) env('STVR_PUBLIC_SERVER_CACHE', 30),
+
+        // The map: two places whose in-game position (Tamriel worldspace, the
+        // console's getpos x and getpos y) and whose point on our drawing are
+        // both known, so every other position can be placed between them.
+        // UNVERIFIED: these world positions are estimates. Stand at both city
+        // gates in game, read getpos, and correct them.
+        'map' => [
+            'a' => ['world' => [21000, -9000],  'svg' => [478, 322]],   // Whiterun, main gate
+            'b' => ['world' => [131000, 33000], 'svg' => [790, 250]],   // Windhelm, bridge
+        ],
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | The hub
     |--------------------------------------------------------------------------
     | The project's Cloudflare service (invite codes, crash reports, the team's
@@ -215,6 +247,7 @@ return [
         'devlog'   => ['en' => 'devlog',   'fr' => 'journal',      'de' => 'entwicklertagebuch', 'es' => 'diario'],
         'privacy'  => ['en' => 'privacy',  'fr' => 'confidentialite', 'de' => 'datenschutz', 'es' => 'privacidad'],
         'legal'    => ['en' => 'legal-notice', 'fr' => 'mentions-legales', 'de' => 'impressum', 'es' => 'aviso-legal'],
+        'public'   => ['en' => 'public-server', 'fr' => 'serveur-public', 'de' => 'oeffentlicher-server', 'es' => 'servidor-publico'],
     ],
 
     'fallback_locale' => 'en',

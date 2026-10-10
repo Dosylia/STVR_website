@@ -15,7 +15,7 @@
         </a>
 
         <nav class="nav" id="nav" aria-label="{{ __('site.nav.menu') }}">
-            @foreach (Nav::MENU as $item)
+            @foreach (Nav::menu() as $item)
                 <a class="nav__link"
                    href="{{ Nav::url($item) }}"
                    @if (($page ?? '') === $item) aria-current="page" @endif>{{ __("site.nav.{$item}") }}</a>

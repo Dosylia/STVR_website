@@ -11,6 +11,7 @@ return [
         'download' => 'Télécharger',
         'install'  => 'Installation',
         'host'     => 'Héberger',
+        'public'   => 'Serveur public',
         'roadmap'  => 'Feuille de route',
         'devlog'   => 'Journal',
         'faq'      => 'FAQ',

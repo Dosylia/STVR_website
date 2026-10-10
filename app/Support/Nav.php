@@ -15,6 +15,19 @@ final class Nav
     /** Page ids in the order they appear in the main navigation. */
     public const MENU = ['download', 'install', 'host', 'roadmap', 'devlog', 'faq'];
 
+    /** The menu as shown: the public server page joins it only once it is switched on. */
+    public static function menu(): array
+    {
+        if (! config('stvr.public_server.enabled')) {
+            return self::MENU;
+        }
+
+        $menu = self::MENU;
+        array_splice($menu, array_search('host', $menu, true) + 1, 0, ['public']);
+
+        return $menu;
+    }
+
     public static function locales(): array
     {
         return array_keys((array) config('stvr.locales', []));

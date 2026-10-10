@@ -38,6 +38,7 @@ $pages = [
     'roadmap'  => 'roadmap',
     'privacy'  => 'privacy',
     'legal'    => 'legal',
+    'public'   => 'publicServer',
 ];
 
 foreach (Nav::locales() as $locale) {

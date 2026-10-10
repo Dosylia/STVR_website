@@ -11,6 +11,7 @@ return [
         'download' => 'Download',
         'install'  => 'Install',
         'host'     => 'Host a server',
+        'public'   => 'Public server',
         'roadmap'  => 'Roadmap',
         'devlog'   => 'Devlog',
         'faq'      => 'FAQ',

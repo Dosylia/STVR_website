@@ -11,6 +11,7 @@ return [
         'download' => 'Download',
         'install'  => 'Anleitung',
         'host'     => 'Server hosten',
+        'public'   => 'Öffentlicher Server',
         'roadmap'  => 'Fahrplan',
         'devlog'   => 'Entwicklertagebuch',
         'faq'      => 'FAQ',

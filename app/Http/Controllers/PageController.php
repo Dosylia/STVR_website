@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Support\Devlog;
 use App\Support\LauncherDownload;
 use App\Support\Nav;
+use App\Support\PublicServer;
 use App\Support\ReleaseService;
 use App\Support\Shots;
 use Illuminate\Http\Request;
@@ -32,6 +33,7 @@ class PageController extends Controller
     {
         return $this->page('pages.home', 'home', [
             'release' => $this->releases->latest(),
+            'launcherBuild' => $this->launcher->current(),
             'entries' => $this->devlog->latest(app()->getLocale(), 3),
             'shots'   => $this->shots->all(),
         ]);
@@ -71,6 +73,13 @@ class PageController extends Controller
     public function privacy(): View
     {
         return $this->page('pages.privacy', 'privacy');
+    }
+
+    public function publicServer(PublicServer $server): View
+    {
+        return $this->page('pages.public', 'public', [
+            'status' => $server->status(),
+        ]);
     }
 
     public function legal(): View
