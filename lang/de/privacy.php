@@ -95,7 +95,7 @@ return [
         [
             'title' => 'Einladungscodes',
             'body'  => [
-                'Wenn du mit dem Launcher hostest, speichert unser Hub (derselbe Cloudflare-Dienst, der die Berichte empfängt) deine öffentliche Adresse und deinen Port, ob der Server ein Passwort hat (nie das Passwort selbst), die Version des Launchers und, falls es eine gibt, die Relay-Sitzung. Er behält das :invite_hours Stunden lang; der Launcher erneuert es stündlich, solange du hostest, und entfernt es, wenn du aufhörst.',
+                'Wenn du mit dem Launcher hostest, speichert der kleine Dienst von uns, der die Absturzberichte empfängt, deine öffentliche Adresse und deinen Port, ob der Server ein Passwort hat (nie das Passwort selbst), die Version des Launchers und, falls es eine gibt, die Relay-Sitzung. Er behält das :invite_hours Stunden lang; der Launcher erneuert es stündlich, solange du hostest, und entfernt es, wenn du aufhörst.',
                 'Wer den Code hat, bekommt die Adresse. Solange du hostest, sehen deine Steam-Freunde „Hosting urSovngarde“, und ihr Launcher kann den Code lesen.',
             ],
         ],
@@ -113,7 +113,7 @@ return [
             'body'  => [
                 'Die Seite setzt zwei Cookies, beide unbedingt erforderlich und beide nach zwei Stunden verschwunden: <code>skyrim-together-vr-session</code>, mit dem das Framework der Seite einen Besuch zusammenhält, und <code>XSRF-TOKEN</code>, ein Sicherheitstoken gegen gefälschte Formulare. Es gibt kein Tracking, keine Analyse und keine Werbung, und deshalb gibt es auch kein Cookie-Banner.',
                 'Wie jeder Webserver führt unserer ein Zugriffsprotokoll, das die Adresse und den Zeitpunkt jeder Anfrage festhält.',
-                'Wenn der Launcher von dieser Website heruntergeladen wird oder ein installierter Launcher fragt, ob es ein Update gibt, meldet die Website das unserem Hub, der den Zähler des Tages um eins erhöht (bei einem Download auch den dieser Version). Nichts darüber, wer heruntergeladen hat, wird übermittelt.',
+                'Wenn der Launcher von dieser Website heruntergeladen wird oder ein installierter Launcher fragt, ob es ein Update gibt, erhöht derselbe kleine Dienst von uns den Zähler des Tages um eins (bei einem Download auch den dieser Version). Nichts darüber, wer heruntergeladen hat, wird übermittelt.',
             ],
         ],
 
@@ -125,7 +125,7 @@ return [
                 'Die Seite des öffentlichen Servers auf dieser Website zeigt allen live, welche Charaktere gerade auf ihm sind und an welchem Ort sich jeder befindet, so wie das eigene Spiel des jeweiligen Spielers diesen Ort nennt. Draußen zeigt sie außerdem das Gebiet, in dem sie sich befinden (Himmelsrand, Solstheim, das Seelengrab ...), und auf unseren Karten von Himmelsrand und Solstheim, wo sie stehen und in welche Richtung sie blicken. Nur Charakternamen: nie ein Steam-Name, ein Konto oder eine Adresse.',
                 'Du kannst der Seite fernbleiben: im Launcher mit „Mich auf der Seite des öffentlichen Servers verbergen“. Ab deinem nächsten Beitritt zählt die Seite dich weiterhin mit, zeigt aber nie deinen Namen und setzt dich nicht auf ihre Karte.',
                 'Das macht nur unser öffentlicher Server. Auf jedem anderen Server, auch auf deinem, ist die Einstellung aus.',
-                'Solange jemand spielt, schickt der Server alle 10 Sekunden seinen Status an unseren Hub. Der Hub behält nur den neuesten, entfernt die Spieler daraus, sobald der Server beendet wird oder 3 Minuten lang still geblieben ist, und speichert nichts darüber, wer gespielt hat oder wann.',
+                'Solange jemand spielt, schickt der Server alle 10 Sekunden seinen Status an denselben kleinen Dienst von uns. Der Dienst behält nur den neuesten, entfernt die Spieler daraus, sobald der Server beendet wird oder 3 Minuten lang still geblieben ist, und speichert nichts darüber, wer gespielt hat oder wann.',
             ],
         ],
     ],

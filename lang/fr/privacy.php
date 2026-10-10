@@ -95,7 +95,7 @@ return [
         [
             'title' => 'Codes d’invitation',
             'body'  => [
-                'Quand vous hébergez avec le lanceur, notre hub (le même service Cloudflare qui reçoit les rapports) conserve votre adresse publique et votre port, le fait que le serveur ait ou non un mot de passe (jamais le mot de passe lui-même), la version du lanceur et, s’il y en a une, la session de relais. Il les garde :invite_hours heures ; le lanceur les renouvelle toutes les heures tant que vous hébergez et les retire quand vous arrêtez.',
+                'Quand vous hébergez avec le lanceur, le petit service à nous qui reçoit les rapports de plantage conserve votre adresse publique et votre port, le fait que le serveur ait ou non un mot de passe (jamais le mot de passe lui-même), la version du lanceur et, s’il y en a une, la session de relais. Il les garde :invite_hours heures ; le lanceur les renouvelle toutes les heures tant que vous hébergez et les retire quand vous arrêtez.',
                 'Quiconque a le code obtient l’adresse. Tant que vous hébergez, vos amis Steam voient « Hosting urSovngarde », et leur lanceur peut lire le code.',
             ],
         ],
@@ -113,7 +113,7 @@ return [
             'body'  => [
                 'Le site dépose deux cookies, tous deux strictement nécessaires et tous deux supprimés au bout de deux heures : <code>skyrim-together-vr-session</code>, dont le framework du site se sert pour suivre une même visite, et <code>XSRF-TOKEN</code>, un jeton de sécurité contre les formulaires falsifiés. Il n’y a ni pistage, ni mesure d’audience, ni publicité, et c’est pourquoi il n’y a pas de bandeau de cookies.',
                 'Comme tout serveur web, le nôtre tient un journal d’accès qui enregistre l’adresse et l’heure de chaque requête.',
-                'Quand le lanceur est téléchargé depuis ce site, ou qu’un lanceur installé demande s’il existe une mise à jour, le site le signale à notre hub, qui ajoute un au compte du jour (et, pour un téléchargement, à celui de cette version). Rien sur la personne qui télécharge n’est envoyé.',
+                'Quand le lanceur est téléchargé depuis ce site, ou qu’un lanceur installé demande s’il existe une mise à jour, ce même petit service à nous ajoute un au compte du jour (et, pour un téléchargement, à celui de cette version). Rien sur la personne qui télécharge n’est envoyé.',
             ],
         ],
 
@@ -125,7 +125,7 @@ return [
                 'La page du serveur public sur ce site montre à tout le monde, en direct, quels personnages s’y trouvent et le lieu où est chacun, tel que son propre jeu le nomme. En extérieur, elle montre aussi dans quelle zone ils sont (Bordeciel, Solstheim, Griffenoire…) et, sur nos cartes de Bordeciel et de Solstheim, où ils se tiennent et dans quelle direction ils regardent. Uniquement des noms de personnages : jamais de nom Steam, de compte ni d’adresse.',
                 'Un joueur peut rester hors de la page : dans le lanceur, « Me cacher de la page du serveur public ». Dès sa prochaine connexion, la page le compte toujours, mais n’affiche jamais son nom et ne le place pas sur sa carte.',
                 'Seul notre serveur public fait cela. Le réglage est désactivé sur tous les autres serveurs, le vôtre compris.',
-                'Le serveur envoie son état à notre hub toutes les 10 secondes tant que quelqu’un joue. Le hub ne garde que le dernier, en retire les joueurs dès que le serveur s’arrête ou reste silencieux pendant 3 minutes, et ne conserve rien de qui a joué ni de quand.',
+                'Le serveur envoie son état à ce même petit service à nous toutes les 10 secondes tant que quelqu’un joue. Seul le dernier est gardé, les joueurs en sont retirés dès que le serveur s’arrête ou reste silencieux pendant 3 minutes, et rien n’est conservé de qui a joué ni de quand.',
             ],
         ],
     ],

@@ -95,7 +95,7 @@ return [
         [
             'title' => 'Códigos de invitación',
             'body'  => [
-                'Cuando alojas con el lanzador, nuestro hub (el mismo servicio de Cloudflare que recibe los informes) guarda tu dirección pública y tu puerto, si el servidor tiene contraseña (nunca la contraseña en sí), la versión del lanzador y, cuando la hay, la sesión del relay. Los guarda durante :invite_hours horas; el lanzador los renueva cada hora mientras alojas y los retira cuando paras.',
+                'Cuando alojas con el lanzador, el pequeño servicio nuestro que recibe los informes de fallos guarda tu dirección pública y tu puerto, si el servidor tiene contraseña (nunca la contraseña en sí), la versión del lanzador y, cuando la hay, la sesión del relay. Los guarda durante :invite_hours horas; el lanzador los renueva cada hora mientras alojas y los retira cuando paras.',
                 'Cualquiera que tenga el código obtiene la dirección. Mientras alojas, tus amigos de Steam ven «Hosting urSovngarde», y su lanzador puede leer el código.',
             ],
         ],
@@ -113,7 +113,7 @@ return [
             'body'  => [
                 'El sitio pone dos cookies, las dos estrictamente necesarias y las dos desaparecen a las dos horas: <code>skyrim-together-vr-session</code>, que el framework del sitio usa para mantener unida una visita, y <code>XSRF-TOKEN</code>, un token de seguridad contra formularios falsificados. No hay rastreo, ni analítica, ni publicidad, y por eso no hay banner de cookies.',
                 'Como cualquier servidor web, el nuestro guarda un registro de accesos que anota la dirección y la hora de cada petición.',
-                'Cuando el lanzador se descarga desde esta web, o un lanzador instalado pregunta si hay una actualización, la web se lo indica a nuestro hub, que suma uno al recuento del día (y, en una descarga, al de esa versión). No se envía nada sobre quién descargó.',
+                'Cuando el lanzador se descarga desde esta web, o un lanzador instalado pregunta si hay una actualización, el mismo pequeño servicio nuestro suma uno al recuento del día (y, en una descarga, al de esa versión). No se envía nada sobre quién descargó.',
             ],
         ],
 
@@ -125,7 +125,7 @@ return [
                 'La página del servidor público en esta web muestra a cualquiera, en directo, qué personajes hay en él y el lugar en el que está cada uno, tal como lo llama su propio juego. Al aire libre, muestra además la zona en la que están (Skyrim, Solstheim, el Recordatorio de las Almas...) y, en nuestros mapas de Skyrim y Solstheim, en qué punto se encuentran y hacia dónde miran. Solo nombres de personaje: nunca un nombre de Steam, una cuenta ni una dirección.',
                 'Un jugador puede quedarse fuera de la página: en el lanzador, «Ocultarme de la página del servidor público». Desde su próxima conexión, la página lo sigue contando, pero nunca muestra su nombre ni lo pone en su mapa.',
                 'Solo nuestro servidor público hace esto. La opción está desactivada en todos los demás servidores, incluido el tuyo.',
-                'El servidor envía su estado a nuestro hub cada 10 segundos mientras alguien está jugando. El hub guarda solo el último, quita de él a los jugadores en cuanto el servidor se detiene o lleva 3 minutos en silencio, y no guarda nada de quién jugó ni de cuándo.',
+                'El servidor envía su estado al mismo pequeño servicio nuestro cada 10 segundos mientras alguien está jugando. Solo se guarda el último, se quita de él a los jugadores en cuanto el servidor se detiene o lleva 3 minutos en silencio, y no se guarda nada de quién jugó ni de cuándo.',
             ],
         ],
     ],
