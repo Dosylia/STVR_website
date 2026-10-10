@@ -116,5 +116,17 @@ return [
                 'When the launcher is downloaded from this site, or an installed launcher asks whether there is an update, the site tells our hub, which adds one to that day\'s count (and, for a download, to that version\'s). Nothing about who downloaded is sent.',
             ],
         ],
+
+        [
+            // Shown only once the public server page is switched on (config stvr.public_server.enabled).
+            'when'  => 'public_server',
+            'title' => 'The public server',
+            'body'  => [
+                'The public server\'s page on this site shows anyone, live, which characters are on it and the place each one is in, as their own game names it. Outdoors in Skyrim\'s main world, it also shows where on the map they stand and which way they face. Character names only: never a Steam name, an account or an address.',
+                'A player can stay off the page: in the launcher, "Hide me from the public server page". From their next join, the page still counts them, but never shows their name or puts them on its map.',
+                'Only our public server does this. The setting is off on every other server, yours included.',
+                'The server sends its status to our hub every 10 seconds while anyone is playing. The hub keeps only the latest one, drops the players from it as soon as the server stops or has been silent for 3 minutes, and keeps nothing of who played or when.',
+            ],
+        ],
     ],
 ];

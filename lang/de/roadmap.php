@@ -69,7 +69,7 @@ return [
         'items' => [
             [
                 'title' => 'Es stürzt immer noch ab',
-                'body'  => 'Seltener als früher, und was übrig ist, dreht sich meist um viele gleichzeitig abgebaute Akteure. <code>collect-logs.bat</code> gibt uns den Dump, und der Dump benennt die Funktion.',
+                'body'  => 'Seltener als früher, und was übrig ist, dreht sich meist um viele gleichzeitig abgebaute Akteure. Der Absturzbericht des Launchers gibt uns den Dump, und der Dump benennt die Funktion.',
             ],
             [
                 'title' => 'Zellen schnell zu überqueren wird seltsam',
@@ -102,7 +102,7 @@ return [
         ],
         'report' => [
             'title' => 'Wenn du einen neuen findest',
-            'body'  => 'Führe <code>collect-logs.bat</code> im Launcher-Ordner aus. Es legt ein Zip auf dem Desktop ab, mit Client-Log, eventuellem Crashdump und beiden Build-Versionen. Dieses Zip ist der Unterschied zwischen einer Behebung diese Woche und einer Theorie diesen Monat.',
+            'body'  => 'Sag Ja, wenn der Launcher anbietet, einen Absturzbericht zu senden. Ohne den Launcher führe <code>collect-logs.bat</code> im Launcher-Ordner der Mod aus: Es legt ein Zip auf dem Desktop ab, mit Client-Log, eventuellem Crashdump und beiden Build-Versionen. Dieser Bericht ist der Unterschied zwischen einer Behebung diese Woche und einer Theorie diesen Monat.',
             'cta'   => 'Ticket öffnen',
         ],
     ],

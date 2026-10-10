@@ -13,6 +13,7 @@
             @include('partials.kicker', ['text' => __('devlog.hero.kicker')])
             <h1>{{ __('devlog.hero.title') }}</h1>
             <p class="hero__lede">{{ __('devlog.hero.lede') }}</p>
+            <p class="hero__feed"><a href="{{ route(app()->getLocale().'.devlog.feed') }}">{{ __('devlog.feed') }}</a></p>
         </div>
     </div>
 </section>
@@ -25,7 +26,7 @@
                     <a class="post reveal" href="{{ Nav::url('devlog', null, ['slug' => $entry->slug]) }}">
                         <div class="post__meta">
                             <time class="post__date" datetime="{{ $entry->date->format('Y-m-d') }}">
-                                {{ $entry->date->format('j F Y') }}
+                                {{ $entry->date->isoFormat('LL') }}
                             </time>
                             @foreach ($entry->tags as $tag)
                                 <span class="tag">{{ $tag }}</span>

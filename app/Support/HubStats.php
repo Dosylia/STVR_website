@@ -3,6 +3,7 @@
 namespace App\Support;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 
@@ -32,6 +33,38 @@ final class HubStats
         if (self::counts($request)) {
             self::later('updateCheck', null);
         }
+    }
+
+    /**
+     * How many times the launcher has been downloaded from this site, all time, as the hub counts it (GET
+     * /stats/public), for the download card. Null when the hub cannot be reached, and the card then simply shows
+     * no count.
+     *
+     * Fresh for ten minutes. After that the copy is still served, and the hub is asked again once the response has
+     * gone out, by one request at a time (Cache::flexible), so neither a slow hub nor a crowd arriving at expiry holds
+     * a page up. A page waits for the hub only when there is no copy at all: the first visit after the cache is
+     * cleared, or after a day without a visit.
+     */
+    public static function launcherDownloads(): ?int
+    {
+        $url = rtrim((string) config('stvr.hub.url'), '/');
+
+        if ($url === '') {
+            return null;
+        }
+
+        $count = Cache::flexible('stvr.hub.downloads', [600, 86400], function () use ($url) {
+            try {
+                $response = Http::timeout(3)->acceptJson()->get("{$url}/stats/public");
+                $n = $response->successful() ? $response->json('launcherDownloads') : null;
+
+                return is_int($n) && $n >= 0 ? $n : false;
+            } catch (\Throwable) {
+                return false;
+            }
+        });
+
+        return is_int($count) ? $count : null;
     }
 
     /** A real GET from something that is not a bot. HEAD asks about the file without taking it. */

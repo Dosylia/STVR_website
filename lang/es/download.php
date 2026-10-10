@@ -32,6 +32,18 @@ return [
         'none_body'      => 'Aquí todavía no hay nada que descargar. Mientras tanto el código es público, y el diario es donde el trabajo aparece primero.',
     ],
 
+    'smartscreen' => [
+        'label'  => 'La primera vez',
+        'title'  => 'Windows te avisará una vez',
+        'body'   => 'El lanzador no está firmado con un certificado de pago, así que la primera vez que lo abras, Windows mostrará una ventana azul en lugar de arrancarlo. Es lo normal.',
+        'step1'  => 'Haz clic en :more, debajo del mensaje.',
+        'step2'  => 'Después, haz clic en :run.',
+        'why'    => 'Un certificado de firma cuesta dinero cada año, y el mod es gratis. Esto lo verás al instalar el lanzador; una vez instalado, arranca como cualquier otro programa.',
+        'dialog' => 'Windows protegió su PC',
+        'more'   => 'Más información',
+        'run'    => 'Ejecutar de todas formas',
+    ],
+
     'assets' => [
         'launcher' => [
             'title' => 'Lanzador de urSovngarde',
@@ -41,6 +53,10 @@ return [
             'setups' => ['Mod Organizer 2', 'Vortex', 'Sin gestor de mods'],
             'version' => 'Versión :version',
             'updated' => 'Actualizado el :date',
+            'downloads' => '{1} :count descarga|[2,*] :count descargas',
+            'notes' => 'Novedades de la versión :version',
+            'notes_no_version' => 'Novedades de esta versión',
+            'notes_lang' => 'Notas de la versión en inglés.',
             'soon'  => 'Aún no publicado',
             'soon_note' => 'El lanzador aún está en pruebas. Este botón lo descargará en cuanto se publique.',
         ],
@@ -75,7 +91,7 @@ return [
             ['name' => 'uGridsToLoad = 5',                'note' => 'El valor por defecto. El servidor rechaza cualquier otro: los dos mundos dejarían de cuadrar.', 'state' => 'required'],
             ['name' => 'Engine Fixes VR',                 'note' => 'Elimina una categoría de cuelgues que no tiene nada que ver con nosotros.',       'state' => 'recommended'],
             ['name' => 'VRIK',                            'note' => 'El cuerpo que ve tu amigo. Muy recomendable. Es casi todo el sentido de esto.',  'state' => 'recommended'],
-            ['name' => 'La misma build que tus amigos',   'note' => 'El servidor rechaza las diferencias y nombra las dos versiones al hacerlo.',      'state' => 'required'],
+            ['name' => 'Una build que habla los mismos mensajes', 'note' => 'Las builds que intercambian los mismos mensajes de red se conectan, tengan la versión que tengan. Si no, el servidor lo dice y nombra las dos.',      'state' => 'required'],
         ],
     ],
 

@@ -2,6 +2,7 @@
 
 namespace App\Support;
 
+use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
@@ -171,14 +172,14 @@ final class ReleaseService
         );
     }
 
-    private function date(?string $raw): ?\DateTimeImmutable
+    private function date(?string $raw): ?CarbonImmutable
     {
         if (blank($raw)) {
             return null;
         }
 
         try {
-            return new \DateTimeImmutable($raw);
+            return new CarbonImmutable($raw);
         } catch (\Throwable) {
             return null;
         }

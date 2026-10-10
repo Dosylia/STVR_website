@@ -69,7 +69,7 @@ return [
         'items' => [
             [
                 'title' => 'Sigue colgándose',
-                'body'  => 'Menos que antes, y lo que queda gira sobre todo en torno a muchos actores destruidos a la vez. <code>collect-logs.bat</code> nos da el volcado, y el volcado nombra la función.',
+                'body'  => 'Menos que antes, y lo que queda gira sobre todo en torno a muchos actores destruidos a la vez. El informe de fallos del lanzador nos da el volcado, y el volcado nombra la función.',
             ],
             [
                 'title' => 'Cruzar celdas deprisa se pone raro',
@@ -102,7 +102,7 @@ return [
         ],
         'report' => [
             'title' => 'Si encuentras uno nuevo',
-            'body'  => 'Ejecuta <code>collect-logs.bat</code> en la carpeta del lanzador. Deja un zip en tu Escritorio con el registro del cliente, el volcado si lo hay y las dos versiones de build. Ese zip es la diferencia entre un arreglo esta semana y una teoría este mes.',
+            'body'  => 'Di que sí cuando el lanzador ofrezca enviar un informe de fallos. Sin el lanzador, ejecuta <code>collect-logs.bat</code> en la carpeta del lanzador propio del mod: deja un zip en tu Escritorio con el registro del cliente, el volcado si lo hay y las dos versiones de build. Ese informe es la diferencia entre un arreglo esta semana y una teoría este mes.',
             'cta'   => 'Abrir una incidencia',
         ],
     ],

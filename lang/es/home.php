@@ -37,7 +37,7 @@ return [
         'label' => 'Sin rodeos',
         'title' => 'Qué es esto en realidad',
         'body'  => 'Skyrim Together Reborn llevó el cooperativo a Skyrim Special Edition. Skyrim VR es otro ejecutable: otras direcciones de memoria, otras clases del motor, y un cuerpo donde antes solo había una cámara. Esto es ese mod, desmontado y vuelto a montar para la build de VR, por dos desarrolladores full-stack que aprendieron C++ e ingeniería inversa por el camino, lo cual tranquiliza o inquieta según el carácter.',
-        'body2' => 'Es gratis, el código es público y nada pasa nunca por un servidor nuestro. Alojas tú, o aloja tu amigo. Nadie se registra en nada.',
+        'body2' => 'Es gratis, el código es público y nadie se registra en nada. Alojas tú, o aloja tu amigo. Nuestros propios servidores solo hacen las tareas pequeñas: encontrar a un amigo con un código de seis letras, llevar la partida por el relay cuando un router no abre un puerto, decirle al lanzador si hay una actualización, y recibir los informes de fallos que aceptas enviar. Las descargas y las comprobaciones de actualización se cuentan, y el recuento no dice nada de quién las hizo.',
     ],
 
     'features' => [
@@ -90,7 +90,7 @@ return [
     'tips' => [
         'label' => 'De la pantalla de carga',
         'items' => [
-            'El servidor rechaza a cualquier cliente cuya build no coincida. El aviso de conexión nombra las dos versiones, así que el diagnóstico lleva diez segundos.',
+            'Las builds que hablan los mismos mensajes de red se conectan, tengan la versión que tengan. Si el servidor rechaza una, el aviso nombra las dos versiones, y saber quién va por detrás lleva diez segundos.',
             'uGridsToLoad debe valer 5. Es el valor por defecto de todas las listas de Wabbajack, y el servidor no acepta ningún otro.',
             'VRIK es lo que le da cuerpo a tu amigo. Sin él sigue estando ahí, pero hay bastante menos que ver.',
             'El anfitrión se conecta a su propio servidor en 127.0.0.1, la misma dirección que todos los demás, sin el viaje.',

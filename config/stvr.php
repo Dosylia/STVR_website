@@ -76,7 +76,9 @@ return [
     'public_server' => [
         'enabled'       => (bool) env('STVR_PUBLIC_SERVER_ENABLED', false),
         'status_url'    => env('STVR_PUBLIC_SERVER_STATUS_URL', ''),
-        'cache_seconds' => (int) env('STVR_PUBLIC_SERVER_CACHE', 30),
+        // How long the site keeps the hub's answer. The hub is asked again only when a visitor's request finds the copy
+        // older than this, never on a timer: every request to the hub counts against its daily free allowance.
+        'cache_seconds' => (int) env('STVR_PUBLIC_SERVER_CACHE', 5),
 
         // The map: two places whose in-game position (Tamriel worldspace, the
         // console's getpos x and getpos y) and whose point on our drawing are

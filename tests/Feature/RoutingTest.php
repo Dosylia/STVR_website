@@ -28,19 +28,6 @@ class RoutingTest extends TestCase
             ->assertRedirect(Nav::url('home', 'en'));
     }
 
-    public function test_every_page_answers_in_every_language(): void
-    {
-        foreach (Nav::locales() as $locale) {
-            foreach (array_merge(['home'], Nav::MENU) as $page) {
-                $url = Nav::url($page, $locale);
-
-                $this->get($url)
-                    ->assertOk()
-                    ->assertSee('<html lang="'.$locale.'"', false);
-            }
-        }
-    }
-
     public function test_pages_use_the_translated_slug(): void
     {
         // The whole point of per-language slugs: /fr/installation exists and

@@ -30,10 +30,10 @@
                     @if ($release->live)
                         <span class="pill pill--live"><span class="pill__dot"></span>{{ __('download.release.live_label') }}</span>
                         @if ($release->publishedAt)
-                            <span>{{ __('download.release.published', ['date' => \Illuminate\Support\Carbon::instance($release->publishedAt)->locale(app()->getLocale())->isoFormat('LL')]) }}</span>
+                            <span>{{ __('download.release.published', ['date' => $release->publishedAt->isoFormat('LL')]) }}</span>
                         @endif
                         @if ($release->downloads() > 0)
-                            <span>{{ __('download.release.downloads', ['count' => number_format($release->downloads())]) }}</span>
+                            <span>{{ __('download.release.downloads', ['count' => \Illuminate\Support\Number::format($release->downloads(), locale: app()->getLocale())]) }}</span>
                         @endif
                     @else
                         <span class="pill pill--gold">{{ __('download.state.fallback_title') }}</span>
@@ -58,14 +58,19 @@
                     <span class="asset__size">{{ $launcher->humanSize() }}</span>
                 @endif
             </div>
-            {{-- Version and date from the GitHub release the site copied the file from, like the mod's line above. --}}
-            @if ($launcherBuild && ($launcherBuild->version || $launcherBuild->publishedAt))
+            {{-- Version and date from the GitHub release the site copied the file from, like the mod's line above, and
+                 the hub's count. Any one of them is reason enough for the line. --}}
+            @if ($launcherBuild && ($launcherBuild->version || $launcherBuild->publishedAt || $launcherDownloads))
                 <p class="release__meta asset__release">
                     @if ($launcherBuild->version)
                         <span>{{ __('download.assets.launcher.version', ['version' => $launcherBuild->version]) }}</span>
                     @endif
                     @if ($launcherBuild->publishedAt)
-                        <span>{{ __('download.assets.launcher.updated', ['date' => \Illuminate\Support\Carbon::parse($launcherBuild->publishedAt)->locale(app()->getLocale())->isoFormat('LL')]) }}</span>
+                        <span>{{ __('download.assets.launcher.updated', ['date' => $launcherBuild->published()->isoFormat('LL')]) }}</span>
+                    @endif
+                    {{-- All versions together, as the hub counts downloads from this site (App\Support\HubStats). --}}
+                    @if ($launcherDownloads)
+                        <span>{{ trans_choice('download.assets.launcher.downloads', $launcherDownloads, ['count' => \Illuminate\Support\Number::format($launcherDownloads, locale: app()->getLocale())]) }}</span>
                     @endif
                 </p>
             @endif
@@ -91,7 +96,52 @@
                 </span>
                 <p class="asset__soon">{{ __('download.assets.launcher.soon_note') }}</p>
             @endif
+
+            {{-- The release's own notes from GitHub, as written (in English). --}}
+            @if ($launcherBuild && filled($launcherBuild->notes))
+                <details class="asset__notes">
+                    <summary>{{ $launcherBuild->version ? __('download.assets.launcher.notes', ['version' => $launcherBuild->version]) : __('download.assets.launcher.notes_no_version') }}</summary>
+                    <div class="entry__body">
+                        {!! \Illuminate\Support\Str::markdown($launcherBuild->notes, ['html_input' => 'strip', 'allow_unsafe_links' => false]) !!}
+                        @if (__('download.assets.launcher.notes_lang'))
+                            <p class="asset__notes-lang">{{ __('download.assets.launcher.notes_lang') }}</p>
+                        @endif
+                    </div>
+                </details>
+            @endif
         </article>
+
+        {{-- The launcher is not code-signed, so Windows warns on its first run. Said before it happens, with what to
+             press, so the warning reads as expected rather than as a sign of malware. --}}
+        @if ($launcher)
+            <div class="smartscreen reveal">
+                <div class="smartscreen__text">
+                    <p class="inscription">{{ __('download.smartscreen.label') }}</p>
+                    <h3>{{ __('download.smartscreen.title') }}</h3>
+                    <p>{{ __('download.smartscreen.body') }}</p>
+                    <ol class="smartscreen__steps">
+                        <li>{!! __('download.smartscreen.step1', ['more' => '<strong>'.e(__('download.smartscreen.more')).'</strong>']) !!}</li>
+                        <li>{!! __('download.smartscreen.step2', ['run' => '<strong>'.e(__('download.smartscreen.run')).'</strong>']) !!}</li>
+                    </ol>
+                    <p class="smartscreen__why">{{ __('download.smartscreen.why') }}</p>
+                </div>
+                {{-- A drawing of the two moments, in the site's own style: not a copy of Windows. --}}
+                <div class="smartscreen__art" aria-hidden="true">
+                    <div class="sswin">
+                        <p class="sswin__title">{{ __('download.smartscreen.dialog') }}</p>
+                        <span class="sswin__line"></span><span class="sswin__line sswin__line--short"></span>
+                        <span class="sswin__link is-pointed">{{ __('download.smartscreen.more') }}</span>
+                        <span class="sswin__n">1</span>
+                    </div>
+                    <div class="sswin">
+                        <p class="sswin__title">{{ __('download.smartscreen.dialog') }}</p>
+                        <span class="sswin__line"></span><span class="sswin__line sswin__line--short"></span>
+                        <span class="sswin__buttons"><span class="sswin__btn is-pointed">{{ __('download.smartscreen.run') }}</span><span class="sswin__btn sswin__btn--ghost"></span></span>
+                        <span class="sswin__n">2</span>
+                    </div>
+                </div>
+            </div>
+        @endif
 
         <p class="inscription" style="margin-top:2.6rem">{{ __('download.assets.by_hand') }}</p>
 

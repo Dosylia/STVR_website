@@ -30,6 +30,7 @@ return [
         'of'       => ':count von :max',
         'address'  => 'Adresse',
         'version'  => 'Build',
+        'protocol' => 'Nachrichtensatz',
         'password' => 'Passwort',
         'password_yes' => 'Ja, frag auf Discord',
         'password_no'  => 'Keins',
@@ -41,11 +42,13 @@ return [
         'label' => 'Beitreten',
         'title' => 'So trittst du bei',
         'steps' => [
-            ['title' => 'Dieselbe Build haben',     'body' => 'Der Server läuft mit Build :version. Builds, die dieselben Nachrichten sprechen, verbinden sich, also klappt eine nahe Version oft auch; wirst du abgelehnt, nennt der Launcher beide Versionen, und auf der Download-Seite gibt es die richtige.'],
+            ['title' => 'Eine Build haben, die seine Nachrichten spricht', 'body' => 'Der Server läuft mit Build :version, Nachrichtensatz :protocol. Jede Build mit demselben Nachrichtensatz verbindet sich, also klappt eine nahe Version oft auch. Wirst du abgelehnt, nennt der Launcher beide Versionen, und auf der Download-Seite gibt es die richtige.'],
             ['title' => 'Die Adresse eintragen',    'body' => 'Öffne im Launcher Beitreten, wähle "oder eine Adresse" und füge die Adresse von oben ein. Ohne Launcher kommt sie in die erste Zeile deiner connect.txt.'],
             ['title' => 'Einen beliebigen Spielstand laden', 'body' => 'Das Spiel tritt dem Server ein paar Sekunden nach dem Laden des Spielstands bei. Dein Charakter und dein Spielstand bleiben deine.'],
         ],
         'copy' => 'Adresse kopieren',
+        'button' => 'Mit dem Launcher beitreten',
+        'button_note' => 'Der Launcher fragt, bevor er beitritt. Passiert nichts, aktualisiere den Launcher: Ältere Versionen kennen diesen Link nicht.',
     ],
 
     'who' => [
@@ -53,7 +56,9 @@ return [
         'title' => 'Wer da ist',
         'none'  => 'Gerade ist niemand online. Sei der Erste.',
         'inside' => 'In einem Innenraum',
-        'note'  => 'Charakternamen, so wie die Spieler sie im Spiel festgelegt haben. Wer in einem Innenraum ist, steht ohne Ort auf der Karte in der Liste.',
+        'note'  => 'Charakternamen, so wie die Spieler sie im Spiel festgelegt haben, und Orte in der Spielsprache des jeweiligen Spielers. Wer in einem Innenraum ist, steht in der Liste, aber ohne Punkt auf der Karte.',
+        'hidden' => '{1} Dazu ein weiterer Spieler, der nicht aufgeführt ist.|[2,*] Dazu :count weitere Spieler, die nicht aufgeführt sind.',
+        'hide' => 'Du willst hier nicht erscheinen? Im Launcher: „Mich auf der Seite des öffentlichen Servers verbergen“.',
     ],
 
     'map' => [

@@ -37,7 +37,7 @@ return [
         'label' => 'Klartext',
         'title' => 'Was das hier wirklich ist',
         'body'  => 'Skyrim Together Reborn hat Koop in Skyrim Special Edition gebracht. Skyrim VR ist eine andere ausführbare Datei: andere Speicheradressen, andere Engine-Klassen, ein Körper dort, wo vorher nur eine Kamera war. Das hier ist dieselbe Mod, auseinandergenommen und für die VR-Build wieder zusammengesetzt, von zwei Fullstack-Entwicklern, die unterwegs C++ und Reverse Engineering gelernt haben, was je nach Temperament beruhigend oder beunruhigend klingt.',
-        'body2' => 'Es ist kostenlos, der Quellcode ist öffentlich, und nichts läuft jemals über einen Server, der uns gehört. Du hostest, oder dein Freund hostet. Niemand legt irgendwo ein Konto an.',
+        'body2' => 'Es ist kostenlos, der Quellcode ist öffentlich, und niemand legt irgendwo ein Konto an. Du hostest, oder dein Freund hostet. Unsere eigenen Server erledigen nur die kleinen Aufgaben: einen Freund über einen Code aus sechs Buchstaben finden, das Spiel über das Relay leiten, wenn ein Router keinen Port öffnen will, dem Launcher sagen, ob es ein Update gibt, und die Absturzberichte empfangen, deren Versand du zustimmst. Downloads und Update-Abfragen werden gezählt, und der Zähler verrät nichts darüber, wer sie ausgelöst hat.',
     ],
 
     'features' => [
@@ -90,7 +90,7 @@ return [
     'tips' => [
         'label' => 'Vom Ladebildschirm',
         'items' => [
-            'Der Server weist jeden Client ab, dessen Build nicht passt. Die Verbindungsmeldung nennt beide Versionen. Die Diagnose dauert zehn Sekunden.',
+            'Builds, die dieselben Netzwerknachrichten sprechen, verbinden sich, egal welche Version sie tragen. Weist der Server eine ab, nennt die Meldung beide Versionen, und in zehn Sekunden ist klar, wer hinterherhinkt.',
             'uGridsToLoad muss 5 sein. Das ist der Standard jeder Wabbajack-Liste, und der Server akzeptiert nichts anderes.',
             'VRIK gibt deinem Freund einen Körper. Ohne VRIK ist er immer noch da, nur deutlich weniger von ihm.',
             'Der Host verbindet sich mit seinem eigenen Server über 127.0.0.1, dieselbe Adresse wie alle anderen, nur ohne den Weg.',

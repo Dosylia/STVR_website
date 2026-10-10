@@ -6,6 +6,13 @@
     $when = fn (?string $iso, string $format) => $iso ? Carbon::parse($iso)->locale($locale)->isoFormat($format) : null;
     // Three states: no status at all (not open yet), a status that says offline, and online.
     $open = $status['live'] && $status['name'];
+    // The words the page's script needs to redraw the roster and the count (site.js, public server).
+    $i18n = [
+        'inside'  => __('public.who.inside'),
+        'updated' => __('public.status.updated'),
+        'hidden1' => trans_choice('public.who.hidden', 1, ['count' => ':count']),
+        'hidden'  => trans_choice('public.who.hidden', 2, ['count' => ':count']),
+    ];
 @endphp
 
 @section('title', __('public.meta.title'))
@@ -53,7 +60,12 @@
         <div class="shell">
             <div class="grid grid--2" style="align-items:start;gap:clamp(1.5rem,4vw,3rem)">
 
-                <article class="tablet server reveal">
+                <article class="tablet server reveal" id="publicServer"
+                         data-feed="{{ route('public.status') }}"
+                         data-online="{{ $status['online'] ? '1' : '0' }}"
+                         data-every="10"
+                         data-locale="{{ $locale }}"
+                         data-i18n="{{ json_encode($i18n) }}">
                     <p class="server__state {{ $status['online'] ? 'is-online' : 'is-offline' }}">
                         <span class="server__dot" aria-hidden="true"></span>
                         {{ $status['online'] ? __('public.status.online') : __('public.status.offline') }}
@@ -62,7 +74,7 @@
 
                     @if ($status['online'])
                         <p class="server__count">
-                            <span class="server__count-n">{{ $status['count'] }}</span>
+                            <span class="server__count-n" data-count>{{ $status['count'] }}</span>
                             @if ($status['max'])
                                 <span class="server__count-of">/ {{ $status['max'] }}</span>
                             @endif
@@ -88,14 +100,28 @@
                         @if ($status['version'])
                             <div><dt>{{ __('public.status.version') }}</dt><dd class="mono">{{ $status['version'] }}</dd></div>
                         @endif
+                        @if ($status['protocol'])
+                            <div><dt>{{ __('public.status.protocol') }}</dt><dd class="mono">{{ $status['protocol'] }}</dd></div>
+                        @endif
                         <div><dt>{{ __('public.status.password') }}</dt><dd>{{ $status['password'] ? __('public.status.password_yes') : __('public.status.password_no') }}</dd></div>
                         @if ($status['startedAt'])
                             <div><dt>{{ __('public.status.up_since') }}</dt><dd>{{ $when($status['startedAt'], 'LLL') }}</dd></div>
                         @endif
                     </dl>
 
+                    {{-- The launcher's own link: it opens the launcher, which asks before it joins. --}}
+                    @if ($status['online'] && $status['address'])
+                        <div class="server__join">
+                            <a class="btn btn--forge" href="ursovngarde://join?address={{ $status['address'] }}">
+                                @include('partials.icon', ['name' => 'arrow'])
+                                {{ __('public.join.button') }}
+                            </a>
+                            <p class="server__join-note">{{ __('public.join.button_note') }}</p>
+                        </div>
+                    @endif
+
                     @if ($status['updatedAt'])
-                        <p class="server__updated">{{ __('public.status.updated', ['time' => $when($status['updatedAt'], 'LLL')]) }}</p>
+                        <p class="server__updated" data-updated>{{ __('public.status.updated', ['time' => $when($status['updatedAt'], 'LLL')]) }}</p>
                     @endif
                 </article>
 
@@ -106,7 +132,7 @@
                         @foreach (__('public.join.steps') as $step)
                             <li class="steps__item">
                                 <p class="steps__title">{{ $step['title'] }}</p>
-                                <p class="steps__body">{{ strtr($step['body'], [':version' => $status['version'] ?? '?']) }}</p>
+                                <p class="steps__body">{{ strtr($step['body'], [':version' => $status['version'] ?? '?', ':protocol' => $status['protocol'] ?? '?']) }}</p>
                             </li>
                         @endforeach
                     </ol>
@@ -124,27 +150,26 @@
                         <p class="inscription">{{ __('public.who.label') }}</p>
                         <h2>{{ __('public.who.title') }}</h2>
 
-                        @if ($status['players'])
-                            <ul class="roster reveal">
+                        <ul class="roster reveal" data-roster @unless ($status['players']) hidden @endunless>
                                 @foreach ($status['players'] as $player)
-                                    <li class="roster__item">
+                                    <li class="roster__item" data-id="{{ $player['id'] }}">
                                         <span class="roster__rune" aria-hidden="true">{{ mb_strtoupper(mb_substr($player['name'], 0, 1)) }}</span>
                                         <span class="roster__name">{{ $player['name'] }}</span>
                                         <span class="roster__where">
-                                            {{ $player['where'] ?? '' }}@if (! $player['point'] && $player['where']) · {{ __('public.who.inside') }}@endif
+                                            {{ implode(' · ', array_filter([$player['where'], $player['point'] ? null : __('public.who.inside')])) }}
                                         </span>
                                     </li>
                                 @endforeach
                             </ul>
-                            <p class="roster__note">{{ __('public.who.note') }}</p>
-                        @else
-                            <p class="lede">{{ __('public.who.none') }}</p>
-                        @endif
+                        <p class="roster__hidden" data-hidden @unless ($status['hidden']) hidden @endunless>{{ trans_choice('public.who.hidden', $status['hidden'], ['count' => $status['hidden']]) }}</p>
+                        <p class="roster__note" data-note @unless ($status['players']) hidden @endunless>{{ __('public.who.note') }}</p>
+                        <p class="roster__note">{{ __('public.who.hide') }}</p>
+                        <p class="lede" data-none @if ($status['players']) hidden @endif>{{ __('public.who.none') }}</p>
                     </div>
 
                     <figure class="where__map reveal">
                         <p class="inscription">{{ __('public.map.label') }}</p>
-                        @include('art.skyrim-map', ['players' => $status['players']])
+                        <div class="where__scroll">@include('art.skyrim-map', ['players' => $status['players']])</div>
                         <figcaption>{{ __('public.map.note', ['seconds' => (int) config('stvr.public_server.cache_seconds', 30)]) }}</figcaption>
                     </figure>
                 </div>

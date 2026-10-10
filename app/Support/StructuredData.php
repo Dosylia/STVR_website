@@ -56,6 +56,21 @@ final class StructuredData
         ]);
     }
 
+    /** One devlog entry, as an article: in English when it has no translation yet, whatever the page's language. */
+    public static function post(DevlogEntry $entry): string
+    {
+        return self::encode([
+            '@context' => 'https://schema.org',
+            '@type' => 'BlogPosting',
+            'headline' => $entry->title,
+            'description' => $entry->summary,
+            'datePublished' => $entry->date->format('Y-m-d'),
+            'inLanguage' => $entry->translated ? app()->getLocale() : Nav::fallback(),
+            'url' => Nav::url('devlog', null, ['slug' => $entry->slug]),
+            'publisher' => ['@type' => 'Organization', 'name' => config('stvr.name')],
+        ]);
+    }
+
     /** The FAQ page's questions and answers, tags stripped. */
     public static function faq(array $groups): string
     {

@@ -116,5 +116,17 @@ return [
                 'Wenn der Launcher von dieser Website heruntergeladen wird oder ein installierter Launcher fragt, ob es ein Update gibt, meldet die Website das unserem Hub, der den Zähler des Tages um eins erhöht (bei einem Download auch den dieser Version). Nichts darüber, wer heruntergeladen hat, wird übermittelt.',
             ],
         ],
+
+        [
+            // Shown only once the public server page is switched on (config stvr.public_server.enabled).
+            'when'  => 'public_server',
+            'title' => 'Der öffentliche Server',
+            'body'  => [
+                'Die Seite des öffentlichen Servers auf dieser Website zeigt allen live, welche Charaktere gerade auf ihm sind und an welchem Ort sich jeder befindet, so wie das eigene Spiel des jeweiligen Spielers diesen Ort nennt. Draußen in der Hauptwelt von Skyrim zeigt sie außerdem, wo auf der Karte sie stehen und in welche Richtung sie blicken. Nur Charakternamen: nie ein Steam-Name, ein Konto oder eine Adresse.',
+                'Du kannst der Seite fernbleiben: im Launcher mit „Mich auf der Seite des öffentlichen Servers verbergen“. Ab deinem nächsten Beitritt zählt die Seite dich weiterhin mit, zeigt aber nie deinen Namen und setzt dich nicht auf ihre Karte.',
+                'Das macht nur unser öffentlicher Server. Auf jedem anderen Server, auch auf deinem, ist die Einstellung aus.',
+                'Solange jemand spielt, schickt der Server alle 10 Sekunden seinen Status an unseren Hub. Der Hub behält nur den neuesten, entfernt die Spieler daraus, sobald der Server beendet wird oder 3 Minuten lang still geblieben ist, und speichert nichts darüber, wer gespielt hat oder wann.',
+            ],
+        ],
     ],
 ];

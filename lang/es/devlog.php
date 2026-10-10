@@ -7,6 +7,8 @@ return [
         'description' => 'Qué se rompió, qué resultó ser, y qué se hizo al respecto. Incluidos los diagnósticos que estaban equivocados.',
     ],
 
+    'feed' => 'Síguelo en un lector de feeds (Atom)',
+
     'hero' => [
         'kicker' => 'El banco de trabajo',
         'title'  => 'Diario',

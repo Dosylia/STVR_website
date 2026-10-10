@@ -335,55 +335,82 @@ class MakeImages extends Command
     /* --------------------------------------------------------------- icons */
 
     /**
-     * The mark, drawn with primitives at whatever size is asked for. The SVG
-     * favicon is the real one; these exist for the platforms that still want a
-     * raster (iOS home screen, Android install prompt, older Windows pinning).
+     * The sigil (resources/views/art/sigil.blade.php) as a square PNG. The SVG favicon is the real one; these exist
+     * for the platforms that still want a raster (iOS home screen, Android install prompt, older Windows pinning).
+     *
+     * GD draws without anti-aliasing, so the icon is drawn at SS times its size and scaled down, which smooths every
+     * edge. Rings are a filled disc with a smaller one of the background inside (stacked outlines left visible
+     * bands), and the wings and barbs follow the sigil's own curves, flattened into many points, rather than a rough
+     * polygon. Opacities are the vector's: the inner ring at .45, the moons at .75 and .5, the barbs at .82.
      */
     private function icon(int $size, string $path): void
     {
-        $im = imagecreatetruecolor($size, $size);
+        $ss = 4;
+        $big = $size * $ss;
+        $k = $big / 48;
+
+        $im = imagecreatetruecolor($big, $big);
         imagealphablending($im, true);
-        imagesavealpha($im, true);
 
-        $k = $size / 48;
+        $bg = [11, 13, 17];
+        $color = function (array $rgb, float $opacity = 1.0) use ($im, $bg) {
+            // Mixed with the background by hand: the result is flattened onto it anyway.
+            return imagecolorallocate($im, ...array_map(fn ($c, $b) => (int) round($b + ($c - $b) * $opacity), $rgb, $bg));
+        };
+        $gold = [192, 152, 44];
+        $ember = [229, 96, 46];
+        $pale = [236, 227, 207];
 
-        imagefilledrectangle($im, 0, 0, $size, $size, imagecolorallocate($im, 11, 13, 17));
+        imagefilledrectangle($im, 0, 0, $big, $big, $color($bg));
 
-        $gold  = imagecolorallocate($im, 192, 152, 44);
-        $ember = imagecolorallocate($im, 229, 96, 46);
-        $pale  = imagecolorallocate($im, 236, 227, 207);
+        $ring = function (float $r, float $stroke, array $rgb, float $opacity) use ($im, $k, $color, $bg) {
+            $c = (int) round(24 * $k);
+            imagefilledellipse($im, $c, $c, (int) round(2 * ($r + $stroke / 2) * $k), (int) round(2 * ($r + $stroke / 2) * $k), $color($rgb, $opacity));
+            imagefilledellipse($im, $c, $c, (int) round(2 * ($r - $stroke / 2) * $k), (int) round(2 * ($r - $stroke / 2) * $k), $color($bg));
+        };
+        $ring(21.5, 1.6, $gold, 1.0);
+        $ring(18, .7, $gold, .45);
 
-        // GD ignores imagesetthickness for ellipses often enough not to rely on
-        // it; concentric outlines are the portable way to draw a ring.
-        for ($t = 0; $t < max(2, (int) round(2.2 * $k)); $t++) {
-            imageellipse($im, (int) (24 * $k), (int) (24 * $k),
-                (int) (43 * $k) - $t * 2, (int) (43 * $k) - $t * 2, $gold);
+        $poly = fn (array $pts, int $c) => imagefilledpolygon($im, array_map(fn ($v) => (int) round($v * $k), $pts), $c);
+
+        $poly([24, 0.6, 27.4, 4, 24, 7.4, 20.6, 4], $color($gold));          // crown lozenge
+        $poly([24, 11, 26.6, 24, 24, 38.5, 21.4, 24], $color($ember));       // stave
+
+        // Wings and barbs, the sigil's paths: out along one cubic curve and back along a second, then closed.
+        // [start, control, control, tip, control, control, end, opacity]
+        $curves = [
+            [[21.6, 19.4], [15, 15.4], [10.4, 19.6], [10.2, 27.6], [13.4, 23], [17, 21.6], [21.6, 23.4], 1.0],
+            [[26.4, 19.4], [33, 15.4], [37.6, 19.6], [37.8, 27.6], [34.6, 23], [31, 21.6], [26.4, 23.4], 1.0],
+            [[22.1, 28.6], [17.9, 31.4], [16.4, 35.4], [17.8, 39.4], [19.1, 35.1], [20.4, 32.8], [22.9, 31.6], .82],
+            [[25.9, 28.6], [30.1, 31.4], [31.6, 35.4], [30.2, 39.4], [28.9, 35.1], [27.6, 32.8], [25.1, 31.6], .82],
+        ];
+        foreach ($curves as [$p0, $a1, $a2, $tip, $b1, $b2, $end, $opacity]) {
+            $pts = array_merge($this->cubic($p0, $a1, $a2, $tip), $this->cubic($tip, $b1, $b2, $end), $end);
+            $poly($pts, $color($ember, $opacity));
         }
 
-        for ($t = 0; $t < max(1, (int) round(.9 * $k)); $t++) {
-            imageellipse($im, (int) (24 * $k), (int) (24 * $k),
-                (int) (35 * $k) - $t * 2, (int) (35 * $k) - $t * 2, $gold);
-        }
+        imagefilledellipse($im, (int) round(18.4 * $k), (int) round(42.2 * $k), (int) round(3.4 * $k), (int) round(3.4 * $k), $color($pale, .75));
+        imagefilledellipse($im, (int) round(29.6 * $k), (int) round(42.2 * $k), (int) round(2.2 * $k), (int) round(2.2 * $k), $color($pale, .5));
 
-        $poly = fn (array $pts, int $c) => imagefilledpolygon(
-            $im,
-            array_map(fn ($v) => (int) round($v * $k), $pts),
-            $c
-        );
-
-        $poly([24, 0.6, 27.4, 4, 24, 7.4, 20.6, 4], $gold);                        // crown
-        $poly([24, 11, 26.6, 24, 24, 38.5, 21.4, 24], $ember);                     // stave
-        $poly([21.6, 19.2, 17.4, 16.4, 13.6, 17.2, 11.4, 20.4, 10.6, 24.4, 11.2, 27.8,
-               13.8, 23.6, 17.2, 21.6, 21.6, 23.2], $ember);
-        $poly([26.4, 19.2, 30.6, 16.4, 34.4, 17.2, 36.6, 20.4, 37.4, 24.4, 36.8, 27.8,
-               34.2, 23.6, 30.8, 21.6, 26.4, 23.2], $ember);
-        $poly([22.1, 28.6, 18.6, 31.6, 16.6, 35.6, 17.8, 39.4, 19.6, 35.2, 21, 32.6, 22.9, 31.6], $ember);
-        $poly([25.9, 28.6, 29.4, 31.6, 31.4, 35.6, 30.2, 39.4, 28.4, 35.2, 27, 32.6, 25.1, 31.6], $ember);
-
-        imagefilledellipse($im, (int) (18.6 * $k), (int) (40.4 * $k), (int) (3.2 * $k), (int) (3.2 * $k), $pale);
-        imagefilledellipse($im, (int) (29.4 * $k), (int) (40.4 * $k), (int) (2.1 * $k), (int) (2.1 * $k), $pale);
-
-        imagepng($im, $path, 8);
+        $out = imagecreatetruecolor($size, $size);
+        imagecopyresampled($out, $im, 0, 0, 0, 0, $size, $size, $big, $big);
+        imagepng($out, $path, 8);
         imagedestroy($im);
+        imagedestroy($out);
+    }
+
+    /** A cubic Bézier as a flat list of points (x, y, x, y...), without its last point. */
+    private function cubic(array $p0, array $p1, array $p2, array $p3, int $steps = 24): array
+    {
+        $out = [];
+        for ($i = 0; $i < $steps; $i++) {
+            $t = $i / $steps;
+            $u = 1 - $t;
+            foreach ([0, 1] as $axis) {
+                $out[] = $u ** 3 * $p0[$axis] + 3 * $u ** 2 * $t * $p1[$axis] + 3 * $u * $t ** 2 * $p2[$axis] + $t ** 3 * $p3[$axis];
+            }
+        }
+
+        return $out;
     }
 }

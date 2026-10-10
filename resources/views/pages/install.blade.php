@@ -125,6 +125,7 @@
         <p class="lede">{{ __('install.connect.lede') }}</p>
 
         <div class="stack reveal" style="--gap:1.4rem;margin-top:2rem">
+            <p class="notice">{{ __('install.connect.launcher') }}</p>
             <p>{!! __('install.connect.easy') !!}</p>
             <p>{!! __('install.connect.manual', ['path' => '<code>'.e(config('stvr.facts.connect_file')).'</code>']) !!}</p>
 

@@ -30,6 +30,7 @@ return [
         'of'       => ':count sur :max',
         'address'  => 'Adresse',
         'version'  => 'Build',
+        'protocol' => 'Jeu de messages',
         'password' => 'Mot de passe',
         'password_yes' => 'Oui, demandez sur Discord',
         'password_no'  => 'Aucun',
@@ -41,11 +42,13 @@ return [
         'label' => 'Rejoindre',
         'title' => 'Comment rejoindre',
         'steps' => [
-            ['title' => 'Ayez la même build',     'body' => 'Le serveur fait tourner la build :version. Les builds qui parlent les mêmes messages se connectent, donc une version voisine fonctionne souvent aussi ; si la vôtre est refusée, le lanceur affiche les deux versions et la page de téléchargement propose la bonne.'],
+            ['title' => 'Ayez une build qui comprend ses messages', 'body' => 'Le serveur fait tourner la build :version, jeu de messages :protocol. Toute build qui a le même jeu de messages se connecte, donc une version voisine fonctionne souvent aussi. Si la vôtre est refusée, le lanceur affiche les deux versions, et la page de téléchargement propose la bonne.'],
             ['title' => 'Saisissez l’adresse',    'body' => 'Dans le lanceur, ouvrez Rejoindre, choisissez « ou une adresse » et collez l’adresse ci-dessus. Sans le lanceur, mettez-la sur la première ligne de votre connect.txt.'],
             ['title' => 'Chargez n’importe quelle sauvegarde', 'body' => 'Le jeu rejoint le serveur quelques secondes après le chargement de la sauvegarde. Votre personnage et votre sauvegarde restent les vôtres.'],
         ],
         'copy' => 'Copier l’adresse',
+        'button' => 'Rejoindre avec le lanceur',
+        'button_note' => 'Le lanceur demande avant de rejoindre. S’il ne se passe rien, mettez le lanceur à jour : les anciennes versions ne connaissent pas ce lien.',
     ],
 
     'who' => [
@@ -53,7 +56,9 @@ return [
         'title' => 'Qui est là',
         'none'  => 'Personne n’est connecté pour l’instant. Soyez le premier.',
         'inside' => 'En intérieur',
-        'note'  => 'Noms des personnages, tels que les joueurs les ont choisis en jeu. En intérieur, un joueur apparaît dans la liste sans position sur la carte.',
+        'note'  => 'Noms des personnages, tels que les joueurs les ont choisis en jeu, et lieux dans la langue du jeu de chaque joueur. En intérieur, un joueur apparaît dans la liste sans point sur la carte.',
+        'hidden' => '{1} Et un autre joueur, absent de la liste.|[2,*] Et :count autres joueurs, absents de la liste.',
+        'hide' => 'Vous préférez ne pas apparaître ici ? Dans le lanceur : « Me cacher de la page du serveur public ».',
     ],
 
     'map' => [

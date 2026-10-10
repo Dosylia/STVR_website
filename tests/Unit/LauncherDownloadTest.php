@@ -78,11 +78,37 @@ class LauncherDownloadTest extends TestCase
 
     public function test_nothing_released_says_so(): void
     {
-        Http::fake(['api.github.com/*' => Http::response([], 404)]);
+        config()->set('stvr.hub.url', 'https://hub.test');
+        Http::fake([
+            'api.github.com/*' => Http::response([], 404),
+            'hub.test/*' => Http::response(['launcherDownloads' => 5]),
+        ]);
 
         $this->assertNull(app(LauncherDownload::class)->current());
         $this->get('/en/download')->assertOk()->assertSee('Not released yet');
         $this->get('/downloads/launcher/latest.json')->assertNotFound();
+
+        // The count goes on the launcher's card, so with no launcher the hub is not asked for it.
+        Http::assertNotSent(fn ($request) => $request->url() === 'https://hub.test/stats/public');
+    }
+
+    public function test_a_launcher_with_no_version_in_its_name_keeps_its_count_and_its_notes(): void
+    {
+        // A pre-release name the version pattern does not read, from a copy stored without a date.
+        $exe = 'urSovngarde_0.4.0-beta_x64-setup.exe';
+        Storage::disk('local')->put("launcher/{$exe}", 'EXE');
+        Storage::disk('local')->put("launcher/{$exe}.sig", 'SIGNATURE');
+        Storage::disk('local')->put("launcher/{$exe}.json", (string) json_encode(['notes' => 'Hosting password.', 'published_at' => null]));
+        config()->set('stvr.hub.url', 'https://hub.test');
+        Http::fake([
+            'api.github.com/*' => Http::response([], 404),
+            'hub.test/stats/public' => Http::response(['launcherDownloads' => 1234]),
+        ]);
+
+        $this->get('/en/download')
+            ->assertOk()
+            ->assertSee('1,234 downloads')
+            ->assertSee('<summary>What is new in this version</summary>', false);
     }
 
     public function test_only_the_stored_launcher_can_be_downloaded(): void

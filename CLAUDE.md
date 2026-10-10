@@ -46,8 +46,9 @@ Laravel 13 · PHP 8.3 · four languages · no database.
 
 **Translations.**
 - English is canonical. Every key in `lang/en/` must exist in `fr`, `de` and `es`
-  with the same `:placeholders`. There is a parity check in the README; run it
-  after touching any language file.
+  with the same `:placeholders`. Run `php artisan stvr:lang-check` after
+  touching any language file or devlog entry (it also catches dashes), and
+  `php artisan test` before a deploy: it loads every page in every language.
 - Translate meaning, not words. These were written, not machine-translated, and
   that is the point of having them.
 

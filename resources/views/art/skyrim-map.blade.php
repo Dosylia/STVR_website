@@ -11,8 +11,8 @@
     City names come from lang/*/public.php, so each language reads its own
     (Blancherive, Weißlauf, Carrera Blanca).
 
-    $players: list of ['name' => string, 'point' => [x, y]] already on this
-    drawing's 1000 by 640 grid.
+    $players: list of ['id', 'name', 'point' => [x, y] on this drawing's 1000
+    by 640 grid, 'heading' => degrees or null].
 --}}
 @php
     $players = $players ?? [];
@@ -116,17 +116,15 @@
         </g>
     @endforeach
 
-    {{-- players --}}
-    @foreach ($players as $i => $player)
-        @if ($player['point'])
-            @php [$px, $py] = $player['point']; @endphp
-            <g class="map__player">
-                <circle cx="{{ $px }}" cy="{{ $py }}" r="16" fill="url(#mapGlow)"/>
-                <circle cx="{{ $px }}" cy="{{ $py }}" r="4.5" fill="#3fd6a4" stroke="#07080a" stroke-width="1.5"/>
-                <text x="{{ $px }}" y="{{ $py - 11 - ($i % 2) * 11 }}" text-anchor="middle">{{ $player['name'] }}</text>
-            </g>
-        @endif
-    @endforeach
+    {{-- players: one group each, placed by a CSS transform so the page can glide it when the player moves
+         (site.js, public server). Keyed by the connection's random id. --}}
+    <g class="map__players">
+        @foreach ($players as $i => $player)
+            @if ($player['point'])
+                @include('art.map-player', ['player' => $player, 'i' => $i])
+            @endif
+        @endforeach
+    </g>
 
     {{-- north --}}
     <g transform="translate(60 590)" class="map__north">

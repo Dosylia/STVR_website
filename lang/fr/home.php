@@ -37,7 +37,7 @@ return [
         'label' => 'Clairement',
         'title' => 'De quoi il s’agit, en vrai',
         'body'  => 'Skyrim Together Reborn a apporté le coop à Skyrim Special Edition. Skyrim VR est un autre exécutable : d’autres adresses mémoire, d’autres classes moteur, et un corps là où il n’y avait qu’une caméra. Ceci est ce mod, démonté puis remonté pour la build VR, par deux développeurs full-stack qui ont appris le C++ et la rétro-ingénierie en chemin, ce qui est rassurant ou inquiétant selon le tempérament.',
-        'body2' => 'C’est gratuit, le code est public, et rien ne passe jamais par un serveur qui nous appartient. Vous hébergez, ou votre ami héberge. Personne ne crée de compte.',
+        'body2' => 'C’est gratuit, le code est public, et personne ne crée de compte. Vous hébergez, ou votre ami héberge. Nos propres serveurs ne font que les petites tâches : retrouver un ami grâce à un code de six lettres, faire passer la partie par le relais quand une box refuse d’ouvrir un port, dire au lanceur s’il existe une mise à jour, et recevoir les rapports de plantage que vous acceptez d’envoyer. Les téléchargements et les vérifications de mise à jour sont comptés, et ce décompte ne dit rien de qui les a faits.',
     ],
 
     'features' => [
@@ -90,7 +90,7 @@ return [
     'tips' => [
         'label' => 'Écran de chargement',
         'items' => [
-            'Le serveur refuse tout client dont la build ne correspond pas. La notification de connexion affiche les deux versions : dix secondes pour comprendre.',
+            'Les builds qui parlent les mêmes messages réseau se connectent, quelle que soit leur version. Quand le serveur en refuse une, la notification affiche les deux versions : dix secondes pour savoir qui est en retard.',
             'uGridsToLoad doit valoir 5. C’est la valeur par défaut de toutes les listes Wabbajack, et le serveur n’en acceptera aucune autre.',
             'C’est VRIK qui donne un corps à votre ami. Sans lui, il est toujours là, mais il y a nettement moins à voir.',
             'L’hôte se connecte à son propre serveur sur 127.0.0.1, la même adresse que tout le monde, sans le trajet.',

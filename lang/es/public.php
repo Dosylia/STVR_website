@@ -30,6 +30,7 @@ return [
         'of'       => ':count de :max',
         'address'  => 'Dirección',
         'version'  => 'Build',
+        'protocol' => 'Conjunto de mensajes',
         'password' => 'Contraseña',
         'password_yes' => 'Sí, pídela en Discord',
         'password_no'  => 'Ninguna',
@@ -41,11 +42,13 @@ return [
         'label' => 'Unirse',
         'title' => 'Cómo unirte',
         'steps' => [
-            ['title' => 'Ten la misma build',      'body' => 'El servidor lleva la build :version. Se conectan las builds que hablan los mismos mensajes, así que una versión cercana a menudo también vale; si rechazan la tuya, el lanzador te dice las dos versiones y en la página de descarga está la buena.'],
+            ['title' => 'Ten una build que hable sus mensajes', 'body' => 'El servidor lleva la build :version, conjunto de mensajes :protocol. Se conecta cualquier build con el mismo conjunto de mensajes, así que una versión cercana a menudo también vale. Si rechazan la tuya, el lanzador te dice las dos versiones, y en la página de descarga está la buena.'],
             ['title' => 'Pon la dirección',        'body' => 'En el lanzador, abre Unirse, elige "o una dirección" y pega la dirección de arriba. Sin el lanzador, ponla en la primera línea de tu connect.txt.'],
             ['title' => 'Carga cualquier partida', 'body' => 'El juego se une al servidor unos segundos después de cargar la partida. Tu personaje y tu partida siguen siendo tuyos.'],
         ],
         'copy' => 'Copiar la dirección',
+        'button' => 'Unirse con el lanzador',
+        'button_note' => 'El lanzador pregunta antes de unirse. Si no pasa nada, actualiza el lanzador: las versiones antiguas no conocen este enlace.',
     ],
 
     'who' => [
@@ -53,7 +56,9 @@ return [
         'title' => 'Quién está',
         'none'  => 'Ahora mismo no hay nadie. Sé el primero.',
         'inside' => 'En un interior',
-        'note'  => 'Nombres de personaje, tal como los jugadores los pusieron en el juego. En un interior, el jugador aparece en la lista sin lugar en el mapa.',
+        'note'  => 'Nombres de personaje, tal como los jugadores los pusieron en el juego, y lugares en el idioma en que cada jugador tiene su propio juego. En un interior, el jugador aparece en la lista sin punto en el mapa.',
+        'hidden' => '{1} Y un jugador más que no aparece en la lista.|[2,*] Y :count jugadores más que no aparecen en la lista.',
+        'hide' => '¿Prefieres no aparecer aquí? En el lanzador: «Ocultarme de la página del servidor público».',
     ],
 
     'map' => [

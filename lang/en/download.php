@@ -32,6 +32,18 @@ return [
         'none_body'      => 'Nothing to download here yet. The source is public in the meantime, and the devlog is where the work shows up first.',
     ],
 
+    'smartscreen' => [
+        'label'  => 'On the first run',
+        'title'  => 'Windows will warn you once',
+        'body'   => 'The launcher is not signed with a paid certificate, so the first time you open it, Windows shows a blue window instead of starting it. That is expected.',
+        'step1'  => 'Click :more under the message.',
+        'step2'  => 'Then click :run.',
+        'why'    => 'A signing certificate costs money every year, and the mod is free. You see this when you install the launcher; once installed, it starts like any other program.',
+        'dialog' => 'Windows protected your PC',
+        'more'   => 'More info',
+        'run'    => 'Run anyway',
+    ],
+
     'assets' => [
         'launcher' => [
             'title' => 'urSovngarde launcher',
@@ -41,6 +53,10 @@ return [
             'setups' => ['Mod Organizer 2', 'Vortex', 'No mod manager'],
             'version' => 'Version :version',
             'updated' => 'Updated :date',
+            'downloads' => '{1} :count download|[2,*] :count downloads',
+            'notes' => 'What is new in :version',
+            'notes_no_version' => 'What is new in this version',
+            'notes_lang' => '',
             'soon'  => 'Not released yet',
             'soon_note' => 'The launcher is still being tested. This button downloads it the day it is published.',
         ],
@@ -75,7 +91,7 @@ return [
             ['name' => 'uGridsToLoad = 5',               'note' => 'The default. The server refuses anything else, because the world would not line up.', 'state' => 'required'],
             ['name' => 'Engine Fixes VR',                'note' => 'Stops a category of crash that has nothing to do with us.',                       'state' => 'recommended'],
             ['name' => 'VRIK',                           'note' => 'The body your friend sees. Strongly recommended. This is most of the point.',    'state' => 'recommended'],
-            ['name' => 'The same build as your friends', 'note' => 'The server refuses a mismatch and names both versions when it does.',             'state' => 'required'],
+            ['name' => 'A build that speaks the same messages', 'note' => 'Builds that exchange the same network messages connect, whatever their version. When they do not, the server says so and names both.',             'state' => 'required'],
         ],
     ],
 

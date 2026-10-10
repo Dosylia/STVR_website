@@ -15,7 +15,7 @@ final class Facts
     public static function all(): array
     {
         $f = (array) config('stvr.facts', []);
-        $date = fn (string $iso) => Carbon::parse($iso)->locale(app()->getLocale())->isoFormat('LL');
+        $date = fn (string $iso) => Carbon::parse($iso)->isoFormat('LL');
 
         return [
             'port'         => (string) ($f['port'] ?? ''),

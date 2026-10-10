@@ -5,4 +5,5 @@
     $tag = $tag ?? 'p';
     $parts = array_values(array_filter(array_map('trim', explode('·', (string) $text)), 'strlen'));
 @endphp
-<{{ $tag }} class="hero__kicker">@foreach ($parts as $i => $part)@if ($i)<span class="hero__kicker-mark" aria-hidden="true"></span><span class="sr-only">, </span>@endif<span>{{ $part }}</span>@endforeach</{{ $tag }}>
+{{-- Each mark travels with the phrase after it, so a line never ends on a lozenge. --}}
+<{{ $tag }} class="hero__kicker">@foreach ($parts as $i => $part)@if ($i)<span class="hero__kicker-part"><span class="hero__kicker-mark" aria-hidden="true"></span><span class="sr-only">, </span><span>{{ $part }}</span></span>@else<span>{{ $part }}</span>@endif @endforeach</{{ $tag }}>

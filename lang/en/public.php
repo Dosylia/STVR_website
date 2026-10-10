@@ -30,6 +30,7 @@ return [
         'of'       => ':count of :max',
         'address'  => 'Address',
         'version'  => 'Build',
+        'protocol' => 'Message set',
         'password' => 'Password',
         'password_yes' => 'Yes, ask on Discord',
         'password_no'  => 'None',
@@ -41,11 +42,13 @@ return [
         'label' => 'Joining',
         'title' => 'How to join',
         'steps' => [
-            ['title' => 'Have the same build', 'body' => 'The server runs build :version. Builds that speak the same messages connect, so a nearby version often works too; if yours is refused, the launcher says both versions and the download page has the right one.'],
+            ['title' => 'Have a build that speaks its messages', 'body' => 'The server runs build :version, message set :protocol. Any build with the same message set connects, so a nearby version often works too. If yours is refused, the launcher says both versions, and the download page has the right one.'],
             ['title' => 'Put in the address',  'body' => 'In the launcher, open Join, choose "or an address" and paste the address above. Without the launcher, put it on the first line of your connect.txt.'],
             ['title' => 'Load any save',       'body' => 'The game joins the server a few seconds after the save loads. Your character and your save stay yours.'],
         ],
         'copy' => 'Copy the address',
+        'button' => 'Join with the launcher',
+        'button_note' => 'The launcher asks before it joins. If nothing happens, update the launcher: older ones do not know this link.',
     ],
 
     'who' => [
@@ -53,7 +56,9 @@ return [
         'title' => 'Who is here',
         'none'  => 'Nobody is on right now. Be the first.',
         'inside' => 'Indoors',
-        'note'  => 'Character names, as the players set them in game. Indoors, a player is listed without a place on the map.',
+        'note'  => 'Character names, as the players set them in game, and places in each player\'s own game language. Indoors, a player is listed without a dot on the map.',
+        'hidden' => '{1} And one more player, not listed.|[2,*] And :count more players, not listed.',
+        'hide' => 'Want to stay off this page? In the launcher: "Hide me from the public server page".',
     ],
 
     'map' => [

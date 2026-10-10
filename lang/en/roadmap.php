@@ -69,7 +69,7 @@ return [
         'items' => [
             [
                 'title' => 'It still crashes',
-                'body'  => 'Less than it did, and the remaining ones are mostly around a lot of actors being torn down at once. <code>collect-logs.bat</code> gives us the dump, and the dump names the function.',
+                'body'  => 'Less than it did, and the remaining ones are mostly around a lot of actors being torn down at once. The launcher\'s crash report gives us the dump, and the dump names the function.',
             ],
             [
                 'title' => 'Crossing cells fast is where things go odd',
@@ -102,7 +102,7 @@ return [
         ],
         'report' => [
             'title' => 'If you find a new one',
-            'body'  => 'Run <code>collect-logs.bat</code> in the launcher folder. It leaves a zip on your Desktop with the client log, any crash dump and both build versions. That zip is the difference between a fix this week and a theory this month.',
+            'body'  => 'Say yes when the launcher offers to send a crash report. Without the launcher, run <code>collect-logs.bat</code> in the mod\'s launcher folder: it leaves a zip on your Desktop with the client log, any crash dump and both build versions. That report is the difference between a fix this week and a theory this month.',
             'cta'   => 'Open an issue',
         ],
     ],

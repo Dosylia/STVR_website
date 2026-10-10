@@ -7,6 +7,8 @@ return [
         'description' => 'Ce qui a cassé, ce que c’était vraiment, et ce qui a été fait. Y compris les diagnostics qui étaient faux.',
     ],
 
+    'feed' => 'Suivre le journal dans un lecteur de flux (Atom)',
+
     'hero' => [
         'kicker' => 'L’établi',
         'title'  => 'Journal',

@@ -69,7 +69,7 @@ return [
         'items' => [
             [
                 'title' => 'Ça plante encore',
-                'body'  => 'Moins qu’avant, et ce qui reste tourne surtout autour de la destruction simultanée de beaucoup d’acteurs. <code>collect-logs.bat</code> nous donne le dump, et le dump nomme la fonction.',
+                'body'  => 'Moins qu’avant, et ce qui reste tourne surtout autour de la destruction simultanée de beaucoup d’acteurs. Le rapport de plantage du lanceur nous donne le dump, et le dump nomme la fonction.',
             ],
             [
                 'title' => 'Franchir les cellules vite déraille',
@@ -102,7 +102,7 @@ return [
         ],
         'report' => [
             'title' => 'Si vous en trouvez un nouveau',
-            'body'  => 'Lancez <code>collect-logs.bat</code> dans le dossier du lanceur. Il dépose sur votre Bureau un zip avec le log du client, l’éventuel crash dump et les deux versions de build. Ce zip, c’est la différence entre un correctif cette semaine et une théorie ce mois-ci.',
+            'body'  => 'Acceptez quand le lanceur propose d’envoyer un rapport de plantage. Sans le lanceur, lancez <code>collect-logs.bat</code> dans le dossier du lanceur propre au mod : il dépose sur votre Bureau un zip avec le log du client, l’éventuel crash dump et les deux versions de build. Ce rapport, c’est la différence entre un correctif cette semaine et une théorie ce mois-ci.',
             'cta'   => 'Ouvrir un ticket',
         ],
     ],

@@ -7,6 +7,8 @@ return [
         'description' => 'What broke, what it turned out to be, and what was done about it. Including the diagnoses that were wrong.',
     ],
 
+    'feed' => 'Follow it in a feed reader (Atom)',
+
     'hero' => [
         'kicker' => 'The workbench',
         'title'  => 'Devlog',

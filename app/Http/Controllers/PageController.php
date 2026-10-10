@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Support\Devlog;
+use App\Support\HubStats;
 use App\Support\LauncherDownload;
 use App\Support\Nav;
 use App\Support\PublicServer;
@@ -41,10 +42,14 @@ class PageController extends Controller
 
     public function download(): View
     {
+        $build = $this->launcher->current();
+
         return $this->page('pages.download', 'download', [
             'release'  => $this->releases->latest(),
             'launcher' => $this->launcher->asset(),
-            'launcherBuild' => $this->launcher->current(),
+            'launcherBuild' => $build,
+            // The count sits on the launcher's card: with no launcher to download, the hub is not asked.
+            'launcherDownloads' => $build ? HubStats::launcherDownloads() : null,
         ]);
     }
 
@@ -80,6 +85,27 @@ class PageController extends Controller
         return $this->page('pages.public', 'public', [
             'status' => $server->status(),
         ]);
+    }
+
+    /** What the page needs to redraw itself, and nothing else. */
+    public function publicServerStatus(PublicServer $server): \Illuminate\Http\JsonResponse
+    {
+        $s = $server->status();
+
+        return response()->json([
+            'online'    => $s['online'],
+            'count'     => $s['count'],
+            'max'       => $s['max'],
+            'hidden'    => $s['hidden'],
+            'updatedAt' => $s['updatedAt'],
+            'players'   => array_map(fn ($p) => [
+                'id'      => $p['id'],
+                'name'    => $p['name'],
+                'where'   => $p['where'],
+                'point'   => $p['point'],
+                'heading' => $p['heading'],
+            ], $s['players']),
+        ])->header('Cache-Control', 'public, max-age=5');
     }
 
     public function legal(): View

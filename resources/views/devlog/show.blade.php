@@ -5,18 +5,7 @@
 @section('description', $entry->summary ?: __('devlog.meta.description'))
 
 @push('head')
-    <script type="application/ld+json">
-    {!! json_encode([
-        '@context' => 'https://schema.org',
-        '@type' => 'BlogPosting',
-        'headline' => $entry->title,
-        'description' => $entry->summary,
-        'datePublished' => $entry->date->format('Y-m-d'),
-        'inLanguage' => app()->getLocale(),
-        'url' => Nav::url('devlog', null, ['slug' => $entry->slug]),
-        'publisher' => ['@type' => 'Organization', 'name' => config('stvr.name')],
-    ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
-    </script>
+    <script type="application/ld+json">{!! \App\Support\StructuredData::post($entry) !!}</script>
 @endpush
 
 @section('body')
@@ -30,7 +19,7 @@
 
             <div class="post__meta" style="margin-top:1.2rem">
                 <time class="post__date" datetime="{{ $entry->date->format('Y-m-d') }}">
-                    {{ __('devlog.entry.written', ['date' => $entry->date->format('j F Y')]) }}
+                    {{ __('devlog.entry.written', ['date' => $entry->date->isoFormat('LL')]) }}
                 </time>
                 @foreach ($entry->tags as $tag)
                     <span class="tag">{{ $tag }}</span>

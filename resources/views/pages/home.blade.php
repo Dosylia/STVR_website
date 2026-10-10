@@ -43,7 +43,7 @@
                 <p class="band__value">{{ $release->tag ?: ($release->exists() ? __('home.stats.version_rolling') : __('home.stats.version_none')) }}</p>
                 <p class="band__note">
                     @if ($release->live && $release->publishedAt)
-                        {{ \Illuminate\Support\Carbon::instance($release->publishedAt)->locale(app()->getLocale())->isoFormat('LL') }}
+                        {{ $release->publishedAt->isoFormat('LL') }}
                     @else
                         <a href="{{ Nav::link('releases') }}" rel="noopener">{{ __('download.release.mirror') }}</a>
                     @endif
@@ -55,7 +55,7 @@
                     <p class="band__value"><a class="band__link" href="{{ Nav::url('download') }}">v{{ $launcherBuild->version }}</a></p>
                     <p class="band__note">
                         @if ($launcherBuild->publishedAt)
-                            {{ __('home.stats.launcher_note', ['date' => \Illuminate\Support\Carbon::parse($launcherBuild->publishedAt)->locale(app()->getLocale())->isoFormat('LL')]) }}
+                            {{ __('home.stats.launcher_note', ['date' => $launcherBuild->published()->isoFormat('LL')]) }}
                         @endif
                     </p>
                 </div>
@@ -217,7 +217,7 @@
                 <a class="post reveal" href="{{ Nav::url('devlog', null, ['slug' => $entry->slug]) }}">
                     <div class="post__meta">
                         <time class="post__date" datetime="{{ $entry->date->format('Y-m-d') }}">
-                            {{ $entry->date->format('j M Y') }}
+                            {{ $entry->date->isoFormat('ll') }}
                         </time>
                         @foreach (array_slice($entry->tags, 0, 3) as $tag)
                             <span class="tag">{{ $tag }}</span>

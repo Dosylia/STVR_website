@@ -310,4 +310,141 @@
       }, 1800);
     });
   });
+  /* -------------------------------------------------------- public server */
+
+  // The public server page refreshes itself from /api/public-server.json, the site's own cached copy of the hub's
+  // status (so the hub is asked at most once per cache period, however many people watch). Only while the tab is
+  // visible. Markers are keyed by each connection's random id and glide to their new place; the roster and the count
+  // are redrawn. When the server goes from online to offline or back, the page reloads, since its layout changes.
+
+  const server = $('#publicServer');
+
+  if (server && server.dataset.feed) {
+    const feed = server.dataset.feed;
+    const every = Math.max(5, parseInt(server.dataset.every, 10) || 10) * 1000;
+    const wasOnline = server.dataset.online === '1';
+    const t = JSON.parse(server.dataset.i18n || '{}');
+    const svgNS = 'http://www.w3.org/2000/svg';
+    const layer = $('.map__players');
+    const roster = $('[data-roster]');
+    const time = new Intl.DateTimeFormat(server.dataset.locale || 'en', { dateStyle: 'long', timeStyle: 'short' });
+    let timer = null;
+
+    const show = (el, on) => { if (el) el.hidden = !on; };
+    const place = (g, p) => { g.style.transform = `translate(${p.point[0]}px, ${p.point[1]}px)`; };
+
+    const marker = (p, i) => {
+      const g = document.createElementNS(svgNS, 'g');
+      g.setAttribute('class', 'map__player');
+      g.dataset.id = p.id;
+      const glow = document.createElementNS(svgNS, 'circle');
+      glow.setAttribute('r', '16');
+      glow.setAttribute('fill', 'url(#mapGlow)');
+      const arrow = document.createElementNS(svgNS, 'path');
+      arrow.setAttribute('class', 'map__heading');
+      arrow.setAttribute('d', 'M0 -12 L3.6 -6 L-3.6 -6 Z');
+      const dot = document.createElementNS(svgNS, 'circle');
+      dot.setAttribute('r', '4.5');
+      dot.setAttribute('fill', '#3fd6a4');
+      dot.setAttribute('stroke', '#07080a');
+      dot.setAttribute('stroke-width', '1.5');
+      const label = document.createElementNS(svgNS, 'text');
+      label.setAttribute('y', String(-15 - (i % 2) * 11));
+      label.setAttribute('text-anchor', 'middle');
+      label.textContent = p.name;
+      g.append(glow, arrow, dot, label);
+      return g;
+    };
+
+    const drawMap = (players) => {
+      if (!layer) return;
+      const seen = new Set();
+      players.forEach((p, i) => {
+        if (!p.point) return;
+        seen.add(p.id);
+        let g = layer.querySelector(`[data-id="${CSS.escape(p.id)}"]`);
+        if (!g) {
+          g = marker(p, i);
+          place(g, p);
+          layer.append(g);
+        } else {
+          place(g, p);
+          g.querySelector('text').textContent = p.name;
+        }
+        const arrow = g.querySelector('.map__heading');
+        // An SVG element has no .hidden property; the attribute, with its CSS rule, does the job.
+        if (p.heading === null) {
+          arrow.setAttribute('hidden', '');
+        } else {
+          arrow.removeAttribute('hidden');
+          arrow.style.transform = `rotate(${p.heading}deg)`;
+        }
+      });
+      $$('.map__player', layer).forEach((g) => { if (!seen.has(g.dataset.id)) g.remove(); });
+    };
+
+    const drawRoster = (players) => {
+      if (!roster) return;
+      roster.replaceChildren(...players.map((p) => {
+        const li = document.createElement('li');
+        li.className = 'roster__item';
+        li.dataset.id = p.id;
+        const rune = document.createElement('span');
+        rune.className = 'roster__rune';
+        rune.setAttribute('aria-hidden', 'true');
+        rune.textContent = p.name.charAt(0).toUpperCase();
+        const name = document.createElement('span');
+        name.className = 'roster__name';
+        name.textContent = p.name;
+        const where = document.createElement('span');
+        where.className = 'roster__where';
+        where.textContent = [p.where, p.point ? null : t.inside].filter(Boolean).join(' · ');
+        li.append(rune, name, where);
+        return li;
+      }));
+      show(roster, players.length > 0);
+      show($('[data-note]'), players.length > 0);
+      show($('[data-none]'), players.length === 0);
+    };
+
+    const refresh = async () => {
+      try {
+        const response = await fetch(feed, { headers: { Accept: 'application/json' } });
+        if (!response.ok) return;
+        const s = await response.json();
+        if (s.online !== wasOnline) {
+          location.reload();
+          return;
+        }
+        if (!s.online) return;
+        const count = $('[data-count]', server);
+        if (count) count.textContent = String(s.count);
+        const hidden = $('[data-hidden]');
+        if (hidden) {
+          hidden.textContent = (s.hidden === 1 ? t.hidden1 : t.hidden).replace(':count', String(s.hidden));
+          show(hidden, s.hidden > 0);
+        }
+        const updated = $('[data-updated]', server);
+        if (updated && s.updatedAt && t.updated) updated.textContent = t.updated.replace(':time', time.format(new Date(s.updatedAt)));
+        drawRoster(s.players);
+        drawMap(s.players);
+      } catch {
+        // A missed refresh is not worth a word: the next one comes in a few seconds.
+      }
+    };
+
+    const start = () => { if (!timer) timer = setInterval(refresh, every); };
+    const stop = () => { clearInterval(timer); timer = null; };
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        stop();
+      } else {
+        refresh();
+        start();
+      }
+    });
+    if (!document.hidden) start();
+  }
+
 })();

@@ -7,6 +7,8 @@ return [
         'description' => 'Was kaputtging, was es wirklich war, und was dagegen getan wurde. Einschließlich der Diagnosen, die falsch waren.',
     ],
 
+    'feed' => 'Im Feedreader mitlesen (Atom)',
+
     'hero' => [
         'kicker' => 'Die Werkbank',
         'title'  => 'Entwicklertagebuch',

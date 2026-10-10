@@ -23,6 +23,10 @@ Route::get('/', [PageController::class, 'root'])->name('root');
 Route::get('/robots.txt', [SeoController::class, 'robots'])->name('robots');
 Route::get('/sitemap.xml', [SeoController::class, 'sitemap'])->name('sitemap');
 
+// The public server's status for its page to refresh itself (App\Support\PublicServer, cached a few seconds), so that
+// browsers never call the hub: however many people watch, the hub is asked at most once per cache period.
+Route::get('/api/public-server.json', [PageController::class, 'publicServerStatus'])->name('public.status');
+
 // The launcher, from this site's copy of its newest GitHub release (App\Support\LauncherDownload): the file, and
 // the note installed launchers read to update themselves.
 Route::get('/downloads/launcher/latest.json', [LauncherController::class, 'latest'])->name('launcher.latest');
@@ -54,5 +58,7 @@ foreach (Nav::locales() as $locale) {
     $devlog = (string) config("stvr.paths.devlog.{$locale}", 'devlog');
 
     Route::get("/{$locale}/{$devlog}", [DevlogController::class, 'index'])->name("{$locale}.devlog");
+    // Before {slug}, so that "feed.xml" is never taken for an entry.
+    Route::get("/{$locale}/{$devlog}/feed.xml", [DevlogController::class, 'feed'])->name("{$locale}.devlog.feed");
     Route::get("/{$locale}/{$devlog}/{slug}", [DevlogController::class, 'show'])->name("{$locale}.devlog.show");
 }

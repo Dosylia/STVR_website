@@ -32,6 +32,18 @@ return [
         'none_body'      => 'Hier gibt es noch nichts herunterzuladen. Der Quellcode ist in der Zwischenzeit öffentlich, und im Entwicklertagebuch taucht die Arbeit zuerst auf.',
     ],
 
+    'smartscreen' => [
+        'label'  => 'Beim ersten Start',
+        'title'  => 'Windows warnt dich einmal',
+        'body'   => 'Der Launcher ist nicht mit einem kostenpflichtigen Zertifikat signiert. Deshalb zeigt Windows beim ersten Öffnen ein blaues Fenster, statt ihn zu starten. Das ist normal.',
+        'step1'  => 'Klick unter der Meldung auf :more.',
+        'step2'  => 'Dann klick auf :run.',
+        'why'    => 'Ein Signaturzertifikat kostet jedes Jahr Geld, und die Mod ist kostenlos. Du siehst das, wenn du den Launcher installierst; ist er einmal installiert, startet er wie jedes andere Programm.',
+        'dialog' => 'Der Computer wurde durch Windows geschützt',
+        'more'   => 'Weitere Informationen',
+        'run'    => 'Trotzdem ausführen',
+    ],
+
     'assets' => [
         'launcher' => [
             'title' => 'urSovngarde-Launcher',
@@ -41,6 +53,10 @@ return [
             'setups' => ['Mod Organizer 2', 'Vortex', 'Ohne Mod-Manager'],
             'version' => 'Version :version',
             'updated' => 'Aktualisiert am :date',
+            'downloads' => '{1} :count Download|[2,*] :count Downloads',
+            'notes' => 'Neu in :version',
+            'notes_no_version' => 'Neu in dieser Version',
+            'notes_lang' => 'Die Änderungsnotizen sind auf Englisch.',
             'soon'  => 'Noch nicht veröffentlicht',
             'soon_note' => 'Der Launcher wird noch getestet. Dieser Knopf lädt ihn herunter, sobald er veröffentlicht ist.',
         ],
@@ -75,7 +91,7 @@ return [
             ['name' => 'uGridsToLoad = 5',               'note' => 'Der Standardwert. Der Server lehnt alles andere ab, weil die Welten sonst nicht mehr zusammenpassen.', 'state' => 'required'],
             ['name' => 'Engine Fixes VR',                'note' => 'Beseitigt eine Sorte Absturz, die nichts mit uns zu tun hat.',                        'state' => 'recommended'],
             ['name' => 'VRIK',                           'note' => 'Der Körper, den dein Freund sieht. Dringend empfohlen. Darum geht es im Kern.',      'state' => 'recommended'],
-            ['name' => 'Dieselbe Build wie deine Freunde','note' => 'Der Server lehnt Abweichungen ab und nennt dabei beide Versionen.',                   'state' => 'required'],
+            ['name' => 'Eine Build, die dieselben Nachrichten spricht', 'note' => 'Builds, die dieselben Netzwerknachrichten austauschen, verbinden sich, egal welche Version sie haben. Wenn nicht, sagt der Server es und nennt beide.',                   'state' => 'required'],
         ],
     ],
 

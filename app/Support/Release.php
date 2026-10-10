@@ -2,6 +2,8 @@
 
 namespace App\Support;
 
+use Carbon\CarbonImmutable;
+
 /**
  * One published build, however we came to know about it.
  *
@@ -15,7 +17,8 @@ final class Release
     public function __construct(
         public readonly ?string $tag,
         public readonly ?string $name,
-        public readonly ?\DateTimeImmutable $publishedAt,
+        /** A Carbon date: ->isoFormat('LL') writes it in the page's language, since Carbon follows the app locale. */
+        public readonly ?CarbonImmutable $publishedAt,
         public readonly ?string $url,
         public readonly ?string $notes,
         public readonly array $assets = [],

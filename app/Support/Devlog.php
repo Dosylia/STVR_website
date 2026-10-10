@@ -2,6 +2,8 @@
 
 namespace App\Support;
 
+use Carbon\CarbonImmutable;
+
 /**
  * The devlog is flat markdown files, not a database.
  *
@@ -48,6 +50,26 @@ final class Devlog
     public function latest(string $locale, int $limit = 3): array
     {
         return array_slice($this->all($locale), 0, $limit);
+    }
+
+    /**
+     * When the files a language's entries come from last changed: the English originals, that language's
+     * translations, and the two folders, whose own time moves when an entry is added or removed. One stat per
+     * file and nothing parsed, so a feed reader asking whether anything is new costs next to nothing.
+     */
+    public function lastModified(string $locale): ?CarbonImmutable
+    {
+        $times = [];
+
+        foreach (array_unique([(string) config('stvr.fallback_locale', 'en'), $locale]) as $folder) {
+            foreach ([$this->directory($folder), ...(glob($this->directory($folder).'/*.md') ?: [])] as $path) {
+                $times[] = @filemtime($path);
+            }
+        }
+
+        $times = array_filter($times);
+
+        return $times === [] ? null : CarbonImmutable::createFromTimestamp(max($times));
     }
 
     /** @return array<int, DevlogEntry> */
@@ -120,7 +142,7 @@ final class Devlog
         }
 
         try {
-            $date = new \DateTimeImmutable($meta['date']);
+            $date = new CarbonImmutable($meta['date']);
         } catch (\Throwable) {
             return null;
         }

@@ -37,7 +37,7 @@ return [
         'label' => 'Plainly',
         'title' => 'What this actually is',
         'body'  => 'Skyrim Together Reborn put co-op into Skyrim Special Edition. Skyrim VR is a different executable: different memory addresses, different engine classes, a body where there used to be a camera. This is that mod, taken apart and put back together for the VR build, by two full-stack developers who learned C++ and reverse engineering on the way, which is either reassuring or alarming depending on your temperament.',
-        'body2' => 'It is free, the source is public, and it never talks to a server we own. You host, or your friend hosts. Nobody signs up for anything.',
+        'body2' => 'It is free, the source is public, and nobody signs up for anything. You host, or your friend hosts. Our own servers only do the small jobs: finding a friend by a six-letter code, carrying the game through the relay when a router will not open a port, telling the launcher whether there is an update, and receiving the crash reports you agree to send. Downloads and update checks are counted, and the count says nothing about who made them.',
     ],
 
     'features' => [
@@ -90,7 +90,7 @@ return [
     'tips' => [
         'label' => 'From the loading screen',
         'items' => [
-            'The server refuses any client whose build does not match. The connect notification names both versions, so a mismatch takes ten seconds to diagnose.',
+            'Builds that speak the same network messages connect, whatever their version. When the server refuses one, the notification names both versions, so finding who is behind takes ten seconds.',
             'uGridsToLoad must be 5. It is the default of every Wabbajack list, and the server will not take anything else.',
             'VRIK is what gives your friend a body. Without it they are still there, with rather less of them to see.',
             'The host connects to their own server at 127.0.0.1, the same address as everyone else, minus the travel.',

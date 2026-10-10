@@ -28,7 +28,14 @@
     </div>
 </section>
 
-@foreach (__('privacy.sections') as $s => $section)
+@php
+    // A section about something not switched on yet stays off the page until it is.
+    $sections = array_values(array_filter(
+        __('privacy.sections'),
+        fn ($section) => ($section['when'] ?? null) !== 'public_server' || config('stvr.public_server.enabled'),
+    ));
+@endphp
+@foreach ($sections as $s => $section)
     <section class="section {{ $s % 2 ? 'section--lift' : '' }} section--tight">
         <div class="shell shell--narrow">
             <p class="inscription">{{ ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII'][$s] ?? $s + 1 }}</p>

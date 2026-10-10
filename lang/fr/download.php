@@ -32,6 +32,18 @@ return [
         'none_body'      => 'Rien à télécharger ici pour l’instant. Le code est public entre-temps, et c’est dans le journal que le travail apparaît en premier.',
     ],
 
+    'smartscreen' => [
+        'label'  => 'Au premier lancement',
+        'title'  => 'Windows vous avertira une fois',
+        'body'   => 'Le lanceur n’est pas signé avec un certificat payant : la première fois que vous l’ouvrez, Windows affiche une fenêtre bleue au lieu de le démarrer. C’est normal.',
+        'step1'  => 'Cliquez sur :more sous le message.',
+        'step2'  => 'Puis cliquez sur :run.',
+        'why'    => 'Un certificat de signature se paie chaque année, et le mod est gratuit. Vous voyez cet avertissement en installant le lanceur ; une fois installé, il démarre comme n’importe quel autre programme.',
+        'dialog' => 'Windows a protégé votre ordinateur',
+        'more'   => 'Informations complémentaires',
+        'run'    => 'Exécuter quand même',
+    ],
+
     'assets' => [
         'launcher' => [
             'title' => 'Lanceur urSovngarde',
@@ -41,7 +53,11 @@ return [
             'setups' => ['Mod Organizer 2', 'Vortex', 'Sans gestionnaire de mods'],
             'version' => 'Version :version',
             'updated' => 'Mise à jour le :date',
-            'soon'  => 'Pas encore publié',
+            'downloads' => '{1} :count téléchargement|[2,*] :count téléchargements',
+            'notes' => 'Nouveautés de la version :version',
+            'notes_no_version' => 'Nouveautés de cette version',
+            'notes_lang' => 'Notes de version en anglais.',
+            'soon'=> 'Pas encore publié',
             'soon_note' => 'Le lanceur est encore en test. Ce bouton le téléchargera dès sa publication.',
         ],
         'by_hand' => 'À la main',
@@ -75,7 +91,7 @@ return [
             ['name' => 'uGridsToLoad = 5',               'note' => 'La valeur par défaut. Le serveur refuse les autres : les deux mondes ne coïncideraient plus.', 'state' => 'required'],
             ['name' => 'Engine Fixes VR',                'note' => 'Supprime une catégorie de crash qui n’a rien à voir avec nous.',              'state' => 'recommended'],
             ['name' => 'VRIK',                           'note' => 'Le corps que votre ami voit. Vivement conseillé. C’est l’essentiel de l’intérêt.', 'state' => 'recommended'],
-            ['name' => 'La même build que vos amis',     'note' => 'Le serveur refuse les écarts et affiche les deux versions quand il le fait.', 'state' => 'required'],
+            ['name' => 'Une build qui parle les mêmes messages', 'note' => 'Les builds qui échangent les mêmes messages réseau se connectent, quelle que soit leur version. Sinon, le serveur le dit et affiche les deux.', 'state' => 'required'],
         ],
     ],
 

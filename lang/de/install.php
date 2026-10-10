@@ -19,7 +19,7 @@ return [
         'lede'  => 'Herunterladen, öffnen, auf Installieren klicken. Alles nach diesem Abschnitt ist das, was er für dich tut, für den Fall, dass du es lieber von Hand machst.',
         'steps' => [
             ['title' => 'Den Launcher herunterladen', 'body' => 'Von der Download-Seite: ein kleiner Installer, kein Konto.'],
-            ['title' => 'Ihn öffnen', 'body' => 'Er findet Skyrim VR in jeder Steam-Bibliothek, und Mod Organizer 2, Vortex oder keinen Mod-Manager. Liegt er falsch, korrigier es in den Einstellungen.'],
+            ['title' => 'Ihn öffnen', 'body' => 'Beim ersten Mal warnt Windows dich, weil der Launcher nicht signiert ist: klick auf Weitere Informationen, dann auf Trotzdem ausführen. Danach findet er Skyrim VR in jeder Steam-Bibliothek, und Mod Organizer 2, Vortex oder keinen Mod-Manager. Liegt er falsch, korrigier es in den Einstellungen.'],
             ['title' => 'Installieren', 'body' => 'Er lädt die neueste Version herunter und legt die Mod ab: in Mod Organizer die Mod in deinem Profil, ihr Plugin angehakt, ihr Launcher als Programm eingetragen. Dann prüft er deine Installation.'],
             ['title' => 'Spielen', 'body' => 'Spielen startet das Spiel über deinen Mod-Manager. Unter Freunde hostest du ein Spiel und bekommst einen sechsstelligen Code, oder du tippst den eines Freundes ein.'],
         ],
@@ -83,7 +83,8 @@ return [
     'connect' => [
         'title' => 'Einen Server eintragen',
         'lede'  => 'Der Client liest eine kleine Textdatei, um zu wissen, wohin. Du schreibst sie einmal.',
-        'easy'  => 'Der einfache Weg: Doppelklick auf <code>setup-connect.bat</code> im Ordner <code>Skyrim Together VR</code> und die Adresse eintippen.',
+        'launcher' => 'Mit dem Launcher öffnest du diese Datei nie: Beitreten schreibt sie für dich, aus einem sechsstelligen Code oder einer Adresse.',
+        'easy'  => 'Ohne ihn geht es am einfachsten so: Doppelklick auf <code>setup-connect.bat</code> im Ordner <code>Skyrim Together VR</code> und die Adresse eintippen.',
         'manual'=> 'Von Hand: lege <code>:path</code> an, die Adresse in Zeile eins und das Server-Passwort, falls es eines gibt, in Zeile zwei.',
         'table' => [
             'who'  => 'Wer du bist',
@@ -102,8 +103,8 @@ return [
     'first' => [
         'title' => 'Die erste Sitzung',
         'steps' => [
-            ['title' => 'Jemand startet einen Server', 'body' => 'Der Host führt <code>host-server.bat</code> aus und lässt das Fenster offen. Wenn du das bist: siehe Host-Anleitung.'],
-            ['title' => 'Alle starten das Spiel',      'body' => 'Über MO2, über Vortex oder direkt die EXE. Bei einer schweren Modliste: gib ihr Zeit.'],
+            ['title' => 'Jemand startet einen Server', 'body' => 'Der Host drückt im Launcher auf Spiel hosten und schickt allen den sechsstelligen Code, oder er führt <code>host-server.bat</code> aus und lässt das Fenster offen. Wenn du das bist: siehe Host-Anleitung.'],
+            ['title' => 'Alle starten das Spiel',      'body' => 'Mit dem Launcher drückst du auf Spielen. Ohne ihn über MO2, über Vortex oder direkt die EXE. Bei einer schweren Modliste: gib ihr Zeit.'],
             ['title' => 'Spielstand laden',            'body' => 'Irgendeinen. Etwa fünf Sekunden später steht da <em>Skyrim Together: connecting…</em> und danach <em>connected (build …)</em>. Die Gruppe bildet sich von selbst; niemand muss jemanden einladen.'],
             ['title' => 'Spielen',                     'body' => 'Das SteamVR-Dashboard hat einen <strong>Skyrim Together</strong>-Tab: System-Taste drücken, Laserpointer benutzen. <code>:key</code> trennt und verbindet wieder, ohne das Spiel zu verlassen.'],
         ],
@@ -112,8 +113,8 @@ return [
     'update' => [
         'label' => 'Aktuell bleiben',
         'title' => 'Aktualisieren',
-        'body'  => 'Spiel schließen. Zieh das Update-Zip auf <code>update.bat</code> im Ordner <code>Skyrim Together VR</code>. Es tauscht die Dateien, ohne MO2 zu schließen. Von Hand heißt das: <code>SkyrimTogetherVR.exe</code> und <code>SkyrimTogetherVR.pdb</code> ersetzen.',
-        'warn'  => 'Alle müssen auf derselben Build sein, der Server eingeschlossen. Eine Abweichung wird beim Verbinden abgelehnt, und die Meldung nennt beide Versionen, du siehst also, wer hinterherhinkt.',
+        'body'  => 'Der Launcher hält die Mod aktuell: Wenn eine neue Version erscheint, sagt er es, und Aktualisieren installiert sie. Sich selbst aktualisiert er auf dieselbe Weise. Von Hand: Spiel schließen und das Update-Zip auf <code>update.bat</code> im Ordner <code>Skyrim Together VR</code> ziehen. Es tauscht die Dateien, ohne MO2 zu schließen. Dabei werden <code>SkyrimTogetherVR.exe</code> und <code>SkyrimTogetherVR.pdb</code> an Ort und Stelle ersetzt.',
+        'warn'  => 'Builds, die dieselben Netzwerknachrichten austauschen, verbinden sich, egal welche Version sie haben. Ändert eine Version diese Nachrichten, steht das dabei, und dann aktualisieren alle, der Server eingeschlossen. Wer abgelehnt wird, bekommt beide Versionen genannt, du siehst also, wer hinterherhinkt.',
     ],
 
     'trouble' => [
@@ -122,16 +123,16 @@ return [
         'lede'  => 'Grob nach Häufigkeit sortiert.',
         'items' => [
             ['q' => 'Es verbindet sich nie',                 'a' => 'Zuerst <code>connect.txt</code> prüfen: richtige Adresse, richtiger Port, nichts sonst in der Zeile. Dann prüfen, ob das Server-Fenster beim Host wirklich offen ist. Es schreibt bei jeder Verbindung eine Zeile.'],
-            ['q' => 'Sofort abgelehnt',                      'a' => 'Das ist Absicht. Die Meldung sagt warum: abweichende Build oder falsches Passwort. Builds müssen exakt übereinstimmen, Server eingeschlossen.'],
+            ['q' => 'Sofort abgelehnt',                      'a' => 'Das ist Absicht, und die Meldung sagt warum: ein falsches Passwort, oder Builds, die nicht mehr dieselben Netzwerknachrichten sprechen. Beide Versionen werden angezeigt, im Spiel und im Ladebildschirm des Launchers. Wer zurückliegt, aktualisiert, der Server eingeschlossen.'],
             ['q' => 'Er sieht einen Bären, ich einen Wolf',   'a' => 'Unterschiedliche Ladereihenfolgen. Bring beide Modlisten so nah aneinander wie möglich: gleiche Liste, gleiche Version, gleiche optionale Mods.'],
-            ['q' => 'Das Spiel stürzt ab',                   'a' => 'Führe <code>collect-logs.bat</code> im Launcher-Ordner aus. Es legt ein Zip auf dem Desktop ab, mit Log, Crashdump und Versionen. Schick das: es ist der Unterschied zwischen einer Behebung und einer Vermutung.'],
+            ['q' => 'Das Spiel stürzt ab',                   'a' => 'Nach einem Absturz fragt der Launcher, ob er einen Bericht senden darf, deine Namen und Adressen vorher entfernt. Sag ja: es ist der Unterschied zwischen einer Behebung und einer Vermutung. Ohne den Launcher führst du <code>collect-logs.bat</code> im Launcher-Ordner der Mod aus und schickst das Zip, das es auf deinem Desktop ablegt.'],
             ['q' => 'Es startet ohne meine SKSE-Mods',       'a' => 'Du hast den SKSE-Loader statt <code>SkyrimTogetherVR.exe</code> gestartet. Der Launcher lädt SKSE selbst. Geh durch ihn, nicht an ihm vorbei.'],
         ],
     ],
 
     'cta' => [
         'title' => 'Irgendjemand muss den Server betreiben',
-        'body'  => 'Es ist eine ausführbare Datei und ein UDP-Port, oder gar kein Port, wenn dir ein virtuelles LAN lieber ist.',
+        'body'  => 'Mit dem Launcher ist es ein Knopf und ein sechsstelliger Code. Von Hand ist es eine ausführbare Datei und ein UDP-Port.',
         'primary' => 'Host-Anleitung',
     ],
 ];

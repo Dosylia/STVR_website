@@ -1,18 +1,21 @@
 {
-    "_comment": "A made-up server, for reviewing the public server page on a development machine (STVR_PUBLIC_SERVER_STATUS_URL=sample). Its address is from the range reserved for documentation. Never shown in production.",
+    "_comment": "A made-up server, for reviewing the public server page on a development machine (STVR_PUBLIC_SERVER_STATUS_URL=sample). Its address is from the range reserved for documentation. Shaped like what the server's PublicStatusService sends: player_count counts a player who chose not to be listed, and place names are in each player's game language. Never shown in production.",
     "online": true,
     "name": "urSovngarde public server",
     "address": "203.0.113.10:10578",
     "version": "1.9.0",
+    "protocol": "a1b2c3d4",
     "password": false,
     "max_players": 8,
+    "player_count": 6,
     "started_at": "2026-10-10T08:00:00Z",
+    "server_time": "2026-10-10T12:00:00Z",
     "updated_at": "2026-10-10T12:00:00Z",
     "players": [
-        { "name": "Ingrid", "location": "Riverwood", "worldspace": "Tamriel", "x": 7603, "y": -66167 },
-        { "name": "Torvald", "location": "Riverwood", "worldspace": "Tamriel", "x": 9718, "y": -62667 },
-        { "name": "Asta", "location": "Dragonsreach", "worldspace": "WhiterunWorld" },
-        { "name": "Kjeld", "location": "Windhelm", "worldspace": "Tamriel", "x": 123948, "y": 24250 },
-        { "name": "Runa", "location": "Falkreath Hold", "worldspace": "Tamriel", "x": -29416, "y": -115750 }
+        { "id": "k3f9a1", "name": "Ingrid", "location": "Riverwood", "worldspace": "Tamriel", "x": 7603, "y": -66167, "heading": 45 },
+        { "id": "p0x7qz", "name": "Torvald", "location": "Rivebois", "worldspace": "Tamriel", "x": 9718, "y": -62667, "heading": 200 },
+        { "id": "m2c8rd", "name": "Asta", "location": "Dragonsreach" },
+        { "id": "t6w1ye", "name": "Kjeld", "location": "Windhelm", "worldspace": "Tamriel", "x": 123948, "y": 24250, "heading": 300 },
+        { "id": "b5n4vu", "name": "Runa", "location": "Falkreath Hold", "worldspace": "Tamriel", "x": -29416, "y": -115750, "heading": 90 }
     ]
 }

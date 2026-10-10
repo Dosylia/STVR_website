@@ -32,7 +32,27 @@ docker exec -w /var/www/stvr dev_stvr php artisan view:clear
 
 ```bash
 docker exec -w /var/www/stvr dev_stvr php artisan optimize:clear
+docker exec -w /var/www/stvr dev_stvr php artisan stvr:lang-check
 ```
+
+`stvr:lang-check` fails on a key missing from a language, a lost `:placeholder`,
+a devlog entry not yet translated, or an em or en dash anywhere in the copy.
+
+### Before a deploy
+
+```bash
+docker exec -w /var/www/stvr dev_stvr php artisan test
+```
+
+The tests find every page in `config/stvr.php` and every devlog entry and load
+each one in every language: a page that throws, a raw translation key, an
+unfilled placeholder, a date in English on a French page or broken structured
+data fails here instead of in production. They do it twice: before anything is
+released, and with a release, a launcher and a download count to show.
+
+No test reaches the network, whatever `.env` holds: a request to GitHub or the
+hub that the test has not faked throws (`tests/TestCase.php`), so a test that
+needs an answer fakes it.
 
 ---
 

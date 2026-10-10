@@ -1,29 +1,32 @@
-# Public server status: what the website needs
+# Public server status: how it flows, and what the website reads
 
-For whoever builds the mod and hub side of the public server. The website's page is built and waiting
-(`/en/public-server`, `/fr/serveur-public`, `/de/oeffentlicher-server`, `/es/servidor-publico`). It reads one JSON
-document and draws the status, the player list and a map from it. Nothing on the site claims the server exists until
-this document is live and `STVR_PUBLIC_SERVER_ENABLED=true` is set.
+The public server page (`/en/public-server`, `/fr/serveur-public`, `/de/oeffentlicher-server`,
+`/es/servidor-publico`) shows a server's status, who is on it and where, from one JSON document. It stays out of the
+menu, the sitemap and search engines until `STVR_PUBLIC_SERVER_ENABLED=true`.
 
 Website side: `app/Support/PublicServer.php` (reads and checks the document), `resources/views/pages/public.blade.php`,
-`resources/views/art/skyrim-map.blade.php`. A made-up example: `resources/fixtures/public-server.sample.json`.
+`resources/views/art/skyrim-map.blade.php` and `map-player.blade.php`, the refresh in `public/assets/js/site.js`. A
+made-up example in the server's shape: `resources/fixtures/public-server.sample.json`.
 
-## Where the document comes from (recommended)
+## The flow
 
-The dedicated server should not serve HTTP itself: it would need a second port opened, and it can sit behind the relay.
-Instead:
-
-1. **The server pushes** its status to the hub every 30 seconds, and once when it stops (`"online": false`):
-   `POST https://ursovngarde-hub.ursovngarde.workers.dev/servers/public/status`, body = the document below,
-   `Authorization: Bearer <SERVER_KEY>`. `SERVER_KEY` is a new hub secret, held only by the public server's machine
-   and Cloudflare. Not the upload key: every launcher carries that one.
-2. **The hub keeps** the latest document in its Durable Object (one row, overwritten) and stamps `updated_at` itself on
-   arrival, so a server with a wrong clock cannot look fresh or stale.
-3. **The hub serves** it, public and read-only: `GET /servers/public/status`, with `Cache-Control: max-age=15`.
-4. **The website** reads that URL (`STVR_PUBLIC_SERVER_STATUS_URL`) and caches it for 30 seconds.
-
-The hub endpoints are not written yet. They are small and follow the pattern of `POST /stats`, which the website already
-uses.
+1. **The dedicated server pushes** its status (`Code/server/Services/PublicStatusService.cpp` in the mod): every
+   **10 seconds** while anyone is connected, every **60 seconds** when it is empty, and once with `"online": false` on
+   a clean stop (`/quit`); a closed window or Ctrl+C sends nothing, and the hub then answers offline after 180 seconds.
+   Only with `bPublicStatus=true` in `STServer.ini` (off by default) **and** the key in the
+   `URSOVNGARDE_SERVER_KEY` environment variable, so no friend's server ever pushes anything.
+   `POST https://ursovngarde-hub.ursovngarde.workers.dev/servers/public/status`, `Authorization: Bearer <SERVER_KEY>`.
+2. **The hub keeps** only the latest document (one row, overwritten) and stamps `updated_at` itself on arrival, so a
+   server with a wrong clock can look neither fresh nor stale. Once the server stops, or has been silent for
+   **180 seconds**, the hub answers `online: false`, `player_count: 0`, `players: []`.
+3. **The hub serves** it, public: `GET /servers/public/status`, `Cache-Control: max-age=5`.
+4. **The website** reads it (`STVR_PUBLIC_SERVER_STATUS_URL`) and keeps the answer `STVR_PUBLIC_SERVER_CACHE` seconds
+   (5 by default, the hub's own cache). It asks the hub again only when a visitor's request finds its copy older than that, never on a
+   timer: every request to the hub counts against its 100,000 Worker requests a day, shared with crash reports and
+   invite codes.
+5. **Browsers never call the hub.** The page refreshes itself every 10 seconds while its tab is visible, from the
+   website's own `/api/public-server.json` (the same cached copy). However many people watch, the hub is asked at most
+   once per cache period, and not at all when nobody does.
 
 ## The document
 
@@ -33,74 +36,89 @@ uses.
     "name": "urSovngarde public server",
     "address": "play.example.org:10578",
     "version": "1.9.0",
+    "protocol": "a1b2c3d4",
     "password": false,
     "max_players": 8,
+    "player_count": 6,
     "started_at": "2026-10-10T08:00:00Z",
+    "server_time": "2026-10-10T12:00:00Z",
     "updated_at": "2026-10-10T12:00:00Z",
     "players": [
-        { "name": "Ingrid", "location": "Riverwood", "worldspace": "Tamriel", "x": 7603, "y": -66167 },
-        { "name": "Asta", "location": "Dragonsreach", "worldspace": "WhiterunWorld" }
+        { "id": "k3f9a1", "name": "Ingrid", "location": "Riverwood", "worldspace": "Tamriel", "x": 7603, "y": -66167, "heading": 45 },
+        { "id": "m2c8rd", "name": "Asta", "location": "Dragonsreach" }
     ]
 }
 ```
 
-| Field | Type | Meaning |
+| Field | Type | Meaning, and what the page does with it |
 |---|---|---|
-| `online` | boolean | `true` while the server accepts players. Send `false` when stopping. |
-| `name` | string, ≤ 80 | Shown as the server's title. |
-| `address` | string, ≤ 100 | What a player types to join: `host:port`. Shown with a copy button. |
-| `version` | string, ≤ 20 | The server's build, as the download page names it (`1.9.0`). |
-| `password` | boolean | Whether `sPassword` is set. Never the password. |
-| `max_players` | integer | The server's player limit. |
-| `started_at` | ISO 8601 UTC | When this run of the server started. |
-| `updated_at` | ISO 8601 UTC | When this status was made. Stamped by the hub on arrival. |
-| `players` | array, ≤ 64 shown | One entry per player connected right now. |
+| `online` | boolean | `true` while the server accepts players. |
+| `name` | string, ≤ 80 | The server's title. |
+| `address` | string, ≤ 100 | What a player types to join, `host:port`. Shown with a copy button. |
+| `version` | string, ≤ 20 | The server's build (`1.9.0`). |
+| `protocol` | string, ≤ 40 | The build's message set. Builds with the same protocol connect, whatever their version; the join step says so with this value. |
+| `password` | boolean | Whether the server has a password. Never the password. |
+| `max_players` | integer | The player limit, shown as "5 / 8". |
+| `player_count` | integer | How many are connected, **including players who are not listed**: those who chose to hide, and any past the 64 shown. The page shows this number, never the length of `players`, and "and N more, not listed" for the difference. |
+| `started_at` | ISO 8601 UTC | When this run started ("up since"). |
+| `server_time` | ISO 8601 UTC | Ignored: the page trusts `updated_at`. |
+| `updated_at` | ISO 8601 UTC | Stamped by the hub on arrival. |
+| `players` | array, ≤ 64 shown | The players who are listed. |
 
 Each player:
 
-| Field | Type | Meaning |
+| Field | Type | Meaning, and what the page does with it |
 |---|---|---|
-| `name` | string, ≤ 40 | The **character's name**, as set in game. Never a Steam name, account or address. |
-| `location` | string, ≤ 60, optional | The current location's display name, in English (`Riverwood`, `Dragonsreach`, `Falkreath Hold`). Indoors, the interior's name. |
-| `worldspace` | string, optional | The worldspace's editor ID. Only `Tamriel` is drawn on the map. Any other (an interior, `WhiterunWorld`, `Solstheim`) lists the player as indoors, without a dot. |
-| `x`, `y` | numbers, optional | The player's position in game units, as the console's `getpos x` and `getpos y` give it. |
+| `id` | string, ≤ 16 | A random token per connection, never a Steam id, account or address. The key of the player's dot, so it glides to its new place instead of being redrawn. |
+| `name` | string, ≤ 40 | The character's name, as the client sent it at connect. |
+| `location` | string, ≤ 60, optional | The place, from the game client, **in the player's own game language**, UTF-8 (a French player's "Rivebois" appears as such on the English page): the room's name indoors, the town, dungeon or hold outdoors. It arrives with the next mod build; until then the roster lists players without a place. |
+| `worldspace` | string, optional | `Tamriel` when the player is outdoors in Skyrim's main world. Anything else, or none, lists the player as indoors, without a dot. |
+| `x`, `y` | numbers, optional | Position in game units (`getpos x`, `getpos y`). Only outdoors in Tamriel. |
+| `heading` | number, degrees, optional | Where the player faces, 0 north, clockwise. The arrow on the dot. Only outdoors in Tamriel. |
 
-Rules the website applies, so the sender does not have to:
+The website's own rules, so the sender does not have to care:
 
-- A document whose `updated_at` is more than **180 seconds** old shows the server as offline. Keep pushing every 30
-  seconds; a crashed server goes offline on the page within three minutes without anyone doing anything.
-- Unknown fields are ignored. Missing optional fields are fine. Strings are trimmed and cut to the lengths above.
-- A player without a `name` is skipped.
+- A document whose `updated_at` is more than 180 seconds old shows the server offline (the hub does the same).
+- Unknown fields are ignored, optional fields may be missing, strings are trimmed and cut to the lengths above, a
+  player without a `name` is skipped.
+
+## Hiding
+
+A player can stay off the page: in the launcher, "Hide me from the public server page" (fr "Me cacher de la page du
+serveur public", de "Mich auf der Seite des öffentlichen Servers verbergen", es "Ocultarme de la página del servidor
+público"). From their next join they are left out of `players` but still counted in `player_count`. The page's roster
+and the privacy page's public server section both name the setting, in the launcher's own words.
+
+## Joining in one click
+
+The status card has a Join button: `ursovngarde://join?address=<host>:<port>`, the launcher's own link. The launcher
+always asks before it joins. Older launchers have no handler for the link, so the note under the button says to update
+the launcher if nothing happens.
 
 ## The map
 
-Our own drawing of Skyrim (not the game's map), 1000 by 640. A position is placed on it from two calibration points in
-`config/stvr.php` (`public_server.map`): Whiterun's main gate and Windhelm's bridge. **Their in-game positions there are
-estimates.** Please stand at both places in game, read `getpos x` and `getpos y`, and send the four numbers; the dots
-are only as right as those.
+Our own drawing of Skyrim, 1000 by 640. Positions are placed from two calibration points in `config/stvr.php`
+(`public_server.map`): Whiterun's main gate and Windhelm's bridge. **Their in-game values are still estimates**: in
+game at both places, `getpos x` and `getpos y`, and correct the four numbers.
 
-## Privacy: before the page is switched on
+## Before switching it on
 
-The page shows, to anyone on the internet, which characters are on the server and roughly where. Before
-`STVR_PUBLIC_SERVER_ENABLED=true`:
-
-- The server should send only character names, and the website's privacy page (`lang/*/privacy.php`, four languages)
-  needs a section saying the public server's page lists character names and places, live, and keeps nothing.
-- Worth deciding: a server setting to leave positions out (`x`, `y` absent = listed without a dot), and whether a
-  player can hide from the list.
-
-## Joining
-
-Today the page tells players to paste the address into the launcher's Join ("or an address"), or into connect.txt. If
-the launcher later gets a link that joins in one click (for example `ursovngarde://join?address=...`), the page can
-add a Join button; it does not show one until that exists.
+- **Privacy page.** The "public server" section is written in four languages, says how to hide, and appears on the
+  privacy page only once the page is switched on.
+- **Rules and moderation** on the page, once decided (`urSovngarde-hub/PUBLIC_SERVER.md`, decision 4).
+- **Calibration**, above.
 
 ## Switching it on
 
-1. Hub: the two endpoints above, `npx wrangler secret put SERVER_KEY`, deploy.
-2. Server: push the document every 30 seconds.
-3. Website `.env`: `STVR_PUBLIC_SERVER_STATUS_URL=https://ursovngarde-hub.ursovngarde.workers.dev/servers/public/status`,
-   check the page, then `STVR_PUBLIC_SERVER_ENABLED=true` (adds it to the menu, the sitemap and search engines).
+1. Production `.env`: `STVR_PUBLIC_SERVER_STATUS_URL=https://ursovngarde-hub.ursovngarde.workers.dev/servers/public/status`
+   with `STVR_PUBLIC_SERVER_ENABLED=false`, and check the page.
+2. Then `STVR_PUBLIC_SERVER_ENABLED=true`: the page joins the menu, the sitemap and search engines, and its section
+   joins the privacy page. Check live: online, offline after stopping the server, the map moving.
 
 On a development machine, `STVR_PUBLIC_SERVER_STATUS_URL=sample` shows the made-up server from the fixture. It is
 refused in production.
+
+## Later
+
+- If servers keep announcing to Tilted Phoques' server list (`PUBLIC_SERVER.md`, decision 3), the privacy page has to
+  say so.

@@ -37,6 +37,9 @@
 <meta property="og:image:alt" content="{{ __('site.meta.default_title') }}">
 <meta name="twitter:card" content="summary_large_image">
 
+{{-- The devlog's feed, so a feed reader finds it from any page. --}}
+<link rel="alternate" type="application/atom+xml" title="{{ __('devlog.meta.title') }}" href="{{ route($locale.'.devlog.feed') }}">
+
 <link rel="icon" href="{{ url('/favicon.svg') }}" type="image/svg+xml">
 <link rel="icon" href="{{ url('/icon-192.png') }}" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="{{ url('/apple-touch-icon.png') }}">

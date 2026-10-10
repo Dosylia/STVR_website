@@ -2,6 +2,7 @@
 
 namespace App\Support;
 
+use Carbon\CarbonImmutable;
 use Illuminate\Support\Str;
 
 final class DevlogEntry
@@ -10,11 +11,12 @@ final class DevlogEntry
     public function __construct(
         public readonly string $slug,
         public readonly string $title,
-        public readonly \DateTimeImmutable $date,
+        /** A Carbon date: ->isoFormat('LL') writes it in the page's language, since Carbon follows the app locale. */
+        public readonly CarbonImmutable $date,
         public readonly string $summary,
         public readonly array $tags,
         public readonly string $markdown,
-        /** True when this entry had no translation and the English text is being shown. */
+        /** False when this entry had no translation and the English text is being shown. */
         public readonly bool $translated = true,
     ) {
     }

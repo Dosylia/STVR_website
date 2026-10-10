@@ -28,8 +28,8 @@ final class PublicServer
 
     /**
      * @return array{configured: bool, live: bool, online: bool, name: ?string, address: ?string, version: ?string,
-     *               password: bool, max: ?int, count: int, players: list<array>, startedAt: ?string,
-     *               updatedAt: ?string, sample: bool}
+     *               protocol: ?string, password: bool, max: ?int, count: int, hidden: int, players: list<array>,
+     *               startedAt: ?string, updatedAt: ?string, sample: bool}
      */
     public function status(): array
     {
@@ -76,19 +76,29 @@ final class PublicServer
 
         $players = [];
         if ($online) {
-            foreach (array_slice((array) ($raw['players'] ?? []), 0, self::MAX_PLAYERS_SHOWN) as $p) {
+            foreach (array_slice((array) ($raw['players'] ?? []), 0, self::MAX_PLAYERS_SHOWN) as $i => $p) {
                 if (! is_array($p) || ($name = $str($p['name'] ?? null, 40)) === null) {
                     continue;
                 }
+                $point = $this->point($p);
+                $heading = $p['heading'] ?? null;
                 $players[] = [
-                    'name'  => $name,
-                    'where' => $str($p['location'] ?? null, 60),
-                    'point' => $this->point($p),
+                    // A random token per connection, never anything about the person: the key that lets the page move
+                    // a dot rather than redraw it. Kept to plain characters, since it ends up in an HTML attribute.
+                    'id'      => is_string($p['id'] ?? null) ? substr(preg_replace('/[^A-Za-z0-9_-]/', '', $p['id']), 0, 16) : 'p'.$i,
+                    'name'    => $name,
+                    // In the player's own game language: a French player's "Rivebois" on the English page.
+                    'where'   => $str($p['location'] ?? null, 60),
+                    'point'   => $point,
+                    'heading' => $point && is_numeric($heading) ? ((int) round($heading) % 360 + 360) % 360 : null,
                 ];
             }
         }
 
         $max = $raw['max_players'] ?? null;
+        // player_count includes players who chose not to be listed; the list is only those who did not.
+        $count = $raw['player_count'] ?? null;
+        $count = $online ? (is_int($count) && $count >= count($players) ? $count : count($players)) : 0;
 
         return [
             'configured' => $configured,
@@ -97,9 +107,11 @@ final class PublicServer
             'name'       => $str($raw['name'] ?? null),
             'address'    => $str($raw['address'] ?? null, 100),
             'version'    => $str($raw['version'] ?? null, 20),
+            'protocol'   => $str($raw['protocol'] ?? null, 40),
             'password'   => ($raw['password'] ?? false) === true,
             'max'        => is_int($max) && $max > 0 ? $max : null,
-            'count'      => count($players),
+            'count'      => $count,
+            'hidden'     => max(0, $count - count($players)),
             'players'    => $players,
             'startedAt'  => $online ? $this->time($raw['started_at'] ?? null)?->toIso8601String() : null,
             'updatedAt'  => $updated?->toIso8601String(),
