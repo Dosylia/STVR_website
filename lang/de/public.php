@@ -4,7 +4,7 @@ return [
 
     'meta' => [
         'title'       => 'Öffentlicher Skyrim VR Server · urSovngarde',
-        'description' => 'Ein urSovngarde-Server, auf den jeder kann: wer gerade drauf ist, wo auf der Karte sie sind und wie du beitrittst.',
+        'description' => 'Ein urSovngarde-Server, dem jeder beitreten kann: wer gerade drauf ist, wo auf der Karte sie sind und wie du beitrittst.',
     ],
 
     'hero' => [
