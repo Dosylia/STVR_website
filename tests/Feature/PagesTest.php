@@ -148,7 +148,15 @@ class PagesTest extends TestCase
 
         $body = $this->get(Nav::url('public', 'fr'))->assertOk()->getContent();
 
-        $this->assertSame(4, substr_count($body, 'class="map__player"'), 'Four of the five sample players are outdoors');
+        // Six of the eight listed players have a dot: four outdoors in Tamriel, one in Whiterun's own worldspace (drawn
+        // on Skyrim's map), one near Raven Rock (Solstheim's). Indoors and the Soul Cairn have none.
+        $this->assertSame(6, substr_count($body, 'class="map__player"'));
+        preg_match('#data-map="skyrim".*?</g>\s*(?=\s*<g transform)#s', $body, $skyrim);
+        $this->assertSame(5, substr_count($skyrim[0] ?? '', 'class="map__player"'), 'Five dots on Skyrim, the city one included');
+        $this->assertStringContainsString('data-id="s8d3me"', $body);
+        $this->assertMatchesRegularExpression('#data-map="solstheim".*?data-id="s8d3me"#s', $body, 'Erik is on Solstheim\'s map');
+        $this->assertMatchesRegularExpression('#data-tab="skyrim"[^>]*aria-selected="true"#', $body, 'The busier map opens first');
+        $this->assertMatchesRegularExpression('#data-map-count="solstheim">1<#', $body);
         $this->assertStringContainsString('Blancherive', $body);
         $this->assertStringContainsString('href="ursovngarde://join?address=203.0.113.10:10578"', $body, 'The launcher\'s join link');
         $this->assertStringContainsString('Me cacher de la page du serveur public', $body, 'How to stay off the page, in the launcher\'s words');
@@ -175,12 +183,18 @@ class PagesTest extends TestCase
         $json = $this->getJson('/api/public-server.json')->assertOk()->json();
 
         $this->assertTrue($json['online']);
-        $this->assertSame(6, $json['count'], 'player_count, hidden players included');
+        $this->assertSame(9, $json['count'], 'player_count, hidden players included');
         $this->assertSame(1, $json['hidden']);
-        $this->assertCount(5, $json['players']);
-        $this->assertSame(['id', 'name', 'where', 'point', 'heading'], array_keys($json['players'][0]));
-        $this->assertNull($json['players'][2]['point'], 'Indoors: no dot');
-        $this->assertNull($json['players'][2]['heading']);
+        $this->assertCount(8, $json['players']);
+        $this->assertSame(['skyrim' => 5, 'solstheim' => 1], $json['maps']);
+        $this->assertSame(['id', 'name', 'where', 'map', 'area', 'point', 'heading'], array_keys($json['players'][0]));
+
+        $byName = array_column($json['players'], null, 'name');
+        $this->assertNull($byName['Asta']['point'], 'Indoors: no dot');
+        $this->assertNull($byName['Asta']['heading']);
+        $this->assertSame(['skyrim', null], [$byName['Brynja']['map'], $byName['Brynja']['area']], 'A walled city is Skyrim');
+        $this->assertSame(['solstheim', 'solstheim'], [$byName['Erik']['map'], $byName['Erik']['area']]);
+        $this->assertSame([null, 'soul_cairn', null], [$byName['Siv']['map'], $byName['Siv']['area'], $byName['Siv']['point']]);
     }
 
     public function test_the_public_server_section_of_the_privacy_page_waits_for_the_switch(): void

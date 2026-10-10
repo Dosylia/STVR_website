@@ -64,7 +64,32 @@ return [
     'map' => [
         'label'  => 'Dónde están',
         'title'  => 'El mapa',
-        'note'   => 'Se actualiza cada :seconds segundos, no en directo. Es nuestro propio dibujo de Skyrim, lo bastante preciso para decir "cerca de Cauce Boscoso".',
+        'note'   => 'Se actualiza cada :seconds segundos mientras miras. Son nuestros propios dibujos, lo bastante precisos para decir "cerca de Cauce Boscoso".',
+        'switch' => 'Elige un mapa',
+        'title_solstheim' => 'Mapa de Solstheim con los jugadores del servidor público',
+        'red_mountain' => 'Montaña Roja',
+        // The areas a player can be outdoors in (config stvr.public_server.areas). Skyrim and Solstheim have a map.
+        'areas'  => [
+            'skyrim'         => 'Skyrim',
+            'solstheim'      => 'Solstheim',
+            'blackreach'     => 'Blackreach',
+            'sovngarde'      => 'Sovngarde',
+            'skuldafn'       => 'Skuldafn',
+            'soul_cairn'     => 'Recordatorio de las Almas',
+            'forgotten_vale' => 'Valle Olvidado',
+            'apocrypha'      => 'Apocrypha',
+            'deepwood_vale'  => 'Deepwood Vale',
+        ],
+        'solstheim' => [
+            'raven_rock'    => 'Roca del Cuervo',
+            'skaal_village' => 'Aldea Skaal',
+            'thirsk'        => 'Salón del aguamiel de Thirsk',
+            'tel_mithryn'   => 'Tel Mithryn',
+            'karstaag'      => 'Castillo de Karstaag',
+            'miraak'        => 'Templo de Miraak',
+            'frostmoth'     => 'Fuerte Polilla Helada',
+            'kolbjorn'      => 'Túmulo de Kolbjorn',
+        ],
         'sea'    => 'Mar de los Fantasmas',
         'throat' => 'Garganta del Mundo',
         'towns'  => [

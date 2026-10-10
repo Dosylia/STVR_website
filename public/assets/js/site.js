@@ -325,7 +325,8 @@
     const wasOnline = server.dataset.online === '1';
     const t = JSON.parse(server.dataset.i18n || '{}');
     const svgNS = 'http://www.w3.org/2000/svg';
-    const layer = $('.map__players');
+    // One layer of dots per drawing (Skyrim, Solstheim), by the map's slug.
+    const layers = Object.fromEntries($$('.map__players').map((g) => [g.dataset.map, g]));
     const roster = $('[data-roster]');
     const time = new Intl.DateTimeFormat(server.dataset.locale || 'en', { dateStyle: 'long', timeStyle: 'short' });
     let timer = null;
@@ -333,13 +334,13 @@
     const show = (el, on) => { if (el) el.hidden = !on; };
     const place = (g, p) => { g.style.transform = `translate(${p.point[0]}px, ${p.point[1]}px)`; };
 
-    const marker = (p, i) => {
+    const marker = (p, i, layer) => {
       const g = document.createElementNS(svgNS, 'g');
       g.setAttribute('class', 'map__player');
       g.dataset.id = p.id;
       const glow = document.createElementNS(svgNS, 'circle');
       glow.setAttribute('r', '16');
-      glow.setAttribute('fill', 'url(#mapGlow)');
+      glow.setAttribute('fill', `url(#${layer.dataset.glow})`);
       const arrow = document.createElementNS(svgNS, 'path');
       arrow.setAttribute('class', 'map__heading');
       arrow.setAttribute('d', 'M0 -12 L3.6 -6 L-3.6 -6 Z');
@@ -357,14 +358,21 @@
     };
 
     const drawMap = (players) => {
-      if (!layer) return;
       const seen = new Set();
+      const counts = {};
       players.forEach((p, i) => {
-        if (!p.point) return;
+        const layer = p.point && layers[p.map];
+        if (!layer) return;
         seen.add(p.id);
-        let g = layer.querySelector(`[data-id="${CSS.escape(p.id)}"]`);
+        counts[p.map] = (counts[p.map] || 0) + 1;
+        let g = document.querySelector(`.map__player[data-id="${CSS.escape(p.id)}"]`);
+        if (g && g.parentNode !== layer) {
+          // Gone to another map (through a door to Solstheim): drawn afresh there rather than glided across.
+          g.remove();
+          g = null;
+        }
         if (!g) {
-          g = marker(p, i);
+          g = marker(p, i, layer);
           place(g, p);
           layer.append(g);
         } else {
@@ -380,7 +388,8 @@
           arrow.style.transform = `rotate(${p.heading}deg)`;
         }
       });
-      $$('.map__player', layer).forEach((g) => { if (!seen.has(g.dataset.id)) g.remove(); });
+      $$('.map__player').forEach((g) => { if (!seen.has(g.dataset.id)) g.remove(); });
+      $$('[data-map-count]').forEach((n) => { n.textContent = String(counts[n.dataset.mapCount] || 0); });
     };
 
     const drawRoster = (players) => {
@@ -398,7 +407,8 @@
         name.textContent = p.name;
         const where = document.createElement('span');
         where.className = 'roster__where';
-        where.textContent = [p.where, p.point ? null : t.inside].filter(Boolean).join(' · ');
+        const area = p.area && t.areas ? t.areas[p.area] : null;
+        where.textContent = [p.where, area, p.point || p.area ? null : t.inside].filter(Boolean).join(' · ');
         li.append(rune, name, where);
         return li;
       }));

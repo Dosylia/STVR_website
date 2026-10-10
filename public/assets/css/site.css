@@ -1457,6 +1457,22 @@ tbody td:first-child { color: var(--parchment); font-family: var(--mono); font-s
 .roster__note { margin-top: 1rem; font-size: .9rem; color: var(--iron); }
 
 .where__map { margin: 0; }
+.maps__tabs { margin-bottom: .9rem; }
+.maps__count {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  margin-left: .45rem;
+  padding: 0 .35rem;
+  border-radius: 999px;
+  font-family: var(--body);
+  font-size: .78rem;
+  letter-spacing: 0;
+  color: var(--aurora-a);
+  border: 1px solid rgba(63, 214, 164, .4);
+}
+.map__distant text { fill: #7d6a62; }
 .where__map .inscription { margin-bottom: 1rem; }
 .where__map figcaption { margin-top: .8rem; font-size: .9rem; font-style: italic; color: var(--iron); }
 .map {

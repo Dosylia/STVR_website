@@ -64,7 +64,32 @@ return [
     'map' => [
         'label'  => 'Wo sie sind',
         'title'  => 'Die Karte',
-        'note'   => 'Alle :seconds Sekunden aktualisiert, nicht live. Unsere eigene Zeichnung von Skyrim, genau genug für "in der Nähe von Flusswald".',
+        'note'   => 'Alle :seconds Sekunden aktualisiert, solange du zusiehst. Unsere eigenen Zeichnungen, genau genug für "in der Nähe von Flusswald".',
+        'switch' => 'Karte wählen',
+        'title_solstheim' => 'Karte von Solstheim mit den Spielern auf dem öffentlichen Server',
+        'red_mountain' => 'Roter Berg',
+        // The areas a player can be outdoors in (config stvr.public_server.areas). Skyrim and Solstheim have a map.
+        'areas'  => [
+            'skyrim'         => 'Himmelsrand',
+            'solstheim'      => 'Solstheim',
+            'blackreach'     => 'Schwarzweite',
+            'sovngarde'      => 'Sovngarde',
+            'skuldafn'       => 'Skuldafn',
+            'soul_cairn'     => 'Seelengrab',
+            'forgotten_vale' => 'Vergessenes Tal',
+            'apocrypha'      => 'Apokryphen',
+            'deepwood_vale'  => 'Deepwood Vale',
+        ],
+        'solstheim' => [
+            'raven_rock'    => 'Rabenfels',
+            'skaal_village' => 'Skaal Village',
+            'thirsk'        => 'Thirsk Mead Hall',
+            'tel_mithryn'   => 'Tel Mithryn',
+            'karstaag'      => 'Castle Karstaag',
+            'miraak'        => 'Temple of Miraak',
+            'frostmoth'     => 'Fort Frostmoth',
+            'kolbjorn'      => 'Kolbjorn Barrow',
+        ],
         'sea'    => 'Geistermeer',
         'throat' => 'Hals der Welt',
         'towns'  => [
@@ -81,7 +106,7 @@ return [
             'helgen'     => 'Helgen',
             'ivarstead'  => 'Ivarstedt',
         ],
-        'title_svg' => 'Karte von Skyrim mit den Spielern auf dem öffentlichen Server',
+        'title_svg' => 'Karte von Himmelsrand mit den Spielern auf dem öffentlichen Server',
     ],
 
     'rules' => [

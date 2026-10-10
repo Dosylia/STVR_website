@@ -29,7 +29,7 @@ final class PublicServer
     /**
      * @return array{configured: bool, live: bool, online: bool, name: ?string, address: ?string, version: ?string,
      *               protocol: ?string, password: bool, max: ?int, count: int, hidden: int, players: list<array>,
-     *               startedAt: ?string, updatedAt: ?string, sample: bool}
+     *               maps: array<string, int>, openMap: ?string, startedAt: ?string, updatedAt: ?string, sample: bool}
      */
     public function status(): array
     {
@@ -80,8 +80,9 @@ final class PublicServer
                 if (! is_array($p) || ($name = $str($p['name'] ?? null, 40)) === null) {
                     continue;
                 }
-                $point = $this->point($p);
+                [$map, $point] = $this->place($p);
                 $heading = $p['heading'] ?? null;
+                $area = is_string($p['worldspace'] ?? null) ? config('stvr.public_server.areas.'.$p['worldspace']) : null;
                 $players[] = [
                     // A random token per connection, never anything about the person: the key that lets the page move
                     // a dot rather than redraw it. Kept to plain characters, since it ends up in an HTML attribute.
@@ -89,11 +90,23 @@ final class PublicServer
                     'name'    => $name,
                     // In the player's own game language: a French player's "Rivebois" on the English page.
                     'where'   => $str($p['location'] ?? null, 60),
+                    // Which drawing the dot is on ('skyrim', 'solstheim'), and the area's name for anyone outside main
+                    // Skyrim: Solstheim, the Soul Cairn... (null in Skyrim, and indoors, where no worldspace comes).
+                    'map'     => $map,
+                    'area'    => $area !== 'skyrim' ? $area : null,
                     'point'   => $point,
                     'heading' => $point && is_numeric($heading) ? ((int) round($heading) % 360 + 360) % 360 : null,
                 ];
             }
         }
+
+        // How many are on each drawing, in the config's order, and the one the page opens on: the busiest, Skyrim when
+        // it is a tie.
+        $maps = [];
+        foreach ((array) config('stvr.public_server.maps') as $map) {
+            $maps[$map['slug']] = count(array_filter($players, fn ($p) => $p['map'] === $map['slug']));
+        }
+        $open = $maps ? array_search(max($maps), $maps, true) : null;
 
         $max = $raw['max_players'] ?? null;
         // player_count includes players who chose not to be listed; the list is only those who did not.
@@ -113,6 +126,8 @@ final class PublicServer
             'count'      => $count,
             'hidden'     => max(0, $count - count($players)),
             'players'    => $players,
+            'maps'       => $maps,
+            'openMap'    => $open,
             'startedAt'  => $online ? $this->time($raw['started_at'] ?? null)?->toIso8601String() : null,
             'updatedAt'  => $updated?->toIso8601String(),
             'sample'     => $sample,
@@ -120,33 +135,38 @@ final class PublicServer
     }
 
     /**
-     * Where a player stands on our map, or null: inside a building, in another worldspace, or without a position.
-     * Two calibration points (config stvr.public_server.map) fix the scale and offset on each axis; the in-game Y
-     * grows northwards, the drawing's Y grows downwards, and the calibration carries that sign.
+     * Which drawing a player is on and where, as [slug, [x, y]], or [null, null]: indoors, in a worldspace without a
+     * drawing, or without a position. Each worldspace's two calibration points (config stvr.public_server.maps) fix
+     * the scale and offset on each axis; the in-game Y grows northwards, the drawing's Y grows downwards, and the
+     * calibration carries that sign. A walled city is placed on the drawing of the worldspace it belongs to.
      */
-    private function point(array $p): ?array
+    private function place(array $p): array
     {
         $x = $p['x'] ?? null;
         $y = $p['y'] ?? null;
+        $worldspace = is_string($p['worldspace'] ?? null) ? $p['worldspace'] : null;
+        $worldspace = config('stvr.public_server.shared.'.$worldspace) ?? $worldspace;
+        $map = $worldspace !== null ? config('stvr.public_server.maps.'.$worldspace) : null;
 
-        if (($p['worldspace'] ?? null) !== 'Tamriel' || ! is_numeric($x) || ! is_numeric($y)) {
-            return null;
+        if (! is_array($map) || ! is_numeric($x) || ! is_numeric($y)) {
+            return [null, null];
         }
 
-        $a = config('stvr.public_server.map.a');
-        $b = config('stvr.public_server.map.b');
+        [$a, $b] = [$map['a'], $map['b']];
         $dx = $b['world'][0] - $a['world'][0];
         $dy = $b['world'][1] - $a['world'][1];
 
         if ($dx == 0 || $dy == 0) {
-            return null;
+            return [null, null];
         }
 
         $sx = $a['svg'][0] + ($x - $a['world'][0]) * ($b['svg'][0] - $a['svg'][0]) / $dx;
         $sy = $a['svg'][1] + ($y - $a['world'][1]) * ($b['svg'][1] - $a['svg'][1]) / $dy;
 
         // Off the drawing is no use to anyone: drop it rather than pin it to an edge.
-        return $sx >= 0 && $sx <= 1000 && $sy >= 0 && $sy <= 640 ? [round($sx, 1), round($sy, 1)] : null;
+        return $sx >= 0 && $sx <= 1000 && $sy >= 0 && $sy <= 640
+            ? [$map['slug'], [round($sx, 1), round($sy, 1)]]
+            : [null, null];
     }
 
     private function time(mixed $value): ?Carbon

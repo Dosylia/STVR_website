@@ -116,15 +116,7 @@
         </g>
     @endforeach
 
-    {{-- players: one group each, placed by a CSS transform so the page can glide it when the player moves
-         (site.js, public server). Keyed by the connection's random id. --}}
-    <g class="map__players">
-        @foreach ($players as $i => $player)
-            @if ($player['point'])
-                @include('art.map-player', ['player' => $player, 'i' => $i])
-            @endif
-        @endforeach
-    </g>
+    @include('art.map-players', ['players' => $players, 'slug' => 'skyrim', 'glow' => 'mapGlow'])
 
     {{-- north --}}
     <g transform="translate(60 590)" class="map__north">

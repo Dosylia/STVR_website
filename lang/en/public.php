@@ -64,7 +64,32 @@ return [
     'map' => [
         'label'  => 'Where they are',
         'title'  => 'The map',
-        'note'   => 'Updated every :seconds seconds, not live. Our own drawing of Skyrim, close enough to say "near Riverwood".',
+        'note'   => 'Refreshed every :seconds seconds while you watch. Our own drawings, close enough to say "near Riverwood".',
+        'switch' => 'Choose a map',
+        'title_solstheim' => 'Map of Solstheim with the players on the public server',
+        'red_mountain' => 'Red Mountain',
+        // The areas a player can be outdoors in (config stvr.public_server.areas). Skyrim and Solstheim have a map.
+        'areas'  => [
+            'skyrim'         => 'Skyrim',
+            'solstheim'      => 'Solstheim',
+            'blackreach'     => 'Blackreach',
+            'sovngarde'      => 'Sovngarde',
+            'skuldafn'       => 'Skuldafn',
+            'soul_cairn'     => 'Soul Cairn',
+            'forgotten_vale' => 'Forgotten Vale',
+            'apocrypha'      => 'Apocrypha',
+            'deepwood_vale'  => 'Deepwood Vale',
+        ],
+        'solstheim' => [
+            'raven_rock'    => 'Raven Rock',
+            'skaal_village' => 'Skaal Village',
+            'thirsk'        => 'Thirsk Mead Hall',
+            'tel_mithryn'   => 'Tel Mithryn',
+            'karstaag'      => 'Castle Karstaag',
+            'miraak'        => 'Temple of Miraak',
+            'frostmoth'     => 'Fort Frostmoth',
+            'kolbjorn'      => 'Kolbjorn Barrow',
+        ],
         'sea'    => 'Sea of Ghosts',
         'throat' => 'Throat of the World',
         'towns'  => [

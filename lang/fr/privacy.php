@@ -122,7 +122,7 @@ return [
             'when'  => 'public_server',
             'title' => 'Le serveur public',
             'body'  => [
-                'La page du serveur public sur ce site montre à tout le monde, en direct, quels personnages s’y trouvent et le lieu où est chacun, tel que son propre jeu le nomme. En extérieur, dans le monde principal de Bordeciel, elle montre aussi où ils se tiennent sur la carte et dans quelle direction ils regardent. Uniquement des noms de personnages : jamais de nom Steam, de compte ni d’adresse.',
+                'La page du serveur public sur ce site montre à tout le monde, en direct, quels personnages s’y trouvent et le lieu où est chacun, tel que son propre jeu le nomme. En extérieur, elle montre aussi dans quelle zone ils sont (Bordeciel, Solstheim, Griffenoire…) et, sur nos cartes de Bordeciel et de Solstheim, où ils se tiennent et dans quelle direction ils regardent. Uniquement des noms de personnages : jamais de nom Steam, de compte ni d’adresse.',
                 'Un joueur peut rester hors de la page : dans le lanceur, « Me cacher de la page du serveur public ». Dès sa prochaine connexion, la page le compte toujours, mais n’affiche jamais son nom et ne le place pas sur sa carte.',
                 'Seul notre serveur public fait cela. Le réglage est désactivé sur tous les autres serveurs, le vôtre compris.',
                 'Le serveur envoie son état à notre hub toutes les 10 secondes tant que quelqu’un joue. Le hub ne garde que le dernier, en retire les joueurs dès que le serveur s’arrête ou reste silencieux pendant 3 minutes, et ne conserve rien de qui a joué ni de quand.',

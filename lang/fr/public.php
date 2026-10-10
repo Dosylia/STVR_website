@@ -64,7 +64,32 @@ return [
     'map' => [
         'label'  => 'Où ils sont',
         'title'  => 'La carte',
-        'note'   => 'Mise à jour toutes les :seconds secondes, pas en direct. Notre propre dessin de Bordeciel, assez précis pour dire « près de Rivebois ».',
+        'note'   => 'Actualisée toutes les :seconds secondes tant que vous la regardez. Nos propres dessins, assez précis pour dire « près de Rivebois ».',
+        'switch' => 'Choisir une carte',
+        'title_solstheim' => 'Carte de Solstheim avec les joueurs du serveur public',
+        'red_mountain' => 'Mont Écarlate',
+        // The areas a player can be outdoors in (config stvr.public_server.areas). Skyrim and Solstheim have a map.
+        'areas'  => [
+            'skyrim'         => 'Bordeciel',
+            'solstheim'      => 'Solstheim',
+            'blackreach'     => 'Griffenoire',
+            'sovngarde'      => 'Sovngarde',
+            'skuldafn'       => 'Skuldafn',
+            'soul_cairn'     => 'Soul Cairn',
+            'forgotten_vale' => 'Vallée oubliée',
+            'apocrypha'      => 'Apocryphe',
+            'deepwood_vale'  => 'Deepwood Vale',
+        ],
+        'solstheim' => [
+            'raven_rock'    => 'Corberoc',
+            'skaal_village' => 'Skaal Village',
+            'thirsk'        => 'Thirsk Mead Hall',
+            'tel_mithryn'   => 'Tel Mithryn',
+            'karstaag'      => 'Castle Karstaag',
+            'miraak'        => 'Temple de Miraak',
+            'frostmoth'     => 'Fort Frostmoth',
+            'kolbjorn'      => 'Tertre de Kolbjorn',
+        ],
         'sea'    => 'Mer des Fantômes',
         'throat' => 'Gorge du Monde',
         'towns'  => [

@@ -3,7 +3,7 @@
      site.js for players who arrive while the page is open. --}}
 @php [$px, $py] = $player['point']; @endphp
 <g class="map__player" data-id="{{ $player['id'] }}" style="transform: translate({{ $px }}px, {{ $py }}px)">
-    <circle r="16" fill="url(#mapGlow)"/>
+    <circle r="16" fill="url(#{{ $glow }})"/>
     <path class="map__heading" d="M0 -12 L3.6 -6 L-3.6 -6 Z" @if ($player['heading'] === null) hidden @endif
           style="transform: rotate({{ (int) ($player['heading'] ?? 0) }}deg)"/>
     <circle r="4.5" fill="#3fd6a4" stroke="#07080a" stroke-width="1.5"/>

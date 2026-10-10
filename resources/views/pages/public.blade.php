@@ -9,6 +9,7 @@
     // The words the page's script needs to redraw the roster and the count (site.js, public server).
     $i18n = [
         'inside'  => __('public.who.inside'),
+        'areas'   => __('public.map.areas'),
         'updated' => __('public.status.updated'),
         'hidden1' => trans_choice('public.who.hidden', 1, ['count' => ':count']),
         'hidden'  => trans_choice('public.who.hidden', 2, ['count' => ':count']),
@@ -156,7 +157,11 @@
                                         <span class="roster__rune" aria-hidden="true">{{ mb_strtoupper(mb_substr($player['name'], 0, 1)) }}</span>
                                         <span class="roster__name">{{ $player['name'] }}</span>
                                         <span class="roster__where">
-                                            {{ implode(' · ', array_filter([$player['where'], $player['point'] ? null : __('public.who.inside')])) }}
+                                            {{ implode(' · ', array_filter([
+                                                $player['where'],
+                                                $player['area'] ? __('public.map.areas.'.$player['area']) : null,
+                                                $player['point'] || $player['area'] ? null : __('public.who.inside'),
+                                            ])) }}
                                         </span>
                                     </li>
                                 @endforeach
@@ -169,8 +174,28 @@
 
                     <figure class="where__map reveal">
                         <p class="inscription">{{ __('public.map.label') }}</p>
-                        <div class="where__scroll">@include('art.skyrim-map', ['players' => $status['players']])</div>
-                        <figcaption>{{ __('public.map.note', ['seconds' => (int) config('stvr.public_server.cache_seconds', 30)]) }}</figcaption>
+                        {{-- One drawing per worldspace worth drawing, as tabs (the install page's), each with how many players
+                             are there; the page opens on the busiest. site.js keeps the counts and the dots current. --}}
+                        <div data-tabs class="maps">
+                            <div class="tabs__list maps__tabs" role="tablist" aria-label="{{ __('public.map.switch') }}">
+                                @foreach ($status['maps'] as $slug => $n)
+                                    <button class="tabs__tab" type="button" role="tab" data-tab="{{ $slug }}"
+                                            id="map-tab-{{ $slug }}" aria-controls="map-{{ $slug }}"
+                                            aria-selected="{{ $slug === $status['openMap'] ? 'true' : 'false' }}">
+                                        {{ __('public.map.areas.'.$slug) }}
+                                        <span class="maps__count" data-map-count="{{ $slug }}">{{ $n }}</span>
+                                    </button>
+                                @endforeach
+                            </div>
+                            @foreach ((array) config('stvr.public_server.maps') as $map)
+                                <div class="maps__panel" role="tabpanel" data-panel="{{ $map['slug'] }}"
+                                     id="map-{{ $map['slug'] }}" aria-labelledby="map-tab-{{ $map['slug'] }}"
+                                     @if ($map['slug'] !== $status['openMap']) hidden @endif>
+                                    <div class="where__scroll">@include($map['view'], ['players' => $status['players']])</div>
+                                </div>
+                            @endforeach
+                        </div>
+                        <figcaption>{{ __('public.map.note', ['seconds' => 10]) }}</figcaption>
                     </figure>
                 </div>
             </div>

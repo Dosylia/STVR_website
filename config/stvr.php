@@ -80,14 +80,57 @@ return [
         // older than this, never on a timer: every request to the hub counts against its daily free allowance.
         'cache_seconds' => (int) env('STVR_PUBLIC_SERVER_CACHE', 5),
 
-        // The map: two places whose in-game position (Tamriel worldspace, the
-        // console's getpos x and getpos y) and whose point on our drawing are
-        // both known, so every other position can be placed between them.
-        // UNVERIFIED: these world positions are estimates. Stand at both city
-        // gates in game, read getpos, and correct them.
-        'map' => [
-            'a' => ['world' => [21000, -9000],  'svg' => [478, 322]],   // Whiterun, main gate
-            'b' => ['world' => [131000, 33000], 'svg' => [790, 250]],   // Windhelm, bridge
+        // The maps: one drawing per exterior worldspace worth drawing, keyed by the worldspace's editor id as the
+        // server sends it. Each has two places whose in-game position (the console's getpos x and getpos y) and
+        // whose point on the drawing are both known, so every other position can be placed between them. A player
+        // outdoors in a worldspace without a drawing is listed with the area's name and no dot.
+        'maps' => [
+            'Tamriel' => [
+                'slug' => 'skyrim',
+                'view' => 'art.skyrim-map',
+                // UNVERIFIED: estimates. In game at both places, getpos x and getpos y, and correct them.
+                'a' => ['world' => [21000, -9000],  'svg' => [478, 322]],   // Whiterun, main gate
+                'b' => ['world' => [131000, 33000], 'svg' => [790, 250]],   // Windhelm, bridge
+            ],
+            'DLC2SolstheimWorld' => [
+                'slug' => 'solstheim',
+                'view' => 'art.solstheim-map',
+                // UNVERIFIED: placeholders until someone stands there. In game at both places, getpos x and getpos y.
+                'a' => ['world' => [30000, -45000], 'svg' => [652, 512]],   // Raven Rock, the end of the dock
+                'b' => ['world' => [55000, 55000],  'svg' => [735, 200]],   // Skaal Village, the Greathall's door
+            ],
+        ],
+
+        // Worldspaces drawn on another one's map because they share its ground and its coordinates: Skyrim's walled
+        // cities are worldspaces of their own in the game data, children of Tamriel, and the game's own map shows a
+        // player inside them on Tamriel's. To be checked once in game: getpos in Whiterun's market should land on
+        // Whiterun on the drawing.
+        'shared' => [
+            'WhiterunWorld'  => 'Tamriel',
+            'SolitudeWorld'  => 'Tamriel',
+            'WindhelmWorld'  => 'Tamriel',
+            'RiftenWorld'    => 'Tamriel',
+            'MarkarthWorld'  => 'Tamriel',
+        ],
+
+        // The areas a player can be outdoors in, by editor id, and the name the page gives each (lang/*/public.php,
+        // map.areas). The mod session lists the exact editor ids from the game data; one not here is listed without
+        // an area's name.
+        'areas' => [
+            'Tamriel'              => 'skyrim',
+            'WhiterunWorld'        => 'skyrim',
+            'SolitudeWorld'        => 'skyrim',
+            'WindhelmWorld'        => 'skyrim',
+            'RiftenWorld'          => 'skyrim',
+            'MarkarthWorld'        => 'skyrim',
+            'DLC2SolstheimWorld'   => 'solstheim',
+            'Blackreach'           => 'blackreach',
+            'Sovngarde'            => 'sovngarde',
+            'SkuldafnWorld'        => 'skuldafn',
+            'DLC01SoulCairn'       => 'soul_cairn',
+            'DLC01FalmerValley'    => 'forgotten_vale',
+            'DLC2ApocryphaWorld'   => 'apocrypha',
+            'DeepwoodRedoubtWorld' => 'deepwood_vale',
         ],
     ],
 

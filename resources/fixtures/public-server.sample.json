@@ -1,5 +1,5 @@
 {
-    "_comment": "A made-up server, for reviewing the public server page on a development machine (STVR_PUBLIC_SERVER_STATUS_URL=sample). Its address is from the range reserved for documentation. Shaped like what the server's PublicStatusService sends: player_count counts a player who chose not to be listed, and place names are in each player's game language. Never shown in production.",
+    "_comment": "A made-up server, for reviewing the public server page on a development machine (STVR_PUBLIC_SERVER_STATUS_URL=sample). Its address is from the range reserved for documentation. Shaped like what the server's PublicStatusService sends: player_count counts a player who chose not to be listed, and place names are in each player's game language. Never shown in production. Players outdoors in every worldspace send a position: Whiterun's city lands on the Skyrim map, Raven Rock on Solstheim's, the Soul Cairn has no map.",
     "online": true,
     "name": "urSovngarde public server",
     "address": "203.0.113.10:10578",
@@ -7,15 +7,75 @@
     "protocol": "a1b2c3d4",
     "password": false,
     "max_players": 8,
-    "player_count": 6,
+    "player_count": 9,
     "started_at": "2026-10-10T08:00:00Z",
     "server_time": "2026-10-10T12:00:00Z",
     "updated_at": "2026-10-10T12:00:00Z",
     "players": [
-        { "id": "k3f9a1", "name": "Ingrid", "location": "Riverwood", "worldspace": "Tamriel", "x": 7603, "y": -66167, "heading": 45 },
-        { "id": "p0x7qz", "name": "Torvald", "location": "Rivebois", "worldspace": "Tamriel", "x": 9718, "y": -62667, "heading": 200 },
-        { "id": "m2c8rd", "name": "Asta", "location": "Dragonsreach" },
-        { "id": "t6w1ye", "name": "Kjeld", "location": "Windhelm", "worldspace": "Tamriel", "x": 123948, "y": 24250, "heading": 300 },
-        { "id": "b5n4vu", "name": "Runa", "location": "Falkreath Hold", "worldspace": "Tamriel", "x": -29416, "y": -115750, "heading": 90 }
+        {
+            "id": "k3f9a1",
+            "name": "Ingrid",
+            "location": "Riverwood",
+            "worldspace": "Tamriel",
+            "x": 7603,
+            "y": -66167,
+            "heading": 45
+        },
+        {
+            "id": "p0x7qz",
+            "name": "Torvald",
+            "location": "Rivebois",
+            "worldspace": "Tamriel",
+            "x": 9718,
+            "y": -62667,
+            "heading": 200
+        },
+        {
+            "id": "m2c8rd",
+            "name": "Asta",
+            "location": "Dragonsreach"
+        },
+        {
+            "id": "t6w1ye",
+            "name": "Kjeld",
+            "location": "Windhelm",
+            "worldspace": "Tamriel",
+            "x": 123948,
+            "y": 24250,
+            "heading": 300
+        },
+        {
+            "id": "b5n4vu",
+            "name": "Runa",
+            "location": "Falkreath Hold",
+            "worldspace": "Tamriel",
+            "x": -29416,
+            "y": -115750,
+            "heading": 90
+        },
+        {
+            "id": "w4r2lq",
+            "name": "Brynja",
+            "location": "Whiterun",
+            "worldspace": "WhiterunWorld",
+            "x": 18885,
+            "y": -13667,
+            "heading": 270
+        },
+        {
+            "id": "s8d3me",
+            "name": "Erik",
+            "location": "Raven Rock",
+            "worldspace": "DLC2SolstheimWorld",
+            "x": 23373,
+            "y": -37949,
+            "heading": 120
+        },
+        {
+            "id": "c1z0ny",
+            "name": "Siv",
+            "location": "Boneyard",
+            "worldspace": "DLC01SoulCairn"
+        }
     ]
 }

@@ -122,7 +122,7 @@ return [
             'when'  => 'public_server',
             'title' => 'El servidor público',
             'body'  => [
-                'La página del servidor público en esta web muestra a cualquiera, en directo, qué personajes hay en él y el lugar en el que está cada uno, tal como lo llama su propio juego. Al aire libre, en el mundo principal de Skyrim, muestra además en qué punto del mapa se encuentran y hacia dónde miran. Solo nombres de personaje: nunca un nombre de Steam, una cuenta ni una dirección.',
+                'La página del servidor público en esta web muestra a cualquiera, en directo, qué personajes hay en él y el lugar en el que está cada uno, tal como lo llama su propio juego. Al aire libre, muestra además la zona en la que están (Skyrim, Solstheim, el Recordatorio de las Almas...) y, en nuestros mapas de Skyrim y Solstheim, en qué punto se encuentran y hacia dónde miran. Solo nombres de personaje: nunca un nombre de Steam, una cuenta ni una dirección.',
                 'Un jugador puede quedarse fuera de la página: en el lanzador, «Ocultarme de la página del servidor público». Desde su próxima conexión, la página lo sigue contando, pero nunca muestra su nombre ni lo pone en su mapa.',
                 'Solo nuestro servidor público hace esto. La opción está desactivada en todos los demás servidores, incluido el tuyo.',
                 'El servidor envía su estado a nuestro hub cada 10 segundos mientras alguien está jugando. El hub guarda solo el último, quita de él a los jugadores en cuanto el servidor se detiene o lleva 3 minutos en silencio, y no guarda nada de quién jugó ni de cuándo.',

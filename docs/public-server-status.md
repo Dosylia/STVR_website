@@ -45,6 +45,7 @@ made-up example in the server's shape: `resources/fixtures/public-server.sample.
     "updated_at": "2026-10-10T12:00:00Z",
     "players": [
         { "id": "k3f9a1", "name": "Ingrid", "location": "Riverwood", "worldspace": "Tamriel", "x": 7603, "y": -66167, "heading": 45 },
+        { "id": "s8d3me", "name": "Erik", "location": "Raven Rock", "worldspace": "DLC2SolstheimWorld", "x": 23373, "y": -37949, "heading": 120 },
         { "id": "m2c8rd", "name": "Asta", "location": "Dragonsreach" }
     ]
 }
@@ -72,9 +73,9 @@ Each player:
 | `id` | string, ≤ 16 | A random token per connection, never a Steam id, account or address. The key of the player's dot, so it glides to its new place instead of being redrawn. |
 | `name` | string, ≤ 40 | The character's name, as the client sent it at connect. |
 | `location` | string, ≤ 60, optional | The place, from the game client, **in the player's own game language**, UTF-8 (a French player's "Rivebois" appears as such on the English page): the room's name indoors, the town, dungeon or hold outdoors. It arrives with the next mod build; until then the roster lists players without a place. |
-| `worldspace` | string, optional | `Tamriel` when the player is outdoors in Skyrim's main world. Anything else, or none, lists the player as indoors, without a dot. |
-| `x`, `y` | numbers, optional | Position in game units (`getpos x`, `getpos y`). Only outdoors in Tamriel. |
-| `heading` | number, degrees, optional | Where the player faces, 0 north, clockwise. The arrow on the dot. Only outdoors in Tamriel. |
+| `worldspace` | string, optional | The editor id of the exterior worldspace the player is in (`Tamriel`, `WhiterunWorld`, `DLC2SolstheimWorld`, `DLC01SoulCairn`...). Absent indoors. See "Maps and areas" below for what the page does with each. |
+| `x`, `y` | numbers, optional | Position in game units (`getpos x`, `getpos y`), in that worldspace. Outdoors only, in every exterior worldspace. |
+| `heading` | number, degrees, optional | Where the player faces, 0 north, clockwise. The arrow on the dot. Outdoors only. |
 
 The website's own rules, so the sender does not have to care:
 
@@ -95,18 +96,43 @@ The status card has a Join button: `ursovngarde://join?address=<host>:<port>`, t
 always asks before it joins. Older launchers have no handler for the link, so the note under the button says to update
 the launcher if nothing happens.
 
-## The map
+## Maps and areas
 
-Our own drawing of Skyrim, 1000 by 640. Positions are placed from two calibration points in `config/stvr.php`
-(`public_server.map`): Whiterun's main gate and Windhelm's bridge. **Their in-game values are still estimates**: in
-game at both places, `getpos x` and `getpos y`, and correct the four numbers.
+All in `config/stvr.php`, `public_server`:
+
+- **`maps`**, keyed by worldspace editor id: the worldspaces with a drawing of their own, today `Tamriel` (Skyrim,
+  `art/skyrim-map.blade.php`) and `DLC2SolstheimWorld` (Solstheim, `art/solstheim-map.blade.php`), each 1000 by 640.
+  The page shows them as tabs, each with how many players are there, and opens on the busiest (Skyrim on a tie).
+- **`shared`**: worldspaces drawn on another one's map because they share its ground and coordinates. Skyrim's walled
+  cities (`WhiterunWorld`, `SolitudeWorld`, `WindhelmWorld`, `RiftenWorld`, `MarkarthWorld`) are worldspaces of their
+  own in the game data, children of Tamriel, so a player in Whiterun's market is drawn on Whiterun on the Skyrim map.
+  To be checked once in game (below).
+- **`areas`**: the name the page gives each exterior worldspace (`lang/*/public.php`, `map.areas`). A player outside
+  main Skyrim is listed with the place and the area ("Raven Rock · Solstheim", "Boneyard · Soul Cairn"). A worldspace
+  with a name but no drawing (the Soul Cairn, the Forgotten Vale, Apocrypha, Blackreach, Sovngarde, Skuldafn, Deepwood
+  Vale) lists its players without a dot. An editor id that is in none of these lists is listed without an area's name:
+  add it to `areas` (and a name in four languages) once the mod session lists the exact ids from the game data.
+
+### Calibration, per worldspace
+
+Each drawing places positions from two points whose in-game position and point on the drawing are both known (`a` and
+`b` under the worldspace in `maps`). **All four pairs are still estimates.** In game, stand at each place, run
+`getpos x` and `getpos y`, and correct the `world` numbers:
+
+| Map | Point a | Point b |
+|---|---|---|
+| Skyrim (`Tamriel`) | Whiterun, the main gate | Windhelm, the bridge |
+| Solstheim (`DLC2SolstheimWorld`) | Raven Rock, the end of the dock | Skaal Village, the Greathall's door |
+
+And one check for the cities: in Whiterun's market, `getpos x` and `getpos y`, and the dot should land on Whiterun on
+the Skyrim map. If it does not, the cities need a pair of their own.
 
 ## Before switching it on
 
 - **Privacy page.** The "public server" section is written in four languages, says how to hide, and appears on the
   privacy page only once the page is switched on.
 - **Rules and moderation** on the page, once decided (`urSovngarde-hub/PUBLIC_SERVER.md`, decision 4).
-- **Calibration**, above.
+- **Calibration**, above: four places, and the Whiterun check.
 
 ## Switching it on
 
