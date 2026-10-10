@@ -101,7 +101,9 @@ the launcher if nothing happens.
 All in `config/stvr.php`, `public_server`:
 
 - **`maps`**, keyed by worldspace editor id: the worldspaces with a drawing of their own, today `Tamriel` (Skyrim,
-  `art/skyrim-map.blade.php`) and `DLC2SolstheimWorld` (Solstheim, `art/solstheim-map.blade.php`), each 1000 by 640.
+  `art/skyrim-map.blade.php`), `DLC2SolstheimWorld` (Solstheim, `art/solstheim-map.blade.php`) and `DLC01SoulCairn`
+  (the Soul Cairn, `art/soul-cairn-map.blade.php`), each 1000 by 640. The Skyrim map also draws Castle Volkihar's island
+  and Fort Dawnguard; if the server reports either under a worldspace of its own, add it to `shared`.
   The page shows them as tabs, each with how many players are there, and opens on the busiest (Skyrim on a tie).
 - **`shared`**: worldspaces drawn on another one's map because they share its ground and coordinates. Skyrim's walled
   cities (`WhiterunWorld`, `SolitudeWorld`, `WindhelmWorld`, `RiftenWorld`, `MarkarthWorld`) are worldspaces of their
@@ -109,20 +111,21 @@ All in `config/stvr.php`, `public_server`:
   To be checked once in game (below).
 - **`areas`**: the name the page gives each exterior worldspace (`lang/*/public.php`, `map.areas`). A player outside
   main Skyrim is listed with the place and the area ("Raven Rock · Solstheim", "Boneyard · Soul Cairn"). A worldspace
-  with a name but no drawing (the Soul Cairn, the Forgotten Vale, Apocrypha, Blackreach, Sovngarde, Skuldafn, Deepwood
+  with a name but no drawing (the Forgotten Vale, Apocrypha, Blackreach, Sovngarde, Skuldafn, Deepwood
   Vale) lists its players without a dot. An editor id that is in none of these lists is listed without an area's name:
   add it to `areas` (and a name in four languages) once the mod session lists the exact ids from the game data.
 
 ### Calibration, per worldspace
 
 Each drawing places positions from two points whose in-game position and point on the drawing are both known (`a` and
-`b` under the worldspace in `maps`). **All four pairs are still estimates.** In game, stand at each place, run
+`b` under the worldspace in `maps`). **All three pairs are still estimates.** In game, stand at each place, run
 `getpos x` and `getpos y`, and correct the `world` numbers:
 
 | Map | Point a | Point b |
 |---|---|---|
 | Skyrim (`Tamriel`) | Whiterun, the main gate | Windhelm, the bridge |
 | Solstheim (`DLC2SolstheimWorld`) | Raven Rock, the end of the dock | Skaal Village, the Greathall's door |
+| Soul Cairn (`DLC01SoulCairn`) | Where you arrive, at the portal | The Boneyard, its gate |
 
 And one check for the cities: in Whiterun's market, `getpos x` and `getpos y`, and the dot should land on Whiterun on
 the Skyrim map. If it does not, the cities need a pair of their own.
@@ -132,7 +135,7 @@ the Skyrim map. If it does not, the cities need a pair of their own.
 - **Privacy page.** The "public server" section is written in four languages, says how to hide, and appears on the
   privacy page only once the page is switched on.
 - **Rules and moderation** on the page, once decided (`urSovngarde-hub/PUBLIC_SERVER.md`, decision 4).
-- **Calibration**, above: four places, and the Whiterun check.
+- **Calibration**, above: six places, and the Whiterun check.
 
 ## Switching it on
 

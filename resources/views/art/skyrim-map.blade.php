@@ -30,6 +30,9 @@
         'riverwood'  => [440, 420, false, 'end'],
         'helgen'     => [512, 508, false, 'start'],
         'ivarstead'  => [640, 470, false, 'start'],
+        // Dawnguard's two strongholds: the fort in the canyon east of Riften, the castle on its island off Solitude.
+        'fort_dawnguard'  => [906, 474, false, 'end'],
+        'castle_volkihar' => [172, 84, false, 'middle'],
     ];
 @endphp
 <svg class="map" viewBox="0 0 1000 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="mapTitle">
@@ -69,6 +72,10 @@
              L950 342 L948 384 L942 426 L944 470 L934 516 L918 556 L890 584 L852 600 L810 598 L770 590 L730 596
              L688 590 L646 600 L604 594 L560 586 L516 594 L470 600 L424 596 L380 590 L336 578 L292 568 L252 552
              L214 532 L180 506 L146 476 L118 444 L94 410 L74 372 L62 344 Z"/>
+
+    {{-- Castle Volkihar's island, in the Sea of Ghosts north-west of Solitude --}}
+    <path fill="url(#mapLand)" stroke="#6b5a2a" stroke-width="1.3" stroke-linejoin="round"
+          d="M150 84 L160 72 L176 68 L190 74 L194 86 L182 96 L164 96 Z"/>
 
     {{-- hold borders --}}
     <g fill="none" stroke="#3a404b" stroke-width="1" stroke-dasharray="4 5">

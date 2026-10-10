@@ -148,9 +148,10 @@ class PagesTest extends TestCase
 
         $body = $this->get(Nav::url('public', 'fr'))->assertOk()->getContent();
 
-        // Six of the eight listed players have a dot: four outdoors in Tamriel, one in Whiterun's own worldspace (drawn
-        // on Skyrim's map), one near Raven Rock (Solstheim's). Indoors and the Soul Cairn have none.
-        $this->assertSame(6, substr_count($body, 'class="map__player"'));
+        // Seven of the eight listed players have a dot: four outdoors in Tamriel, one in Whiterun's own worldspace (drawn
+        // on Skyrim's map), one near Raven Rock (Solstheim's), one at the Boneyard (the Soul Cairn's). Indoors has none.
+        $this->assertSame(7, substr_count($body, 'class="map__player"'));
+        $this->assertMatchesRegularExpression('#data-map="soul_cairn".*?data-id="c1z0ny"#s', $body, 'Siv is on the Soul Cairn\'s map');
         preg_match('#data-map="skyrim".*?</g>\s*(?=\s*<g transform)#s', $body, $skyrim);
         $this->assertSame(5, substr_count($skyrim[0] ?? '', 'class="map__player"'), 'Five dots on Skyrim, the city one included');
         $this->assertStringContainsString('data-id="s8d3me"', $body);
@@ -186,7 +187,7 @@ class PagesTest extends TestCase
         $this->assertSame(9, $json['count'], 'player_count, hidden players included');
         $this->assertSame(1, $json['hidden']);
         $this->assertCount(8, $json['players']);
-        $this->assertSame(['skyrim' => 5, 'solstheim' => 1], $json['maps']);
+        $this->assertSame(['skyrim' => 5, 'solstheim' => 1, 'soul_cairn' => 1], $json['maps']);
         $this->assertSame(['id', 'name', 'where', 'map', 'area', 'point', 'heading'], array_keys($json['players'][0]));
 
         $byName = array_column($json['players'], null, 'name');
@@ -194,7 +195,7 @@ class PagesTest extends TestCase
         $this->assertNull($byName['Asta']['heading']);
         $this->assertSame(['skyrim', null], [$byName['Brynja']['map'], $byName['Brynja']['area']], 'A walled city is Skyrim');
         $this->assertSame(['solstheim', 'solstheim'], [$byName['Erik']['map'], $byName['Erik']['area']]);
-        $this->assertSame([null, 'soul_cairn', null], [$byName['Siv']['map'], $byName['Siv']['area'], $byName['Siv']['point']]);
+        $this->assertSame(['soul_cairn', 'soul_cairn'], [$byName['Siv']['map'], $byName['Siv']['area']]);
     }
 
     public function test_the_public_server_section_of_the_privacy_page_waits_for_the_switch(): void

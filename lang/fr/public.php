@@ -67,6 +67,7 @@ return [
         'note'   => 'Actualisée toutes les :seconds secondes tant que vous la regardez. Nos propres dessins, assez précis pour dire « près de Rivebois ».',
         'switch' => 'Choisir une carte',
         'title_solstheim' => 'Carte de Solstheim avec les joueurs du serveur public',
+        'title_soul_cairn' => 'Carte du Soul Cairn avec les joueurs du serveur public',
         'red_mountain' => 'Mont Écarlate',
         // The areas a player can be outdoors in (config stvr.public_server.areas). Skyrim and Solstheim have a map.
         'areas'  => [
@@ -90,6 +91,11 @@ return [
             'frostmoth'     => 'Fort Frostmoth',
             'kolbjorn'      => 'Tertre de Kolbjorn',
         ],
+        'soul_cairn' => [
+            'arrival'  => 'Point d’arrivée',
+            'boneyard' => 'The Boneyard',
+            'reaper'   => 'Reaper’s Lair',
+        ],
         'sea'    => 'Mer des Fantômes',
         'throat' => 'Gorge du Monde',
         'towns'  => [
@@ -105,6 +111,8 @@ return [
             'riverwood'  => 'Rivebois',
             'helgen'     => 'Helgen',
             'ivarstead'  => 'Ivarstead',
+            'fort_dawnguard'  => 'Fort de la Garde de l’aube',
+            'castle_volkihar' => 'Château Volkihar',
         ],
         'title_svg' => 'Carte de Bordeciel avec les joueurs du serveur public',
     ],

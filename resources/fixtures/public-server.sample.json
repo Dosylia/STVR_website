@@ -75,7 +75,10 @@
             "id": "c1z0ny",
             "name": "Siv",
             "location": "Boneyard",
-            "worldspace": "DLC01SoulCairn"
+            "worldspace": "DLC01SoulCairn",
+            "x": 7273,
+            "y": 14444,
+            "heading": 0
         }
     ]
 }

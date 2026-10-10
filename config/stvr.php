@@ -99,6 +99,13 @@ return [
                 'a' => ['world' => [30000, -45000], 'svg' => [652, 512]],   // Raven Rock, the end of the dock
                 'b' => ['world' => [55000, 55000],  'svg' => [735, 200]],   // Skaal Village, the Greathall's door
             ],
+            'DLC01SoulCairn' => [
+                'slug' => 'soul_cairn',
+                'view' => 'art.soul-cairn-map',
+                // UNVERIFIED: placeholders until someone stands there. In game at both places, getpos x and getpos y.
+                'a' => ['world' => [-20000, -30000], 'svg' => [300, 470]],  // where you arrive, at the portal
+                'b' => ['world' => [10000, 20000],   'svg' => [520, 200]],  // the Boneyard, its gate
+            ],
         ],
 
         // Worldspaces drawn on another one's map because they share its ground and its coordinates: Skyrim's walled
@@ -111,6 +118,8 @@ return [
             'WindhelmWorld'  => 'Tamriel',
             'RiftenWorld'    => 'Tamriel',
             'MarkarthWorld'  => 'Tamriel',
+            // Castle Volkihar's island and Fort Dawnguard are drawn on the Skyrim map. If the server reports either
+            // under a worldspace of its own, add that editor id here, pointing to Tamriel.
         ],
 
         // The areas a player can be outdoors in, by editor id, and the name the page gives each (lang/*/public.php,

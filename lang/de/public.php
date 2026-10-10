@@ -67,6 +67,7 @@ return [
         'note'   => 'Alle :seconds Sekunden aktualisiert, solange du zusiehst. Unsere eigenen Zeichnungen, genau genug für "in der Nähe von Flusswald".',
         'switch' => 'Karte wählen',
         'title_solstheim' => 'Karte von Solstheim mit den Spielern auf dem öffentlichen Server',
+        'title_soul_cairn' => 'Karte des Seelengrabs mit den Spielern auf dem öffentlichen Server',
         'red_mountain' => 'Roter Berg',
         // The areas a player can be outdoors in (config stvr.public_server.areas). Skyrim and Solstheim have a map.
         'areas'  => [
@@ -90,6 +91,11 @@ return [
             'frostmoth'     => 'Fort Frostmoth',
             'kolbjorn'      => 'Kolbjorn Barrow',
         ],
+        'soul_cairn' => [
+            'arrival'  => 'Hier kommst du an',
+            'boneyard' => 'The Boneyard',
+            'reaper'   => 'Schnitterhöhle',
+        ],
         'sea'    => 'Geistermeer',
         'throat' => 'Hals der Welt',
         'towns'  => [
@@ -105,6 +111,8 @@ return [
             'riverwood'  => 'Flusswald',
             'helgen'     => 'Helgen',
             'ivarstead'  => 'Ivarstedt',
+            'fort_dawnguard'  => 'Festung Dämmerwacht',
+            'castle_volkihar' => 'Burg Volkihar',
         ],
         'title_svg' => 'Karte von Himmelsrand mit den Spielern auf dem öffentlichen Server',
     ],

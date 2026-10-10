@@ -67,6 +67,7 @@ return [
         'note'   => 'Se actualiza cada :seconds segundos mientras miras. Son nuestros propios dibujos, lo bastante precisos para decir "cerca de Cauce Boscoso".',
         'switch' => 'Elige un mapa',
         'title_solstheim' => 'Mapa de Solstheim con los jugadores del servidor público',
+        'title_soul_cairn' => 'Mapa del Recordatorio de las Almas con los jugadores del servidor público',
         'red_mountain' => 'Montaña Roja',
         // The areas a player can be outdoors in (config stvr.public_server.areas). Skyrim and Solstheim have a map.
         'areas'  => [
@@ -90,6 +91,11 @@ return [
             'frostmoth'     => 'Fuerte Polilla Helada',
             'kolbjorn'      => 'Túmulo de Kolbjorn',
         ],
+        'soul_cairn' => [
+            'arrival'  => 'Donde llegas',
+            'boneyard' => 'El Osario',
+            'reaper'   => 'Reaper\'s Lair',
+        ],
         'sea'    => 'Mar de los Fantasmas',
         'throat' => 'Garganta del Mundo',
         'towns'  => [
@@ -105,6 +111,8 @@ return [
             'riverwood'  => 'Cauce Boscoso',
             'helgen'     => 'Helgen',
             'ivarstead'  => 'Ivarstead',
+            'fort_dawnguard'  => 'Fuerte Guardia del Alba',
+            'castle_volkihar' => 'Castillo Volkihar',
         ],
         'title_svg' => 'Mapa de Skyrim con los jugadores del servidor público',
     ],

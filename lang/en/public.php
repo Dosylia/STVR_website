@@ -67,6 +67,7 @@ return [
         'note'   => 'Refreshed every :seconds seconds while you watch. Our own drawings, close enough to say "near Riverwood".',
         'switch' => 'Choose a map',
         'title_solstheim' => 'Map of Solstheim with the players on the public server',
+        'title_soul_cairn' => 'Map of the Soul Cairn with the players on the public server',
         'red_mountain' => 'Red Mountain',
         // The areas a player can be outdoors in (config stvr.public_server.areas). Skyrim and Solstheim have a map.
         'areas'  => [
@@ -90,6 +91,11 @@ return [
             'frostmoth'     => 'Fort Frostmoth',
             'kolbjorn'      => 'Kolbjorn Barrow',
         ],
+        'soul_cairn' => [
+            'arrival'  => 'Where you arrive',
+            'boneyard' => 'The Boneyard',
+            'reaper'   => 'Reaper\'s Lair',
+        ],
         'sea'    => 'Sea of Ghosts',
         'throat' => 'Throat of the World',
         'towns'  => [
@@ -105,6 +111,8 @@ return [
             'riverwood'  => 'Riverwood',
             'helgen'     => 'Helgen',
             'ivarstead'  => 'Ivarstead',
+            'fort_dawnguard'  => 'Fort Dawnguard',
+            'castle_volkihar' => 'Castle Volkihar',
         ],
         'title_svg' => 'Map of Skyrim with the players on the public server',
     ],
